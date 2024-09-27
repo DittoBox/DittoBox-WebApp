@@ -1,7 +1,6 @@
 import {Component, Inject} from '@angular/core';
 import {
   MAT_DIALOG_DATA,
-  MatDialog,
   MatDialogContainer,
   MatDialogContent,
   MatDialogModule, MatDialogRef
@@ -49,7 +48,7 @@ export class ContianerEditComponent {
     this.containerService.updateTemplate(this.data).subscribe(
       (response) => {
         console.log('Template updated successfully', response);
-        this.dialogRef.close(response); // Cierra el diálogo y devuelve la respuesta si es necesario
+        this.dialogRef.close(response);
       },
       (error) => {
         console.error('Error updating template', error);

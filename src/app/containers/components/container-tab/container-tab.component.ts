@@ -16,8 +16,8 @@ import {ContainerServiceService} from "../../service/container-service.service";
   styleUrl: './container-tab.component.css'
 })
 export class ContainerTabComponent implements  OnInit{
-  allContainers: Container[] = []; // Todos los containers
-  activeContainers: Container[] = []; // Solo los containers activos
+  allContainers: Container[] = [];
+  activeContainers: Container[] = [];
 
   constructor(private containerService: ContainerServiceService) {}
 
@@ -27,8 +27,8 @@ export class ContainerTabComponent implements  OnInit{
 
   loadContainers() {
     this.containerService.getContainers().subscribe((data: Container[]) => {
-      this.allContainers = data; // Almacena todos los containers
-      this.activeContainers = data.filter(container => container.status === 'Active'); // Filtra los activos
+      this.allContainers = data;
+      this.activeContainers = data.filter(container => container.status === 'Active');
     });
   }
 }

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {MatCard, MatCardContent, MatCardHeader} from "@angular/material/card";
 import {NgForOf, NgIf} from "@angular/common";
 import {ContainerServiceService} from "../../service/container-service.service";
@@ -8,7 +8,7 @@ import {Container} from "../../model/container-model/container.entity";
 import {Template} from "../../model/template-model/template.entity";
 import {MatButtonToggle} from "@angular/material/button-toggle";
 import {ContianerEditComponent} from "../contianer-edit/contianer-edit.component";
-import {MatDialog, MatDialogActions, MatDialogModule} from "@angular/material/dialog";
+import {MatDialog} from "@angular/material/dialog";
 import {RouterLink} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
 
@@ -35,7 +35,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 })
 export class ContainerDetailsComponent {
   container: Container | null = null;
-  template: Template | null = null; // Agregar template
+  template: Template | null = null;
   isButtonDisabled: boolean = true;
   opened: boolean = false;
 
@@ -49,10 +49,10 @@ export class ContainerDetailsComponent {
         data.temperature,
         data.humidity,
         data.lastSync,
-        data.idTemplates // Asegúrate de que esto exista
+        data.idTemplates
       );
 
-      // Comprobación para asegurar que templateId no es nulo
+
       if (this.container && this.container.idTemplates) {
         this.containerService.getTemplateById(this.container.idTemplates).subscribe(templateData => {
           this.template = new Template(
@@ -70,7 +70,7 @@ export class ContainerDetailsComponent {
             templateData.detectsulfurdioxide
           );
 
-          // Abre el sidenav cuando cargue la data
+
           this.opened = true;
         }, error => {
           console.error('Error al obtener el template:', error);
@@ -84,7 +84,7 @@ export class ContainerDetailsComponent {
   }
   openDialog() {
     this.dialog.open(ContianerEditComponent, {
-      width: '450px', // Puedes personalizar el tamaño del diálogo
+      width: '450px',
       data:this.template
     });
   }
@@ -92,7 +92,7 @@ export class ContainerDetailsComponent {
   onButtonClick(): void {
     if (this.isButtonDisabled) {
       this.snackBar.open('You are not a premium user.', 'Close', {
-        duration: 3000, // Duración en milisegundos
+        duration: 3000,
       });
     }
   }

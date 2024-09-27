@@ -1,12 +1,12 @@
 .card-container {
-  display: flex; /* Activar Flexbox */
-  flex-wrap: wrap; /* Permitir que las tarjetas se muevan a la siguiente línea */
-  justify-content: flex-start; /* Alinear tarjetas al principio */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .container-card {
-  width: 500px; /* Ancho fijo para las tarjetas */
-  margin: 10px; /* Margen entre tarjetas */
+  width: 500px;
+  margin: 10px;
   padding: 15px;
   border: 2px solid #c6c6c6;
   border-radius: 8px;
@@ -19,7 +19,7 @@
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
 .content {
-  display: flex; /* Activar Flexbox */
-  justify-content: space-between; /* Espaciar elementos a los extremos */
-  margin: 10px 0; /* Margen entre líneas */
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
 }

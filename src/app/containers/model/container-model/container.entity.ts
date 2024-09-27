@@ -4,7 +4,7 @@ export class Container {
   temperature: string;
   humidity:string;
   lastSync:string;
-  idTemplates: string; // Agregar esta propiedad
+  idTemplates: string;
 
   constructor(id: string, name: string, capacity: string,humidity:string,lastSync:string,idTemplates:string) {
     this.id = id;

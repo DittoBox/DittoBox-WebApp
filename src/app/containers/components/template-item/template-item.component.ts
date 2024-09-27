@@ -22,7 +22,7 @@ export class TemplateItemComponent implements OnInit {
   @Input() templateItems: any[] = [];
 
 
-  constructor( private containerServiceService: ContainerServiceService,public dialog:MatDialog) { }
+  constructor( private containerServiceService: ContainerServiceService) { }
   ngOnInit() {
     this.containerServiceService.getTemplates().subscribe((data: any[]) => {
       this.templateItems = data;

@@ -27,11 +27,11 @@ export class TemplateConfirmComponent {
   ) {}
 
   onNoClick(): void {
-    this.dialogRef.close(); // Cierra el diálogo sin confirmar
+    this.dialogRef.close();
   }
 
   onConfirm(): void {
-    this.dialogRef.close(true); // Cierra el diálogo y devuelve true
+    this.dialogRef.close(true);
   }
 
 }
