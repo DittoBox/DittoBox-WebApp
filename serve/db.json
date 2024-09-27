@@ -1,0 +1,170 @@
+{
+  "containers": [
+    {
+      "id": "1",
+      "status": "Active",
+      "temperature": 4,
+      "humidity": 48,
+      "lastSync": "21 minutes ago",
+      "idTemplates": 4
+    },
+    {
+      "id": "2",
+      "status": "Active",
+      "temperature": 0,
+      "humidity": 15,
+      "lastSync": "15 minutes ago",
+      "idTemplates": 3
+    },
+    {
+      "id": "3",
+      "status": "Idle",
+      "temperature": null,
+      "humidity": null,
+      "lastSync": "1 hour ago",
+      "idTemplates": 6
+    },
+    {
+      "id": "4",
+      "status": "Needs attention",
+      "temperature": 18,
+      "humidity": 87,
+      "lastSync": "1 hour ago",
+      "idTemplates": 5
+    },
+    {
+      "id": "5",
+      "status": "Active",
+      "temperature": 7,
+      "humidity": 33,
+      "lastSync": "30 minutes ago",
+      "idTemplates": 2
+    },
+    {
+      "id": "6",
+      "status": "Idle",
+      "temperature": null,
+      "humidity": null,
+      "lastSync": "2 hours ago",
+      "idTemplates": 3
+    },
+    {
+      "id": "7",
+      "status": "Needs attention",
+      "temperature": 20,
+      "humidity": 90,
+      "lastSync": "3 hours ago",
+      "idTemplates": 5
+    },
+    {
+      "id": "8",
+      "status": "Active",
+      "temperature": -2,
+      "humidity": 25,
+      "lastSync": "5 minutes ago",
+      "idTemplates": 4
+    },
+    {
+      "id": "9",
+      "status": "Idle",
+      "temperature": null,
+      "humidity": null,
+      "lastSync": "6 hours ago",
+      "idTemplates": 1
+    },
+    {
+      "id": "10",
+      "status": "Needs attention",
+      "temperature": 22,
+      "humidity": 80,
+      "lastSync": "2 hours ago",
+      "idTemplates": 2
+    }
+  ],
+  "templates": [
+    {
+      "id": "1",
+      "nametemplate": "Almacenamiento Frutas Tropicales",
+      "descriptiontemplate": "Configuración óptima para almacenar frutas tropicales como piñas y mangos.",
+      "maxtemp": 10,
+      "mintemp": -5,
+      "maxhumidity": 90,
+      "minhumidity": 20,
+      "detectoxygen": true,
+      "detectdioxide": true,
+      "detectetylene": false,
+      "detectammonia": false,
+      "detectsulfurdioxide": false
+    },
+    {
+      "id": "2",
+      "nametemplate": "Almacenamiento Verduras",
+      "descriptiontemplate": "Temperaturas ideales para almacenar verduras frescas como lechugas y espinacas.",
+      "maxtemp": 15,
+      "mintemp": 0,
+      "maxhumidity": 80,
+      "minhumidity": 25,
+      "detectoxygen": true,
+      "detectdioxide": false,
+      "detectetylene": true,
+      "detectammonia": false,
+      "detectsulfurdioxide": false
+    },
+    {
+      "id": "3",
+      "nametemplate": "Almacenamiento Cítricos",
+      "descriptiontemplate": "Condiciones de conservación de cítricos como naranjas y limones.",
+      "maxtemp": 20,
+      "mintemp": "5",
+      "maxhumidity": "90",
+      "minhumidity": 30,
+      "detectoxygen": true,
+      "detectdioxide": true,
+      "detectetylene": false,
+      "detectammonia": false,
+      "detectsulfurdioxide": false
+    },
+    {
+      "id": "4",
+      "nametemplate": "Almacenamiento Carnes Rojas",
+      "descriptiontemplate": "Control de temperatura y gases para la preservación de carnes rojas.",
+      "maxtemp": 25,
+      "mintemp": 10,
+      "maxhumidity": 75,
+      "minhumidity": 35,
+      "detectoxygen": false,
+      "detectdioxide": true,
+      "detectetylene": false,
+      "detectammonia": true,
+      "detectsulfurdioxide": false
+    },
+    {
+      "id": "5",
+      "nametemplate": "Almacenamiento Lácteos",
+      "descriptiontemplate": "Conservación de productos lácteos como leche y queso.",
+      "maxtemp": 30,
+      "mintemp": 15,
+      "maxhumidity": 70,
+      "minhumidity": 40,
+      "detectoxygen": true,
+      "detectdioxide": false,
+      "detectetylene": true,
+      "detectammonia": false,
+      "detectsulfurdioxide": true
+    },
+    {
+      "id": "6",
+      "nametemplate": "Almacenamiento Productos Congelados",
+      "descriptiontemplate": "Condiciones ideales para productos congelados como helados y carnes congeladas.",
+      "maxtemp": 28,
+      "mintemp": 12,
+      "maxhumidity": 82,
+      "minhumidity": 28,
+      "detectoxygen": false,
+      "detectdioxide": true,
+      "detectetylene": false,
+      "detectammonia": false,
+      "detectsulfurdioxide": true
+    }
+  ]
+}
