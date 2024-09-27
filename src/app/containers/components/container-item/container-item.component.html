@@ -1,0 +1,22 @@
+<div class="card-container">
+<mat-card *ngFor="let container of containerItems" (click)="openContainerSidenav(container.id)" class="container-card">
+  <mat-card-header>
+    <h3>Container #{{ container.id }}</h3>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ container.status }}</p>
+    <div class="content">
+      <strong>Temperature:</strong>
+      <span>{{ container.temperature !== null ? container.temperature + '°C' : '--' }}</span>
+    </div>
+    <div class="content">
+      <strong>Humidity:</strong>
+      <span>{{ container.humidity !== null ? container.humidity + '%' : '--' }}</span>
+    </div>
+    <div class="content">
+      <strong>Last sync:</strong>
+      <span>{{ container.lastSync }} ago</span>
+    </div>
+  </mat-card-content>
+</mat-card>
+</div>

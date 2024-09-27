@@ -1,0 +1,25 @@
+.card-container {
+  display: flex; /* Activar Flexbox */
+  flex-wrap: wrap; /* Permitir que las tarjetas se muevan a la siguiente línea */
+  justify-content: flex-start; /* Alinear tarjetas al principio */
+}
+
+.container-card {
+  width: 500px; /* Ancho fijo para las tarjetas */
+  margin: 10px; /* Margen entre tarjetas */
+  padding: 15px;
+  border: 2px solid #c6c6c6;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.container-card:hover {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.content {
+  display: flex; /* Activar Flexbox */
+  justify-content: space-between; /* Espaciar elementos a los extremos */
+  margin: 10px 0; /* Margen entre líneas */
+}

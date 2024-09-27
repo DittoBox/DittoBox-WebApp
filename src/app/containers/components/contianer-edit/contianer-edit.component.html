@@ -1,0 +1,43 @@
+<mat-dialog-content>
+  <mat-card class="no-border">
+    <mat-card-title>
+      Manual change
+    </mat-card-title>
+    <p>This change will be recorded in this container’s historial.</p>
+    <mat-card-content>
+      <div class="form-fields-container">
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Min temperature</mat-label>
+          <input matInput [(ngModel)]="data.mintemp">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Max temperature</mat-label>
+          <input matInput [(ngModel)]="data.maxtemp">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Min humidity</mat-label>
+          <input matInput [(ngModel)]="data.minhumidity">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Max humidity</mat-label>
+          <input matInput [(ngModel)]="data.maxhumidity">
+        </mat-form-field>
+      </div>
+
+      <div class="toggles-container">
+        <p>Measure oxygen <mat-slide-toggle [(ngModel)]="data.detectoxygen"></mat-slide-toggle></p>
+        <p>Measure carbon dioxide <mat-slide-toggle [(ngModel)]="data.detectdioxide"></mat-slide-toggle></p>
+        <p>Measure ethylene <mat-slide-toggle [(ngModel)]="data.detectetylene"></mat-slide-toggle></p>
+        <p>Measure ammonia and sulfur dioxide <mat-slide-toggle [(ngModel)]="data.detectammonia"></mat-slide-toggle></p>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions class="button-container">
+      <button mat-button (click)="close()">Cancel</button>
+      <button mat-button (click)="saveChanges()">Save</button>
+    </mat-card-actions>
+  </mat-card>
+</mat-dialog-content>

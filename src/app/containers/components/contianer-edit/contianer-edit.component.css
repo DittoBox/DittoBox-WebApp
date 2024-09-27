@@ -1,0 +1,26 @@
+.no-border {
+  box-shadow: none; /* Quita los bordes del mat-card */
+  border: none;     /* Asegura que no haya ningún borde */
+}
+
+.form-fields-container {
+  display: flex;              /* Usa flexbox para organizar los campos */
+  flex-wrap: wrap;           /* Permite que los campos se ajusten a la siguiente línea */
+  gap: 5px;
+  padding-top: 1px/* Espacio entre los campos */
+}
+
+.form-field {
+  flex: 1 1 calc(50% - 16px); /* Cada campo ocupa el 50% del ancho, menos el espacio */
+  min-width: 100px;          /* Ancho mínimo para los campos de formulario */
+}
+
+.toggles-container p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Alinea el texto y el toggle */
+}
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
