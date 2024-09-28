@@ -1,0 +1,19 @@
+<div class="card-container">
+  <mat-card *ngFor="let template of templateItems" class="container-card" >
+    <mat-card-title>
+      {{template.nametemplate}}
+    </mat-card-title>
+    <p>{{ template.descriptiontemplate }}</p>
+    <mat-card-content>
+      <div class="content">
+        <strong>Temperature:</strong>
+        <span>{{ template.mintemp}} {{template.maxtemp}}</span>
+      </div>
+      <div class="content">
+        <strong>Humidity:</strong>
+        <span>{{ template.minhumidity}} {{template.maxhumidity}}</span>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+

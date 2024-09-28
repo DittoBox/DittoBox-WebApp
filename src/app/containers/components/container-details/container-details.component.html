@@ -1,0 +1,32 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="over" [(opened)]="opened" class="sidenav" position="end">
+    <div *ngIf="container">
+      <h2>Container #{{ container.id }}</h2>
+      <p>Status: {{ container.status }}</p>
+      <p>Temperature: {{ container.temperature + '°C' }}</p>
+      <p>Humidity: {{  container.humidity + '%' }}</p>
+      <p>Last sync: {{ container.lastSync }}</p>
+    </div>
+    <div>
+      <mat-button-toggle (click)="openDialog()">Manual edit</mat-button-toggle>
+    </div>
+    <div *ngIf="template">
+      <h3>Template #{{ template.id }}</h3>
+      <p>Max Temperature: {{ template.maxtemp + '°C' }}</p>
+      <p>Min Temperature: {{ template.mintemp + '°C' }}</p>
+      <p>Max Humidity: {{ template.maxhumidity + '%' }}</p>
+      <p>Min Humidity: {{ template.minhumidity + '%' }}</p>
+      <p>Oxygen Detection: {{ template.detectoxygen ? 'Yes' : 'No' }}</p>
+      <p>Dioxide Detection: {{ template.detectdioxide ? 'Yes' : 'No' }}</p>
+      <p>Ethylene Detection: {{ template.detectetylene ? 'Yes' : 'No' }}</p>
+      <p>Ammonia Detection: {{ template.detectammonia ? 'Yes' : 'No' }}</p>
+      <p>Sulfur Dioxide Detection: {{ template.detectsulfurdioxide ? 'Yes' : 'No' }}</p>
+    </div>
+    <div>
+      <mat-button-toggle   (click)="onButtonClick()" >Change template</mat-button-toggle>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,13 @@
+.sidenav-container {
+  height: 100%;
+  width: 100%;
+}
+
+.sidenav {
+  width: 250px;
+  height: 800px;
+}
+
+mat-sidenav-content {
+  padding: 16px;
+}
