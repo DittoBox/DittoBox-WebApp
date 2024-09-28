@@ -1,0 +1,26 @@
+.no-border {
+  box-shadow: none;
+  border: none;
+}
+
+.form-fields-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding-top: 1px
+}
+
+.form-field {
+  flex: 1 1 calc(50% - 16px);
+  min-width: 100px;
+}
+
+.toggles-container p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
