@@ -16,7 +16,7 @@ import {ContainerDetailsComponent} from "../container-details/container-details.
   templateUrl: './container-item.component.html',
   styleUrl: './container-item.component.css'
 })
-export class ContainerItemComponent implements OnInit {
+export class ContainerItemComponent {
 
   @Input() containerItems: any[] = [];
 
@@ -26,9 +26,4 @@ export class ContainerItemComponent implements OnInit {
     this.sidenavComponent.loadContainer(containerId);
   }
 
-  ngOnInit() {
-    this.containerServiceService.getContainers().subscribe((data: any[]) => {
-      this.containerItems = data;
-    });
-  }
 }

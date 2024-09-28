@@ -129,7 +129,7 @@
       "nametemplate": "Almacenamiento Carnes Rojas",
       "descriptiontemplate": "Control de temperatura y gases para la preservación de carnes rojas.",
       "maxtemp": 25,
-      "mintemp": 10,
+      "mintemp": "15",
       "maxhumidity": 75,
       "minhumidity": 35,
       "detectoxygen": false,
