@@ -8,7 +8,7 @@ import {Template} from "../model/template-model/template.entity";
 })
 export class ContainerServiceService {
 
-  Baseurl: string = 'http://localhost:3000';
+  Baseurl: string = 'https://my-json-server.typicode.com/DittoBox/DittoboxFakeApi';
 
   constructor(private http: HttpClient) { }
 
