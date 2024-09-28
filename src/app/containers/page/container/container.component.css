@@ -1,0 +1,27 @@
+/* Ajustar el contenedor del sidenav para que ocupe toda la pantalla */
+.sidenav-container {
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+}
+
+.sidenav {
+  width: 250px; /* Ancho del menú lateral */
+  background-color: #f5f5f5; /* Color de fondo */
+}
+
+.menu-content {
+  padding: 20px; /* Espacio alrededor del contenido del menú */
+}
+
+.badge {
+  background-color: #4caf50;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  margin-left: auto;
+}
+
+/* Separador flexible para empujar los elementos en el toolbar */
+.example-spacer {
+  flex: 1 1 auto;
+}

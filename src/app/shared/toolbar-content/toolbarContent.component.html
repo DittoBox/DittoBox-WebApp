@@ -1,0 +1,68 @@
+<mat-sidenav-container class="sidenav-container">
+  <!-- Sidenav (Menú Desplegable) -->
+  <mat-sidenav #sidenav mode="over" class="sidenav"> <!-- Establecer el modo a 'over' -->
+    <div class="menu-content">
+      <h3>Menu</h3>
+      <mat-nav-list>
+        <mat-list-item>
+          <mat-icon matListIcon>dashboard</mat-icon>
+          <h4 matLine>Dashboard</h4>
+          <span class="badge">24</span>
+        </mat-list-item>
+
+        <mat-list-item>
+          <mat-icon matListIcon>business</mat-icon>
+          <h4 matLine>Facilities</h4>
+        </mat-list-item>
+
+        <mat-list-item>
+          <mat-icon matListIcon>inbox</mat-icon>
+          <h4 matLine>Containers</h4>
+        </mat-list-item>
+
+        <mat-list-item>
+          <mat-icon matListIcon>people</mat-icon>
+          <h4 matLine>Workers</h4>
+        </mat-list-item>
+
+        <mat-list-item>
+          <mat-icon matListIcon>description</mat-icon>
+          <h4 matLine>Templates</h4>
+        </mat-list-item>
+      </mat-nav-list>
+
+      <h3>Settings</h3>
+      <mat-nav-list>
+        <mat-list-item>
+          <mat-icon matListIcon>account_circle</mat-icon>
+          <h4 matLine>Account</h4>
+        </mat-list-item>
+
+        <mat-list-item>
+          <mat-icon matListIcon>credit_card</mat-icon>
+          <h4 matLine>Subscription</h4>
+        </mat-list-item>
+
+        <mat-list-item>
+          <mat-icon matListIcon>notifications</mat-icon>
+          <h4 matLine>Notifications</h4>
+        </mat-list-item>
+
+        <mat-list-item>
+          <mat-icon matListIcon>logout</mat-icon>
+          <h4 matLine>Log out</h4>
+        </mat-list-item>
+      </mat-nav-list>
+    </div>
+  </mat-sidenav>
+
+  <!-- Contenido Principal -->
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()" aria-label="Toggle sidenav">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>A warm place</span>
+    </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>
