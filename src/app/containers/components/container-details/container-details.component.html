@@ -4,7 +4,7 @@
       <h2>Container #{{ container.id }}</h2>
       <p>Status: {{ container.status }}</p>
       <p>Temperature: {{ container.temperature + '°C' }}</p>
-      <p>Humidity: {{  container.humidity + '%' }}</p>
+      <p>Humidity: {{ container.humidity + '%' }}</p>
       <p>Last sync: {{ container.lastSync }}</p>
     </div>
     <div>
@@ -23,10 +23,10 @@
       <p>Sulfur Dioxide Detection: {{ template.detectsulfurdioxide ? 'Yes' : 'No' }}</p>
     </div>
     <div>
-      <mat-button-toggle   (click)="onButtonClick()" >Change template</mat-button-toggle>
+      <mat-button-toggle (click)="onButtonClick()">Change template</mat-button-toggle>
     </div>
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content class="sidenav-content">
     <ng-content></ng-content>
   </mat-sidenav-content>
 </mat-sidenav-container>
