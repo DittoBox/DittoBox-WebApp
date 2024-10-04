@@ -1,2 +1,7 @@
-<app-toolbar-content></app-toolbar-content>
-<router-outlet></router-outlet>
+<app-toolbar-content (drawerToggle)="drawer.toggle()" ></app-toolbar-content>
+<mat-drawer-container autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <app-sidenav-content></app-sidenav-content>
+    </mat-drawer>
+    <router-outlet></router-outlet>
+</mat-drawer-container>
