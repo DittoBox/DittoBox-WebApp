@@ -6,15 +6,24 @@
   <mat-card-content>
     <p>{{ container.status }}</p>
     <div class="content">
-      <strong>Temperature:</strong>
+        <div class="tag">
+            <mat-icon aria-hidden="false" aria-label="Example temperature icon" fontIcon="device_thermostat"></mat-icon>
+            <span>Temperature</span>
+        </div>
       <span>{{ container.temperature !== null ? container.temperature + '°C' : '--' }}</span>
     </div>
     <div class="content">
-      <strong>Humidity:</strong>
+        <div class="tag">
+            <mat-icon aria-hidden="false" aria-label="Example humidity icon" fontIcon="water_drop"></mat-icon>
+            <span>Humidity</span>
+        </div>
       <span>{{ container.humidity !== null ? container.humidity + '%' : '--' }}</span>
     </div>
     <div class="content">
-      <strong>Last sync:</strong>
+        <div class="tag">
+            <mat-icon aria-hidden="false" aria-label="Example last sync" fontIcon="hourglass_empty"></mat-icon>
+            <span>Last sync</span>
+        </div>
       <span>{{ container.lastSync }}</span>
     </div>
   </mat-card-content>

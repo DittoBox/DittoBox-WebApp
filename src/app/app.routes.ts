@@ -1,6 +1,7 @@
-import { Routes } from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import {ContainerComponent} from "./containers/page/container/container.component";
-import {TemplateComponent} from "./containers/page/template/template.component";
+import {NgModule} from "@angular/core";
+import {TemplateItemComponent} from "./containers/components/template-item/template-item.component";
 
 export const routes: Routes = [
   {
@@ -9,10 +10,16 @@ export const routes: Routes = [
   },
   {
     path: 'templates',
-    component: TemplateComponent,
+    component: TemplateItemComponent,
   },
 
   { path: '',
-    redirectTo: 'containers', pathMatch: 'full'
+    redirectTo: '/containers', pathMatch: 'full'
   },
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
