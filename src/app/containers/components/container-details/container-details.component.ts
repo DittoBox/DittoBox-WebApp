@@ -3,7 +3,7 @@ import {MatCard, MatCardContent, MatCardHeader} from "@angular/material/card";
 import {NgForOf, NgIf} from "@angular/common";
 import {ContainerServiceService} from "../../service/container-service.service";
 import {MatSidenav, MatSidenavContainer, MatSidenavContent} from "@angular/material/sidenav";
-import {MatButton} from "@angular/material/button";
+import {MatButton, MatIconButton} from "@angular/material/button";
 import {Container} from "../../model/container-model/container.entity";
 import {Template} from "../../model/template-model/template.entity";
 import {MatButtonToggle} from "@angular/material/button-toggle";
@@ -11,25 +11,30 @@ import {ContianerEditComponent} from "../contianer-edit/contianer-edit.component
 import {MatDialog} from "@angular/material/dialog";
 import {RouterLink} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {MatIcon} from "@angular/material/icon";
+import {MatDivider} from "@angular/material/divider";
 
 @Component({
   selector: 'app-container-details',
   standalone: true,
-  imports: [
-    MatCardContent,
-    MatCard,
-    MatCardHeader,
-    NgForOf,
-    MatSidenav,
-    MatButton,
-    MatSidenavContainer,
-    NgIf,
-    MatSidenavContent,
-    MatButtonToggle,
-    RouterLink,
+    imports: [
+        MatCardContent,
+        MatCard,
+        MatCardHeader,
+        NgForOf,
+        MatSidenav,
+        MatButton,
+        MatSidenavContainer,
+        NgIf,
+        MatSidenavContent,
+        MatButtonToggle,
+        RouterLink,
+        MatIcon,
+        MatDivider,
+        MatIconButton,
 
 
-  ],
+    ],
   templateUrl: './container-details.component.html',
   styleUrl: './container-details.component.css'
 })
@@ -44,7 +49,7 @@ export class ContainerDetailsComponent {
   loadContainer(containerId: number) {
     this.containerService.getContainerbyId(containerId.toString()).subscribe(data => {
       this.container = new Container(
-        data.containerID,
+        data.id,
         data.status,
         data.temperature,
         data.humidity,

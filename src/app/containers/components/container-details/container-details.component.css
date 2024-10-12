@@ -1,25 +1,115 @@
 .sidenav {
-  width: 300px;
-  padding: 24px; /* Aumentar el padding */
+  width: 400px;
+  padding: 24px;
+  background-color: #F8F9FA;
 }
 
-.sidenav-content {
-  padding: 24px; /* Aumentar el padding */
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.mat-button-toggle {
-  margin-top: 24px; /* Aumentar el margen superior */
-  display: block;
+.title span {
+  font-weight: 500;
 }
 
-/* Estilos responsivos */
-@media (max-width: 600px) {
-  .sidenav {
-    width: 100%; /* Hacer que el sidenav ocupe todo el ancho en pantallas pequeñas */
-    padding: 16px;
-  }
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  .sidenav-content {
-    padding: 16px;
-  }
+.container p {
+  display: inline;
+}
+
+.container p:first-child {
+  font-weight: 500;
+}
+
+.container-button button {
+  margin-top: 16px;
+  font-weight: normal;
+  background-color: #2B593C;
+}
+
+.container-button {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+
+h2 {
+  display: inline;
+  font-weight: normal;
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 0px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #555; /* Texto en un color más suave */
+}
+
+.mat-divider {
+  margin: 24px 0;
+  border-color: rgba(0, 0, 0, 0.1); /* Divider más suave */
+}
+
+.gases {
+  margin-top: 20px;
+}
+
+.gases p:first-child {
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.gases-element p:first-child {
+  font-weight: 500;
+}
+
+.gases-element {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.gases-element p {
+  margin: 0;
+}
+
+/* Ajuste de listas para detectar gases */
+ul {
+  padding-left: 0;
+  list-style-type: none;
+  margin: 0;
+}
+
+ul li {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Ajustes específicos para que el layout sea más fluido */
+.sidenav p strong {
+  color: #333;
+  font-weight: bold;
+}
+
+/* Estilo para íconos */
+.mat-icon {
+  vertical-align: middle;
+  margin-right: 8px;
+  color: #666;
 }
