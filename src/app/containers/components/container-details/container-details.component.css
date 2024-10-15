@@ -1,7 +1,16 @@
 .sidenav {
   width: 400px;
+  max-width: 100%;
   padding: 24px;
   background-color: #F8F9FA;
+}
+
+.sidenav-container {
+  height: 100vh;
+}
+
+.sidenav-content {
+  height: 100%;
 }
 
 .title {
@@ -112,4 +121,9 @@ ul li {
   vertical-align: middle;
   margin-right: 8px;
   color: #666;
+}
+
+.close:hover {
+  cursor: pointer;
+  color: black;
 }

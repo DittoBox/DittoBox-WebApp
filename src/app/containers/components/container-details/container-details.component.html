@@ -1,5 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #sidenav mode="over" [(opened)]="opened" class="sidenav" position="end">
+        <mat-icon class="close" (click)="sidenav.close()">arrow_back</mat-icon>
         <div *ngIf="container">
             <div class="title">
                 <h2>Container # {{ container.id }}</h2>
