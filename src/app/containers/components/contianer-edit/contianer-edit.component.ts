@@ -45,7 +45,7 @@ export class ContianerEditComponent {
 
   saveChanges() {
 
-    this.containerService.updateTemplate(this.data).subscribe(
+    this.containerService.updateContainer(this.data).subscribe(
       (response) => {
         console.log('Template updated successfully', response);
         this.dialogRef.close(response);
@@ -56,5 +56,7 @@ export class ContianerEditComponent {
     );
   }
 
-  protected readonly close = close;
+  close(): void {
+    this.dialogRef.close();
+  }
 }

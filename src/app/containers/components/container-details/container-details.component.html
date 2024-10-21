@@ -1,54 +1,47 @@
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #sidenav mode="over" [(opened)]="opened" class="sidenav" position="end">
         <mat-icon class="close" (click)="sidenav.close()">arrow_back</mat-icon>
-        <div *ngIf="container">
+
             <div class="title">
-                <h2>Container # {{ container.id }}</h2>
-                <span>{{ container.status }}</span>
+                <h2>Container # {{ container?.id }}</h2>
+                <span>{{ container?.status }}</span>
             </div>
             <div class="container">
                 <p><mat-icon>thermostat</mat-icon> Temperature</p>
-                <p>{{ container.temperature + '°C' }}</p>
+                <p>{{ container?.temperature + '°C' }}</p>
             </div>
             <div class="container">
                 <p><mat-icon>opacity</mat-icon> Humidity</p>
-                <p>{{ container.humidity + '%' }}</p>
+                <p>{{ container?.humidity + '%' }}</p>
             </div>
             <div class="container">
                 <p><mat-icon>hourglass_empty</mat-icon> Last sync</p>
-                <p>{{ container.lastSync }}</p>
+                <p>{{ container?.lastSync }}</p>
             </div>
-
-            <div class="container-button">
-                <button mat-flat-button (click)="openDialog()">Manual edit</button>
-            </div>
-        </div>
 
         <mat-divider></mat-divider>
 
-        <div *ngIf="template">
             <h3>Template configuration</h3>
             <div class="container">
                 <p><mat-icon>thermostat</mat-icon> Temperature</p>
-                <p>{{ template.mintemp + '°C' }} - {{ template.maxtemp + '°C' }}</p>
+                <p>{{ container?.minTemp + '°C' }} - {{ container?.maxTemp + '°C' }}</p>
             </div>
             <div class="container">
                 <p><mat-icon>opacity</mat-icon> Humidity</p>
-                <p>{{ template.minhumidity + '%' }} - {{ template.maxhumidity + '%' }}</p>
+                <p>{{ container?.minHumidity + '%' }} - {{ container?.maxHumidity + '%' }}</p>
             </div>
             <div class="gases">
                 <p><mat-icon>air</mat-icon> Detect gases</p>
                 <ul>
-                    <li class="gases-element"> <p>Oxygen (O₂)</p><p>{{ template.detectoxygen ? 'Yes' : 'No' }}</p></li>
-                    <li class="gases-element"><p>Carbon dioxide (CO₂)</p><p>{{ template.detectdioxide ? 'Yes' : 'No' }}</p></li>
-                    <li class="gases-element"><p>Ethylene (C₂H₄)</p><p>{{ template.detectetylene ? 'Yes' : 'No' }}</p></li>
-                    <li class="gases-element"><p>Ammonia (NH₃) and sulfur dioxide (SO₂)</p><p>{{ template.detectammonia && template.detectsulfurdioxide ? 'Yes' : 'No' }}</p></li>
+                    <li class="gases-element"> <p>Oxygen (O₂)</p><p>{{ container?.detectOxygen ? 'Yes' : 'No' }}</p></li>
+                    <li class="gases-element"><p>Carbon dioxide (CO₂)</p><p>{{ container?.detectDioxide ? 'Yes' : 'No' }}</p></li>
+                    <li class="gases-element"><p>Ethylene (C₂H₄)</p><p>{{ container?.detectEthylene ? 'Yes' : 'No' }}</p></li>
+                    <li class="gases-element"><p>Ammonia (NH₃) and sulfur dioxide (SO₂)</p><p>{{ container?.detectAmmonia && container?.detectSulfurDioxide ? 'Yes' : 'No' }}</p></li>
                 </ul>
             </div>
-        </div>
 
         <div class="container-button">
-            <button mat-flat-button (click)="onButtonClick()">Change template</button>
+            <button mat-flat-button (click)="openDialog()">Manual edit</button>
         </div>
 
     </mat-sidenav>

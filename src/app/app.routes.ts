@@ -1,7 +1,7 @@
 import {RouterModule, Routes} from '@angular/router';
 import {ContainerComponent} from "./containers/page/container/container.component";
 import {NgModule} from "@angular/core";
-import {TemplateItemComponent} from "./containers/components/template-item/template-item.component";
+import {TemplateComponent} from "./containers/page/template/template.component";
 
 export const routes: Routes = [
   {
@@ -10,7 +10,7 @@ export const routes: Routes = [
   },
   {
     path: 'templates',
-    component: TemplateItemComponent,
+    component: TemplateComponent,
   },
 
   { path: '',

@@ -1,19 +1,39 @@
-<div class="card-container">
-  <mat-card *ngFor="let template of templateItems" class="container-card" >
-    <mat-card-title>
-      {{template.nametemplate}}
-    </mat-card-title>
-    <p>{{ template.descriptiontemplate }}</p>
-    <mat-card-content>
-      <div class="content">
-        <strong>Temperature:</strong>
-        <span>{{ template.mintemp}} {{template.maxtemp}}</span>
-      </div>
-      <div class="content">
-        <strong>Humidity:</strong>
-        <span>{{ template.minhumidity}} {{template.maxhumidity}}</span>
-      </div>
-    </mat-card-content>
-  </mat-card>
+<div class="space">
+    <h1>Templates Library</h1>
+
+    <mat-form-field class="search-field" appearance="outline">
+        <mat-label>Search</mat-label>
+        <input matInput (input)="applyFilter($event)" placeholder="Search templates by name or description" />
+        <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+
+    <div class="card-container">
+        <mat-card *ngFor="let template of filteredTemplates" (click)="openTemplateDetails(template)" class="container-card" >
+            <mat-card-title>
+                {{template.nameTemplate}}
+            </mat-card-title>
+            <p class="description">{{ template.descriptionTemplate }}</p>
+            <mat-divider></mat-divider>
+            <mat-card-content>
+                <div class="container">
+                    <p class="item"><mat-icon>thermostat</mat-icon> Temperature</p>
+                    <p class="item">{{ template.minTemp + '°C' }} - {{ template.maxTemp + '°C' }}</p>
+                </div>
+                <div class="container">
+                    <p class="item"><mat-icon>opacity</mat-icon> Humidity</p>
+                    <p class="item">{{ template.minHumidity + '%' }} - {{ template.maxHumidity + '%' }}</p>
+                </div>
+                <div class="gases">
+                    <p class="item"><mat-icon>air</mat-icon> Detect gases</p>
+                    <ul>
+                        <li class="gases-element"> <p>Oxygen (O₂)</p><mat-slide-toggle class="custom-toggle" [checked]="template?.detectOxygen" disabled></mat-slide-toggle></li>
+                        <li class="gases-element"><p>Carbon dioxide (CO₂)</p><mat-slide-toggle class="custom-toggle" [checked]="template?.detectDioxide" disabled></mat-slide-toggle></li>
+                        <li class="gases-element"><p>Ethylene (C₂H₄)</p><mat-slide-toggle class="custom-toggle" [checked]="template?.detectEthylene" disabled></mat-slide-toggle></li>
+                        <li class="gases-element"><p>Ammonia (NH₃) and sulfur dioxide (SO₂)</p><mat-slide-toggle class="custom-toggle" [checked]="template?.detectAmmonia && template?.detectSulfurDioxide" disabled></mat-slide-toggle></li>
+                    </ul>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
 </div>
 

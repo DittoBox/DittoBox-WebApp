@@ -1,44 +1,44 @@
 export class Template {
   id: string;
-  nametemplate:string;
-  descriptiontemplate:string;
-  maxtemp: string;
-  mintemp: string;
-  maxhumidity: string;
-  minhumidity: string;
-  detectoxygen: boolean;
-  detectdioxide: boolean;
-  detectetylene: boolean;
-  detectammonia: boolean;
-  detectsulfurdioxide: boolean;
+  nameTemplate:string;
+  descriptionTemplate:string;
+  maxTemp: string;
+  minTemp: string;
+  maxHumidity: string;
+  minHumidity: string;
+  detectOxygen: boolean;
+  detectDioxide: boolean;
+  detectEthylene: boolean;
+  detectAmmonia: boolean;
+  detectSulfurDioxide: boolean;
 
 
   constructor(
-    id: string,
-    nametemplate: string,
-    descriptiontemplate: string,
-    maxtemp: string,
-    mintemp: string,
-    maxhumidity: string,
-    minhumidity: string,
-    detectoxygen: boolean,
-    detectdioxide: boolean,
-    detectetylene: boolean,
-    detectammonia: boolean,
-    detectsulfurdioxide: boolean
+      id: string,
+      nameTemplate:string,
+      descriptionTemplate:string,
+      maxTemp: string,
+      minTemp: string,
+      maxHumidity: string,
+      minHumidity: string,
+      detectOxygen: boolean,
+      detectDioxide: boolean,
+      detectEthylene: boolean,
+      detectAmmonia: boolean,
+      detectSulfurDioxide: boolean
   ) {
     this.id = id;
-    this.nametemplate= nametemplate;
-    this.descriptiontemplate= descriptiontemplate;
-    this.maxtemp = maxtemp;
-    this.mintemp = mintemp;
-    this.maxhumidity = maxhumidity;
-    this.minhumidity = minhumidity;
-    this.detectoxygen = detectoxygen;
-    this.detectdioxide = detectdioxide;
-    this.detectetylene = detectetylene;
-    this.detectammonia = detectammonia;
-    this.detectsulfurdioxide = detectsulfurdioxide;
+    this.nameTemplate= nameTemplate;
+    this.descriptionTemplate= descriptionTemplate;
+    this.maxTemp = maxTemp;
+    this.minTemp = minTemp;
+    this.maxHumidity = maxHumidity;
+    this.minHumidity = minHumidity;
+    this.detectOxygen = detectOxygen;
+    this.detectDioxide = detectDioxide;
+    this.detectEthylene = detectEthylene;
+    this.detectAmmonia = detectAmmonia;
+    this.detectSulfurDioxide = detectSulfurDioxide;
   }
 
 }

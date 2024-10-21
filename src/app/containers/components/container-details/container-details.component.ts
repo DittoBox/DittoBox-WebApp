@@ -1,15 +1,13 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatCard, MatCardContent, MatCardHeader} from "@angular/material/card";
 import {NgForOf, NgIf} from "@angular/common";
 import {ContainerServiceService} from "../../service/container-service.service";
 import {MatSidenav, MatSidenavContainer, MatSidenavContent} from "@angular/material/sidenav";
 import {MatButton, MatIconButton} from "@angular/material/button";
 import {Container} from "../../model/container-model/container.entity";
-import {Template} from "../../model/template-model/template.entity";
 import {MatButtonToggle} from "@angular/material/button-toggle";
 import {ContianerEditComponent} from "../contianer-edit/contianer-edit.component";
 import {MatDialog} from "@angular/material/dialog";
-import {RouterLink} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {MatIcon} from "@angular/material/icon";
 import {MatDivider} from "@angular/material/divider";
@@ -28,20 +26,15 @@ import {MatDivider} from "@angular/material/divider";
         NgIf,
         MatSidenavContent,
         MatButtonToggle,
-        RouterLink,
         MatIcon,
         MatDivider,
-        MatIconButton,
-
-
+        MatIconButton
     ],
   templateUrl: './container-details.component.html',
   styleUrl: './container-details.component.css'
 })
-export class ContainerDetailsComponent {
+export class ContainerDetailsComponent{
   container: Container | null = null;
-  template: Template | null = null;
-  isButtonDisabled: boolean = true;
   opened: boolean = false;
 
   constructor(private containerService: ContainerServiceService, public dialog:MatDialog,private snackBar: MatSnackBar) { }
@@ -54,35 +47,19 @@ export class ContainerDetailsComponent {
         data.temperature,
         data.humidity,
         data.lastSync,
-        data.idTemplates
+        data.maxTemp,
+        data.minTemp,
+        data.maxHumidity,
+        data.minHumidity,
+        data.detectOxygen,
+        data.detectDioxide,
+        data.detectEthylene,
+        data.detectAmmonia,
+        data.detectSulfurDioxide
       );
 
+      this.opened = true;
 
-      if (this.container && this.container.idTemplates) {
-        this.containerService.getTemplateById(this.container.idTemplates).subscribe(templateData => {
-          this.template = new Template(
-            templateData.id,
-            templateData.nametemplate,
-            templateData.descriptiontemplate,
-            templateData.maxtemp,
-            templateData.mintemp,
-            templateData.maxhumidity,
-            templateData.minhumidity,
-            templateData.detectoxygen,
-            templateData.detectdioxide,
-            templateData.detectetylene,
-            templateData.detectammonia,
-            templateData.detectsulfurdioxide
-          );
-
-
-          this.opened = true;
-        }, error => {
-          console.error('Error al obtener el template:', error);
-        });
-      } else {
-        console.error('templateId no está definido o container es nulo');
-      }
     }, error => {
       console.error('Error al obtener el contenedor:', error);
     });
@@ -90,16 +67,8 @@ export class ContainerDetailsComponent {
   openDialog() {
     this.dialog.open(ContianerEditComponent, {
       width: '450px',
-      data:this.template
+      data: this.container
     });
-  }
-
-  onButtonClick(): void {
-    if (this.isButtonDisabled) {
-      this.snackBar.open('You are not a premium user.', 'Close', {
-        duration: 3000,
-      });
-    }
   }
 
 }

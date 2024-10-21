@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  background-color: #faf9fd;
 }
 
 .container-card {

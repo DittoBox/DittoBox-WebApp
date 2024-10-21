@@ -15,6 +15,10 @@
   cursor: pointer;
 }
 
+.mat-mdc-card-content {
+  padding: 0;
+}
+
 .container-card:hover {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -22,4 +26,76 @@
   display: flex;
   justify-content: space-between;
   margin: 10px 0;
+}
+
+.gases p:first-child {
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.gases-element p:first-child {
+  font-weight: 300;
+}
+
+.gases-element {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.gases-element p {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center !important;
+  justify-content: space-between;
+}
+
+.container p {
+  display: inline;
+}
+
+.container p:first-child {
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.item {
+  display: flex !important;
+  align-items: center;
+  gap: 5px;
+}
+
+ul {
+  margin: 0;
+}
+
+.description {
+  margin: 0;
+}
+
+.mat-divider {
+  margin: 10px 0;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 32px;
+  margin: 0 10px;
+}
+
+.space {
+    margin: 10px;
+}
+
+.search-field {
+  margin: 0 10px;
+  width: 99%;
 }
