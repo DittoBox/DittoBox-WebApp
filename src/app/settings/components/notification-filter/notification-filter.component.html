@@ -1,0 +1,9 @@
+<button mat-button [matMenuTriggerFor]="afterMenu">Filters</button>
+<mat-menu #afterMenu="matMenu" xPosition="after">
+  <button mat-menu-item (click)="filter.emit('alert')">Alertas</button>
+  <button mat-menu-item (click)="filter.emit('warning')">Advertencias</button>
+  <button mat-menu-item (click)="filter.emit('update')">Actualizaciones</button>
+  <button mat-menu-item (click)="filter.emit('all')">Todas</button>
+</mat-menu>
+
+
