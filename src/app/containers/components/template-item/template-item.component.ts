@@ -15,6 +15,9 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ChangeDetectorRef } from '@angular/core';
+import {MatButton} from "@angular/material/button";
+import {MatSidenav, MatSidenavContainer, MatSidenavContent} from "@angular/material/sidenav";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-template-item',
@@ -32,7 +35,12 @@ import { ChangeDetectorRef } from '@angular/core';
         MatInput,
         MatSelectModule,
         MatInputModule,
-        MatFormFieldModule
+        MatFormFieldModule,
+        MatButton,
+        MatSidenavContainer,
+        MatSidenavContent,
+        MatSidenav,
+        FormsModule
     ],
   templateUrl: './template-item.component.html',
   styleUrl: './template-item.component.css'
@@ -41,8 +49,25 @@ export class TemplateItemComponent implements OnInit {
 
   templateItems: Template[] = [];
   filteredTemplates: Template[] = [];
+  newTemplate: Template = new Template(
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        false,
+        false,
+        false,
+        false,
+        false
+  );
+  isNewTemplateSidenavOpened = false;
 
-  constructor(private templateSidenav: TemplateDetailsComponent, private containerServiceService: ContainerServiceService, private cdr: ChangeDetectorRef) { }
+  constructor(private templateSidenav: TemplateDetailsComponent, private containerServiceService: ContainerServiceService, private cdr: ChangeDetectorRef) {
+
+  }
 
   ngOnInit() {
     this.containerServiceService.getTemplates().subscribe((data: any[]) => {
@@ -63,6 +88,33 @@ export class TemplateItemComponent implements OnInit {
             template.descriptionTemplate.toLowerCase().includes(filterValue)
         );
         this.cdr.detectChanges(); // Forzamos la detección de cambios
+    }
+
+    openNewTemplateSidenav(sidenav: MatSidenav): void {
+      this.isNewTemplateSidenavOpened = true;
+      sidenav.open();
+    }
+
+    saveTemplate(): void {
+      this.newTemplate.id = (this.templateItems.length + 1).toString();
+        this.templateItems.push(this.newTemplate);
+        this.filteredTemplates = [...this.templateItems]; // Refresca la lista filtrada
+        this.containerServiceService.postTemplate(this.newTemplate).subscribe(); // Guarda el nuevo template
+        this.newTemplate = new Template(
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            false,
+            false,
+            false,
+            false,
+            false
+        ); // Limpia el formulario
+        this.isNewTemplateSidenavOpened = false;
     }
 
 
