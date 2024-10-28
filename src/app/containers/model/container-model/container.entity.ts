@@ -1,5 +1,7 @@
 export class Container {
   id: string;
+  name: string;
+  description: string;
   status: string;
   temperature: string;
   humidity:string;
@@ -8,36 +10,52 @@ export class Container {
   minTemp: string;
   maxHumidity: string;
   minHumidity: string;
-  detectOxygen: boolean;
-  detectDioxide: boolean;
-  detectEthylene: boolean;
-  detectAmmonia: boolean;
-  detectSulfurDioxide: boolean;
+  oxygenMin: number;
+  oxygenMax: number;
+  dioxideMin: number;
+  dioxideMax: number;
+  ethyleneMin: number;
+  ethyleneMax: number;
+  ammoniaMin: number;
+  ammoniaMax: number;
+  sulfurDioxideMin: number;
+  sulfurDioxideMax: number;
 
 
-  constructor(id: string, name: string, capacity: string,humidity:string,lastSync:string, maxTemp: string,
+  constructor(id: string, name: string, description: string, status: string, capacity: string,humidity:string,lastSync:string, maxTemp: string,
               minTemp: string,
               maxHumidity: string,
               minHumidity: string,
-              detectOxygen: boolean,
-              detectDioxide: boolean,
-              detectEthylene: boolean,
-              detectAmmonia: boolean,
-              detectSulfurDioxide: boolean) {
+              oxygenMin: number,
+              oxygenMax: number,
+              dioxideMin: number,
+              dioxideMax: number,
+              ethyleneMin: number,
+              ethyleneMax: number,
+              ammoniaMin: number,
+              ammoniaMax: number,
+              sulfurDioxideMin: number,
+              sulfurDioxideMax: number){
     this.id = id;
-    this.status = name;
+    this.name = name;
+    this.description = description;
+    this.status = status;
     this.temperature = capacity;
     this.humidity = humidity;
     this.lastSync = lastSync;
-    this.maxTemp = maxTemp;
     this.minTemp = minTemp;
-    this.maxHumidity = maxHumidity;
+    this.maxTemp = maxTemp;
     this.minHumidity = minHumidity;
-    this.detectOxygen = detectOxygen;
-    this.detectDioxide = detectDioxide;
-    this.detectEthylene = detectEthylene;
-    this.detectAmmonia = detectAmmonia;
-    this.detectSulfurDioxide = detectSulfurDioxide;
-
+    this.maxHumidity = maxHumidity;
+    this.oxygenMin = oxygenMin;
+    this.oxygenMax = oxygenMax;
+    this.dioxideMin = dioxideMin;
+    this.dioxideMax = dioxideMax;
+    this.ethyleneMin = ethyleneMin;
+    this.ethyleneMax = ethyleneMax;
+    this.ammoniaMin = ammoniaMin;
+    this.ammoniaMax = ammoniaMax;
+    this.sulfurDioxideMin = sulfurDioxideMin;
+    this.sulfurDioxideMax = sulfurDioxideMax;
   }
 }
