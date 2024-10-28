@@ -39,4 +39,8 @@ export class ContainerServiceService {
     this.templateSource.next(template);
   }
 
+  postTemplate(template: Template) {
+    return this.http.post<Template>(`${this.Baseurl}/templates`, template);
+  }
+
 }

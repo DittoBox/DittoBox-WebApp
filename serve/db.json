@@ -6,15 +6,15 @@
       "temperature": 4,
       "humidity": 48,
       "lastSync": "21 minutes ago",
-      "maxTemp": 10,
+      "maxTemp": "1000000",
       "minTemp": -5,
-      "maxHumidity": 90,
-      "minHumidity": 20,
-      "detectOxygen": true,
-      "detectDioxide": true,
+      "maxHumidity": "9999999999999",
+      "minHumidity": "-12",
+      "detectOxygen": false,
+      "detectDioxide": false,
       "detectEthylene": false,
       "detectAmmonia": false,
-      "detectSulfurDioxide": false
+      "detectSulfurDioxide": true
     },
     {
       "id": "2",
@@ -231,6 +231,20 @@
       "detectEthylene": true,
       "detectAmmonia": false,
       "detectSulfurDioxide": true
+    },
+    {
+      "id": "6",
+      "nameTemplate": "Bananas",
+      "descriptionTemplate": "Fruits and vegetables",
+      "maxTemp": 20,
+      "minTemp": 10,
+      "maxHumidity": 20,
+      "minHumidity": 10,
+      "detectOxygen": true,
+      "detectDioxide": true,
+      "detectEthylene": false,
+      "detectAmmonia": false,
+      "detectSulfurDioxide": false
     }
   ]
 }
