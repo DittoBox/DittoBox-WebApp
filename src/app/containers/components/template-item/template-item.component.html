@@ -1,6 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
 
-    <mat-sidenav #newTemplateSidenav mode="side" [(opened)]="isNewTemplateSidenavOpened" class="sidenav" position="end">
+    <mat-sidenav #newTemplateSidenav mode="side" [(opened)]="isNewTemplateSidenavOpened" class="sidenav" position="end" [autoFocus]="false">
         <mat-icon class="close" (click)="newTemplateSidenav.close()">arrow_back</mat-icon>
 
         <div class="title-new">
@@ -13,9 +13,14 @@
                 <input matInput [(ngModel)]="newTemplate.nameTemplate" [ngModelOptions]="{standalone: true}" name="nameTemplate" />
             </mat-form-field>
 
+            <mat-form-field appearance="fill">
+                <mat-label>Description</mat-label>
+                <textarea matInput [(ngModel)]="newTemplate.descriptionTemplate" [ngModelOptions]="{standalone: true}" name="description" ></textarea>
+            </mat-form-field>
+
             <mat-form-field>
                 <mat-label>Select Category</mat-label>
-                <mat-select [(ngModel)]="newTemplate.descriptionTemplate" [ngModelOptions]="{standalone: true}" name="categoryTemplate" >
+                <mat-select [(ngModel)]="newTemplate.category" [ngModelOptions]="{standalone: true}" name="categoryTemplate" >
                     <mat-option value="Fruits and vegetables">Fruits and vegetables</mat-option>
                     <mat-option value="Meats">Meats</mat-option>
                     <mat-option value="Dairy">Dairy</mat-option>
@@ -49,13 +54,35 @@
                 </mat-form-field>
             </div>
 
-            <h3>Gas Detection</h3>
             <div class="toggles-container">
-                <p>Measure oxygen <mat-slide-toggle [(ngModel)]="newTemplate.detectOxygen" [ngModelOptions]="{standalone: true}"></mat-slide-toggle></p>
-                <p>Measure carbon dioxide <mat-slide-toggle [(ngModel)]="newTemplate.detectDioxide" [ngModelOptions]="{standalone: true}"></mat-slide-toggle></p>
-                <p>Measure ethylene <mat-slide-toggle [(ngModel)]="newTemplate.detectEthylene" [ngModelOptions]="{standalone: true}"></mat-slide-toggle></p>
-                <p>Measure ammonia <mat-slide-toggle [(ngModel)]="newTemplate.detectAmmonia" [ngModelOptions]="{standalone: true}"></mat-slide-toggle></p>
-                <p> Measure sulfur dioxide <mat-slide-toggle [(ngModel)]="newTemplate.detectSulfurDioxide" [ngModelOptions]="{standalone: true}"></mat-slide-toggle></p>
+                <h3>Gas Detection
+                    <mat-slide-toggle
+                            [(ngModel)]="gasSwitch"
+                            [ngModelOptions]="{ standalone: true }">
+                    </mat-slide-toggle>
+                </h3>
+
+                <div *ngIf="gasSwitch" class="gas-container">
+                    <div *ngFor="let gas of gases" class="gas-field">
+                        <div class="gas-toggle">
+                            <p>{{ gas.name }}</p>
+                            <mat-slide-toggle [(ngModel)]="gas.enabled" class="small-toggle" [ngModelOptions]="{ standalone: true }">
+                            </mat-slide-toggle>
+                        </div>
+
+                        <div *ngIf="gas.enabled" class="gas-inputs">
+                            <mat-form-field appearance="fill">
+                                <mat-label>{{ gas.name }} Min</mat-label>
+                                <input matInput type="number" [(ngModel)]="gas.min" [ngModelOptions]="{ standalone: true }" />
+                            </mat-form-field>
+
+                            <mat-form-field appearance="fill">
+                                <mat-label>{{ gas.name }} Max</mat-label>
+                                <input matInput type="number" [(ngModel)]="gas.max" [ngModelOptions]="{ standalone: true }" />
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="container-of-container-button">
@@ -86,7 +113,7 @@
                     <mat-card-title>
                         {{template.nameTemplate}}
                     </mat-card-title>
-                    <p class="description">{{ template.descriptionTemplate }}</p>
+                    <p class="description">{{ template.category }}</p>
                     <mat-divider></mat-divider>
                     <mat-card-content>
                         <div class="container">
@@ -100,10 +127,12 @@
                         <div class="gases">
                             <p class="item"><mat-icon>air</mat-icon> Detect gases</p>
                             <ul>
-                                <li class="gases-element"> <p>Oxygen (O₂)</p><mat-slide-toggle class="custom-toggle" [checked]="template?.detectOxygen" disabled></mat-slide-toggle></li>
-                                <li class="gases-element"><p>Carbon dioxide (CO₂)</p><mat-slide-toggle class="custom-toggle" [checked]="template?.detectDioxide" disabled></mat-slide-toggle></li>
-                                <li class="gases-element"><p>Ethylene (C₂H₄)</p><mat-slide-toggle class="custom-toggle" [checked]="template?.detectEthylene" disabled></mat-slide-toggle></li>
-                                <li class="gases-element"><p>Ammonia (NH₃) and sulfur dioxide (SO₂)</p><mat-slide-toggle class="custom-toggle" [checked]="template?.detectAmmonia && template?.detectSulfurDioxide" disabled></mat-slide-toggle></li>
+                                <li class="gases-element"><p>Oxygen (O₂)</p><mat-slide-toggle class="custom-toggle" [checked]="template.oxygenMax != 0" disabled></mat-slide-toggle></li>
+                                <li class="gases-element"><p>Carbon Dioxide (CO₂)</p><mat-slide-toggle class="custom-toggle" [checked]="template.dioxideMax != 0" disabled></mat-slide-toggle></li>
+                                <li class="gases-element"><p>Ethylene (C₂H₄)</p><mat-slide-toggle class="custom-toggle" [checked]="template.ethyleneMax != 0" disabled></mat-slide-toggle></li>
+                                <li class="gases-element"><p>Ammonia (NH₃)</p><mat-slide-toggle class="custom-toggle" [checked]="template.ammoniaMax != 0" disabled></mat-slide-toggle></li>
+                                <li class="gases-element"><p>Sulfur Dioxide (SO₂)</p><mat-slide-toggle class="custom-toggle" [checked]="template.sulfurDioxideMax != 0" disabled></mat-slide-toggle></li>
+
                             </ul>
                         </div>
                     </mat-card-content>

@@ -1,18 +1,15 @@
 .card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  padding: 16px;
 }
 
 .container-card {
-  width: 500px;
-  margin: 10px;
-  padding: 15px;
-  border: 2px solid #c6c6c6;
-  border-radius: 8px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
   cursor: pointer;
+  padding: 15px;
 }
 
 .mat-mdc-card-content {
@@ -22,6 +19,7 @@
 .container-card:hover {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 .content {
   display: flex;
   justify-content: space-between;
@@ -65,6 +63,7 @@
 h3 {
   font-size: 18px;
   font-weight: 500;
+  margin: 0;
 }
 
 .item {
@@ -110,8 +109,6 @@ h1 {
 .title button {
   margin-top: 0;
   font-weight: normal;
-  background-color: #2B593C;
-  color: #F8F9FA;
 }
 
 .title-new h2 {
@@ -151,14 +148,6 @@ h1 {
 
 .container-button :first-child {
   font-weight: normal;
-  background-color: #2B593C;
-  color: #F8F9FA;
-}
-
-.container-button :last-child {
-  border: 1px solid #2B593C;
-  background-color: #F8F9FA;
-  color: #2B593C;
 }
 
 .close:hover {
@@ -171,6 +160,44 @@ h1 {
   justify-content: space-between;
 }
 
-.input {
-  background-color: #F8F9FA !important;
+.toggles-container h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gas-container {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gas-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gas-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gas-toggle p {
+    margin: 0;
+
+}
+
+.gas-inputs {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.small-toggle {
+  transform: scale(0.8);
+  margin: 0;
+  padding: 0;
 }

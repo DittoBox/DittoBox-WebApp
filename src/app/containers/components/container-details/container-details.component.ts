@@ -34,12 +34,12 @@ import {MatDivider} from "@angular/material/divider";
   styleUrl: './container-details.component.css'
 })
 export class ContainerDetailsComponent{
-  container: Container | null = null;
+  container !: any;
   opened: boolean = false;
 
   constructor(private containerService: ContainerServiceService, public dialog:MatDialog,private snackBar: MatSnackBar) { }
 
-  loadContainer(containerId: number) {
+    loadContainer(containerId: number) {
     this.containerService.getContainerbyId(containerId.toString()).subscribe(data => {
       this.container = new Container(
         data.id,
@@ -58,12 +58,13 @@ export class ContainerDetailsComponent{
         data.detectSulfurDioxide
       );
 
-      this.opened = true;
+        this.opened = true;
 
     }, error => {
       console.error('Error al obtener el contenedor:', error);
     });
   }
+
   openDialog() {
     this.dialog.open(ContianerEditComponent, {
       width: '450px',

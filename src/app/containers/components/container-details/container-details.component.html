@@ -19,29 +19,30 @@
                 <p>{{ container?.lastSync }}</p>
             </div>
 
-        <mat-divider></mat-divider>
-
-            <h3>Template configuration</h3>
-            <div class="container">
-                <p><mat-icon>thermostat</mat-icon> Temperature</p>
-                <p>{{ container?.minTemp + '°C' }} - {{ container?.maxTemp + '°C' }}</p>
-            </div>
-            <div class="container">
-                <p><mat-icon>opacity</mat-icon> Humidity</p>
-                <p>{{ container?.minHumidity + '%' }} - {{ container?.maxHumidity + '%' }}</p>
-            </div>
-            <div class="gases">
-                <p><mat-icon>air</mat-icon> Detect gases</p>
-                <ul>
-                    <li class="gases-element"> <p>Oxygen (O₂)</p><p>{{ container?.detectOxygen ? 'Yes' : 'No' }}</p></li>
-                    <li class="gases-element"><p>Carbon dioxide (CO₂)</p><p>{{ container?.detectDioxide ? 'Yes' : 'No' }}</p></li>
-                    <li class="gases-element"><p>Ethylene (C₂H₄)</p><p>{{ container?.detectEthylene ? 'Yes' : 'No' }}</p></li>
-                    <li class="gases-element"><p>Ammonia (NH₃) and sulfur dioxide (SO₂)</p><p>{{ container?.detectAmmonia && container?.detectSulfurDioxide ? 'Yes' : 'No' }}</p></li>
-                </ul>
-            </div>
-
         <div class="container-button">
             <button mat-flat-button (click)="openDialog()">Manual edit</button>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <h3>Template configuration</h3>
+        <div class="container">
+            <p><mat-icon>thermostat</mat-icon> Temperature</p>
+            <p>{{ container?.minTemp + '°C' }} - {{ container?.maxTemp + '°C' }}</p>
+        </div>
+        <div class="container">
+            <p><mat-icon>opacity</mat-icon> Humidity</p>
+            <p>{{ container?.minHumidity + '%' }} - {{ container?.maxHumidity + '%' }}</p>
+        </div>
+        <div class="gases">
+            <p><mat-icon>air</mat-icon> Detect gases</p>
+            <ul>
+                <li class="gases-element"> <p>Oxygen (O₂)</p><p>{{ container?.detectOxygen ? 'Yes' : 'No' }}</p></li>
+                <li class="gases-element"><p>Carbon dioxide (CO₂)</p><p>{{ container?.detectDioxide ? 'Yes' : 'No' }}</p></li>
+                <li class="gases-element"><p>Ethylene (C₂H₄)</p><p>{{ container?.detectEthylene ? 'Yes' : 'No' }}</p></li>
+                <li class="gases-element"><p>Ammonia (NH₃)</p><p>{{ container?.detectAmmonia ? 'Yes' : 'No' }}</p></li>
+                <li class="gases-element"><p>Sulfur dioxide (SO₂)</p><p>{{ container?.detectSulfurDioxide ? 'Yes' : 'No' }}</p></li>
+            </ul>
         </div>
 
     </mat-sidenav>

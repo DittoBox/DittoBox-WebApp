@@ -52,7 +52,7 @@ export class TemplateDetailsComponent implements OnInit{
   applyTemplateToContainers() {
     if (this.selectedContainers.length > 0) {
       console.log('Containers seleccionados:', this.selectedContainers);
-      // Aquí implementas la lógica para aplicar el template a los containers seleccionados.
+      // Aquí implementará logica de copia de template a contenedor
     } else {
       console.warn('No se ha seleccionado ningún container.');
     }
