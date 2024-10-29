@@ -3,6 +3,8 @@ import {ContainerComponent} from "./containers/page/container/container.componen
 import {NgModule} from "@angular/core";
 import {TemplateItemComponent} from "./containers/components/template-item/template-item.component";
 import {NotificationsComponent} from "./settings/page/notifications/notifications.component";
+import {AccountComponent} from "./settings/page/account/account.component";
+import {SubscriptionComponent} from "./settings/page/subscription/subscription.component";
 
 export const routes: Routes = [
   {
@@ -16,6 +18,14 @@ export const routes: Routes = [
   {
     path: 'notifications',
     component: NotificationsComponent,
+  },
+  {
+    path: 'account',
+    component: AccountComponent,
+  },
+  {
+    path: 'subscription',
+    component: SubscriptionComponent,
   },
 
   { path: '',
