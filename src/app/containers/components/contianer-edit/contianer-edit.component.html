@@ -28,11 +28,24 @@
       </div>
 
       <div class="toggles-container">
-        <p>Measure oxygen <mat-slide-toggle [(ngModel)]="data.detectOxygen"></mat-slide-toggle></p>
-        <p>Measure carbon dioxide <mat-slide-toggle [(ngModel)]="data.detectDioxide"></mat-slide-toggle></p>
-        <p>Measure ethylene <mat-slide-toggle [(ngModel)]="data.detectEthylene"></mat-slide-toggle></p>
-        <p>Measure ammonia <mat-slide-toggle [(ngModel)]="data.detectAmmonia"></mat-slide-toggle></p>
-          <p> Measure sulfur dioxide <mat-slide-toggle [(ngModel)]="data.detectSulfurDioxide"></mat-slide-toggle></p>
+          <div *ngFor="let gas of gases" class="gas-field">
+              <div class="name-toggle">
+                  <p>{{ gas.name }}</p>
+                  <mat-slide-toggle [(ngModel)]="gas.enabled" (change)="toggleGas(gas)"></mat-slide-toggle>
+              </div>
+
+              <div *ngIf="gas.enabled" class="gas-inputs">
+                  <mat-form-field appearance="outline" class="form-field">
+                      <mat-label>{{ gas.name }} Min</mat-label>
+                      <input matInput [(ngModel)]="gas.min" type="number" />
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline" class="form-field">
+                      <mat-label>{{ gas.name }} Max</mat-label>
+                      <input matInput [(ngModel)]="gas.max" type="number" />
+                  </mat-form-field>
+              </div>
+          </div>
       </div>
     </mat-card-content>
 

@@ -43,6 +43,8 @@ export class ContainerDetailsComponent{
     this.containerService.getContainerbyId(containerId.toString()).subscribe(data => {
       this.container = new Container(
         data.id,
+        data.name,
+        data.description,
         data.status,
         data.temperature,
         data.humidity,
@@ -51,11 +53,16 @@ export class ContainerDetailsComponent{
         data.minTemp,
         data.maxHumidity,
         data.minHumidity,
-        data.detectOxygen,
-        data.detectDioxide,
-        data.detectEthylene,
-        data.detectAmmonia,
-        data.detectSulfurDioxide
+        data.oxygenMin,
+        data.oxygenMax,
+        data.dioxideMin,
+        data.dioxideMax,
+        data.ethyleneMin,
+        data.ethyleneMax,
+        data.ammoniaMin,
+        data.ammoniaMax,
+        data.sulfurDioxideMin,
+        data.sulfurDioxideMax
       );
 
         this.opened = true;

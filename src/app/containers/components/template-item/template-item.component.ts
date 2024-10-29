@@ -99,7 +99,7 @@ export class TemplateItemComponent implements OnInit {
         const filterValue = (event.target as HTMLInputElement).value.toLowerCase();
         this.filteredTemplates = this.templateItems.filter(template =>
             template.nameTemplate.toLowerCase().includes(filterValue) ||
-            template.descriptionTemplate.toLowerCase().includes(filterValue)
+            template.category.toLowerCase().includes(filterValue)
         );
         this.cdr.detectChanges();
     }

@@ -118,3 +118,17 @@ ul li {
   cursor: pointer;
   color: black;
 }
+
+.info {
+  width: 90px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info .mat-icon {
+  margin-right: 0;
+}
+
+.info span {
+  width: 50px;
+}
