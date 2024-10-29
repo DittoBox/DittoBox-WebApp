@@ -1,0 +1,31 @@
+.notification-card {
+  margin: 10px 0;
+  border-left: 5px solid;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.alert {
+  border-color: red;
+}
+
+.warning {
+  border-color: orange;
+}
+
+.update {
+  border-color: blue;
+}
+
+.notification-icon {
+  background-color: transparent;
+}
+
+mat-card-title {
+  font-weight: bold;
+}
+.notification-filter {
+  display: flex;
+  justify-content: space-between; /* Espaciado entre los elementos */
+  align-items: center; /* Alinea los elementos verticalmente al centro */
+  padding: 10px; /* Añade un poco de padding si es necesario */
+}

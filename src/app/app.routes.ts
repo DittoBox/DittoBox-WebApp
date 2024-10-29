@@ -1,7 +1,7 @@
 import {RouterModule, Routes} from '@angular/router';
 import {ContainerComponent} from "./containers/page/container/container.component";
 import {NgModule} from "@angular/core";
-import {TemplateComponent} from "./containers/page/template/template.component";
+import {TemplateItemComponent} from "./containers/components/template-item/template-item.component";
 
 export const routes: Routes = [
   {
@@ -10,7 +10,19 @@ export const routes: Routes = [
   },
   {
     path: 'templates',
-    component: TemplateComponent,
+    component: TemplateItemComponent,
+  },
+  {
+    path: 'notifications',
+    component: NotificationsComponent,
+  },
+  {
+    path: 'account',
+    component: AccountComponent,
+  },
+  {
+    path: 'subscription',
+    component: SubscriptionComponent,
   },
 
   { path: '',
