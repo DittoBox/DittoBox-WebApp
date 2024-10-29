@@ -1,0 +1,17 @@
+.user-card {
+
+  margin: auto;
+  background-color: #f9f6fb;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
