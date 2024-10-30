@@ -6,7 +6,7 @@ import { Template } from "../../containers/model/template-model/template.entity"
 @Injectable({
   providedIn: 'root'
 })
-export class FacilityServiceService {
+export class WorkerServiceService {
 
   Baseurl: string = 'http://localhost:3000';
 
@@ -20,3 +20,4 @@ export class FacilityServiceService {
     return this.http.get<any>(`${this.Baseurl}/facilities/${facilityID}`);
   }
 }
+

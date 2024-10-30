@@ -16,19 +16,19 @@ import {FacilityServiceService} from "../../service/facility-service.service";
   styleUrl: './facility-tab.component.css'
 })
 export class FacilityTabComponent implements  OnInit {
-  allContainers: Facility[] = [];
-  activeContainers: Facility[] = [];
+  allFacilities: Facility[] = [];
+  activeFacility: Facility[] = [];
 
-  constructor(private containerService: FacilityServiceService) {}
+  constructor(private facilityService: FacilityServiceService) {}
 
   ngOnInit() {
-    this.loadContainers();
+    this.loadFacilities();
   }
 
-  loadContainers() {
-    this.containerService.getFacilities().subscribe((data: Facility[]) => {
-      this.allContainers = data;
-      this.activeContainers = data.filter(facility => facility.status === 'Active');
+  loadFacilities() {
+    this.facilityService.getFacilities().subscribe((data: Facility[]) => {
+      this.allFacilities = data;
+      this.activeFacility = data.filter(facility => facility.status === 'Active');
     });
   }
 }

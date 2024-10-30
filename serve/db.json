@@ -1,4 +1,49 @@
 {
+  "workers": [
+    {
+      "id": "1",
+      "name": "Candice Merle",
+      "location": "Gran Via, Madrid",
+      "rol": "Manager"
+    },
+    {
+      "id": "2",
+      "name": "Andrea Kirsch",
+      "location": "Gran Via, Madrid",
+      "rol": "Worker"
+    },
+    {
+      "id": "3",
+      "name": "Angelo Fray",
+      "location": "Polígono Este, Madrid",
+      "rol": "Manager"
+    },
+    {
+      "id": "4",
+      "name": "Manuel Ruiz",
+      "location": "M-30, Madrid",
+      "rol": "Manager"
+    },
+    {
+      "id": "5",
+      "name": "Ivonne Black",
+      "location": "Recoletos, Madrid",
+      "rol": "Manager"
+    },
+    {
+      "id": "6",
+      "name": "Alexander Smith",
+      "location": "Atocha, Madrid",
+      "rol": "Manager"
+    },
+    {
+      "id": "7",
+      "name": "Troy Willfort",
+      "location": "Atocha, Madrid",
+      "rol": "Worker"
+    }
+  ],
+
   "facilities": [
     {
       "id": "1",

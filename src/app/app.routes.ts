@@ -3,7 +3,7 @@ import {ContainerComponent} from "./containers/page/container/container.componen
 import {NgModule} from "@angular/core";
 import {TemplateItemComponent} from "./containers/components/template-item/template-item.component";
 import {FacilityComponent} from "./facilities/page/facility/facility.component";
-import {WorkerComponent} from "./workers/page/worker/worker/worker.component";
+import {WorkerComponent} from "./workers/page/worker/worker.component";
 
 export const routes: Routes = [
   {

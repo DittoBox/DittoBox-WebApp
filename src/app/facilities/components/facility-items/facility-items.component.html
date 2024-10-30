@@ -1,5 +1,5 @@
 <div class="card-container">
-  <mat-card *ngFor="let facility of containerItems" (click)="openContainerSidenav(facility.id)" class="container-card">
+  <mat-card *ngFor="let facility of facilityItems"  class="container-card">
     <mat-card-header>
       <h3>{{ facility.name }}</h3>
     </mat-card-header>
@@ -26,6 +26,9 @@
           <span>Workers</span>
         </div>
         <span>{{ facility.workers }}</span>
+      </div>
+      <div class="container-button">
+        <button mat-flat-button (click)="openFacilitySidenav(facility.id)">More</button>
       </div>
     </mat-card-content>
   </mat-card>
