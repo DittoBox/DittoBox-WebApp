@@ -1,4 +1,62 @@
 {
+  "facilities": [
+    {
+      "id": "1",
+      "name": "Gran Vía",
+      "location": "Madrid, Spain",
+      "containers": 24,
+      "alerts": 3,
+      "workers": 8,
+      "status": "Active",
+      "type": "Restaurant",
+      "idTemplates": 4
+    },
+    {
+      "id": "2",
+      "name": "Atocha",
+      "location": "Madrid, Spain",
+      "containers": 24,
+      "alerts": 3,
+      "workers": 8,
+      "status": "Active",
+      "type": "Restaurant",
+      "idTemplates": 4
+    },
+    {
+      "id": "3",
+      "name": "Polígono Este",
+      "location": "Madrid, Spain",
+      "containers": 24,
+      "alerts": 3,
+      "workers": 8,
+      "status": "Active",
+      "type": "Restaurant",
+      "idTemplates": 4
+    },
+    {
+      "id": "4",
+      "name": "M-30",
+      "location": "Madrid, Spain",
+      "containers": 24,
+      "alerts": 3,
+      "workers": 8,
+      "status": "Active",
+      "type": "Restaurant",
+      "idTemplates": 4
+    },
+    {
+      "id": "5",
+      "name": "Recoletos",
+      "location": "Madrid, Spain",
+      "containers": 24,
+      "alerts": 3,
+      "workers": 8,
+      "status": "Active",
+      "type": "Restaurant",
+      "idTemplates": 4
+    }
+  ],
+
   "containers": [
     {
       "id": "1",

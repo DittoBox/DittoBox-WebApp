@@ -8,7 +8,7 @@
                 <span class="counter">24</span>
             </div>
         </a>
-        <a mat-list-item>
+        <a mat-list-item [routerLink]="'/facilities'" routerLinkActive="active-link" (click)="closeSidenav()">
             <div class="list-item-content">
                 <mat-icon>corporate_fare</mat-icon>
                 Facilities
@@ -20,7 +20,7 @@
                 Containers
             </div>
         </a>
-        <a mat-list-item>
+        <a mat-list-item [routerLink]="'/workers'" routerLinkActive="active-link" (click)="closeSidenav()">
             <div class="list-item-content">
                 <mat-icon>person</mat-icon>
                 Workers

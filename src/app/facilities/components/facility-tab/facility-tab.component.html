@@ -1,1 +1,7 @@
-<p>facility-tab works!</p>
+<mat-tab-group>
+  <mat-tab label="Facilties">
+    <div class="card-container">
+      <app-facility-items [containerItems]="allContainers"></app-facility-items>
+    </div>
+  </mat-tab>
+</mat-tab-group>

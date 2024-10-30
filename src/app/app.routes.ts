@@ -2,7 +2,8 @@ import {RouterModule, Routes} from '@angular/router';
 import {ContainerComponent} from "./containers/page/container/container.component";
 import {NgModule} from "@angular/core";
 import {TemplateItemComponent} from "./containers/components/template-item/template-item.component";
-import {FacilitiesItemComponent} from "./containers/components/facilities-item/facilities-item/facilities-item.component";
+import {FacilityComponent} from "./facilities/page/facility/facility.component";
+import {WorkerComponent} from "./workers/page/worker/worker/worker.component";
 
 export const routes: Routes = [
   {
@@ -15,7 +16,12 @@ export const routes: Routes = [
   },
   {
     path: 'facilities',
-    component: FacilitiesItemComponent,
+    component: FacilityComponent,
+  },
+
+  {
+    path: 'workers',
+    component: WorkerComponent,
   },
 
   { path: '',
