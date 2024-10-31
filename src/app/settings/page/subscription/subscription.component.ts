@@ -1,19 +1,32 @@
-import { Component } from '@angular/core';
-import {CurrentTierItemComponent} from "../../components/current-tier-item/current-tier-item.component";
-import {
-  PaymentInformationItemComponent
-} from "../../components/payment-information-item/payment-information-item.component";
+import { Component, inject } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
+import { SubscriptionDialogComponent } from '../../components/subscription-dialog/subscription-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @Component({
   selector: 'app-subscription',
   standalone: true,
   imports: [
-    CurrentTierItemComponent,
-    PaymentInformationItemComponent
+	MatCardModule,
+	MatButtonModule
   ],
   templateUrl: './subscription.component.html',
   styleUrl: './subscription.component.css'
 })
 export class SubscriptionComponent {
+	readonly dialog = inject(MatDialog);
 
+	openUpgradeDialog(): void {
+		this.dialog.open(SubscriptionDialogComponent, {
+			width: '500px'
+		});
+	}
+
+	openDowngradeDialog(): void {
+		this.dialog.open(SubscriptionDialogComponent, {
+			width: '500px'
+		});
+	}
 }

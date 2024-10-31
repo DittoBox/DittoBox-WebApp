@@ -1,5 +1,50 @@
-<div class = "subscription-container">
-    <h1>Subscription</h1>
-    <app-current-tier-item></app-current-tier-item>
-    <app-payment-information-item></app-payment-information-item>
+<h3>Subscription</h3>
+<div class="flex flex-row gap-8">
+  <div class="flex flex-col flex-grow">
+    <h6>Current tier</h6>
+    <div>
+      <span>Features:</span>
+    </div>
+    <div class="info-row">
+      <span>Facilities</span>
+      <span>Used 5 out of 5</span>
+    </div>
+    <div class="info-row">
+      <span>Containers</span>
+      <span>Used 4 out of 25</span>
+    </div>
+    <div class="info-row">
+      <span>Users</span>
+      <span>Used 7 out of 20</span>
+    </div>
+	<div class="flex flex-row">
+		<button mat-button mat-flat-button (click)="openUpgradeDialog()">Upgrade plan</button>
+		<button mat-button (click)="openDowngradeDialog()">Downgrade plan</button>
+
+	</div>
+  </div>
+  <div class="flex flex-col flex-grow">
+    <h6>Payment information</h6>
+    <div class="info-row">
+      <span>Status</span>
+      <span>Active</span>
+    </div>
+    <div class="info-row">
+      <span>Next payment day</span>
+      <span>October 21st</span>
+    </div>
+    <div class="info-row">
+      <span>Identification number</span>
+      <span>20124578963</span>
+    </div>
+    <div class="info-row">
+      <span>Bank account owner</span>
+      <span>Sofía Pérez</span>
+    </div>
+	<div class="flex flex-row">
+		
+		<button mat-button mat-flat-button >Update information</button>
+		<button mat-button>Cancel subscription</button>
+	</div>
+  </div>
 </div>

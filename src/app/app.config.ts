@@ -7,6 +7,7 @@ import {HttpClient, provideHttpClient} from "@angular/common/http";
 import {provideNativeDateAdapter} from "@angular/material/core";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -27,7 +28,10 @@ export const appConfig: ApplicationConfig = {
           deps: [HttpClient]
         }
       })
-    )
+    ),
+	{
+		provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}
+	}
   ]
 
 

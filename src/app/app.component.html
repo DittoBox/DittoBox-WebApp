@@ -1,10 +1,10 @@
-<div class="container">
-    <app-toolbar-content (drawerToggle)="drawer.toggle()"></app-toolbar-content>
-    <mat-drawer-container autosize class="example-container full-height">
-        <!-- Sidenav fijo en el drawer -->
-        <mat-drawer #drawer class="example-sidenav full-height" mode="side">
-            <app-sidenav-content (sidenavClose)="drawer.toggle()"></app-sidenav-content>
-        </mat-drawer>
-        <router-outlet></router-outlet>
-    </mat-drawer-container>
-</div>
+<app-toolbar-content (drawerToggle)="drawer.toggle()"></app-toolbar-content>
+<mat-drawer-container autosize class="example-container full-height">
+    <mat-drawer #drawer class="example-sidenav full-height" mode="side">
+        <app-sidenav-content (sidenavClose)="drawer.toggle()"></app-sidenav-content>
+    </mat-drawer>
+	<div class="p-8">
+		
+		<router-outlet></router-outlet>
+	</div>
+</mat-drawer-container>
