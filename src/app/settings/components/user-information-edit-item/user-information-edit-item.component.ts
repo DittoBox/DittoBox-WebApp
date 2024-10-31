@@ -34,6 +34,7 @@ export class UserInformationEditItemComponent {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 
+
   onSave(): void {
     this.dialogRef.close(this.data);
   }
