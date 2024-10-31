@@ -1,8 +1,7 @@
 .card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 16px; /* Espacio entre las cards */
-  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .container-card {
@@ -14,7 +13,11 @@
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
   cursor: pointer;
-  border: 1px solid #C4C7C1;
+}
+.container-button {
+  display: flex;
+  justify-content: right;
+  margin-top: 10px;
 }
 
 .container-card:hover {
