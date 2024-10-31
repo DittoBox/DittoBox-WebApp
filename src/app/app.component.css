@@ -1,8 +1,9 @@
 /* Asegura que el contenedor del sidenav y el contenido del router-outlet ocupen toda la pantalla */
 .full-height {
-    height: 100vh;  /* Full viewport height */
+    flex: 1;
     display: flex;
     flex-direction: column;
+    overflow: auto;
 }
 
 /* El sidenav también debe tener el alto completo */
@@ -15,4 +16,10 @@
     height: 100%;
     padding: 20px;
     box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }

@@ -22,6 +22,16 @@ export const routes: Routes = [
   {
     path: 'workers',
     component: WorkerComponent,
+    path: 'notifications',
+    component: NotificationsComponent,
+  },
+  {
+    path: 'account',
+    component: AccountComponent,
+  },
+  {
+    path: 'subscription',
+    component: SubscriptionComponent,
   },
 
   { path: '',

@@ -2,14 +2,10 @@
   width: 400px;
   max-width: 100%;
   padding: 24px;
-  background-color: #F8F9FA;
+  height: 100%;
 }
 
 .sidenav-container {
-  height: 100vh;
-}
-
-.sidenav-content {
   height: 100%;
 }
 
@@ -38,9 +34,8 @@
 }
 
 .container-button button {
-  margin-top: 16px;
+  margin-top: 10px;
   font-weight: normal;
-  background-color: #2B593C;
 }
 
 .container-button {
@@ -69,12 +64,8 @@ p {
 }
 
 .mat-divider {
-  margin: 24px 0;
+  margin: 15px 0;
   border-color: rgba(0, 0, 0, 0.1); /* Divider más suave */
-}
-
-.gases {
-  margin-top: 20px;
 }
 
 .gases p:first-child {
@@ -126,4 +117,18 @@ ul li {
 .close:hover {
   cursor: pointer;
   color: black;
+}
+
+.info {
+  width: 90px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info .mat-icon {
+  margin-right: 0;
+}
+
+.info span {
+  width: 50px;
 }
