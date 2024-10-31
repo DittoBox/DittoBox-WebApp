@@ -22,15 +22,16 @@ export class UserInformationItemComponent {
 
   openEditDialog() {
     const dialogRef = this.dialog.open(UserInformationEditItemComponent, {
-      width: '400px',
       data: {
         username: 'A warm place',
         name: 'Advance',
         idNumber: '20124578963',
         bankOwner: 'Sofía Pérez'
-      }
+      },
+      position: { right: '0' },
+      panelClass: 'custom-dialog-container'
     });
-
+  
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         console.log('Dialog closed with data:', result);

@@ -1,11 +1,12 @@
 .card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  padding: 16px;
 }
 
 .container-card {
-  width: 500px;
+  width: calc(33.33% - 20px);
   margin: 10px;
   padding: 15px;
   border: 2px solid #c6c6c6;
@@ -13,13 +14,195 @@
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
   cursor: pointer;
+  border: 1px solid #C4C7C1;
+}
+
+.mat-mdc-card-content {
+  padding: 0;
 }
 
 .container-card:hover {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 .content {
   display: flex;
   justify-content: space-between;
   margin: 10px 0;
+}
+
+.gases p:first-child {
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.gases-element p:first-child {
+  font-weight: 300;
+}
+
+.gases-element {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.gases-element p {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center !important;
+  justify-content: space-between;
+}
+
+.container p {
+  display: inline;
+}
+
+.container p:first-child {
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.item {
+  display: flex !important;
+  align-items: center;
+  gap: 5px;
+}
+
+ul {
+  margin: 0;
+}
+
+.description {
+  margin: 0;
+}
+
+.mat-divider {
+  margin: 10px 0;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 0;
+}
+
+.space {
+    margin: 10px;
+}
+
+.search-field {
+  margin: 0 10px;
+  width: 99%;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.title button {
+  margin-top: 0;
+  font-weight: normal;
+}
+
+.title-new h2 {
+  font-size: 32px;
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 400px;
+  padding: 20px;
+}
+
+.template-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.range-inputs {
+  display: flex;
+  gap: 10px;
+}
+
+.container-of-container-button {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+
+.container-button {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-button :first-child {
+  font-weight: normal;
+}
+
+.close:hover {
+  cursor: pointer;
+}
+
+.toggles-container p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toggles-container h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gas-container {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gas-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gas-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gas-toggle p {
+    margin: 0;
+
+}
+
+.gas-inputs {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.small-toggle {
+  transform: scale(0.8);
+  margin: 0;
+  padding: 0;
 }

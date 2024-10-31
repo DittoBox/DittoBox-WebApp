@@ -20,7 +20,7 @@
   background-color: transparent;
 }
 
-mat-card-title {
+.mat-card-title {
   font-weight: bold;
 }
 .notification-filter {

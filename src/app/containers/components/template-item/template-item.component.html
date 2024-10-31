@@ -1,19 +1,144 @@
-<div class="card-container">
-  <mat-card *ngFor="let template of templateItems" class="container-card" >
-    <mat-card-title>
-      {{template.nametemplate}}
-    </mat-card-title>
-    <p>{{ template.descriptiontemplate }}</p>
-    <mat-card-content>
-      <div class="content">
-        <strong>Temperature:</strong>
-        <span>{{ template.mintemp}} {{template.maxtemp}}</span>
-      </div>
-      <div class="content">
-        <strong>Humidity:</strong>
-        <span>{{ template.minhumidity}} {{template.maxhumidity}}</span>
-      </div>
-    </mat-card-content>
-  </mat-card>
-</div>
+<mat-sidenav-container class="sidenav-container">
+
+    <mat-sidenav #newTemplateSidenav mode="side" [(opened)]="isNewTemplateSidenavOpened" class="sidenav" position="end" [autoFocus]="false">
+        <mat-icon class="close" (click)="newTemplateSidenav.close()">arrow_back</mat-icon>
+
+        <div class="title-new">
+            <h2>New Template</h2>
+        </div>
+
+        <form (ngSubmit)="saveTemplate()" class="template-form">
+            <mat-form-field appearance="fill">
+                <mat-label>Template Name</mat-label>
+                <input matInput [(ngModel)]="newTemplate.nameTemplate" [ngModelOptions]="{standalone: true}" name="nameTemplate" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Description</mat-label>
+                <textarea matInput [(ngModel)]="newTemplate.descriptionTemplate" [ngModelOptions]="{standalone: true}" name="description" ></textarea>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Select Category</mat-label>
+                <mat-select [(ngModel)]="newTemplate.category" [ngModelOptions]="{standalone: true}" name="categoryTemplate" >
+                    <mat-option value="Fruits and vegetables">Fruits and vegetables</mat-option>
+                    <mat-option value="Meats">Meats</mat-option>
+                    <mat-option value="Dairy">Dairy</mat-option>
+                    <mat-option value="Animal derived">Animal derived</mat-option>
+                    <mat-option value="Processed foods">Processed foods</mat-option>
+                    <mat-option value="Prepared foods">Prepared foods</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <h3>Temperature Range</h3>
+            <div class="range-inputs">
+                <mat-form-field appearance="fill">
+                    <mat-label>Min</mat-label>
+                    <input matInput type="number" [(ngModel)]="newTemplate.minTemp" [ngModelOptions]="{standalone: true}" name="minTemp" />
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Max</mat-label>
+                    <input matInput type="number" [(ngModel)]="newTemplate.maxTemp" [ngModelOptions]="{standalone: true}" name="maxTemp" />
+                </mat-form-field>
+            </div>
+
+            <h3>Humidity Range</h3>
+            <div class="range-inputs">
+                <mat-form-field appearance="fill">
+                    <mat-label>Min</mat-label>
+                    <input matInput type="number" [(ngModel)]="newTemplate.minHumidity" [ngModelOptions]="{standalone: true}" name="minHumidity" />
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Max</mat-label>
+                    <input matInput type="number" [(ngModel)]="newTemplate.maxHumidity" [ngModelOptions]="{standalone: true}" name="maxHumidity" />
+                </mat-form-field>
+            </div>
+
+            <div class="toggles-container">
+                <h3>Gas Detection
+                    <mat-slide-toggle
+                            [(ngModel)]="gasSwitch"
+                            [ngModelOptions]="{ standalone: true }">
+                    </mat-slide-toggle>
+                </h3>
+
+                <div *ngIf="gasSwitch" class="gas-container">
+                    <div *ngFor="let gas of gases" class="gas-field">
+                        <div class="gas-toggle">
+                            <p>{{ gas.name }}</p>
+                            <mat-slide-toggle [(ngModel)]="gas.enabled" class="small-toggle" [ngModelOptions]="{ standalone: true }">
+                            </mat-slide-toggle>
+                        </div>
+
+                        <div *ngIf="gas.enabled" class="gas-inputs">
+                            <mat-form-field appearance="fill">
+                                <mat-label>{{ gas.name }} Min</mat-label>
+                                <input matInput type="number" [(ngModel)]="gas.min" [ngModelOptions]="{ standalone: true }" />
+                            </mat-form-field>
+
+                            <mat-form-field appearance="fill">
+                                <mat-label>{{ gas.name }} Max</mat-label>
+                                <input matInput type="number" [(ngModel)]="gas.max" [ngModelOptions]="{ standalone: true }" />
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-of-container-button">
+                <div class="container-button">
+                    <button mat-raised-button type="submit">Save</button>
+                    <button mat-button type="button" (click)="newTemplateSidenav.close()">Discard</button>
+                </div>
+            </div>
+        </form>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <div class="space">
+            <div class="title">
+                <h1>Templates Library</h1>
+                <button mat-raised-button (click)="openNewTemplateSidenav(newTemplateSidenav)">
+                    Create template
+                </button>
+            </div>
+            <mat-form-field class="search-field" appearance="outline">
+                <mat-label>Search</mat-label>
+                <input matInput (input)="applyFilter($event)" placeholder="Search templates by name or category" />
+                <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+
+            <div class="card-container">
+                <mat-card *ngFor="let template of filteredTemplates" (click)="openTemplateDetails(template)" class="container-card" >
+                    <mat-card-title>
+                        {{template.nameTemplate}}
+                    </mat-card-title>
+                    <p class="description">{{ template.category }}</p>
+                    <mat-divider></mat-divider>
+                    <mat-card-content>
+                        <div class="container">
+                            <p class="item"><mat-icon>thermostat</mat-icon> Temperature</p>
+                            <p class="item">{{ template.minTemp + '°C' }} - {{ template.maxTemp + '°C' }}</p>
+                        </div>
+                        <div class="container">
+                            <p class="item"><mat-icon>opacity</mat-icon> Humidity</p>
+                            <p class="item">{{ template.minHumidity + '%' }} - {{ template.maxHumidity + '%' }}</p>
+                        </div>
+                        <div class="gases">
+                            <p class="item"><mat-icon>air</mat-icon> Detect gases</p>
+                            <ul>
+                                <li class="gases-element"><p>Oxygen (O₂)</p><mat-slide-toggle class="custom-toggle" [checked]="template.oxygenMax != 0" disabled></mat-slide-toggle></li>
+                                <li class="gases-element"><p>Carbon Dioxide (CO₂)</p><mat-slide-toggle class="custom-toggle" [checked]="template.dioxideMax != 0" disabled></mat-slide-toggle></li>
+                                <li class="gases-element"><p>Ethylene (C₂H₄)</p><mat-slide-toggle class="custom-toggle" [checked]="template.ethyleneMax != 0" disabled></mat-slide-toggle></li>
+                                <li class="gases-element"><p>Ammonia (NH₃)</p><mat-slide-toggle class="custom-toggle" [checked]="template.ammoniaMax != 0" disabled></mat-slide-toggle></li>
+                                <li class="gases-element"><p>Sulfur Dioxide (SO₂)</p><mat-slide-toggle class="custom-toggle" [checked]="template.sulfurDioxideMax != 0" disabled></mat-slide-toggle></li>
+
+                            </ul>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
 

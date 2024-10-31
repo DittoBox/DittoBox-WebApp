@@ -1,3 +1,12 @@
-.mat-mdc-tab .mdc-tab-indicator__content--underline {
-    border-color: #2B593C !important;
+
+.tab {
+}
+
+#title {
+    font-size: 32px;
+    margin: 0;
+}
+
+.space {
+    margin: 10px;
 }

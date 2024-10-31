@@ -1,44 +1,62 @@
 export class Template {
   id: string;
-  nametemplate:string;
-  descriptiontemplate:string;
-  maxtemp: string;
-  mintemp: string;
-  maxhumidity: string;
-  minhumidity: string;
-  detectoxygen: boolean;
-  detectdioxide: boolean;
-  detectetylene: boolean;
-  detectammonia: boolean;
-  detectsulfurdioxide: boolean;
+  nameTemplate:string;
+  category: string;
+  descriptionTemplate:string;
+  maxTemp: string;
+  minTemp: string;
+  maxHumidity: string;
+  minHumidity: string;
+  oxygenMin: number;
+  oxygenMax: number;
+  dioxideMin: number;
+  dioxideMax: number;
+  ethyleneMin: number;
+  ethyleneMax: number;
+  ammoniaMin: number;
+  ammoniaMax: number;
+  sulfurDioxideMin: number;
+  sulfurDioxideMax: number;
 
 
   constructor(
-    id: string,
-    nametemplate: string,
-    descriptiontemplate: string,
-    maxtemp: string,
-    mintemp: string,
-    maxhumidity: string,
-    minhumidity: string,
-    detectoxygen: boolean,
-    detectdioxide: boolean,
-    detectetylene: boolean,
-    detectammonia: boolean,
-    detectsulfurdioxide: boolean
+      id: string,
+      nameTemplate:string,
+      category: string,
+      descriptionTemplate:string,
+      maxTemp: string,
+      minTemp: string,
+      maxHumidity: string,
+      minHumidity: string,
+      oxygenMin: number,
+      oxygenMax: number,
+      dioxideMin: number,
+      dioxideMax: number,
+      ethyleneMin: number,
+      ethyleneMax: number,
+      ammoniaMin: number,
+      ammoniaMax: number,
+      sulfurDioxideMin: number,
+      sulfurDioxideMax: number
   ) {
     this.id = id;
-    this.nametemplate= nametemplate;
-    this.descriptiontemplate= descriptiontemplate;
-    this.maxtemp = maxtemp;
-    this.mintemp = mintemp;
-    this.maxhumidity = maxhumidity;
-    this.minhumidity = minhumidity;
-    this.detectoxygen = detectoxygen;
-    this.detectdioxide = detectdioxide;
-    this.detectetylene = detectetylene;
-    this.detectammonia = detectammonia;
-    this.detectsulfurdioxide = detectsulfurdioxide;
+    this.nameTemplate= nameTemplate;
+    this.category = category;
+    this.descriptionTemplate= descriptionTemplate;
+    this.maxTemp = maxTemp;
+    this.minTemp = minTemp;
+    this.maxHumidity = maxHumidity;
+    this.minHumidity = minHumidity;
+    this.oxygenMin = oxygenMin;
+    this.oxygenMax = oxygenMax;
+    this.dioxideMin = dioxideMin;
+    this.dioxideMax = dioxideMax;
+    this.ethyleneMin = ethyleneMin;
+    this.ethyleneMax = ethyleneMax;
+    this.ammoniaMin = ammoniaMin;
+    this.ammoniaMax = ammoniaMax;
+    this.sulfurDioxideMin = sulfurDioxideMin;
+    this.sulfurDioxideMax = sulfurDioxideMax;
   }
 
 }

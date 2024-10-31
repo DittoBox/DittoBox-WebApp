@@ -1,7 +1,7 @@
 <div class="card-container">
 <mat-card *ngFor="let container of containerItems" (click)="openContainerSidenav(container.id)" class="container-card">
   <mat-card-header>
-    <h3>Container #{{ container.id }}</h3>
+    <h3>{{container.name}}</h3>
   </mat-card-header>
   <mat-card-content>
     <p>{{ container.status }}</p>
