@@ -12,12 +12,12 @@ export class WorkerServiceService {
 
   constructor(private http: HttpClient) { }
 
-  getFacilities(): Observable<any> {
-    return this.http.get<any>(`${this.Baseurl}/facilities`);
+  getWorkers(): Observable<any> {
+    return this.http.get<any>(`${this.Baseurl}/workers`);
   }
 
-  getFacilitybyId(facilityID: string): Observable<any> {
-    return this.http.get<any>(`${this.Baseurl}/facilities/${facilityID}`);
+  getWorkerbyId(facilityID: string): Observable<any> {
+    return this.http.get<any>(`${this.Baseurl}/workers/${facilityID}`);
   }
 }
 

@@ -1,7 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {MatTab, MatTabGroup} from "@angular/material/tabs";
-import {Facility} from "../../../facilities/model/facility-model/facility.model";
-import {FacilityServiceService} from "../../../facilities/service/facility-service.service";
+import {WorkerServiceService} from "../../service/worker-service.service";
+import {WorkerDetailsComponent} from "../worker-details/worker-details.component";
+import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from "@angular/material/card";
+import {NgForOf} from "@angular/common";
+import {MatIcon, MatIconModule} from '@angular/material/icon';
+import {MatButton} from "@angular/material/button";
+
 
 @Component({
   selector: 'app-worker-items',
@@ -9,24 +14,31 @@ import {FacilityServiceService} from "../../../facilities/service/facility-servi
   imports: [
     MatTabGroup,
     MatTab,
+    MatButton,
+    MatCard,
+    MatCardContent,
+    MatCardHeader,
+    MatIcon,
+    NgForOf,
   ],
   templateUrl: './worker-items.component.html',
   styleUrl: './worker-items.component.css'
 })
-export class WorkerItemsComponent implements OnInit{
-  allFacilities: Facility[] = [];
-  activeFacility: Facility[] = [];
+export class WorkerItemsComponent implements OnInit {
+  @Input() workersItems: any[] = [];
 
-  constructor(private facilityService: FacilityServiceService) {}
+  constructor(
+    private sidenavComponent: WorkerDetailsComponent,
+    private workerServiceService: WorkerServiceService
+  ) {}
 
   ngOnInit() {
-    this.loadFacilities();
+    this.workerServiceService.getWorkers().subscribe((data: any[]) => {
+      this.workersItems = data;
+    });
   }
 
-  loadFacilities() {
-    this.facilityService.getFacilities().subscribe((data: Facility[]) => {
-      this.allFacilities = data;
-      this.activeFacility = data.filter(facility => facility.status === 'Active');
-    });
+  openWorkerDialog(workerId: number) {
+    this.sidenavComponent.loadWorker(workerId);
   }
 }

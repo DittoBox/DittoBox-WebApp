@@ -1,1 +1,33 @@
-<p>wroker-details works!</p>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="over" [(opened)]="opened" class="sidenav" position="end">
+    <mat-icon class="close" (click)="sidenav.close()">arrow_back</mat-icon>
+    <div *ngIf="worker">
+      <div class="title">
+        <h2>{{ worker.name }}</h2>
+      </div>
+      <div class="container">
+        <p> Worker Info:</p> <br>
+      </div>
+      <div class="container">
+        <p> Category:</p> <br>
+        <p>{{ worker.rol }}</p>
+      </div>
+      <div class="container">
+        <p> Facility:</p> <br>
+        <p>{{ worker.facility }}</p>
+      </div>
+      <div class="container">
+        <p> Location:</p> <br>
+        <p>{{ worker.location }}</p>
+      </div>
+
+      <div class="container-button">
+        <button mat-flat-button >Delete</button>
+      </div>
+    </div>
+
+  </mat-sidenav>
+  <mat-sidenav-content class="sidenav-content">
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

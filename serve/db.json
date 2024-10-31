@@ -3,44 +3,58 @@
     {
       "id": "1",
       "name": "Candice Merle",
-      "location": "Gran Via, Madrid",
-      "rol": "Manager"
+      "facility":"Gran Vía",
+      "location": "Madrid, Spain",
+      "rol": "Manager",
+      "image": "https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg"
     },
     {
       "id": "2",
       "name": "Andrea Kirsch",
-      "location": "Gran Via, Madrid",
-      "rol": "Worker"
+      "facility":"Gran Vía",
+      "location": "Madrid, Spain",
+      "rol": "Worker",
+      "image": "https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg"
     },
     {
       "id": "3",
       "name": "Angelo Fray",
-      "location": "Polígono Este, Madrid",
-      "rol": "Manager"
+      "facility":"Polígono Este",
+      "location": "Madrid",
+      "rol": "Manager",
+      "image": "https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg"
     },
     {
       "id": "4",
       "name": "Manuel Ruiz",
-      "location": "M-30, Madrid",
-      "rol": "Manager"
+      "facility":"M-30",
+      "location": "Madrid",
+      "rol": "Manager",
+      "image": "https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg"
     },
     {
       "id": "5",
       "name": "Ivonne Black",
-      "location": "Recoletos, Madrid",
-      "rol": "Manager"
+      "facility":"Recoletos",
+      "location": "Madrid",
+      "rol": "Manager",
+      "image": "https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg"
     },
     {
       "id": "6",
       "name": "Alexander Smith",
-      "location": "Atocha, Madrid",
-      "rol": "Manager"
+      "facility":"Atocha",
+      "location": "Madrid",
+      "rol": "Manager",
+      "image": "https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg"
     },
     {
       "id": "7",
       "name": "Troy Willfort",
-      "location": "Atocha, Madrid",
-      "rol": "Worker"
+      "facility":"Atocha",
+      "location": "Madrid",
+      "rol": "Worker",
+      "image": "https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg"
     }
   ],
 
