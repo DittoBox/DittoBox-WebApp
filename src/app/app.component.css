@@ -1,6 +1,8 @@
 :root {
-	  --navbar-height: 4rem;
+	--navbar-height: 4rem;
+	margin: 0;
 }
+
 .navbar {
 	height: var(--navbar-height);
 }

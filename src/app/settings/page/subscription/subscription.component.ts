@@ -3,14 +3,15 @@ import { MatCardModule } from '@angular/material/card';
 import { SubscriptionDialogComponent } from '../../components/subscription-dialog/subscription-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-
+import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'app-subscription',
   standalone: true,
   imports: [
 	MatCardModule,
-	MatButtonModule
+	MatButtonModule,
+	MatDividerModule
   ],
   templateUrl: './subscription.component.html',
   styleUrl: './subscription.component.css'

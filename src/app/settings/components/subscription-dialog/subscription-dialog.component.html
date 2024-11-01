@@ -1,9 +1,24 @@
-<h2 mat-dialog-title>Downgrade warning</h2>
+<h2 mat-dialog-title>Are you sure you want to continue?</h2>
 <mat-dialog-content>
-	  <p>You are about to downgrade your subscription to the Free plan. This will remove some of your current features and you will lose access to some of your data.</p>
-  <p>Are you sure you want to continue?</p>
+  <p>You are about to downgrade your subscription to the Free plan. You will lose access to the following resources:</p>
+  <ul class="flex flex-col gap-2">
+    <li class="flex flex-col gap-0">
+      <span class="mat-label-large">Facilities</span>
+      <span class="mat-body-medium">Used 5 out of 5</span>
+      <span class="mat-body-medium">Free plan only allows 2</span>
+    </li>
+    <li class="flex flex-col gap-0">
+      <span class="mat-label-large">Containers</span>
+      <span class="mat-body-medium">None affected</span>
+    </li>
+    <li class="flex flex-col gap-0">
+      <span class="mat-label-large">Users</span>
+      <span class="mat-body-medium">Used 7 out of 20</span>
+      <span class="mat-body-medium">Free plan only allows 5</span>
+    </li>
+  </ul>
 </mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button mat-dialog-close>No</button>
-  <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button>Downgrade</button>
 </mat-dialog-actions>
