@@ -67,7 +67,6 @@ export class FacilityDetailsComponent {
             data.idTemplates
           );
 
-
           this.opened = true;
         }, error => {
           console.error('Error al obtener:', error);

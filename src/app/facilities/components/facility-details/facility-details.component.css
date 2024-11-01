@@ -40,7 +40,6 @@
 .container-button button {
   margin-top: 16px;
   font-weight: normal;
-  background-color: #2B593C;
 }
 
 .container-button {
@@ -112,7 +111,6 @@ ul li {
 
 /* Ajustes específicos para que el layout sea más fluido */
 .sidenav p strong {
-  color: #333;
   font-weight: bold;
 }
 
