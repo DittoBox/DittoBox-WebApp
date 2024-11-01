@@ -8,30 +8,44 @@
       <div class="form-fields-container">
         <mat-form-field appearance="outline" class="form-field">
           <mat-label>Min temperature</mat-label>
-          <input matInput [(ngModel)]="data.mintemp">
+          <input matInput [(ngModel)]="data.minTemp">
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="form-field">
           <mat-label>Max temperature</mat-label>
-          <input matInput [(ngModel)]="data.maxtemp">
+          <input matInput [(ngModel)]="data.maxTemp">
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="form-field">
           <mat-label>Min humidity</mat-label>
-          <input matInput [(ngModel)]="data.minhumidity">
+          <input matInput [(ngModel)]="data.minHumidity">
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="form-field">
           <mat-label>Max humidity</mat-label>
-          <input matInput [(ngModel)]="data.maxhumidity">
+          <input matInput [(ngModel)]="data.maxHumidity">
         </mat-form-field>
       </div>
 
       <div class="toggles-container">
-        <p>Measure oxygen <mat-slide-toggle [(ngModel)]="data.detectoxygen"></mat-slide-toggle></p>
-        <p>Measure carbon dioxide <mat-slide-toggle [(ngModel)]="data.detectdioxide"></mat-slide-toggle></p>
-        <p>Measure ethylene <mat-slide-toggle [(ngModel)]="data.detectetylene"></mat-slide-toggle></p>
-        <p>Measure ammonia and sulfur dioxide <mat-slide-toggle [(ngModel)]="data.detectammonia"></mat-slide-toggle></p>
+          <div *ngFor="let gas of gases" class="gas-field">
+              <div class="name-toggle">
+                  <p>{{ gas.name }}</p>
+                  <mat-slide-toggle [(ngModel)]="gas.enabled" (change)="toggleGas(gas)"></mat-slide-toggle>
+              </div>
+
+              <div *ngIf="gas.enabled" class="gas-inputs">
+                  <mat-form-field appearance="outline" class="form-field">
+                      <mat-label>{{ gas.name }} Min</mat-label>
+                      <input matInput [(ngModel)]="gas.min" type="number" />
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline" class="form-field">
+                      <mat-label>{{ gas.name }} Max</mat-label>
+                      <input matInput [(ngModel)]="gas.max" type="number" />
+                  </mat-form-field>
+              </div>
+          </div>
       </div>
     </mat-card-content>
 

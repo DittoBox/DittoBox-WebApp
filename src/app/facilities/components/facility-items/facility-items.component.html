@@ -1,0 +1,35 @@
+<div class="card-container">
+  <mat-card *ngFor="let facility of facilityItems"  class="container-card">
+    <mat-card-header>
+      <h3>{{ facility.name }}</h3>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ facility.location }}</p>
+      <div class="content">
+        <div class="tag">
+          <mat-icon aria-hidden="false" aria-label="Containers icon" fontIcon="category"></mat-icon>
+          <span>Containers</span>
+        </div>
+        <span>{{ facility.containers }}</span>
+      </div>
+      <div class="content">
+        <div class="tag">
+          <mat-icon aria-hidden="false" aria-label="Alerts icon">notifications</mat-icon>
+          <span>Alerts</span>
+
+        </div>
+        <span>{{ facility.alerts }}</span>
+      </div>
+      <div class="content">
+        <div class="tag">
+          <mat-icon aria-hidden="false" aria-label="Example last sync" fontIcon="person"></mat-icon>
+          <span>Workers</span>
+        </div>
+        <span>{{ facility.workers }}</span>
+      </div>
+      <div class="container-button">
+        <button mat-flat-button (click)="openFacilitySidenav(facility.id)">More</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

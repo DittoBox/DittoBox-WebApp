@@ -1,0 +1,11 @@
+:root {
+	  --navbar-height: 4rem;
+}
+.navbar {
+	height: var(--navbar-height);
+}
+
+.mat-drawer-content {
+	min-height: calc(100vh - var(--navbar-height));
+	background-color: aqua;
+}

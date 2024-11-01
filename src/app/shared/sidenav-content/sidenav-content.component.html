@@ -1,0 +1,69 @@
+<div class="sidenav-content">
+    Menu
+    <mat-nav-list>
+        <a mat-list-item>
+            <div class="list-item-content">
+                <mat-icon>developer_board</mat-icon>
+                Dashboard
+                <span class="counter">24</span>
+            </div>
+        </a>
+        <a mat-list-item [routerLink]="'/facilities'" routerLinkActive="active-link" (click)="closeSidenav()">
+            <div class="list-item-content">
+                <mat-icon>corporate_fare</mat-icon>
+                Facilities
+            </div>
+        </a>
+        <a mat-list-item [routerLink]="'/containers'" routerLinkActive="active-link" (click)="closeSidenav()">
+            <div class="list-item-content">
+                <mat-icon>widgets</mat-icon>
+                Containers
+            </div>
+        </a>
+        <a mat-list-item [routerLink]="'/workers'" routerLinkActive="active-link" (click)="closeSidenav()">
+            <div class="list-item-content">
+                <mat-icon>person</mat-icon>
+                Workers
+            </div>
+        </a>
+        <mat-divider></mat-divider>
+        <a mat-list-item [routerLink]="'/templates'" routerLinkActive="active-link" (click)="closeSidenav()">
+            <div class="list-item-content">
+                <mat-icon>text_snippet</mat-icon>
+                Templates
+            </div>
+        </a>
+    </mat-nav-list>
+
+    Settings
+    <mat-nav-list>
+        <a mat-list-item [routerLink]="'/account'" routerLinkActive="active-link" (click)="closeSidenav()">
+            <div class="list-item-content">
+                <mat-icon>manage_accounts</mat-icon>
+                Account
+            </div>
+        </a>
+        <a mat-list-item [routerLink]="'/subscription'" routerLinkActive="active-link" (click)="closeSidenav()">
+            <div class="list-item-content">
+                <mat-icon>credit_card</mat-icon>
+                Subscription
+            </div>
+        </a>
+        <a mat-list-item [routerLink]="'/notifications'" routerLinkActive="active-link" (click)="closeSidenav()">
+            <div class="list-item-content">
+                <mat-icon>notifications</mat-icon>
+                Notifications
+            </div>
+        </a>
+    </mat-nav-list>
+
+    <mat-divider></mat-divider>
+    <mat-nav-list>
+        <a mat-list-item>
+            <div class="list-item-content">
+                <mat-icon>logout</mat-icon>
+                Logout
+            </div>
+        </a>
+    </mat-nav-list>
+</div>

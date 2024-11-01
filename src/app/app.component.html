@@ -1,2 +1,10 @@
-<app-toolbar-content></app-toolbar-content>
-<router-outlet></router-outlet>
+<app-toolbar-content class="navbar-height" (drawerToggle)="drawer.toggle()"></app-toolbar-content>
+<mat-drawer-container autosize class="example-container full-height">
+    <mat-drawer #drawer class="example-sidenav full-height" mode="side">
+        <app-sidenav-content (sidenavClose)="drawer.toggle()"></app-sidenav-content>
+    </mat-drawer>
+	<div class="p-8">
+		
+		<router-outlet></router-outlet>
+	</div>
+</mat-drawer-container>

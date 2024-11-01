@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {MatTab, MatTabGroup} from "@angular/material/tabs";
 import {ContainerItemComponent} from "../container-item/container-item.component";
 import {Container} from "../../model/container-model/container.entity";
@@ -13,7 +13,8 @@ import {ContainerServiceService} from "../../service/container-service.service";
     ContainerItemComponent
   ],
   templateUrl: './container-tab.component.html',
-  styleUrl: './container-tab.component.css'
+  styleUrl: './container-tab.component.css',
+  encapsulation: ViewEncapsulation.None
 })
 export class ContainerTabComponent implements  OnInit{
   allContainers: Container[] = [];

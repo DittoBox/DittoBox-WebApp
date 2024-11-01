@@ -1,0 +1,96 @@
+.sidenav {
+    width: 427px;
+    max-width: 100%;
+    padding: 24px;
+    height: 100%;
+}
+
+.sidenav-container {
+    height: 100%;
+}
+
+.title p {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container p {
+    display: inline;
+}
+
+.container p:first-child {
+    font-weight: 500;
+}
+
+.container-button button {
+    margin-top: 16px;
+    font-weight: normal;
+}
+
+.container-button {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+
+.mat-divider {
+    margin: 10px 0;
+    border-color: rgba(0, 0, 0, 0.1); /* Divider más suave */
+}
+
+.gases p:first-child {
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.gases-element p:first-child {
+    font-weight: 500;
+}
+
+.gases-element {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.gases-element p {
+    margin: 0;
+}
+
+/* Ajuste de listas para detectar gases */
+ul {
+    padding-left: 0;
+    list-style-type: none;
+    margin: 0;
+}
+
+ul li {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Ajustes específicos para que el layout sea más fluido */
+.sidenav p strong {
+    font-weight: bold;
+}
+
+/* Estilo para íconos */
+.mat-icon {
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.close:hover {
+    cursor: pointer;
+    color: black;
+}
+
+.selection {
+    padding-top: 0;
+}
