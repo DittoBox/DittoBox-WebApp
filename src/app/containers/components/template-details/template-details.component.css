@@ -38,24 +38,6 @@
     justify-content: right;
 }
 
-h2 {
-    display: inline;
-    font-weight: normal;
-    font-size: 30px;
-    margin-bottom: 0;
-}
-
-h3 {
-    font-size: 18px;
-    font-weight: 500;
-    margin: 0;
-}
-
-p {
-    margin: 8px 0;
-    font-size: 14px;
-}
-
 .mat-divider {
     margin: 10px 0;
     border-color: rgba(0, 0, 0, 0.1); /* Divider más suave */
