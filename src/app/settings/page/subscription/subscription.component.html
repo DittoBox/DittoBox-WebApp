@@ -1,50 +1,48 @@
 <h3>Subscription</h3>
-<div class="flex flex-row gap-8">
-  <div class="flex flex-col flex-grow">
+<div class="flex flex-col" style="padding-left: 48px; padding-right: 64px;">
+  <div class="flex flex-col" style="padding-bottom: 32px;">
     <h6>Current tier</h6>
-    <div>
+    <div class="info-row" style="padding-bottom: 12px;">
       <span>Features:</span>
     </div>
-    <div class="info-row">
+    <div class="info-row" style="padding-bottom: 12px;">
       <span>Facilities</span>
       <span>Used 5 out of 5</span>
     </div>
-    <div class="info-row">
+    <div class="info-row" style="padding-bottom: 12px;">
       <span>Containers</span>
       <span>Used 4 out of 25</span>
     </div>
-    <div class="info-row">
+    <div class="info-row" style="padding-bottom: 12px;">
       <span>Users</span>
       <span>Used 7 out of 20</span>
     </div>
-	<div class="flex flex-row">
-		<button mat-button mat-flat-button (click)="openUpgradeDialog()">Upgrade plan</button>
-		<button mat-button (click)="openDowngradeDialog()">Downgrade plan</button>
-
-	</div>
+    <div class="flex flex-row">
+      <button mat-button mat-flat-button (click)="openUpgradeDialog()">Upgrade plan</button>
+      <button mat-button (click)="openDowngradeDialog()">Downgrade plan</button>
+    </div>
   </div>
-  <div class="flex flex-col flex-grow">
+  <div class="flex flex-col" style="padding-top: 32px;">
     <h6>Payment information</h6>
-    <div class="info-row">
+    <div class="info-row" style="padding-bottom: 12px;">
       <span>Status</span>
       <span>Active</span>
     </div>
-    <div class="info-row">
+    <div class="info-row" style="padding-bottom: 12px;">
       <span>Next payment day</span>
       <span>October 21st</span>
     </div>
-    <div class="info-row">
+    <div class="info-row" style="padding-bottom: 12px;">
       <span>Identification number</span>
       <span>20124578963</span>
     </div>
-    <div class="info-row">
+    <div class="info-row" style="padding-bottom: 12px;">
       <span>Bank account owner</span>
       <span>Sofía Pérez</span>
     </div>
-	<div class="flex flex-row">
-		
-		<button mat-button mat-flat-button >Update information</button>
-		<button mat-button>Cancel subscription</button>
-	</div>
+    <div class="flex flex-row">
+      <button mat-button mat-flat-button>Update information</button>
+      <button mat-button>Cancel subscription</button>
+    </div>
   </div>
 </div>
