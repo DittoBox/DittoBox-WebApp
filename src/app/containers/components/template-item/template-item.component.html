@@ -96,20 +96,18 @@
 
     <mat-sidenav-content>
         <div class="space">
-            <div class="title">
+            <div class="title-container">
                 <h1>Templates Library</h1>
-                <button mat-raised-button (click)="openNewTemplateSidenav(newTemplateSidenav)">
+                <button mat-flat-button (click)="openNewTemplateSidenav(newTemplateSidenav)">
                     Create template
                 </button>
             </div>
             <mat-form-field class="search-field" appearance="outline">
-                <mat-label>Search</mat-label>
-                <input matInput (input)="applyFilter($event)" placeholder="Search templates by name or category" />
+                <input matInput (input)="applyFilter($event)" matInput placeholder="Search">
                 <mat-icon matSuffix>search</mat-icon>
             </mat-form-field>
-
-            <div class="card-container">
-                <mat-card *ngFor="let template of filteredTemplates" (click)="openTemplateDetails(template)" class="container-card" >
+            <div class="card-container grid-container">
+                <mat-card *ngFor="let template of filteredTemplates" (click)="openTemplateDetails(template)" class="container-card">
                     <mat-card-title>
                         {{template.nameTemplate}}
                     </mat-card-title>
@@ -132,7 +130,6 @@
                                 <li class="gases-element"><p>Ethylene (C₂H₄)</p><mat-slide-toggle class="custom-toggle" [checked]="template.ethyleneMax != 0" disabled></mat-slide-toggle></li>
                                 <li class="gases-element"><p>Ammonia (NH₃)</p><mat-slide-toggle class="custom-toggle" [checked]="template.ammoniaMax != 0" disabled></mat-slide-toggle></li>
                                 <li class="gases-element"><p>Sulfur Dioxide (SO₂)</p><mat-slide-toggle class="custom-toggle" [checked]="template.sulfurDioxideMax != 0" disabled></mat-slide-toggle></li>
-
                             </ul>
                         </div>
                     </mat-card-content>
@@ -141,4 +138,3 @@
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
-

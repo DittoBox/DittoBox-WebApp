@@ -4,6 +4,10 @@ import {NgModule} from "@angular/core";
 import {TemplateItemComponent} from "./containers/components/template-item/template-item.component";
 import {FacilityComponent} from "./facilities/page/facility/facility.component";
 import {WorkerComponent} from "./workers/page/worker/worker.component";
+import { NotificationsComponent } from './settings/page/notifications/notifications.component';
+import { AccountComponent } from './settings/page/account/account.component';
+import { SubscriptionComponent } from './settings/page/subscription/subscription.component';
+import { TemplateComponent } from './containers/page/template/template.component';
 
 export const routes: Routes = [
   {
@@ -12,7 +16,7 @@ export const routes: Routes = [
   },
   {
     path: 'templates',
-    component: TemplateItemComponent,
+    component: TemplateComponent,
   },
   {
     path: 'facilities',
@@ -22,6 +26,8 @@ export const routes: Routes = [
   {
     path: 'workers',
     component: WorkerComponent,
+  },
+  {
     path: 'notifications',
     component: NotificationsComponent,
   },

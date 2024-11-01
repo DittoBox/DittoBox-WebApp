@@ -11,17 +11,18 @@
         <h3>Select Containers</h3>
         <mat-selection-list [(ngModel)]="selectedContainers" class="selection">
             <mat-list-option *ngFor="let container of containerItems" [value]="container">
-                Container #{{ container.id }}
+                <div class="data-container">
+                    <span class="data-name">Container #{{ container.id }}</span>
+                    <span class="data-value">{{ container.value }}</span>
+                </div>
             </mat-list-option>
         </mat-selection-list>
 
         <div class="container-button">
-            <button mat-raised-button (click)="applyTemplateToContainers()">
+            <button mat-flat-button (click)="applyTemplateToContainers()">
                 Apply Template
             </button>
         </div>
-
-
     </mat-sidenav>
     <mat-sidenav-content class="sidenav-content">
         <ng-content></ng-content>
