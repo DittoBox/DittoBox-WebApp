@@ -1,25 +1,11 @@
-/* Asegura que el contenedor del sidenav y el contenido del router-outlet ocupen toda la pantalla */
-.full-height {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
+:root {
+	  --navbar-height: 4rem;
+}
+.navbar {
+	height: var(--navbar-height);
 }
 
-/* El sidenav también debe tener el alto completo */
-.example-sidenav {
-    height: 100%;
-}
-
-/* El contenido también debe ocupar todo el alto */
 .mat-drawer-content {
-    height: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+	min-height: calc(100vh - var(--navbar-height));
+	background-color: aqua;
 }
