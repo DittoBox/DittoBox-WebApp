@@ -8,16 +8,13 @@
 .facility-item {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #c6c6c6;
   padding: 15px;
   margin: 10px 0;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.facility-item:hover {
-  background-color: #f0f0f0;
-}
+
 
 .worker-photo {
   width: 50px;
