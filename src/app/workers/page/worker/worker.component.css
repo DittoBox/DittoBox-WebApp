@@ -1,0 +1,4 @@
+.app-container {
+  height: 100vh; /* Asegúrate de que ocupe toda la altura de la ventana */
+  overflow: auto; /* Permite el desplazamiento solo en el contenedor principal */
+}

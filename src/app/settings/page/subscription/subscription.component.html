@@ -1,62 +1,48 @@
-<div class="flex flex-col gap-8">
-  <h1 class="mat-headline-large">Subscription</h1>
-  <div class="flex flex-col">
-    <div class="flex flex-row justify-between">
-      <h2 class="mat-title-large">Current tier</h2>
-      <span class="mat-body-large"> Advance </span>
+<h3>Subscription</h3>
+<div class="flex flex-col" style="padding-left: 48px; padding-right: 64px;">
+  <div class="flex flex-col" style="padding-bottom: 32px;">
+    <h6>Current tier</h6>
+    <div class="info-row" style="padding-bottom: 12px;">
+      <span>Features:</span>
     </div>
-    <div class="flex flex-col gap-4">
-      <span class="mat-title-medium">Features:</span>
-
-      <div class="flex flex-col gap-3">
-        <div class="w-full flex flex-row justify-between">
-          <span class="mat-label-large">Facilities</span>
-          <span class="mat-body-medium">Used 5 out of 5</span>
-        </div>
-        <div class="w-full flex flex-row justify-between">
-          <span class="mat-label-large">Containers</span>
-          <span class="mat-body-medium">Used 4 out of 25</span>
-        </div>
-        <div class="w-full flex flex-row justify-between">
-          <span class="mat-label-large">Users</span>
-          <span class="mat-body-medium">Used 7 out of 20</span>
-        </div>
-      </div>
+    <div class="info-row" style="padding-bottom: 12px;">
+      <span>Facilities</span>
+      <span>Used 5 out of 5</span>
     </div>
-    <div class="flex flex-row mt-6 justify-end gap-4">
-      <button mat-button mat-flat-button (click)="openUpgradeDialog()">
-        Upgrade plan
-      </button>
-      <button mat-button mat-stroked-button (click)="openDowngradeDialog()">
-        Downgrade plan
-      </button>
+    <div class="info-row" style="padding-bottom: 12px;">
+      <span>Containers</span>
+      <span>Used 4 out of 25</span>
+    </div>
+    <div class="info-row" style="padding-bottom: 12px;">
+      <span>Users</span>
+      <span>Used 7 out of 20</span>
+    </div>
+    <div class="flex flex-row">
+      <button mat-button mat-flat-button (click)="openUpgradeDialog()">Upgrade plan</button>
+      <button mat-button (click)="openDowngradeDialog()">Downgrade plan</button>
     </div>
   </div>
-  <mat-divider></mat-divider>
-  <div class="flex flex-col">
-	<div class="flex flex-row justify-between">
-	  <h2 class="mat-title-large">Payment information</h2>
-	</div>
-	<div class="flex flex-col gap-4">
-	  <div class="flex flex-row justify-between">
-		<span class="mat-label-large">Status</span>
-		<span class="mat-body-medium">Active</span>
-	  </div>
-	  <div class="flex flex-row justify-between">
-		<span class="mat-label-large">Next payment day</span>
-		<span class="mat-body-medium">October 21st</span>
-	  </div>
-	  <div class="flex flex-row justify-between">
-		<span class="mat-label-large">Identification number</span>
-		<span class="mat-body-medium">20124578963</span>
-	  </div>
-	  <div class="flex flex-row justify-between">
-		<span class="mat-label-large">Bank account owner</span>
-		<span class="mat-body-medium">Sofía Pérez</span>
-	  </div>
-	</div>
-	<div class="flex flex-row mt-6 justify-end gap-4">
-	  <button mat-button mat-flat-button>Update information</button>
-	  <button mat-button mat-stroked-button>Cancel subscription</button>
-	</div>
+  <div class="flex flex-col" style="padding-top: 32px;">
+    <h6>Payment information</h6>
+    <div class="info-row" style="padding-bottom: 12px;">
+      <span>Status</span>
+      <span>Active</span>
+    </div>
+    <div class="info-row" style="padding-bottom: 12px;">
+      <span>Next payment day</span>
+      <span>October 21st</span>
+    </div>
+    <div class="info-row" style="padding-bottom: 12px;">
+      <span>Identification number</span>
+      <span>20124578963</span>
+    </div>
+    <div class="info-row" style="padding-bottom: 12px;">
+      <span>Bank account owner</span>
+      <span>Sofía Pérez</span>
+    </div>
+    <div class="flex flex-row">
+      <button mat-button mat-flat-button>Update information</button>
+      <button mat-button>Cancel subscription</button>
+    </div>
   </div>
+</div>

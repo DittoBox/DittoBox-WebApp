@@ -1,0 +1,20 @@
+.flex {
+    display: flex;
+  }
+  
+  .flex-col {
+    flex-direction: column;
+  }
+  .flex-row {
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+  
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 12px;
+  }
+

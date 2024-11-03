@@ -1,12 +1,11 @@
 .card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 16px;
-  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .container-card {
-  width: calc(33.33% - 20px);
+  width: 500px;
   margin: 10px;
   padding: 15px;
   border-radius: 8px;
@@ -20,10 +19,6 @@
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.mat-mdc-card-content {
-  padding: 0;
-}
-
 .content,
 .container-button,
 .title,
@@ -33,6 +28,43 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gases ul {
+  padding-left: 0;
+}
+
+.gases-element {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mat-divider {
+  margin: 10px 0;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px; /* Espacio entre las tarjetas */
+}
+
+.container-card {
+  width: 90%;
 }
 
 .title {
@@ -68,11 +100,6 @@ ul {
   display: flex;
   align-items: center;
   gap: 5px;
-}
-
-.mat-divider {
-  margin: 10px 0;
-  border-color: rgba(0, 0, 0, 0.1);
 }
 
 .space {

@@ -1,31 +1,40 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {MatCard, MatCardContent, MatCardHeader} from "@angular/material/card";
-import {NgForOf} from "@angular/common";
-import {ContainerServiceService} from "../../service/container-service.service";
-import {ContainerDetailsComponent} from "../container-details/container-details.component";
-import {MatIconModule} from '@angular/material/icon';
+import { Component, Input, OnInit } from '@angular/core';
+import { MatCard, MatCardContent, MatCardHeader } from "@angular/material/card";
+import { NgForOf } from "@angular/common";
+import { ContainerServiceService } from "../../service/container-service.service";
+import { ContainerDetailsComponent } from "../container-details/container-details.component";
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-container-item',
   standalone: true,
-    imports: [
-        MatCard,
-        MatCardContent,
-        MatCardHeader,
-        NgForOf,
-        MatIconModule
-    ],
+  imports: [
+    MatCard,
+    MatCardContent,
+    MatCardHeader,
+    NgForOf,
+    MatIconModule,
+    MatProgressSpinnerModule
+  ],
   templateUrl: './container-item.component.html',
-  styleUrl: './container-item.component.css'
+  styleUrls: ['./container-item.component.css']
 })
-export class ContainerItemComponent {
+export class ContainerItemComponent implements OnInit {
 
   @Input() containerItems: any[] = [];
+  isLoading = false;
 
   constructor(private sidenavComponent: ContainerDetailsComponent, private containerServiceService: ContainerServiceService) { }
 
-  openContainerSidenav(containerId: number) {
-    this.sidenavComponent.loadContainer(containerId);
+  ngOnInit(): void {
+    // Inicialización si es necesario
   }
 
+  openContainerSidenav(containerId: number) {
+    this.isLoading = true;
+    Promise.resolve(this.sidenavComponent.loadContainer(containerId)).finally(() => {
+      this.isLoading = false;
+    });
+  }
 }

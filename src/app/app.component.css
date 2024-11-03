@@ -8,6 +8,19 @@
 }
 
 .mat-drawer-content {
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.full-height {
+    min-height: 100vh; /* Asegura que el contenedor tenga al menos la altura de la ventana */
 	min-height: calc(100vh - var(--navbar-height));
 	background-color: aqua;
 }

@@ -7,26 +7,24 @@
         <span>{{ facility.type }}</span>
       </div>
       <div class="container">
-        <p><mat-icon>category</mat-icon> Containers</p>
+        <p><mat-icon class="material-icons-outlined">widgets</mat-icon> Containers</p>
         <p>{{ facility.containers }}</p>
       </div>
-      <div><a>Add containers</a></div>
+      <div><button mat-button>Add containers</button></div>
       <div class="container">
-        <p><mat-icon>Person</mat-icon> Workers</p>
+        <p><mat-icon class="material-icons-outlined">person</mat-icon> Workers</p>
         <p>{{ facility.workers }}</p>
       </div>
-      <div><a >Add workers</a></div>
+      <div><button mat-button>Add workers</button></div>
       <div class="container">
-        <p><mat-icon>notifications</mat-icon> Pending Alerts</p>
+        <p><mat-icon class="material-icons-outlined">notifications</mat-icon> Pending Alerts</p>
         <p>{{ facility.alerts }}</p>
       </div>
-      <div><a>Add alerts</a></div>
-
+      <div><button mat-button>Add alerts</button></div>
       <div class="container-button">
-        <button mat-flat-button >Delete</button>
+        <button mat-flat-button>Delete</button>
       </div>
     </div>
-
   </mat-sidenav>
   <mat-sidenav-content class="sidenav-content">
     <ng-content></ng-content>
