@@ -1,9 +1,66 @@
-<h2 mat-dialog-title>Downgrade warning</h2>
+<h2 mat-dialog-title>Are you sure you want to continue?</h2>
 <mat-dialog-content>
-	  <p>You are about to downgrade your subscription to the Free plan. This will remove some of your current features and you will lose access to some of your data.</p>
-  <p>Are you sure you want to continue?</p>
+  <p>
+    You are about to downgrade your subscription to the {{accountUsage.lowerPlan}} plan. You might loose to access to some of the features.
+  </p>
+  <ul class="flex flex-col gap-2">
+    <li class="flex flex-col gap-0">
+      <span class="mat-label-large">Facilities</span>
+      <span class="mat-body-medium"
+        >Used {{ accountUsage.facilities.currentUsage }} out of
+        {{ accountUsage.facilities.currentPlanLimit }}</span
+      >
+      <span class="mat-body-medium">
+        {{
+          accountUsage.facilities.currentUsage <
+          accountUsage.facilities.lowerPlanLimit
+            ? "None affected"
+            : "You'll lose access to " +
+              (accountUsage.facilities.currentUsage -
+                accountUsage.facilities.lowerPlanLimit) +
+              " facilities"
+        }}
+      </span>
+    </li>
+    <li class="flex flex-col gap-0">
+      <span class="mat-label-large">Containers</span>
+      <span class="mat-body-medium"
+        >Used {{ accountUsage.containers.currentUsage }} out of
+        {{ accountUsage.containers.currentPlanLimit }}</span
+      >
+      <span class="mat-body-medium">
+        {{
+          accountUsage.containers.currentUsage <
+          accountUsage.containers.lowerPlanLimit
+            ? "None affected"
+            : "You'll lose access to " +
+              (accountUsage.containers.currentUsage -
+                accountUsage.containers.lowerPlanLimit) +
+              " containers"
+        }}
+      </span>
+    </li>
+    <li class="flex flex-col gap-0">
+      <span class="mat-label-large">Users</span>
+
+      <span class="mat-body-medium"
+        >Used {{ accountUsage.users.currentUsage }} out of
+        {{ accountUsage.users.currentPlanLimit }}</span
+      >
+      <span class="mat-body-medium">
+        {{
+          accountUsage.users.currentUsage < accountUsage.users.lowerPlanLimit
+            ? "None affected"
+            : "You'll lose access to " +
+              (accountUsage.users.currentUsage -
+                accountUsage.users.lowerPlanLimit) +
+              " users"
+        }}
+      </span>
+    </li>
+  </ul>
 </mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button mat-dialog-close>No</button>
-  <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button>Downgrade</button>
 </mat-dialog-actions>

@@ -22,7 +22,6 @@ export const routes: Routes = [
     path: 'facilities',
     component: FacilityComponent,
   },
-
   {
     path: 'workers',
     component: WorkerComponent,
