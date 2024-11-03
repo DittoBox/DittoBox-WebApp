@@ -22,5 +22,4 @@
 .full-height {
     min-height: 100vh; /* Asegura que el contenedor tenga al menos la altura de la ventana */
 	min-height: calc(100vh - var(--navbar-height));
-	background-color: aqua;
 }
