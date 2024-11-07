@@ -5,6 +5,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {FacilityDetailsComponent} from "../facility-details/facility-details.component";
 import {FacilityServiceService} from "../../service/facility-service.service";
 import {MatButton} from "@angular/material/button";
+import {MatButtonToggle} from "@angular/material/button-toggle";
 
 @Component({
   selector: 'app-facility-items',
@@ -16,6 +17,7 @@ import {MatButton} from "@angular/material/button";
     NgForOf,
     MatIconModule,
     MatButton,
+    MatButtonToggle,
   ],
   templateUrl: './facility-items.component.html',
   styleUrl: './facility-items.component.css'
