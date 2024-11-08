@@ -61,5 +61,24 @@
         "WARNINGS": "Warnings",
         "UPDATES": "Updates",
         "ALL": "All"
+      },
+      "SUBSCRIPTION_MODULE": {
+        "TITLE": "Subscription",
+        "CURRENT_TIER": "Current tier",
+        "FEATURES": "Features",
+        "FACILITIES": "Facilities",
+        "CONTAINERS": "Containers",
+        "USERS": "Users",
+        "USED_OUT_OF": "Used {{used}} out of {{total}}",
+        "UPGRADE_PLAN": "Upgrade plan",
+        "DOWNGRADE_PLAN": "Downgrade plan",
+        "PAYMENT_INFORMATION": "Payment information",
+        "STATUS": "Status",
+        "ACTIVE": "Active",
+        "NEXT_PAYMENT_DAY": "Next payment day",
+        "ID_NUMBER": "Identification number",
+        "BANK_OWNER": "Bank account owner",
+        "UPDATE_INFORMATION": "Update information",
+        "CANCEL_SUBSCRIPTION": "Cancel subscription"
       }
   }
