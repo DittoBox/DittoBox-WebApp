@@ -4,58 +4,58 @@
         <mat-icon class="close" (click)="newTemplateSidenav.close()">arrow_back</mat-icon>
 
         <div class="title-new">
-            <h2>New Template</h2>
+            <h2>{{ 'TEMPLATE_ITEM.NEW_TEMPLATE' | translate }}</h2>
         </div>
 
         <form (ngSubmit)="saveTemplate()" class="template-form">
             <mat-form-field appearance="fill">
-                <mat-label>Template Name</mat-label>
+                <mat-label>{{ 'TEMPLATE_ITEM.TEMPLATE_NAME' | translate }}</mat-label>
                 <input matInput [(ngModel)]="newTemplate.nameTemplate" [ngModelOptions]="{standalone: true}" name="nameTemplate" />
             </mat-form-field>
 
             <mat-form-field appearance="fill">
-                <mat-label>Description</mat-label>
+                <mat-label>{{ 'TEMPLATE_ITEM.DESCRIPTION' | translate }}</mat-label>
                 <textarea matInput [(ngModel)]="newTemplate.descriptionTemplate" [ngModelOptions]="{standalone: true}" name="description" ></textarea>
             </mat-form-field>
 
             <mat-form-field>
-                <mat-label>Select Category</mat-label>
+                <mat-label>{{ 'TEMPLATE_ITEM.SELECT_CATEGORY' | translate }}</mat-label>
                 <mat-select [(ngModel)]="newTemplate.category" [ngModelOptions]="{standalone: true}" name="categoryTemplate" >
-                    <mat-option value="Fruits and vegetables">Fruits and vegetables</mat-option>
-                    <mat-option value="Meats">Meats</mat-option>
-                    <mat-option value="Dairy">Dairy</mat-option>
-                    <mat-option value="Animal derived">Animal derived</mat-option>
-                    <mat-option value="Processed foods">Processed foods</mat-option>
-                    <mat-option value="Prepared foods">Prepared foods</mat-option>
+                    <mat-option value="Fruits and vegetables">{{ 'TEMPLATE_ITEM.FRUITS_VEGETABLES' | translate }}</mat-option>
+                    <mat-option value="Meats">{{ 'TEMPLATE_ITEM.MEATS' | translate }}</mat-option>
+                    <mat-option value="Dairy">{{ 'TEMPLATE_ITEM.DAIRY' | translate }}</mat-option>
+                    <mat-option value="Animal derived">{{ 'TEMPLATE_ITEM.ANIMAL_DERIVED' | translate }}</mat-option>
+                    <mat-option value="Processed foods">{{ 'TEMPLATE_ITEM.PROCESSED_FOODS' | translate }}</mat-option>
+                    <mat-option value="Prepared foods">{{ 'TEMPLATE_ITEM.PREPARED_FOODS' | translate }}</mat-option>
                 </mat-select>
             </mat-form-field>
 
-            <h3>Temperature Range</h3>
+            <h3>{{ 'TEMPLATE_ITEM.TEMPERATURE_RANGE' | translate }}</h3>
             <div class="range-inputs">
                 <mat-form-field appearance="fill">
-                    <mat-label>Min</mat-label>
+                    <mat-label>{{ 'TEMPLATE_ITEM.MIN' | translate }}</mat-label>
                     <input matInput type="number" [(ngModel)]="newTemplate.minTemp" [ngModelOptions]="{standalone: true}" name="minTemp" />
                 </mat-form-field>
                 <mat-form-field appearance="fill">
-                    <mat-label>Max</mat-label>
+                    <mat-label>{{ 'TEMPLATE_ITEM.MAX' | translate }}</mat-label>
                     <input matInput type="number" [(ngModel)]="newTemplate.maxTemp" [ngModelOptions]="{standalone: true}" name="maxTemp" />
                 </mat-form-field>
             </div>
 
-            <h3>Humidity Range</h3>
+            <h3>{{ 'TEMPLATE_ITEM.HUMIDITY_RANGE' | translate }}</h3>
             <div class="range-inputs">
                 <mat-form-field appearance="fill">
-                    <mat-label>Min</mat-label>
+                    <mat-label>{{ 'TEMPLATE_ITEM.MIN' | translate }}</mat-label>
                     <input matInput type="number" [(ngModel)]="newTemplate.minHumidity" [ngModelOptions]="{standalone: true}" name="minHumidity" />
                 </mat-form-field>
                 <mat-form-field appearance="fill">
-                    <mat-label>Max</mat-label>
+                    <mat-label>{{ 'TEMPLATE_ITEM.MAX' | translate }}</mat-label>
                     <input matInput type="number" [(ngModel)]="newTemplate.maxHumidity" [ngModelOptions]="{standalone: true}" name="maxHumidity" />
                 </mat-form-field>
             </div>
 
             <div class="toggles-container">
-                <h3>Gas Detection
+                <h3>{{ 'TEMPLATE_ITEM.GAS_DETECTION' | translate }}
                     <mat-slide-toggle
                             [(ngModel)]="gasSwitch"
                             [ngModelOptions]="{ standalone: true }">
@@ -87,8 +87,8 @@
 
             <div class="container-of-container-button">
                 <div class="container-button">
-                    <button mat-raised-button type="submit">Save</button>
-                    <button mat-button type="button" (click)="newTemplateSidenav.close()">Discard</button>
+                    <button mat-raised-button type="submit">{{ 'TEMPLATE_ITEM.SAVE' | translate }}</button>
+                    <button mat-button type="button" (click)="newTemplateSidenav.close()">{{ 'TEMPLATE_ITEM.DISCARD' | translate }}</button>
                 </div>
             </div>
         </form>
@@ -97,13 +97,13 @@
     <mat-sidenav-content>
         <div class="space">
             <div class="title-container">
-                <h1>Templates Library</h1>
+                <h1>{{ 'TEMPLATE_ITEM.TEMPLATES_LIBRARY' | translate }}</h1>
                 <button mat-flat-button (click)="openNewTemplateSidenav(newTemplateSidenav)">
-                    Create template
+                    {{ 'TEMPLATE_ITEM.CREATE_TEMPLATE' | translate }}
                 </button>
             </div>
             <mat-form-field class="search-field" appearance="outline">
-                <input matInput (input)="applyFilter($event)" matInput placeholder="Search">
+                <input matInput (input)="applyFilter($event)" matInput placeholder="{{ 'TEMPLATE_ITEM.SEARCH' | translate }}">
                 <mat-icon matSuffix>search</mat-icon>
             </mat-form-field>
             <div class="card-container grid-container">
@@ -115,21 +115,21 @@
                     <mat-divider></mat-divider>
                     <mat-card-content>
                         <div class="container">
-                            <p class="item"><mat-icon>thermostat</mat-icon> Temperature</p>
+                            <p class="item"><mat-icon>thermostat</mat-icon> {{ 'TEMPLATE_ITEM.TEMPERATURE' | translate }}</p>
                             <p class="item">{{ template.minTemp + '°C' }} - {{ template.maxTemp + '°C' }}</p>
                         </div>
                         <div class="container">
-                            <p class="item"><mat-icon>opacity</mat-icon> Humidity</p>
+                            <p class="item"><mat-icon>opacity</mat-icon> {{ 'TEMPLATE_ITEM.HUMIDITY' | translate }}</p>
                             <p class="item">{{ template.minHumidity + '%' }} - {{ template.maxHumidity + '%' }}</p>
                         </div>
                         <div class="gases">
-                            <p class="item"><mat-icon>air</mat-icon> Detect gases</p>
+                            <p class="item"><mat-icon>air</mat-icon> {{ 'TEMPLATE_ITEM.DETECT_GASES' | translate }}</p>
                             <ul>
-                                <li class="gases-element"><p>Oxygen (O₂)</p><mat-slide-toggle class="custom-toggle" [checked]="template.oxygenMax != 0" disabled></mat-slide-toggle></li>
-                                <li class="gases-element"><p>Carbon Dioxide (CO₂)</p><mat-slide-toggle class="custom-toggle" [checked]="template.dioxideMax != 0" disabled></mat-slide-toggle></li>
-                                <li class="gases-element"><p>Ethylene (C₂H₄)</p><mat-slide-toggle class="custom-toggle" [checked]="template.ethyleneMax != 0" disabled></mat-slide-toggle></li>
-                                <li class="gases-element"><p>Ammonia (NH₃)</p><mat-slide-toggle class="custom-toggle" [checked]="template.ammoniaMax != 0" disabled></mat-slide-toggle></li>
-                                <li class="gases-element"><p>Sulfur Dioxide (SO₂)</p><mat-slide-toggle class="custom-toggle" [checked]="template.sulfurDioxideMax != 0" disabled></mat-slide-toggle></li>
+                                <li class="gases-element"><p>{{ 'TEMPLATE_ITEM.OXYGEN' | translate }}</p><mat-slide-toggle class="custom-toggle" [checked]="template.oxygenMax != 0" disabled></mat-slide-toggle></li>
+                                <li class="gases-element"><p>{{ 'TEMPLATE_ITEM.CARBON_DIOXIDE' | translate }}</p><mat-slide-toggle class="custom-toggle" [checked]="template.dioxideMax != 0" disabled></mat-slide-toggle></li>
+                                <li class="gases-element"><p>{{ 'TEMPLATE_ITEM.ETHYLENE' | translate }}</p><mat-slide-toggle class="custom-toggle" [checked]="template.ethyleneMax != 0" disabled></mat-slide-toggle></li>
+                                <li class="gases-element"><p>{{ 'TEMPLATE_ITEM.AMMONIA' | translate }}</p><mat-slide-toggle class="custom-toggle" [checked]="template.ammoniaMax != 0" disabled></mat-slide-toggle></li>
+                                <li class="gases-element"><p>{{ 'TEMPLATE_ITEM.SULFUR_DIOXIDE' | translate }}</p><mat-slide-toggle class="custom-toggle" [checked]="template.sulfurDioxideMax != 0" disabled></mat-slide-toggle></li>
                             </ul>
                         </div>
                     </mat-card-content>

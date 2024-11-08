@@ -105,5 +105,82 @@
         "PENDING_ALERTS": "Alertas pendientes",
         "ADD_ALERTS": "Agregar alertas",
         "DELETE": "Eliminar"
+      },
+      "FACILITY_TAB": {
+        "FACILITIES": "Instalaciones"
+      },
+      "CONTAINER_DETAILS": {
+        "DESCRIPTION": "Descripción",
+        "TEMPERATURE": "Temperatura",
+        "HUMIDITY": "Humedad",
+        "LAST_SYNC": "Última sincronización",
+        "MANUAL_EDIT": "Edición manual",
+        "TEMPLATE_CONFIGURATION": "Configuración de plantilla",
+        "DETECT_GASES": "Detectar gases",
+        "OXYGEN": "Oxígeno (O₂)",
+        "CARBON_DIOXIDE": "Dióxido de carbono (CO₂)",
+        "ETHYLENE": "Etileno (C₂H₄)",
+        "AMMONIA": "Amoníaco (NH₃)",
+        "SULFUR_DIOXIDE": "Dióxido de azufre (SO₂)"
+      },
+      "CONTAINER_ITEM": {
+        "TEMPERATURE": "Temperatura",
+        "HUMIDITY": "Humedad",
+        "LAST_SYNC": "Ult. Sync"
+      },
+      "CONTAINER_TAB": {
+        "TITLE": "Contenedores",
+        "ALL_CONTAINERS": "Todos los Contenedores",
+        "ACTIVE_CONTAINERS": "Contenedores Activos"
+      },
+      "CONTAINER_EDIT": {
+        "TITLE": "Cambio manual",
+        "DESCRIPTION": "Este cambio se registrará en el historial de este contenedor.",
+        "MIN_TEMPERATURE": "Temperatura mínima",
+        "MAX_TEMPERATURE": "Temperatura máxima",
+        "MIN_HUMIDITY": "Humedad mínima",
+        "MAX_HUMIDITY": "Humedad máxima",
+        "CANCEL": "Cancelar",
+        "SAVE": "Guardar"
+      },
+      "TEMPLATE_CONFIRM": {
+        "TITLE": "Confirmación",
+        "CANCEL": "Cancelar",
+        "YES": "Sí"
+      },
+      "TEMPLATE_DETAILS": {
+        "SELECT_CONTAINERS": "Seleccionar Contenedores",
+        "APPLY_TEMPLATE": "Aplicar Plantilla"
+      },
+      "TEMPLATE_ITEM": {
+        "NEW_TEMPLATE": "Nueva Plantilla",
+        "TEMPLATE_NAME": "Nombre de la Plantilla",
+        "DESCRIPTION": "Descripción",
+        "SELECT_CATEGORY": "Seleccionar Categoría",
+        "FRUITS_VEGETABLES": "Frutas y verduras",
+        "MEATS": "Carnes",
+        "DAIRY": "Lácteos",
+        "ANIMAL_DERIVED": "Derivados de animales",
+        "PROCESSED_FOODS": "Alimentos procesados",
+        "PREPARED_FOODS": "Alimentos preparados",
+        "TEMPERATURE_RANGE": "Rango de Temperatura",
+        "MIN": "Mín",
+        "MAX": "Máx",
+        "HUMIDITY_RANGE": "Rango de Humedad",
+        "GAS_DETECTION": "Detección de Gases",
+        "SAVE": "Guardar",
+        "DISCARD": "Descartar",
+        "TEMPLATES_LIBRARY": "Biblioteca de Plantillas",
+        "CREATE_TEMPLATE": "Crear plantilla",
+        "SEARCH": "Buscar",
+        "TEMPERATURE": "Temperatura",
+        "HUMIDITY": "Humedad",
+        "DETECT_GASES": "Detectar gases",
+        "OXYGEN": "Oxígeno (O₂)",
+        "CARBON_DIOXIDE": "Dióxido de Carbono (CO₂)",
+        "ETHYLENE": "Etileno (C₂H₄)",
+        "AMMONIA": "Amoníaco (NH₃)",
+        "SULFUR_DIOXIDE": "Dióxido de Azufre (SO₂)"
       }
+
   }

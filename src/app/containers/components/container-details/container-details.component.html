@@ -6,44 +6,44 @@
                 <h2>{{ container?.name }}</h2>
                 <span>{{ container?.status }}</span>
             </div>
-                <p style="font-weight: 500; margin-bottom: 0; font-size: 14px">Description</p>
+                <p style="font-weight: 500; margin-bottom: 0; font-size: 14px">{{ 'CONTAINER_DETAILS.DESCRIPTION' | translate }}</p>
                 <p style="margin-top: 0; letter-spacing: 1px; font-size: 16px;">{{ container?.description}}</p>
             <div class="container">
-                <p><mat-icon>thermostat</mat-icon> Temperature</p>
+                <p><mat-icon>thermostat</mat-icon> {{ 'CONTAINER_DETAILS.TEMPERATURE' | translate }}</p>
                 <p>{{ container?.temperature + '°C' }}</p>
             </div>
             <div class="container">
-                <p><mat-icon>opacity</mat-icon> Humidity</p>
+                <p><mat-icon>opacity</mat-icon> {{ 'CONTAINER_DETAILS.HUMIDITY' | translate }}</p>
                 <p>{{ container?.humidity + '%' }}</p>
             </div>
             <div class="container">
-                <p><mat-icon>hourglass_empty</mat-icon> Last sync</p>
+                <p><mat-icon>hourglass_empty</mat-icon> {{ 'CONTAINER_DETAILS.LAST_SYNC' | translate }}</p>
                 <p>{{ container?.lastSync }}</p>
             </div>
 
         <div class="container-button">
-            <button mat-flat-button (click)="openDialog()">Manual edit</button>
+            <button mat-flat-button (click)="openDialog()">{{ 'CONTAINER_DETAILS.MANUAL_EDIT' | translate }}</button>
         </div>
 
         <mat-divider></mat-divider>
 
-        <h3>Template configuration</h3>
+        <h3>{{ 'CONTAINER_DETAILS.TEMPLATE_CONFIGURATION' | translate }}</h3>
         <div class="container">
-            <p><mat-icon>thermostat</mat-icon> Temperature</p>
+            <p><mat-icon>thermostat</mat-icon> {{ 'CONTAINER_DETAILS.TEMPERATURE' | translate }}</p>
             <p>{{ container?.minTemp + '°C' }} - {{ container?.maxTemp + '°C' }}</p>
         </div>
         <div class="container">
-            <p><mat-icon>opacity</mat-icon> Humidity</p>
+            <p><mat-icon>opacity</mat-icon> {{ 'CONTAINER_DETAILS.HUMIDITY' | translate }}</p>
             <p>{{ container?.minHumidity + '%' }} - {{ container?.maxHumidity + '%' }}</p>
         </div>
         <div class="gases">
-            <p><mat-icon>air</mat-icon> Detect gases</p>
+            <p><mat-icon>air</mat-icon> {{ 'CONTAINER_DETAILS.DETECT_GASES' | translate }}</p>
             <ul>
-                <li *ngIf="container?.oxygenMax !== 0" class="gases-element"><p>Oxygen (O₂)</p><p class="info"><mat-icon>arrow_downward</mat-icon>{{container?.oxygenMin}}<span><mat-icon>arrow_upward</mat-icon>{{container?.oxygenMax}}</span></p></li>
-                <li *ngIf="container?.dioxideMax !== 0" class="gases-element"><p>Carbon dioxide (CO₂)</p><p class="info"><mat-icon>arrow_downward</mat-icon>{{container?.dioxideMin}}<span><mat-icon>arrow_upward</mat-icon>{{container?.dioxideMax}}</span></p></li>
-                <li *ngIf="container?.ethyleneMax !== 0" class="gases-element"><p>Ethylene (C₂H₄)</p><p class="info"><mat-icon>arrow_downward</mat-icon>{{container?.ethyleneMin}}<span><mat-icon>arrow_upward</mat-icon>{{container?.ethyleneMax}}</span></p></li>
-                <li *ngIf="container?.ammoniaMax !== 0" class="gases-element"><p>Ammonia (NH₃)</p><p class="info"><mat-icon>arrow_downward</mat-icon>{{container?.ammoniaMin}}<span><mat-icon>arrow_upward</mat-icon>{{container?.ammoniaMax}}</span></p></li>
-                <li *ngIf="container?.sulfurDioxideMax !== 0" class="gases-element"><p>Sulfur dioxide (SO₂)</p><p class="info"><mat-icon>arrow_downward</mat-icon>{{container?.sulfurDioxideMin}}<span><mat-icon>arrow_upward</mat-icon>{{container?.sulfurDioxideMax}}</span></p></li>
+                <li *ngIf="container?.oxygenMax !== 0" class="gases-element"><p>{{ 'CONTAINER_DETAILS.OXYGEN' | translate }}</p><p class="info"><mat-icon>arrow_downward</mat-icon>{{container?.oxygenMin}}<span><mat-icon>arrow_upward</mat-icon>{{container?.oxygenMax}}</span></p></li>
+                <li *ngIf="container?.dioxideMax !== 0" class="gases-element"><p>{{ 'CONTAINER_DETAILS.CARBON_DIOXIDE' | translate }}</p><p class="info"><mat-icon>arrow_downward</mat-icon>{{container?.dioxideMin}}<span><mat-icon>arrow_upward</mat-icon>{{container?.dioxideMax}}</span></p></li>
+                <li *ngIf="container?.ethyleneMax !== 0" class="gases-element"><p>{{ 'CONTAINER_DETAILS.ETHYLENE' | translate }}</p><p class="info"><mat-icon>arrow_downward</mat-icon>{{container?.ethyleneMin}}<span><mat-icon>arrow_upward</mat-icon>{{container?.ethyleneMax}}</span></p></li>
+                <li *ngIf="container?.ammoniaMax !== 0" class="gases-element"><p>{{ 'CONTAINER_DETAILS.AMMONIA' | translate }}</p><p class="info"><mat-icon>arrow_downward</mat-icon>{{container?.ammoniaMin}}<span><mat-icon>arrow_upward</mat-icon>{{container?.ammoniaMax}}</span></p></li>
+                <li *ngIf="container?.sulfurDioxideMax !== 0" class="gases-element"><p>{{ 'CONTAINER_DETAILS.SULFUR_DIOXIDE' | translate }}</p><p class="info"><mat-icon>arrow_downward</mat-icon>{{container?.sulfurDioxideMin}}<span><mat-icon>arrow_upward</mat-icon>{{container?.sulfurDioxideMax}}</span></p></li>
             </ul>
         </div>
 

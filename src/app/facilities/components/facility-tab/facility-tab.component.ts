@@ -3,6 +3,7 @@ import {MatTab, MatTabGroup} from "@angular/material/tabs";
 import {Facility} from "../../model/facility-model/facility.model";
 import {FacilityItemsComponent} from "../facility-items/facility-items.component";
 import {FacilityServiceService} from "../../service/facility-service.service";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-facility-tab',
@@ -11,6 +12,7 @@ import {FacilityServiceService} from "../../service/facility-service.service";
     MatTabGroup,
     MatTab,
     FacilityItemsComponent,
+    TranslateModule
   ],
   templateUrl: './facility-tab.component.html',
   styleUrl: './facility-tab.component.css'

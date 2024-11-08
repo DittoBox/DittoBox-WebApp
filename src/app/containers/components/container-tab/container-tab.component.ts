@@ -3,6 +3,7 @@ import {MatTab, MatTabGroup} from "@angular/material/tabs";
 import {ContainerItemComponent} from "../container-item/container-item.component";
 import {Container} from "../../model/container-model/container.entity";
 import {ContainerServiceService} from "../../service/container-service.service";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-container-tab',
@@ -10,7 +11,8 @@ import {ContainerServiceService} from "../../service/container-service.service";
   imports: [
     MatTabGroup,
     MatTab,
-    ContainerItemComponent
+    ContainerItemComponent,
+    TranslateModule
   ],
   templateUrl: './container-tab.component.html',
   styleUrl: './container-tab.component.css',

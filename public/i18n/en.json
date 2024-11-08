@@ -105,5 +105,82 @@
         "PENDING_ALERTS": "Pending Alerts",
         "ADD_ALERTS": "Add alerts",
         "DELETE": "Delete"
+      },
+      "FACILITY_TAB": {
+        "FACILITIES": "Facilities"
+      },
+      "CONTAINER_DETAILS": {
+        "DESCRIPTION": "Description",
+        "TEMPERATURE": "Temperature",
+        "HUMIDITY": "Humidity",
+        "LAST_SYNC": "Last sync",
+        "MANUAL_EDIT": "Manual edit",
+        "TEMPLATE_CONFIGURATION": "Template configuration",
+        "DETECT_GASES": "Detect gases",
+        "OXYGEN": "Oxygen (O₂)",
+        "CARBON_DIOXIDE": "Carbon dioxide (CO₂)",
+        "ETHYLENE": "Ethylene (C₂H₄)",
+        "AMMONIA": "Ammonia (NH₃)",
+        "SULFUR_DIOXIDE": "Sulfur dioxide (SO₂)"
+      },
+      "CONTAINER_ITEM": {
+        "TEMPERATURE": "Temperature",
+        "HUMIDITY": "Humidity",
+        "LAST_SYNC": "Last sync"
+      },
+      "CONTAINER_TAB": {
+        "TITLE": "Containers",
+        "ALL_CONTAINERS": "All Containers",
+        "ACTIVE_CONTAINERS": "Active Containers"
+      },
+      "CONTAINER_EDIT": {
+        "TITLE": "Manual change",
+        "DESCRIPTION": "This change will be recorded in this container’s history.",
+        "MIN_TEMPERATURE": "Min temperature",
+        "MAX_TEMPERATURE": "Max temperature",
+        "MIN_HUMIDITY": "Min humidity",
+        "MAX_HUMIDITY": "Max humidity",
+        "CANCEL": "Cancel",
+        "SAVE": "Save"
+      },
+      "TEMPLATE_CONFIRM": {
+        "TITLE": "Confirmation",
+        "CANCEL": "Cancel",
+        "YES": "Yes"
+      },
+      "TEMPLATE_DETAILS": {
+        "SELECT_CONTAINERS": "Select Containers",
+        "APPLY_TEMPLATE": "Apply Template"
+      },
+      "TEMPLATE_ITEM": {
+        "NEW_TEMPLATE": "New Template",
+        "TEMPLATE_NAME": "Template Name",
+        "DESCRIPTION": "Description",
+        "SELECT_CATEGORY": "Select Category",
+        "FRUITS_VEGETABLES": "Fruits and vegetables",
+        "MEATS": "Meats",
+        "DAIRY": "Dairy",
+        "ANIMAL_DERIVED": "Animal derived",
+        "PROCESSED_FOODS": "Processed foods",
+        "PREPARED_FOODS": "Prepared foods",
+        "TEMPERATURE_RANGE": "Temperature Range",
+        "MIN": "Min",
+        "MAX": "Max",
+        "HUMIDITY_RANGE": "Humidity Range",
+        "GAS_DETECTION": "Gas Detection",
+        "SAVE": "Save",
+        "DISCARD": "Discard",
+        "TEMPLATES_LIBRARY": "Templates Library",
+        "CREATE_TEMPLATE": "Create template",
+        "SEARCH": "Search",
+        "TEMPERATURE": "Temperature",
+        "HUMIDITY": "Humidity",
+        "DETECT_GASES": "Detect gases",
+        "OXYGEN": "Oxygen (O₂)",
+        "CARBON_DIOXIDE": "Carbon Dioxide (CO₂)",
+        "ETHYLENE": "Ethylene (C₂H₄)",
+        "AMMONIA": "Ammonia (NH₃)",
+        "SULFUR_DIOXIDE": "Sulfur Dioxide (SO₂)"
       }
+      
   }

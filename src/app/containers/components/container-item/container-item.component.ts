@@ -5,6 +5,7 @@ import { ContainerServiceService } from "../../service/container-service.service
 import { ContainerDetailsComponent } from "../container-details/container-details.component";
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-container-item',
@@ -15,7 +16,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatCardHeader,
     NgForOf,
     MatIconModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    TranslateModule
   ],
   templateUrl: './container-item.component.html',
   styleUrls: ['./container-item.component.css']

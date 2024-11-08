@@ -7,6 +7,7 @@ import {
   MatDialogTitle
 } from "@angular/material/dialog";
 import {MatButton} from "@angular/material/button";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-template-confirm',
@@ -15,7 +16,8 @@ import {MatButton} from "@angular/material/button";
     MatDialogContent,
     MatDialogActions,
     MatButton,
-    MatDialogTitle
+    MatDialogTitle,
+    TranslateModule
   ],
   templateUrl: './template-confirm.component.html',
   styleUrl: './template-confirm.component.css'

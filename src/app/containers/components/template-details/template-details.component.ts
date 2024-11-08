@@ -8,6 +8,7 @@ import {Template} from "../../model/template-model/template.entity";
 import {MatListOption, MatSelectionList} from "@angular/material/list";
 import {FormsModule} from "@angular/forms";
 import {NgForOf} from "@angular/common";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-template-details',
@@ -23,6 +24,7 @@ import {NgForOf} from "@angular/common";
     FormsModule,
     MatListOption,
     NgForOf,
+    TranslateModule
   ],
   templateUrl: './template-details.component.html',
   styleUrl: './template-details.component.css'

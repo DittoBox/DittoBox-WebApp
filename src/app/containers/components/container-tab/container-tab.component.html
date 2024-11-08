@@ -1,10 +1,10 @@
 <div class="space">
-    <h1 id="title">Containers</h1>
+    <h1 id="title">{{ 'CONTAINER_TAB.TITLE' | translate }}</h1>
     <mat-tab-group class="tab">
-        <mat-tab label="All Containers">
+        <mat-tab label="{{ 'CONTAINER_TAB.ALL_CONTAINERS' | translate }}">
             <app-container-item [containerItems]="allContainers"></app-container-item>
         </mat-tab>
-        <mat-tab label="Active Containers">
+        <mat-tab label="{{ 'CONTAINER_TAB.ACTIVE_CONTAINERS' | translate }}">
             <app-container-item [containerItems]="activeContainers"></app-container-item>
         </mat-tab>
     </mat-tab-group>

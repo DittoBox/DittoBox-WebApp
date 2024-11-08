@@ -8,7 +8,7 @@
         </div>
         <mat-divider></mat-divider>
 
-        <h3>Select Containers</h3>
+        <h3>{{ 'TEMPLATE_DETAILS.SELECT_CONTAINERS' | translate }}</h3>
         <mat-selection-list [(ngModel)]="selectedContainers" class="selection">
             <mat-list-option *ngFor="let container of containerItems" [value]="container">
                 <div class="data-container">
@@ -20,7 +20,7 @@
 
         <div class="container-button">
             <button mat-flat-button (click)="applyTemplateToContainers()">
-                Apply Template
+                {{ 'TEMPLATE_DETAILS.APPLY_TEMPLATE' | translate }}
             </button>
         </div>
     </mat-sidenav>
