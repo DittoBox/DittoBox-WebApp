@@ -80,5 +80,12 @@
         "BANK_OWNER": "Bank account owner",
         "UPDATE_INFORMATION": "Update information",
         "CANCEL_SUBSCRIPTION": "Cancel subscription"
+      },
+      "WORKER_DETAILS": {
+        "WORKER_INFO": "Worker Info",
+        "CATEGORY": "Category",
+        "FACILITY": "Facility",
+        "LOCATION": "Location",
+        "DELETE": "Delete"
       }
   }

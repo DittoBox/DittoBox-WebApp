@@ -80,5 +80,12 @@
          "BANK_OWNER": "Titular de la cuenta bancaria",
          "UPDATE_INFORMATION": "Actualizar información",
          "CANCEL_SUBSCRIPTION": "Cancelar suscripción"
+       },
+       "WORKER_DETAILS": {
+         "WORKER_INFO": "Información del trabajador",
+         "CATEGORY": "Categoría",
+         "FACILITY": "Instalación",
+         "LOCATION": "Ubicación",
+         "DELETE": "Eliminar"
        }
   }

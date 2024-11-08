@@ -1,13 +1,13 @@
 .user-card {
   margin: 32px auto 0 auto;
   background-color: #f9f6fb;
-  padding: 32px 64px 12px 48px;
+  padding: 32px 32px 2px 20px;
 }
 
 .info-row {
   display: flex;
   justify-content: space-between;
-  padding: 18px 0px 18px 0px;
+  padding: 18px 0px 10px 0px;
 }
 
 .actions {
@@ -15,7 +15,7 @@
   justify-content: flex-end;
   gap: 16px;
   margin-top: 32px;
-  padding: 32px 64px 12px 48px;
+  padding: 32px 0px 32px 48px;
 }
 
 /* Media queries para hacer el diseño responsive */

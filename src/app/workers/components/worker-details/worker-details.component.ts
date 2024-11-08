@@ -11,12 +11,18 @@ import {MatDialog, MatDialogContainer, MatDialogContent} from "@angular/material
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {Worker} from "../../model/wroker-model/worker";
 import {WorkerServiceService} from "../../service/worker-service.service";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-worker-details',
   standalone: true,
   imports: [
     NgIf,
+    MatIcon,
+    MatSidenav,
+    MatSidenavContainer,
+    MatSidenavContent,
+    TranslateModule,
   ],
   templateUrl: './worker-details.component.html',
   styleUrl: './worker-details.component.css'

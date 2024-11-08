@@ -1,12 +1,25 @@
 h1 {
-    font-size: 32px;
+    font-size: 45px;
     font-style: normal;
     font-weight: 400;
     line-height: 40px; /* 125% */
-    padding: 32px 64px 0px 48px;
 }
 
 .account-container {
-    background-color: #f9f6fb; /* Color de fondo */
+    padding: 16px;
     margin: auto;
+    max-width: auto;
+}
+@media (max-width: 768px) {
+    .account-container {
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    hr {
+        margin: 16px 0;
+    }
 }
