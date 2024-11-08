@@ -90,5 +90,20 @@
        },
        "WORKER_ITEMS": {
          "TITLE": "Lista de Trabajadores"
+      },
+      "FACILITY_ITEMS": {
+        "CONTAINERS": "Containers",
+        "ALERTS": "Alerts",
+        "WORKERS": "Workers",
+        "MORE": "More"
+      },
+      "FACILITY_DETAILS": {
+        "CONTAINERS": "Contenedores",
+        "ADD_CONTAINERS": "Agregar contenedores",
+        "WORKERS": "Trabajadores",
+        "ADD_WORKERS": "Agregar trabajadores",
+        "PENDING_ALERTS": "Alertas pendientes",
+        "ADD_ALERTS": "Agregar alertas",
+        "DELETE": "Eliminar"
       }
   }

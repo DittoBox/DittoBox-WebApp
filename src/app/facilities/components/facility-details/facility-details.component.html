@@ -7,22 +7,22 @@
         <span>{{ facility.type }}</span>
       </div>
       <div class="container">
-        <p><mat-icon class="material-icons-outlined">widgets</mat-icon> Containers</p>
+        <p><mat-icon class="material-icons-outlined">widgets</mat-icon> {{ 'FACILITY_DETAILS.CONTAINERS' | translate }}</p>
         <p>{{ facility.containers }}</p>
       </div>
-      <div><button mat-button>Add containers</button></div>
+      <div><button mat-button>{{ 'FACILITY_DETAILS.ADD_CONTAINERS' | translate }}</button></div>
       <div class="container">
-        <p><mat-icon class="material-icons-outlined">person</mat-icon> Workers</p>
+        <p><mat-icon class="material-icons-outlined">person</mat-icon> {{ 'FACILITY_DETAILS.WORKERS' | translate }}</p>
         <p>{{ facility.workers }}</p>
       </div>
-      <div><button mat-button>Add workers</button></div>
+      <div><button mat-button>{{ 'FACILITY_DETAILS.ADD_WORKERS' | translate }}</button></div>
       <div class="container">
-        <p><mat-icon class="material-icons-outlined">notifications</mat-icon> Pending Alerts</p>
+        <p><mat-icon class="material-icons-outlined">notifications</mat-icon> {{ 'FACILITY_DETAILS.PENDING_ALERTS' | translate }}</p>
         <p>{{ facility.alerts }}</p>
       </div>
-      <div><button mat-button>Add alerts</button></div>
+      <div><button mat-button>{{ 'FACILITY_DETAILS.ADD_ALERTS' | translate }}</button></div>
       <div class="container-button">
-        <button mat-flat-button>Delete</button>
+        <button mat-flat-button>{{ 'FACILITY_DETAILS.DELETE' | translate }}</button>
       </div>
     </div>
   </mat-sidenav>

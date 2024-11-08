@@ -11,25 +11,19 @@ import {MatDialog} from "@angular/material/dialog";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {FacilityServiceService} from "../../service/facility-service.service";
 import {Facility} from "../../model/facility-model/facility.model";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-facility-details',
   standalone: true,
     imports: [
-      MatCardContent,
-      MatCard,
-      MatCardHeader,
-      NgForOf,
       MatSidenav,
-      MatButton,
       MatSidenavContainer,
       NgIf,
       MatSidenavContent,
-      MatButtonToggle,
-      RouterLink,
       MatIcon,
-      MatDivider,
-      MatIconButton,
+      TranslateModule,
+      MatButton,
     ],
   templateUrl: './facility-details.component.html',
   styleUrl: './facility-details.component.css'
