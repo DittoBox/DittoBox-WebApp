@@ -87,5 +87,8 @@
          "FACILITY": "Instalación",
          "LOCATION": "Ubicación",
          "DELETE": "Eliminar"
-       }
+       },
+       "WORKER_ITEMS": {
+         "TITLE": "Lista de Trabajadores"
+      }
   }

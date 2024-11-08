@@ -87,5 +87,8 @@
         "FACILITY": "Facility",
         "LOCATION": "Location",
         "DELETE": "Delete"
+      },
+      "WORKER_ITEMS": {
+        "TITLE": "Worker List"
       }
   }
