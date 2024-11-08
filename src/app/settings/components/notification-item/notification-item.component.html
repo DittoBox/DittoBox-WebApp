@@ -1,6 +1,5 @@
-
 <div class="notification-filter">
-  <app-notification-timefilter (dateChange)="onDateChange($event)" ></app-notification-timefilter>
+  <app-notification-timefilter (dateChange)="onDateChange($event)"></app-notification-timefilter>
   <app-notification-filter (filter)="filterNotifications($event)"></app-notification-filter>
 </div>
 
@@ -35,7 +34,7 @@
         color="warn"
         (click)="dismiss(notification, $event)"
       >
-        Dismiss
+        {{ 'NOTIFICATION_ITEM.DISMISS' | translate }}
       </button>
     </mat-card-actions>
   </mat-card>

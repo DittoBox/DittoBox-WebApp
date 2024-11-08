@@ -1,9 +1,7 @@
-<button mat-button [matMenuTriggerFor]="afterMenu">Filters</button>
+<button mat-button [matMenuTriggerFor]="afterMenu">{{ 'NOTIFICATION_FILTER.FILTERS' | translate }}</button>
 <mat-menu #afterMenu="matMenu" xPosition="after">
-  <button mat-menu-item (click)="filter.emit('alert')">Alertas</button>
-  <button mat-menu-item (click)="filter.emit('warning')">Advertencias</button>
-  <button mat-menu-item (click)="filter.emit('update')">Actualizaciones</button>
-  <button mat-menu-item (click)="filter.emit('all')">Todas</button>
+  <button mat-menu-item (click)="filter.emit('alert')">{{ 'NOTIFICATION_FILTER.ALERTS' | translate }}</button>
+  <button mat-menu-item (click)="filter.emit('warning')">{{ 'NOTIFICATION_FILTER.WARNINGS' | translate }}</button>
+  <button mat-menu-item (click)="filter.emit('update')">{{ 'NOTIFICATION_FILTER.UPDATES' | translate }}</button>
+  <button mat-menu-item (click)="filter.emit('all')">{{ 'NOTIFICATION_FILTER.ALL' | translate }}</button>
 </mat-menu>
-
-

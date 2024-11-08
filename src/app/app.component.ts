@@ -5,11 +5,12 @@ import { ToolbarContentComponent } from './shared/toolbar-content/toolbar-conten
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { SidenavContentComponent } from "./shared/sidenav-content/sidenav-content.component";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
 	selector: 'app-root',
 	standalone: true,
-	imports: [RouterOutlet, MatToolbarModule, ToolbarContentComponent, MatDialogModule, MatSidenavModule, SidenavContentComponent],
+	imports: [RouterOutlet, MatToolbarModule, ToolbarContentComponent, MatDialogModule, MatSidenavModule, SidenavContentComponent, TranslateModule],
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.css'
 })

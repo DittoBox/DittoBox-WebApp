@@ -1,0 +1,65 @@
+{
+    "MENU": "Menú",
+    "DASHBOARD": "Tablero",
+    "FACILITIES": "Instalaciones",
+    "CONTAINERS": "Contenedores",
+    "WORKERS": "Trabajadores",
+    "TEMPLATES": "Plantillas",
+    "SETTINGS": "Configuraciones",
+    "ACCOUNT": "Cuenta",
+    "SUBSCRIPTION": "Suscripción",
+    "NOTIFICATIONS": "Notificaciones",
+    "LOGOUT": "Cerrar sesión",
+    "SELECT_LANGUAGE": "Seleccionar idioma",
+    "LANGUAGES": "idiomas",
+    "SUBSCRIPTION_DIALOG": {
+      "TITLE": "¿Estás seguro de que quieres continuar?",
+      "MESSAGE": "Estás a punto de degradar tu suscripción al plan {{plan}}. Podrías perder el acceso a algunas de las funciones.",
+      "FACILITIES": "Instalaciones",
+      "CONTAINERS": "Contenedores",
+      "USERS": "Usuarios",
+      "USED_OUT_OF": "Usado {{currentUsage}} de {{currentPlanLimit}}",
+      "NONE_AFFECTED": "Ninguno afectado",
+      "LOSE_ACCESS": "Perderás el acceso a {{count}} {{item}}",
+      "CANCEL": "Cancelar",
+      "DOWNGRADE": "Degradar"
+    },
+    "ACCOUNT_INFORMATION": {
+      "TITLE": "Información de la cuenta",
+      "BUSINESS_NAME": "Nombre del negocio",
+      "SUBSCRIPTION_TIER": "Nivel de suscripción",
+      "IDENTIFICATION_NUMBER": "Número de identificación",
+      "MANAGE_SUBSCRIPTION": "Gestionar suscripción"
+    },
+    "USER_INFORMATION_EDIT_ITEM": {
+        "TITLE": "Editar datos del usuario",
+        "USERNAME": "Nombre de usuario",
+        "NAME": "Nombre",
+        "ID_NUMBER": "Número de identificación",
+        "BANK_OWNER": "Titular de la cuenta bancaria",
+        "CANCEL": "Cancelar",
+        "SAVE": "Guardar"
+    },
+    "USER_INFORMATION_ITEM": {
+        "TITLE": "Información del usuario",
+        "USERNAME": "Nombre de usuario",
+        "NAME": "Nombre",
+        "ID_NUMBER": "Número de identificación",
+        "BANK_OWNER": "Titular de la cuenta bancaria",
+        "EDIT_DATA": "Editar datos",
+        "CHANGE_PASSWORD": "Cambiar contraseña"
+     },
+     "NOTIFICATION_TIMEFILTER": {
+        "CHOOSE_DATE": "Elige una fecha"
+     },
+     "NOTIFICATION_ITEM": {
+        "DISMISS": "Descartar"
+     },
+     "NOTIFICATION_FILTER": {
+        "FILTERS": "Filtros",
+        "ALERTS": "Alertas",
+        "WARNINGS": "Advertencias",
+        "UPDATES": "Actualizaciones",
+        "ALL": "Todas"
+      }
+  }

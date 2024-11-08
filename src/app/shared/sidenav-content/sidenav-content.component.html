@@ -1,68 +1,73 @@
 <div class="sidenav-content">
-    Menu
     <mat-nav-list>
+        <mat-divider></mat-divider>
         <a mat-list-item>
             <div class="list-item-content">
                 <mat-icon>developer_board</mat-icon>
-                Dashboard
+                {{ 'DASHBOARD' | translate }}
                 <span class="counter">24</span>
             </div>
         </a>
         <a mat-list-item [routerLink]="'/facilities'" routerLinkActive="active-link" (click)="closeSidenav()">
             <div class="list-item-content">
                 <mat-icon>corporate_fare</mat-icon>
-                Facilities
+                {{ 'FACILITIES' | translate }}
             </div>
         </a>
         <a mat-list-item [routerLink]="'/containers'" routerLinkActive="active-link" (click)="closeSidenav()">
             <div class="list-item-content">
                 <mat-icon>widgets</mat-icon>
-                Containers
+                {{ 'CONTAINERS' | translate }}
             </div>
         </a>
         <a mat-list-item [routerLink]="'/workers'" routerLinkActive="active-link" (click)="closeSidenav()">
             <div class="list-item-content">
                 <mat-icon>person</mat-icon>
-                Workers
+                {{ 'WORKERS' | translate }}
             </div>
         </a>
         <mat-divider></mat-divider>
         <a mat-list-item [routerLink]="'/templates'" routerLinkActive="active-link" (click)="closeSidenav()">
             <div class="list-item-content">
                 <mat-icon>text_snippet</mat-icon>
-                Templates
+                {{ 'TEMPLATES' | translate }}
             </div>
         </a>
     </mat-nav-list>
 
-    Settings
+    {{ 'SETTINGS' | translate }}
     <mat-nav-list>
         <a mat-list-item [routerLink]="'/account'" routerLinkActive="active-link" (click)="closeSidenav()">
             <div class="list-item-content">
                 <mat-icon>manage_accounts</mat-icon>
-                Account
+                {{ 'ACCOUNT' | translate }}
             </div>
         </a>
         <a mat-list-item [routerLink]="'/subscription'" routerLinkActive="active-link" (click)="closeSidenav()">
             <div class="list-item-content">
                 <mat-icon>credit_card</mat-icon>
-                Subscription
+                {{ 'SUBSCRIPTION' | translate }}
             </div>
         </a>
         <a mat-list-item [routerLink]="'/notifications'" routerLinkActive="active-link" (click)="closeSidenav()">
             <div class="list-item-content">
                 <mat-icon>notifications</mat-icon>
-                Notifications
+                {{ 'NOTIFICATIONS' | translate }}
             </div>
         </a>
+        <a mat-list-item (click)="openLanguageDialog()">
+            <div class="list-item-content">
+                <mat-icon>language</mat-icon>
+                {{ 'LANGUAGES' | translate }}
+            </div>
+        </a>
+        <mat-divider></mat-divider>
     </mat-nav-list>
-
-    <mat-divider></mat-divider>
     <mat-nav-list>
         <a mat-list-item>
             <div class="list-item-content">
                 <mat-icon>logout</mat-icon>
-                Logout
+                {{ 'LOGOUT' | translate }}
             </div>
         </a>
     </mat-nav-list>
