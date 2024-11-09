@@ -1,22 +1,23 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
-import { Template } from "../../containers/model/template-model/template.entity";
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Facility } from '../model/facility-model/facility.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FacilityServiceService {
+  Baseurl: string = 'https://app-prod-01-dittobox-argeesg8era0c7ex.eastus-01.azurewebsites.net/api/v1/group';
 
-  Baseurl: string = 'http://localhost:3000';
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  getFacilities(): Observable<any> {
-    return this.http.get<any>(`${this.Baseurl}/facilities`);
+  // Método para obtener un solo facility por ID
+  getFacilityById(facilityID: string): Observable<Facility> {
+    return this.http.get<Facility>(`${this.Baseurl}/${facilityID}`);
   }
 
-  getFacilitybyId(facilityID: string): Observable<any> {
-    return this.http.get<any>(`${this.Baseurl}/facilities/${facilityID}`);
+  // Método para obtener todos los facilities
+  getFacilities(): Observable<Facility[]> {
+    return this.http.get<Facility[]>(`${this.Baseurl}`);
   }
 }

@@ -1,11 +1,12 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 <div class="card-container">
-  <mat-card *ngFor="let facility of facilityItems"  class="container-card">
+  <mat-card *ngFor="let facility of facilityItems" class="container-card">
     <mat-card-header>
       <h3>{{ facility.name }}</h3>
     </mat-card-header>
     <mat-card-content>
-      <p>{{ facility.location }}</p>
+      <!-- Mostrando información detallada de la ubicación -->
+      <p>Location: {{ facility.location.city }}, {{ facility.location.state }}, {{ facility.location.country }}</p>
       <div class="content">
         <div class="tag">
           <mat-icon class="material-icons-outlined" aria-hidden="false" aria-label="Containers icon">widgets</mat-icon>
@@ -16,7 +17,7 @@
       <div class="content">
         <div class="tag">
           <mat-icon class="material-icons-outlined" aria-hidden="false" aria-label="Alerts icon">notifications</mat-icon>
-           <span>Alerts</span>
+          <span>Alerts</span>
         </div>
         <span>{{ facility.alerts }}</span>
       </div>
