@@ -1,0 +1,85 @@
+/* Contenedor principal para centrar el formulario */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9f9; /* Fondo blanco */
+  margin: 0;
+}
+
+/* Tarjeta del formulario */
+.login-card {
+  width: 400px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: white;
+}
+
+/* Título de la tarjeta */
+h2 {
+  margin: 0 0 20px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333333;
+}
+
+/* Campos de entrada */
+.input-field {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-field label {
+  display: block;
+  font-size: 14px;
+  color: #555555;
+  margin-bottom: 5px;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Botón de login */
+.login-button {
+  background-color: #2f5d32; /* Color verde similar al de la imagen */
+  color: white;
+  width: 100%;
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 24px; /* Botón redondeado */
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login-button:hover {
+  background-color: #244c28; /* Verde más oscuro al hacer hover */
+}
+
+/* Contenedor de enlaces */
+.link-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.link {
+  color: #2f5d32; /* Color verde del texto */
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
