@@ -1,3 +1,9 @@
+<ng-container *ngIf="!showLayout">
+  <router-outlet></router-outlet>
+</ng-container>
+
+
+<ng-container *ngIf="showLayout">
 <app-toolbar-content class="navbar-height" (drawerToggle)="drawer.toggle()"></app-toolbar-content>
 <mat-drawer-container autosize class="example-container full-height">
     <mat-drawer #drawer class="example-sidenav full-height" mode="side">
@@ -7,3 +13,5 @@
         <router-outlet></router-outlet>
     </div>
 </mat-drawer-container>
+</ng-container>
+
