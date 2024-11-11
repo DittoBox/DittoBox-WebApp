@@ -1,0 +1,60 @@
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+.input-field {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #555;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.register-button {
+  width: 100%;
+  padding: 0.5rem 0;
+  border-radius: 50px;
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.register-button:hover {
+  background-color: #45a049;
+}
+
+.login-link {
+  display: block;
+  margin-top: 1rem;
+  color: #4caf50;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
