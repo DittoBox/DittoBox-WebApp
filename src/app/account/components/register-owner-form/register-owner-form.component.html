@@ -1,0 +1,24 @@
+<form (submit)="registerOwner()">
+  <div class="input-field">
+    <label for="firstname">First Name</label>
+    <input id="firstname"  name="firstname" [(ngModel)]="user.firstName" type="text" required />
+  </div>
+  <div class="input-field">
+    <label for="lastname">Last Name</label>
+    <input id="lastname"  name="lastname" [(ngModel)]="user.lastName" type="text" required />
+  </div>
+  <div class="input-field">
+    <label for="username">Username</label>
+    <input id="username"  name="username" [(ngModel)]="user.username" type="text" required />
+  </div>
+  <div class="input-field">
+    <label for="email">Email</label>
+    <input id="email" name="email" [(ngModel)]="user.email" type="email" required />
+  </div>
+  <div class="input-field">
+    <label for="password">Password</label>
+    <input id="password"  name="password" [(ngModel)]="user.password" type="password" required />
+  </div>
+  <button class="register-button">Continue</button>
+</form>
+
