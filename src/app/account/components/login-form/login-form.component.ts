@@ -38,8 +38,7 @@ export class LoginFormComponent {
     this.accountService.login(this.email, this.password).subscribe(
       response => {
         console.log('Inicio de sesión exitoso:', response);
-        // Almacena el token o realiza alguna acción con el response
-        this.router.navigate(['/containers']); // Redirige a la página deseada
+        this.router.navigate(['/containers']);
       },
       error => {
         console.error('Error en el inicio de sesión:', error);

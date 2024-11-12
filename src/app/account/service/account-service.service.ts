@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable, switchMap} from "rxjs";
+import {Observable, switchMap, tap, map} from "rxjs";
 import {User} from "../model/user/user.entity";
 import {Account} from "../../settings/model/account/account.entity";
 
@@ -17,10 +17,24 @@ export class AccountServiceService {
     return this.http.post(`${this.BaseUrl}/api/v1/user`, user);
   }
 
-  // Método para hacer login y obtener el token
   login(email: string, password: string): Observable<any> {
     const loginData = { email, password };
-    return this.http.post(`${this.BaseUrl}/api/v1/user/login`, loginData);
+    return this.http.post<any>(`${this.BaseUrl}/api/v1/user/login`, loginData).pipe(
+      tap(response => {
+        const token = response.token;
+        if (token) {
+          localStorage.setItem('token', token);
+          localStorage.setItem('accountId', response.accountId);
+          localStorage.setItem('groupId', response.groupId);
+          localStorage.setItem('privileges', JSON.stringify(response.privileges));
+          localStorage.setItem('profileId', response.profileId);
+          localStorage.setItem('userId', response.userId);
+          localStorage.setItem('username', response.username);
+        } else {
+          throw new Error('Unsuccessful login');
+        }
+      })
+    );
   }
 
   // Método para crear un Account
