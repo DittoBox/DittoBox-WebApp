@@ -38,7 +38,7 @@ export class FacilityDetailsComponent {
   facility: Facility | null = null;
   opened: boolean = false;
 
-  constructor(private facilityService: FacilityServiceService, public dialog: MatDialog, private snackBar: MatSnackBar) {}
+  constructor(private facilityService: FacilityServiceService) {}
 
   loadFacility(facilityId: number) {
     this.facilityService.getFacilityById(facilityId.toString()).subscribe((data: Facility) => {
@@ -65,7 +65,6 @@ export class FacilityDetailsComponent {
         data.type,
         data.idTemplates
       );
-
       this.opened = true;
     }, (error: any) => {
       console.error('Error al obtener el facility:', error);
