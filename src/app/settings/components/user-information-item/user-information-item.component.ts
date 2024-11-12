@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {MatButton} from "@angular/material/button";
 import {MatCard, MatCardActions, MatCardContent, MatCardTitle} from "@angular/material/card";
 import {MatDialog} from "@angular/material/dialog";
 import {UserInformationEditItemComponent} from "../user-information-edit-item/user-information-edit-item.component";
+import {Profile} from "../../model/profile/profile";
 
 @Component({
   selector: 'app-user-information-item',
@@ -18,13 +19,15 @@ import {UserInformationEditItemComponent} from "../user-information-edit-item/us
   styleUrl: './user-information-item.component.css'
 })
 export class UserInformationItemComponent {
+  @Input() profile !: Profile;
+
   constructor(private dialog: MatDialog) {}
 
   openEditDialog() {
     const dialogRef = this.dialog.open(UserInformationEditItemComponent, {
       data: {
-        username: 'A warm place',
-        name: 'Advance',
+        username: this.profile.username,
+        name: this.profile.name,
         idNumber: '20124578963',
         bankOwner: 'Sofía Pérez'
       },
