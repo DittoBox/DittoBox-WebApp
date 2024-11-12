@@ -94,3 +94,12 @@ ul li {
 .selection {
     padding-top: 0;
 }
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 500;
+}

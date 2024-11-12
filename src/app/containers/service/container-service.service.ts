@@ -12,6 +12,8 @@ export class ContainerServiceService {
 
   Baseurl: string = 'http://localhost:3000';
 
+  DevBaseurl: string = 'https://app-dev-01-dittobox-a8bpd5bkh4dnh3g7.eastus-01.azurewebsites.net/api/v1';
+
   // to manage the templates selection
   private templateSource = new BehaviorSubject<any>(null);
   templateSelected = this.templateSource.asObservable();
@@ -28,21 +30,28 @@ export class ContainerServiceService {
 
   getContainers(): Observable<any> {
     this.setLoading(true);
-    return this.http.get<any>(`${this.Baseurl}/containers`).pipe(
+    return this.http.get<any>(`${this.DevBaseurl}/container`).pipe(
       finalize(() => this.setLoading(false))
+    );
+  }
+
+  getContainersByGroupId(groupId: number): Observable<any> {
+    this.setLoading(true);
+    return this.http.get<any>(`${this.DevBaseurl}/group/${groupId}/containers`).pipe(
+        finalize(() => this.setLoading(false))
     );
   }
 
   getTemplates(): Observable<any> {
     this.setLoading(true);
-    return this.http.get<any>(`${this.Baseurl}/templates`).pipe(
+    return this.http.get<any>(`${this.DevBaseurl}/template`).pipe(
       finalize(() => this.setLoading(false))
     );
   }
 
   getContainerbyId(containerID: string): Observable<any> {
     this.setLoading(true);
-    return this.http.get<any>(`${this.Baseurl}/containers/${containerID}`).pipe(
+    return this.http.get<any>(`${this.DevBaseurl}/container/${containerID}`).pipe(
       finalize(() => this.setLoading(false))
     );
   }
@@ -54,9 +63,9 @@ export class ContainerServiceService {
     );
   }
 
-  updateContainer(container: Container) {
+  updateContainerParameters(containerId: any, data: any) {
     this.setLoading(true);
-    return this.http.put<Container>(`${this.Baseurl}/containers/${container.id}`, container).pipe(
+    return this.http.put<Container>(`${this.DevBaseurl}/container/${containerId}/parameters`, data).pipe(
       finalize(() => this.setLoading(false))
     );
   }
@@ -68,6 +77,13 @@ export class ContainerServiceService {
   postTemplate(template: Template) {
     this.setLoading(true);
     return this.http.post<Template>(`${this.Baseurl}/templates`, template).pipe(
+      finalize(() => this.setLoading(false))
+    );
+  }
+
+  assignTemplateToContainer(containerId: number, templateId: number) {
+    this.setLoading(true);
+    return this.http.post<any>(`${this.DevBaseurl}/container/${containerId}/assign/${templateId}`, {}).pipe(
       finalize(() => this.setLoading(false))
     );
   }

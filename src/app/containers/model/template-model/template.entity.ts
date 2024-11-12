@@ -1,62 +1,59 @@
 export class Template {
-  id: string;
-  nameTemplate:string;
-  category: string;
-  descriptionTemplate:string;
-  maxTemp: string;
-  minTemp: string;
-  maxHumidity: string;
-  minHumidity: string;
-  oxygenMin: number;
-  oxygenMax: number;
-  dioxideMin: number;
-  dioxideMax: number;
-  ethyleneMin: number;
-  ethyleneMax: number;
-  ammoniaMin: number;
-  ammoniaMax: number;
-  sulfurDioxideMin: number;
-  sulfurDioxideMax: number;
+  id: number;
+  name:string;
+  category: number;
+  maxTemperatureThreshold: number;
+  minTemperatureThreshold: number;
+  maxHumidityThreshold: number;
+  minHumidityThreshold: number;
+  minOxygenThreshold: number;
+  maxOxygenThreshold: number;
+  minCarbonDioxideThreshold: number;
+  maxCarbonDioxideThreshold: number;
+  minEthyleneThreshold: number;
+  maxEthyleneThreshold: number;
+  minAmmoniaThreshold: number;
+  maxAmmoniaThreshold: number;
+  minSulfurDioxideThreshold: number;
+  maxSulfurDioxideThreshold: number;
 
 
   constructor(
-      id: string,
-      nameTemplate:string,
-      category: string,
-      descriptionTemplate:string,
-      maxTemp: string,
-      minTemp: string,
-      maxHumidity: string,
-      minHumidity: string,
-      oxygenMin: number,
-      oxygenMax: number,
-      dioxideMin: number,
-      dioxideMax: number,
-      ethyleneMin: number,
-      ethyleneMax: number,
-      ammoniaMin: number,
-      ammoniaMax: number,
-      sulfurDioxideMin: number,
-      sulfurDioxideMax: number
+      id: number,
+      name:string,
+      category: number,
+      maxTemperatureThreshold: number,
+      minTemperatureThreshold: number,
+      maxHumidityThreshold: number,
+      minHumidityThreshold: number,
+      minOxygenThreshold: number,
+      maxOxygenThreshold: number,
+      minCarbonDioxideThreshold: number,
+      maxCarbonDioxideThreshold: number,
+      minEthyleneThreshold: number,
+      maxEthyleneThreshold: number,
+      minAmmoniaThreshold: number,
+      maxAmmoniaThreshold: number,
+      minSulfurDioxideThreshold: number,
+      maxSulfurDioxideThreshold: number
   ) {
     this.id = id;
-    this.nameTemplate= nameTemplate;
+    this.name= name;
     this.category = category;
-    this.descriptionTemplate= descriptionTemplate;
-    this.maxTemp = maxTemp;
-    this.minTemp = minTemp;
-    this.maxHumidity = maxHumidity;
-    this.minHumidity = minHumidity;
-    this.oxygenMin = oxygenMin;
-    this.oxygenMax = oxygenMax;
-    this.dioxideMin = dioxideMin;
-    this.dioxideMax = dioxideMax;
-    this.ethyleneMin = ethyleneMin;
-    this.ethyleneMax = ethyleneMax;
-    this.ammoniaMin = ammoniaMin;
-    this.ammoniaMax = ammoniaMax;
-    this.sulfurDioxideMin = sulfurDioxideMin;
-    this.sulfurDioxideMax = sulfurDioxideMax;
+    this.maxTemperatureThreshold = maxTemperatureThreshold;
+    this.minTemperatureThreshold = minTemperatureThreshold;
+    this.maxHumidityThreshold = maxHumidityThreshold;
+    this.minHumidityThreshold = minHumidityThreshold;
+    this.minOxygenThreshold = minOxygenThreshold;
+    this.maxOxygenThreshold = maxOxygenThreshold;
+    this.minCarbonDioxideThreshold = minCarbonDioxideThreshold;
+    this.maxCarbonDioxideThreshold = maxCarbonDioxideThreshold;
+    this.minEthyleneThreshold = minEthyleneThreshold;
+    this.maxEthyleneThreshold = maxEthyleneThreshold;
+    this.minAmmoniaThreshold = minAmmoniaThreshold;
+    this.maxAmmoniaThreshold = maxAmmoniaThreshold;
+    this.minSulfurDioxideThreshold = minSulfurDioxideThreshold;
+    this.maxSulfurDioxideThreshold = maxSulfurDioxideThreshold;
   }
 
 }

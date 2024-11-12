@@ -61,7 +61,7 @@ export class ContianerEditComponent implements OnInit{
     ];
 
     this.gases.forEach(gas => {
-      gas.enabled = gas.max !== 0;
+      gas.enabled = gas.max !== 0 && gas.max !== null;
     });
   }
 
@@ -80,7 +80,24 @@ export class ContianerEditComponent implements OnInit{
       this.data[`${gas.name.toLowerCase()}Max`] = gas.max;
     });
 
-    this.containerService.updateContainer(this.data).subscribe(
+    const parameters = {
+      minTemp: this.data.minTemp,
+      maxTemp: this.data.maxTemp,
+      minHumidity: this.data.minHumidity,
+      maxHumidity: this.data.maxHumidity,
+      oxygenMin: this.data.oxygenMin,
+      oxygenMax: this.data.oxygenMax,
+      dioxideMin: this.data.dioxideMin,
+      dioxideMax: this.data.dioxideMax,
+      ethyleneMin: this.data.ethyleneMin,
+      ethyleneMax: this.data.ethyleneMax,
+      ammoniaMin: this.data.ammoniaMin,
+      ammoniaMax: this.data.ammoniaMax,
+      sulfurDioxideMin: this.data.sulfurDioxideMin,
+      sulfurDioxideMax: this.data.sulfurDioxideMax
+    };
+
+    this.containerService.updateContainerParameters(this.data.id, parameters).subscribe(
       (response) => {
         console.log('Template updated successfully', response);
         this.dialogRef.close(response);

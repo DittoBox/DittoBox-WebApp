@@ -20,6 +20,12 @@ export class ContainerTabComponent implements  OnInit{
   allContainers: Container[] = [];
   activeContainers: Container[] = [];
 
+
+  // using idGroup = 1 as an example
+  // this must be replaced when the iam feature is implemented
+    idGroup = 1;
+
+
   constructor(private containerService: ContainerServiceService) {}
 
   ngOnInit() {
@@ -27,9 +33,9 @@ export class ContainerTabComponent implements  OnInit{
   }
 
   loadContainers() {
-    this.containerService.getContainers().subscribe((data: Container[]) => {
+    this.containerService.getContainersByGroupId(this.idGroup).subscribe((data: Container[]) => {
       this.allContainers = data;
-      this.activeContainers = data.filter(container => container.status === 'Active');
+      this.activeContainers = data.filter(container => container.lastKnownContainerStatus === 'Running');
     });
   }
 }
