@@ -20,10 +20,8 @@ export class ContainerTabComponent implements  OnInit{
   allContainers: Container[] = [];
   activeContainers: Container[] = [];
 
-
-  // using idGroup = 1 as an example
-  // this must be replaced when the iam feature is implemented
-    idGroup = 1;
+    idGroup = Number(localStorage.getItem('groupId'));
+    privileges: string[] = JSON.parse(localStorage.getItem('privileges') || '[]')
 
 
   constructor(private containerService: ContainerServiceService) {}
@@ -33,9 +31,16 @@ export class ContainerTabComponent implements  OnInit{
   }
 
   loadContainers() {
-    this.containerService.getContainersByGroupId(this.idGroup).subscribe((data: Container[]) => {
-      this.allContainers = data;
-      this.activeContainers = data.filter(container => container.lastKnownContainerStatus === 'Running');
-    });
+    if (this.privileges.includes('AccountManagement')) {
+      this.containerService.getContainersByAccountId(Number(localStorage.getItem('accountId'))).subscribe((data: Container[]) => {
+        this.allContainers = data;
+        this.activeContainers = data.filter(container => container.lastKnownContainerStatus === 'Running');
+      });
+    } else {
+        this.containerService.getContainersByGroupId(this.idGroup).subscribe((data: Container[]) => {
+          this.allContainers = data;
+          this.activeContainers = data.filter(container => container.lastKnownContainerStatus === 'Running');
+        });
+    }
   }
 }

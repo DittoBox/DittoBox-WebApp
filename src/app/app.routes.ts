@@ -13,6 +13,8 @@ import {RegisterComponent} from "./account/page/register/register.component";
 import {
   RegisterOwnerCompanyFormComponent
 } from "./account/components/register-owner-company-form/register-owner-company-form.component";
+import {TokenGuardService} from "./account/service/token-guard.service";
+import {PrivilegeGuardService} from "./account/service/privilege-guard.service";
 
 export const routes: Routes = [
   {
@@ -30,30 +32,43 @@ export const routes: Routes = [
   {
     path: 'containers',
     component: ContainerComponent,
+    canActivate: [TokenGuardService, PrivilegeGuardService],
+    data: { requiredPrivilege: 'WorkerManagement' }
   },
   {
     path: 'templates',
     component: TemplateComponent,
+    canActivate: [TokenGuardService, PrivilegeGuardService],
+    data: { requiredPrivilege: 'WorkerManagement' }
   },
   {
     path: 'facilities',
     component: FacilityComponent,
+    canActivate: [TokenGuardService, PrivilegeGuardService],
+    data: { requiredPrivilege: 'AccountManagement' }
   },
   {
     path: 'workers',
     component: WorkerComponent,
+    canActivate: [TokenGuardService, PrivilegeGuardService],
+    data: { requiredPrivilege: 'GroupManagement' }
   },
   {
     path: 'notifications',
     component: NotificationsComponent,
+    canActivate: [TokenGuardService, PrivilegeGuardService],
+    data: { requiredPrivilege: 'WorkerManagement' }
   },
   {
     path: 'account',
     component: AccountComponent,
+    canActivate: [TokenGuardService]
   },
   {
     path: 'subscription',
     component: SubscriptionComponent,
+    canActivate: [TokenGuardService, PrivilegeGuardService],
+    data: { requiredPrivilege: 'AccountManagement' }
   },
 
   { path: '',

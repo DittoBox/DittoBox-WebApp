@@ -36,6 +36,7 @@ export class TemplateDetailsComponent implements OnInit{
   opened: boolean = false;
   containerItems: any[] = [];
     selectedContainers: any[] = [];
+    privileges: string[] = JSON.parse(localStorage.getItem('privileges') || '[]')
 
   constructor(private containerService: ContainerServiceService, public dialog: MatDialog) { }
 
@@ -43,9 +44,16 @@ export class TemplateDetailsComponent implements OnInit{
     this.containerService.templateSelected.subscribe(data => {
       this.template = data;
     });
-    this.containerService.getContainers().subscribe((data: any[]) => {
-      this.containerItems = data;
-    });
+    if (this.privileges.includes('AccountManagement')) {
+      this.containerService.getContainersByAccountId(Number(localStorage.getItem("accountId"))).subscribe((data: any[]) => {
+        this.containerItems = data;
+      });
+    }
+    else {
+        this.containerService.getContainersByGroupId(Number(localStorage.getItem("groupId"))).subscribe((data: any[]) => {
+            this.containerItems = data;
+        });
+    }
   }
 
   openSidenav() {
