@@ -13,8 +13,11 @@ export class FacilityServiceService {
 
   // Método para obtener un solo facility por ID
   getFacilityById(groupId: string): Observable<Facility> {
-    return this.http.get<Facility>(`${this.Baseurl}/${groupId}`);
+    return this.http.get<Facility>(`${this.Baseurl}/${groupId}`, {
+      headers: { 'Accept': 'application/json' }
+    });
   }
+
 
   // Método para obtener todos los facilities
   getFacilities(): Observable<Facility[]> {
