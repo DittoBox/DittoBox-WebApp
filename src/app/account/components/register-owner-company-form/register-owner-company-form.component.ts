@@ -36,7 +36,7 @@ export class RegisterOwnerCompanyFormComponent implements OnInit{
       this.accountService.createAccount(this.account, this.token).subscribe(
         response => {
           console.log('Account creado con éxito:', response);
-          this.router.navigate(['/containers']);
+          this.router.navigate(['/login']);
         },
         error => {
           console.error('Error al crear el Account:', error);

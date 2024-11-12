@@ -1,4 +1,12 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewEncapsulation} from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewEncapsulation
+} from '@angular/core';
 import {MatDrawer} from '@angular/material/sidenav';
 import {MatListItem, MatNavList} from "@angular/material/list";
 import {MatIconModule} from '@angular/material/icon';
@@ -14,9 +22,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
   templateUrl: './sidenav-content.component.html',
   styleUrl: './sidenav-content.component.css'
 })
-export class SidenavContentComponent {
+export class SidenavContentComponent{
 
   @Output() sidenavClose = new EventEmitter<void>();
+  privileges: string[] = JSON.parse(localStorage.getItem('privileges') || '[]')
+
+  workerValidator : boolean = this.privileges.includes('WorkerManagement');
+  groupValidator : boolean = this.privileges.includes('GroupManagement');
+  accountValidator : boolean = this.privileges.includes('AccountManagement');
 
   closeSidenav() {
     this.sidenavClose.emit();  // Emite el evento para cerrar el sidenav

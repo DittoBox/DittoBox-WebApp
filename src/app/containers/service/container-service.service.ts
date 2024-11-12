@@ -10,8 +10,6 @@ import { Container } from "../model/container-model/container.entity";
 })
 export class ContainerServiceService {
 
-  Baseurl: string = 'http://localhost:3000';
-
   DevBaseurl: string = 'https://app-dev-01-dittobox-a8bpd5bkh4dnh3g7.eastus-01.azurewebsites.net/api/v1';
 
   // to manage the templates selection
@@ -31,6 +29,13 @@ export class ContainerServiceService {
   getContainers(): Observable<any> {
     this.setLoading(true);
     return this.http.get<any>(`${this.DevBaseurl}/container`).pipe(
+      finalize(() => this.setLoading(false))
+    );
+  }
+
+  getContainersByAccountId(accountId: number): Observable<any> {
+    this.setLoading(true);
+    return this.http.get<any>(`${this.DevBaseurl}/account/${accountId}/containers`).pipe(
       finalize(() => this.setLoading(false))
     );
   }
@@ -56,13 +61,6 @@ export class ContainerServiceService {
     );
   }
 
-  getTemplateById(templateId: string): Observable<any> {
-    this.setLoading(true);
-    return this.http.get<any>(`${this.Baseurl}/templates/${templateId}`).pipe(
-      finalize(() => this.setLoading(false))
-    );
-  }
-
   updateContainerParameters(containerId: any, data: any) {
     this.setLoading(true);
     return this.http.put<Container>(`${this.DevBaseurl}/container/${containerId}/parameters`, data).pipe(
@@ -72,13 +70,6 @@ export class ContainerServiceService {
 
   selectTemplate(template: Template) {
     this.templateSource.next(template);
-  }
-
-  postTemplate(template: Template) {
-    this.setLoading(true);
-    return this.http.post<Template>(`${this.Baseurl}/templates`, template).pipe(
-      finalize(() => this.setLoading(false))
-    );
   }
 
   assignTemplateToContainer(containerId: number, templateId: number) {

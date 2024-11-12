@@ -24,10 +24,7 @@ export class RegisterOwnerFormComponent {
         console.log('Worker registrado con éxito:', response);
         this.accountService.login(this.user.email, this.user.password).subscribe(
           loginResponse => {
-            const token = loginResponse.token;
-            localStorage.removeItem('token');
-            localStorage.setItem('token', token);
-            this.router.navigate(['/register-company'], { state: { userId: response.id, token: token } });
+            this.router.navigate(['/register-company']);
           },
           error => {
             console.error('Error al iniciar sesión:', error);
