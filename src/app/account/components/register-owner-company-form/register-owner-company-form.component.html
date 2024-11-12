@@ -1,0 +1,25 @@
+
+<form (submit)="createAccount()"  class="form-container">
+  <h2>Register</h2>
+  <div class="input-field">
+    <label for="business-name">Business Name</label>
+    <input
+      id="business-name"
+      name="business-name"
+      [(ngModel)]="account.businessName"
+      type="text"
+      required
+    />
+  </div>
+  <div class="input-field">
+    <label for="business-id">Business ID</label>
+    <input
+      id="business-id"
+      name="business-id"
+      [(ngModel)]="account.businessId"
+      type="text"
+      required
+    />
+  </div>
+  <button class="register-button" type="submit">Register</button>
+</form>
