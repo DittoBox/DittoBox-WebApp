@@ -20,13 +20,24 @@ export class RegisterOwnerFormComponent {
 
   registerOwner() {
     this.accountService.createUser(this.user).subscribe(
-      (createdUser: any) => {
-        console.log('User creado con éxito:', createdUser);
-        this.router.navigate(['/register-company'], { state: { userId: createdUser.id } });
+      response => {
+        console.log('Worker registrado con éxito:', response);
+        this.accountService.login(this.user.email, this.user.password).subscribe(
+          loginResponse => {
+            const token = loginResponse.token;
+            localStorage.removeItem('token');
+            localStorage.setItem('token', token);
+            this.router.navigate(['/register-company'], { state: { userId: response.id, token: token } });
+          },
+          error => {
+            console.error('Error al iniciar sesión:', error);
+          }
+        );
       },
       error => {
-        console.error('Error al crear el User:', error);
+        console.error('Error al registrar el Owner:', error);
       }
     );
   }
+
 }
