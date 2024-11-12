@@ -1,0 +1,7 @@
+<div class="form-container">
+  <h2>Register</h2>
+  <app-register-tab (tabChanged)="onTabChanged($event)"></app-register-tab>
+  <app-register-worker-form *ngIf="activeTab === 'worker'"></app-register-worker-form>
+  <app-register-owner-form *ngIf="activeTab === 'owner'"></app-register-owner-form>
+</div>
+

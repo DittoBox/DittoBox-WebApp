@@ -30,3 +30,20 @@
   display: flex;
   align-items: center;
 }
+
+.gases-section {
+  margin-top: 10px;
+}
+
+.gas {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.divider {
+  border: none;
+  height: 1px;
+  background-color: #ddd;
+  margin: 15px 0;
+}
