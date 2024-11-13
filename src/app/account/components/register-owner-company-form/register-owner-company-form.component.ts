@@ -16,14 +16,18 @@ import {AccountServiceService} from "../../service/account-service.service";
 export class RegisterOwnerCompanyFormComponent implements OnInit{
   account: Account = new Account();
   representativeId!: number;
-  token!: string; // Variable para almacenar el token
-
+  token!: string;
   constructor(private accountService: AccountServiceService, private router: Router) {}
 
   ngOnInit() {
-    const navigation = this.router.getCurrentNavigation();
-    this.representativeId = navigation?.extras?.state?.['userId'];
-    this.token = navigation?.extras?.state?.['token']; // Obtén el token del estado de navegación
+    this.representativeId = Number(localStorage.getItem('userId'));
+    this.token = localStorage.getItem('token') || '';
+
+    if (!this.representativeId || !this.token) {
+      console.error('Error: representativeId o token no encontrado.');
+    } else {
+      console.log('representativeId y token encontrados');
+    }
   }
 
   createAccount() {
@@ -32,7 +36,7 @@ export class RegisterOwnerCompanyFormComponent implements OnInit{
       this.accountService.createAccount(this.account, this.token).subscribe(
         response => {
           console.log('Account creado con éxito:', response);
-          this.router.navigate(['/success-page']);
+          this.router.navigate(['/login']);
         },
         error => {
           console.error('Error al crear el Account:', error);

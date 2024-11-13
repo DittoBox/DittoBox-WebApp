@@ -17,6 +17,7 @@ export class AccountServiceService {
     return this.http.post(`${this.BaseUrl}/api/v1/user`, user);
   }
 
+
   login(email: string, password: string): Observable<any> {
     const loginData = { email, password };
     return this.http.post<any>(`${this.BaseUrl}/api/v1/user/login`, loginData).pipe(

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {LoginFormComponent} from "../../components/login-form/login-form.component";
 
 @Component({
@@ -10,6 +10,10 @@ import {LoginFormComponent} from "../../components/login-form/login-form.compone
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
+    constructor() {}
 
+    ngOnInit() {
+        localStorage.clear();
+    }
 }

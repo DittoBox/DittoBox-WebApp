@@ -16,4 +16,10 @@ import {UserInformationItemComponent} from "../../components/user-information-it
 })
 export class AccountComponent {
 
+      constructor() { }
+
+      privileges: string[] = JSON.parse(localStorage.getItem('privileges') || '[]')
+      workerValidator : boolean = this.privileges.includes('WorkerManagement');
+      groupValidator : boolean = this.privileges.includes('GroupManagement');
+      accountValidator : boolean = this.privileges.includes('AccountManagement');
 }
