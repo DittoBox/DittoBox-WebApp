@@ -4,9 +4,9 @@ import { FacilityServiceService } from '../../service/facility-service.service';
 import { AddContainerDialogComponent } from '../add-container-dialog/add-container-dialog.component';
 
 @Component({
-  selector: 'app-facility-details',
-  templateUrl: './facility-details.component.html',
-  styleUrls: ['./facility-details.component.css']
+  selector: 'app-facility-tab',
+  templateUrl: './facility-tab.component.html',
+  styleUrls: ['./facility-tab.component.css']
 })
 export class FacilityTabComponent {
   facility: any; // Suponiendo que ya tienes cargado el objeto facility con sus datos

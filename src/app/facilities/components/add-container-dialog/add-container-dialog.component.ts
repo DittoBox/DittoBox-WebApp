@@ -27,27 +27,5 @@ import {MatButton} from "@angular/material/button";
   styleUrl: './add-container-dialog.component.css'
 })
 export class AddContainerDialogComponent {
-  containerForm: FormGroup;
 
-  constructor(
-    private fb: FormBuilder,
-    public dialogRef: MatDialogRef<AddContainerDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
-  ) {
-    this.containerForm = this.fb.group({
-      containerId: ['', Validators.required],
-      accountId: [data.accountId, Validators.required], // Obtiene el accountId del *facility*
-      code: ['', Validators.required]
-    });
-  }
-
-  onSave() {
-    if (this.containerForm.valid) {
-      this.dialogRef.close(this.containerForm.value);
-    }
-  }
-
-  onCancel(): void {
-    this.dialogRef.close();
-  }
 }
