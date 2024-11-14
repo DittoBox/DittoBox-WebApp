@@ -1,18 +1,22 @@
 <app-facility-details>
-<mat-tab-group>
-  <mat-tab label="Facilities">
-    <!-- Botón de toggle para mostrar o esconder el formulario de creación -->
-    <button mat-button (click)="toggleCreateFacility()">Create</button>
+  <mat-tab-group>
+    <mat-tab label="Facilities">
+      <!-- Botón para abrir el panel lateral de creación -->
+      <button mat-button (click)="openCreateSidenav()">Create</button>
 
-    <!-- Formulario de creación de Facility -->
-    <div *ngIf="isCreatingFacility" class="create-facility-form">
-      <app-create-facility (facilityCreated)="onFacilityCreated()"></app-create-facility>
-    </div>
+      <!-- Sidenav para el formulario de creación de Facility -->
+      <mat-sidenav-container class="sidenav-container">
+        <mat-sidenav #createSidenav mode="side" position="end" [(opened)]="isCreatingFacility" class="create-sidenav">
+          <app-create-facility (facilityCreated)="onFacilityCreated()"></app-create-facility>
+        </mat-sidenav>
 
-    <!-- Lista de Facilities -->
-    <div class="card-container">
-      <app-facility-items [facilityItems]="allFacilities" (facilitySelected)="showFacilityDetails($event)"></app-facility-items>
-    </div>
-  </mat-tab>
-</mat-tab-group>
+        <!-- Lista de Facilities -->
+        <mat-sidenav-content>
+          <div class="card-container">
+            <app-facility-items [facilityItems]="allFacilities" (facilitySelected)="showFacilityDetails($event)"></app-facility-items>
+          </div>
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+    </mat-tab>
+  </mat-tab-group>
 </app-facility-details>

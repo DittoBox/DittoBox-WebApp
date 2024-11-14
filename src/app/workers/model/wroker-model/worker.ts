@@ -1,17 +1,17 @@
 export class Worker {
   id: string;
-  name: string;
-  facility: string;
-  location: string;
-  rol:string;
-  image: string;
+  firstName: string;
+  lastName: string;
+  accountId: string;
+  groupId: string | null;
+  privileges: string[];
 
-  constructor(id: string, name: string, facility: string, location: string, rol:string, image: string) {
+  constructor(id: string, firstName: string, lastName: string, accountId: string, groupId: string | null, privileges: string[]) {
     this.id = id;
-    this.name = name;
-    this.facility = facility;
-    this.location = location;
-    this.rol = rol;
-    this.image = image;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.accountId = accountId;
+    this.groupId = groupId;
+    this.privileges = privileges;
   }
 }

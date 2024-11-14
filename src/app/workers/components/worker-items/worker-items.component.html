@@ -1,11 +1,12 @@
+
 <div class="worker-list">
   <h2>Worker List</h2>
   <div *ngFor="let worker of workersItems" (click)="openWorkerDialog(worker.id)" class="facility-item">
-    <div class="profile-initial">{{ worker.name.charAt(0) }}</div>
+    <div class="profile-initial">{{ worker.firstName.charAt(0) }}</div>
     <div class="worker-details">
-      <p>{{ worker.rol }}</p>
-      <h5>{{ worker.name }}</h5>
-      <p>{{ worker.location }}</p>
+      <p>{{ worker.rol || 'Role not defined' }}</p>
+      <h5>{{ worker.firstName }} {{ worker.lastName }}</h5>
+      <p>{{ worker.location || 'Location not available' }}</p>
     </div>
   </div>
 </div>

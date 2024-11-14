@@ -1,60 +1,43 @@
-<form [formGroup]="createFacilityForm" (ngSubmit)="onSubmit()">
-  <mat-form-field>
-    <mat-label>Nombre</mat-label>
-    <input matInput formControlName="name">
-  </mat-form-field>
+<div>
+  <h2>New Facility</h2>
+  <mat-button-toggle-group formControlName="facilityType">
+    <mat-button-toggle [value]="0">Restaurant</mat-button-toggle>
+    <mat-button-toggle [value]="1">Warehouse</mat-button-toggle>
+  </mat-button-toggle-group>
 
-  <mat-form-field>
-    <mat-label>Tipo de Facility</mat-label>
-    <input matInput formControlName="facilityType" type="number">
-  </mat-form-field>
+  <form [formGroup]="createFacilityForm" (ngSubmit)="onSubmit()">
+    <div class="input-field">
+      <mat-form-field>
+        <mat-label>Facility name</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+    </div>
 
-  <mat-form-field>
-    <mat-label>Contenedores</mat-label>
-    <input matInput formControlName="containerCount" type="number">
-  </mat-form-field>
+    <div formGroupName="location">
+      <mat-form-field>
+        <mat-label>City</mat-label>
+        <input matInput formControlName="city">
+      </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Perfiles</mat-label>
-    <input matInput formControlName="profileCount" type="number">
-  </mat-form-field>
+      <mat-form-field>
+        <mat-label>Region</mat-label>
+        <input matInput formControlName="state">
+      </mat-form-field>
 
-  <div formGroupName="location">
-    <mat-form-field>
-      <mat-label>Latitud</mat-label>
-      <input matInput formControlName="latitude" type="number">
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label>Country</mat-label>
+        <input matInput formControlName="country">
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-label>Longitud</mat-label>
-      <input matInput formControlName="longitude" type="number">
-    </mat-form-field>
+      <mat-form-field>
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="address">
+      </mat-form-field>
+    </div>
 
-    <mat-form-field>
-      <mat-label>Código Plus</mat-label>
-      <input matInput formControlName="plusCode">
-    </mat-form-field>
-
-    <mat-form-field>
-      <mat-label>País</mat-label>
-      <input matInput formControlName="country">
-    </mat-form-field>
-
-    <mat-form-field>
-      <mat-label>Estado</mat-label>
-      <input matInput formControlName="state">
-    </mat-form-field>
-
-    <mat-form-field>
-      <mat-label>Ciudad</mat-label>
-      <input matInput formControlName="city">
-    </mat-form-field>
-
-    <mat-form-field>
-      <mat-label>Dirección</mat-label>
-      <input matInput formControlName="address">
-    </mat-form-field>
-  </div>
-
-  <button type="submit" mat-raised-button color="primary" [disabled]="createFacilityForm.invalid">Crear Facility</button>
-</form>
+    <div class="button-group">
+      <button mat-button type="button" (click)="cancel()">Cancel</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="createFacilityForm.invalid">Save</button>
+    </div>
+  </form>
+</div>

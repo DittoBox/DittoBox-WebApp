@@ -3,29 +3,21 @@
     <mat-icon class="close" (click)="sidenav.close()">arrow_back</mat-icon>
     <div *ngIf="worker">
       <div class="title">
-        <h2>{{ worker.name }}</h2>
+        <h2>{{ worker.firstName }} {{ worker.lastName }}</h2>
       </div>
       <div class="container">
-        <p> Worker Info:</p> <br>
+        <p>Account ID: {{ worker.accountId }}</p>
       </div>
       <div class="container">
-        <p> Category:</p> <br>
-        <p>{{ worker.rol }}</p>
+        <p>Group ID: {{ worker.groupId || 'No group assigned' }}</p>
       </div>
       <div class="container">
-        <p> Facility:</p> <br>
-        <p>{{ worker.facility }}</p>
-      </div>
-      <div class="container">
-        <p> Location:</p> <br>
-        <p>{{ worker.location }}</p>
-      </div>
-
-      <div class="container-button">
-        <button mat-flat-button >Delete</button>
+        <p>Privileges:</p>
+        <ul>
+          <li *ngFor="let privilege of worker.privileges">{{ privilege }}</li>
+        </ul>
       </div>
     </div>
-
   </mat-sidenav>
   <mat-sidenav-content class="sidenav-content">
     <ng-content></ng-content>

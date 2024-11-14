@@ -1,23 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { Template } from "../../containers/model/template-model/template.entity";
 
 @Injectable({
   providedIn: 'root'
 })
 export class WorkerServiceService {
 
-  Baseurl: string = 'http://localhost:3000';
+  Baseurl: string = 'https://app-dev-01-dittobox-a8bpd5bkh4dnh3g7.eastus-01.azurewebsites.net/api/v1';
 
   constructor(private http: HttpClient) { }
 
   getWorkers(): Observable<any> {
-    return this.http.get<any>(`${this.Baseurl}/workers`);
+    const accountId = localStorage.getItem('accountId');
+    return this.http.get<any>(`${this.Baseurl}/account/${accountId}/users`);
   }
 
-  getWorkerbyId(facilityID: string): Observable<any> {
-    return this.http.get<any>(`${this.Baseurl}/workers/${facilityID}`);
+  getWorkerbyId(workerId: string): Observable<any> {
+    const accountId = localStorage.getItem('accountId');
+    return this.http.get<any>(`${this.Baseurl}/account/${accountId}/users/${workerId}`);
   }
 }
-

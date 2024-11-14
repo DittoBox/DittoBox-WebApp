@@ -42,39 +42,29 @@ export class WorkerDetailsComponent {
 
   constructor(private workerServiceService: WorkerServiceService, public dialog:MatDialog,private snackBar: MatSnackBar) { }
 
-  loadWorker(workerId: number) {
-    this.workerServiceService.getWorkerbyId(workerId.toString()).subscribe(data => {
-      this.worker = new Worker(
-        data.id,
-        data.name,
-        data.facility,
-        data.location,
-        data.rol,
-        data.image
-      );
-      if (this.worker && this.worker.id) {
-        this.workerServiceService.getWorkerbyId(this.worker.id).subscribe(WorkerData => {
-          this.worker = new Worker(
-            data.id,
-            data.name,
-            data.facility,
-            data.location,
-            data.rol,
-            data.image
-          );
+  loadWorker(workerId: number | undefined) {
+    if (workerId === undefined || workerId === null) {
+      console.error("workerId está indefinido o es nulo");
+      return;
+    }
 
-
-          this.opened = true;
-        }, error => {
-          console.error('Error al obtener:', error);
-        });
-      } else {
-        console.error('definido o worker es nulo');
+    this.workerServiceService.getWorkerbyId(workerId.toString()).subscribe(
+      (data) => {
+        this.worker = new Worker(
+          data.id,
+          data.name,
+          data.facility,
+          data.location,
+          data.rol,
+          data.image
+        );
+        this.opened = true;
+      },
+      (error) => {
+        console.error('Error al obtener el trabajador:', error);
       }
-
-    }, error => {
-      console.error('Error al obtener el worker:', error);
-    });
+    );
   }
+
 
 }

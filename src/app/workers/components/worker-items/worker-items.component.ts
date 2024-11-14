@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {MatTab, MatTabGroup} from "@angular/material/tabs";
 import {WorkerServiceService} from "../../service/worker-service.service";
 import {WorkerDetailsComponent} from "../worker-details/worker-details.component";
@@ -26,11 +26,9 @@ import {MatButton} from "@angular/material/button";
 })
 export class WorkerItemsComponent implements OnInit {
   @Input() workersItems: any[] = [];
+  @Output() workerSelected = new EventEmitter<number>(); // Añadido el Output para emitir el ID del trabajador
 
-  constructor(
-    private sidenavComponent: WorkerDetailsComponent,
-    private workerServiceService: WorkerServiceService
-  ) {}
+  constructor(private workerServiceService: WorkerServiceService) {}
 
   ngOnInit() {
     this.workerServiceService.getWorkers().subscribe((data: any[]) => {
@@ -39,6 +37,7 @@ export class WorkerItemsComponent implements OnInit {
   }
 
   openWorkerDialog(workerId: number) {
-    this.sidenavComponent.loadWorker(workerId);
+    this.workerSelected.emit(workerId);
   }
+
 }
