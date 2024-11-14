@@ -36,6 +36,8 @@ export class FacilityDetailsComponent {
 
   constructor(private facilityService: FacilityServiceService, public dialog: MatDialog) {}
 
+  
+
   openAddContainerDialog() {
     const dialogRef = this.dialog.open(AddContainerDialogComponent, {
       width: '300px',
