@@ -1,34 +1,32 @@
+// facility-tab.component.ts
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Facility } from '../../model/facility-model/facility.model';
-import { FacilityItemsComponent } from '../facility-items/facility-items.component';
 import { FacilityServiceService } from '../../service/facility-service.service';
-import { MatButtonToggle } from '@angular/material/button-toggle';
-import { MatTab, MatTabGroup } from "@angular/material/tabs";
-import { FacilityDetailsComponent } from "../facility-details/facility-details.component";
+import { Facility } from '../../model/facility-model/facility.model';
+import { FacilityDetailsComponent } from '../facility-details/facility-details.component';
+import {MatTab, MatTabGroup} from "@angular/material/tabs";
+import {MatButtonToggle} from "@angular/material/button-toggle";
 import {FacilityCreateComponent} from "../facility-create/facility-create.component";
-import {CommonModule} from "@angular/common";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FacilityItemsComponent} from "../facility-items/facility-items.component";
+import {CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-facility-tab',
   standalone: true,
+  templateUrl: './facility-tab.component.html',
   imports: [
-    FacilityItemsComponent,
-    MatButtonToggle,
+    FacilityDetailsComponent,
     MatTabGroup,
     MatTab,
-    FacilityDetailsComponent,
+    MatButtonToggle,
     FacilityCreateComponent,
-    CommonModule,
-    ReactiveFormsModule
+    FacilityItemsComponent,
+    CommonModule
   ],
-  templateUrl: './facility-tab.component.html',
-  styleUrls: ['./facility-tab.component.css']
+  styleUrl: './facility-tab.component.css'
 })
 export class FacilityTabComponent implements OnInit {
   allFacilities: Facility[] = [];
-  activeFacility: Facility[] = [];
-  isCreatingFacility = false; // Nueva variable para manejar el estado de creación
+  isCreatingFacility: boolean = false;
 
   @ViewChild(FacilityDetailsComponent) facilityDetailsComponent!: FacilityDetailsComponent;
 
@@ -43,22 +41,20 @@ export class FacilityTabComponent implements OnInit {
     if (accountId) {
       this.facilityService.getGroupsByAccount(accountId).subscribe((data: Facility[]) => {
         this.allFacilities = data;
-        this.activeFacility = this.allFacilities.filter(facility => facility.status === 'Active');
       });
     }
   }
 
   toggleCreateFacility() {
-    this.isCreatingFacility = !this.isCreatingFacility; // Cambia el estado de creación
+    this.isCreatingFacility = !this.isCreatingFacility;
+  }
+
+  onFacilityCreated() {
+    this.isCreatingFacility = false;
+    this.loadFacilities(); // Refresca la lista de facilities después de la creación
   }
 
   showFacilityDetails(facilityId: number) {
     this.facilityDetailsComponent.loadFacility(facilityId);
   }
-
-  onFacilityCreated() {
-    this.loadFacilities(); // Recarga la lista de facilities
-    this.isCreatingFacility = false; // Cierra el formulario de creación
-  }
 }
-
