@@ -3,6 +3,7 @@ import { MatCard, MatCardContent, MatCardHeader } from "@angular/material/card";
 import { NgForOf } from "@angular/common";
 import { MatIconModule } from '@angular/material/icon';
 import { MatButton } from "@angular/material/button";
+import { Facility } from '../../model/facility-model/facility.model';
 
 @Component({
   selector: 'app-facility-items',
@@ -19,7 +20,7 @@ import { MatButton } from "@angular/material/button";
   styleUrl: './facility-items.component.css'
 })
 export class FacilityItemsComponent {
-  @Input() facilityItems: any[] = [];
+  @Input() facilityItems: Facility[] = [];
   @Output() facilitySelected = new EventEmitter<number>();
 
   openFacilitySidenav(facilityId: number) {

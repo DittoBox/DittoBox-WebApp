@@ -10,21 +10,21 @@
           <mat-icon class="material-icons-outlined">widgets</mat-icon>
           <span>Containers</span>
         </div>
-        <span>{{ facility.containers }}</span>
+        <span>{{ facility.containerCount }}</span>
       </div>
       <div class="content">
         <div class="tag">
           <mat-icon class="material-icons-outlined">notifications</mat-icon>
           <span>Alerts</span>
         </div>
-        <span>{{ facility.alerts }}</span>
+        <span>{{ facility.alerts || 0 }}</span>
       </div>
       <div class="content">
         <div class="tag">
           <mat-icon fontIcon="person"></mat-icon>
           <span>Workers</span>
         </div>
-        <span>{{ facility.workers }}</span>
+        <span>{{ facility.profileCount || 0 }}</span>
       </div>
       <div class="container-button">
         <button mat-flat-button (click)="openFacilitySidenav(facility.id)">More</button>

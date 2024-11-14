@@ -7,20 +7,21 @@ import { Facility } from '../model/facility-model/facility.model';
   providedIn: 'root'
 })
 export class FacilityServiceService {
-  Baseurl: string = 'https://app-dev-01-dittobox-a8bpd5bkh4dnh3g7.eastus-01.azurewebsites.net/api/v1/group';
+  BaseUrl: string = 'https://app-dev-01-dittobox-a8bpd5bkh4dnh3g7.eastus-01.azurewebsites.net/api/v1';
 
   constructor(private http: HttpClient) {}
 
-  // Método para obtener un solo facility por ID
-  getFacilityById(groupId: string): Observable<Facility> {
-    return this.http.get<Facility>(`${this.Baseurl}/${groupId}`, {
+  // Método para obtener los grupos según el `accountId`
+  getGroupsByAccount(accountId: string): Observable<Facility[]> {
+    return this.http.get<Facility[]>(`${this.BaseUrl}/account/${accountId}/groups`, {
       headers: { 'Accept': 'application/json' }
     });
   }
 
-
-  // Método para obtener todos los facilities
-  getFacilities(): Observable<Facility[]> {
-    return this.http.get<Facility[]>(`${this.Baseurl}`);
+  // Método para crear un nuevo grupo
+  createGroup(groupData: any): Observable<any> {
+    return this.http.post(`${this.BaseUrl}/group/create-group`, groupData, {
+      headers: { 'Accept': 'application/json' }
+    });
   }
 }

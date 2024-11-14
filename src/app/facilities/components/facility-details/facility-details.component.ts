@@ -5,12 +5,8 @@ import { MatIcon } from "@angular/material/icon";
 import { MatSidenav, MatSidenavContainer, MatSidenavContent } from "@angular/material/sidenav";
 import { NgForOf, NgIf } from "@angular/common";
 import { MatCard, MatCardContent, MatCardHeader } from "@angular/material/card";
-import { MatButtonToggle } from "@angular/material/button-toggle";
-import { RouterLink } from "@angular/router";
-import { MatDialog } from "@angular/material/dialog";
-import { MatSnackBar } from "@angular/material/snack-bar";
 import { FacilityServiceService } from "../../service/facility-service.service";
-import { Facility, Location } from "../../model/facility-model/facility.model";
+import { Facility } from "../../model/facility-model/facility.model";
 
 @Component({
   selector: 'app-facility-details',
@@ -25,8 +21,6 @@ import { Facility, Location } from "../../model/facility-model/facility.model";
     MatSidenavContainer,
     NgIf,
     MatSidenavContent,
-    MatButtonToggle,
-    RouterLink,
     MatIcon,
     MatDivider,
     MatIconButton,
@@ -41,33 +35,12 @@ export class FacilityDetailsComponent {
   constructor(private facilityService: FacilityServiceService) {}
 
   loadFacility(facilityId: number) {
-    this.facilityService.getFacilityById(facilityId.toString()).subscribe((data: Facility) => {
-      const location = new Location(
-        data.location.id,
-        data.location.latitude,
-        data.location.longitude,
-        data.location.plusCode,
-        data.location.country,
-        data.location.state,
-        data.location.city,
-        data.location.address
-      );
-      this.facility = new Facility(
-        data.id,
-        data.name,
-        location,
-        data.accountId,
-        data.facilityType,
-        data.containers,
-        data.alerts,
-        data.workers,
-        data.status,
-        data.type,
-        data.idTemplates
-      );
-      this.opened = true;
-    }, (error: any) => {
-      console.error('Error al obtener el facility:', error);
-    });
+    const accountId = localStorage.getItem('accountId'); // Obtener el accountId del localStorage
+    if (accountId) {
+      this.facilityService.getGroupsByAccount(accountId).subscribe((facilities: Facility[]) => {
+        this.facility = facilities.find(facility => facility.id === facilityId) || null;
+        this.opened = !!this.facility;
+      });
+    }
   }
 }

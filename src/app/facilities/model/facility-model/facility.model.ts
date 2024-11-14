@@ -32,6 +32,8 @@ export class Facility {
   status: string;
   type: string;
   idTemplates: string;
+  containerCount: number; // Nueva propiedad
+  profileCount: number;   // Nueva propiedad
 
   constructor(
     id: number,
@@ -44,7 +46,9 @@ export class Facility {
     workers: string,
     status: string,
     type: string,
-    idTemplates: string
+    idTemplates: string,
+    containerCount: number,  // Nueva propiedad
+    profileCount: number     // Nueva propiedad
   ) {
     this.id = id;
     this.name = name;
@@ -57,5 +61,7 @@ export class Facility {
     this.status = status;
     this.type = type;
     this.idTemplates = idTemplates;
+    this.containerCount = containerCount; // Asignación de nueva propiedad
+    this.profileCount = profileCount;     // Asignación de nueva propiedad
   }
 }

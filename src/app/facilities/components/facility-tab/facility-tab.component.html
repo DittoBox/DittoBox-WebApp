@@ -1,7 +1,15 @@
 <app-facility-details>
 <mat-tab-group>
   <mat-tab label="Facilities">
-    <mat-button-toggle>Create</mat-button-toggle>
+    <!-- Botón de toggle para mostrar o esconder el formulario de creación -->
+    <mat-button-toggle (click)="toggleCreateFacility()">Create</mat-button-toggle>
+
+    <!-- Formulario de creación de Facility -->
+    <div *ngIf="isCreatingFacility" class="create-facility-form">
+      <app-create-facility (facilityCreated)="onFacilityCreated()"></app-create-facility>
+    </div>
+
+    <!-- Lista de Facilities -->
     <div class="card-container">
       <app-facility-items [facilityItems]="allFacilities" (facilitySelected)="showFacilityDetails($event)"></app-facility-items>
     </div>

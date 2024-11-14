@@ -4,23 +4,20 @@
     <div *ngIf="facility">
       <div class="title">
         <h2>{{ facility.name }}</h2>
-        <span>{{ facility.type }}</span>
+        <span>Type: {{ facility.facilityType }}</span>
       </div>
       <div class="container">
         <p><mat-icon class="material-icons-outlined">widgets</mat-icon> Containers</p>
-        <p>{{ facility.containers }}</p>
+        <p>{{ facility.containerCount }}</p>
       </div>
-      <div><button mat-button>Add containers</button></div>
       <div class="container">
         <p><mat-icon class="material-icons-outlined">person</mat-icon> Workers</p>
-        <p>{{ facility.workers }}</p>
+        <p>{{ facility.profileCount }}</p>
       </div>
-      <div><button mat-button>Add workers</button></div>
       <div class="container">
-        <p><mat-icon class="material-icons-outlined">notifications</mat-icon> Pending Alerts</p>
-        <p>{{ facility.alerts }}</p>
+        <p><mat-icon class="material-icons-outlined">notifications</mat-icon> Alerts</p>
+        <p>{{ facility.alerts || 0 }}</p>
       </div>
-      <div><button mat-button>Add alerts</button></div>
       <div class="container-button">
         <button mat-flat-button color="warn">Delete</button>
       </div>
