@@ -1,62 +1,43 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { FacilityServiceService } from '../../service/facility-service.service';
-import { Facility } from '../../model/facility-model/facility.model';
-import { FacilityDetailsComponent } from '../facility-details/facility-details.component';
-import { FacilityCreateComponent } from '../facility-create/facility-create.component';
-import {MatSidenav, MatSidenavContainer, MatSidenavModule} from '@angular/material/sidenav';
-import {MatTab, MatTabGroup} from "@angular/material/tabs";
-import {FacilityItemsComponent} from "../facility-items/facility-items.component";
+import { AddContainerDialogComponent } from '../add-container-dialog/add-container-dialog.component';
 
 @Component({
-  selector: 'app-facility-tab',
-  standalone: true,
-  imports: [
-    FacilityDetailsComponent,
-    FacilityCreateComponent,
-    MatSidenav,
-    MatTabGroup,
-    MatSidenavContainer,
-    MatTab,
-    FacilityItemsComponent,
-    MatSidenavModule
-  ],
-  templateUrl: './facility-tab.component.html',
-  styleUrls: ['./facility-tab.component.css']
+  selector: 'app-facility-details',
+  templateUrl: './facility-details.component.html',
+  styleUrls: ['./facility-details.component.css']
 })
-export class FacilityTabComponent implements OnInit {
-  allFacilities: Facility[] = [];
-  isCreatingFacility: boolean = false; // Agrega esta variable
+export class FacilityTabComponent {
+  facility: any; // Suponiendo que ya tienes cargado el objeto facility con sus datos
+  opened: boolean = false;
 
-  @ViewChild(FacilityDetailsComponent) facilityDetailsComponent!: FacilityDetailsComponent;
-  @ViewChild('createSidenav') createSidenav!: MatSidenav;
+  constructor(private facilityService: FacilityServiceService, public dialog: MatDialog) {}
 
-  constructor(private facilityService: FacilityServiceService) {}
+  openAddContainerDialog() {
+    const dialogRef = this.dialog.open(AddContainerDialogComponent, {
+      width: '300px',
+      data: { accountId: this.facility.accountId }
+    });
 
-  ngOnInit() {
-    this.loadFacilities();
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.addContainer(result);
+      }
+    });
   }
 
-  loadFacilities() {
-    const accountId = localStorage.getItem('accountId');
-    if (accountId) {
-      this.facilityService.getGroupsByAccount(accountId).subscribe((data: Facility[]) => {
-        this.allFacilities = data;
-      });
+  addContainer(containerData: any) {
+    if (this.facility && this.facility.id) {
+      this.facilityService.registerContainer(this.facility.id, containerData).subscribe(
+        response => {
+          console.log('Container registered successfully:', response);
+          // Aquí puedes actualizar el conteo de contenedores si es necesario
+        },
+        error => {
+          console.error('Error registering container:', error);
+        }
+      );
     }
-  }
-
-  openCreateSidenav() {
-    this.isCreatingFacility = true; // Activa el sidenav de creación
-    this.createSidenav.open();
-  }
-
-  onFacilityCreated() {
-    this.isCreatingFacility = false; // Desactiva el sidenav de creación después de crear
-    this.createSidenav.close();
-    this.loadFacilities(); // Refresca la lista de facilities después de la creación
-  }
-
-  showFacilityDetails(facilityId: number) {
-    this.facilityDetailsComponent.loadFacility(facilityId);
   }
 }

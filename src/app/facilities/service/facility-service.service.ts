@@ -24,4 +24,8 @@ export class FacilityServiceService {
     });
   }
 
+  registerContainer(groupId: number, containerData: any): Observable<any> {
+    return this.http.post(`${this.BaseUrl}/group/${groupId}/register-container`, containerData);
+  }
+
 }

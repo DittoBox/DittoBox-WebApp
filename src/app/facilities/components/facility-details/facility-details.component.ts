@@ -36,6 +36,16 @@ export class FacilityDetailsComponent {
 
   constructor(private facilityService: FacilityServiceService, public dialog: MatDialog) {}
 
+  loadFacility(facilityId: number) {
+    const accountId = localStorage.getItem('accountId'); // Obtener el accountId del localStorage
+    if (accountId) {
+      this.facilityService.getGroupsByAccount(accountId).subscribe((facilities: Facility[]) => {
+        this.facility = facilities.find(facility => facility.id === facilityId) || null;
+        this.opened = !!this.facility;
+      });
+    }
+  }
+
   openAddContainerDialog() {
     const dialogRef = this.dialog.open(AddContainerDialogComponent, {
       width: '300px',
