@@ -7,8 +7,6 @@ import { NgForOf, NgIf } from "@angular/common";
 import { MatCard, MatCardContent, MatCardHeader } from "@angular/material/card";
 import { FacilityServiceService } from "../../service/facility-service.service";
 import { Facility } from "../../model/facility-model/facility.model";
-import {AddContainerDialogComponent} from "../add-container-dialog/add-container-dialog.component";
-import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-facility-details',
@@ -31,11 +29,12 @@ import {MatDialog} from "@angular/material/dialog";
   styleUrl: './facility-details.component.css'
 })
 export class FacilityDetailsComponent {
-  facility: any; // Suponiendo que ya tienes cargado el objeto facility con sus datos
+  facility: Facility | null = null;
   opened: boolean = false;
 
-  constructor(private facilityService: FacilityServiceService, public dialog: MatDialog) {}
+  constructor(private facilityService: FacilityServiceService) {}
 
+<<<<<<< HEAD
   
 
   openAddContainerDialog() {
@@ -62,6 +61,15 @@ export class FacilityDetailsComponent {
           console.error('Error registering container:', error);
         }
       );
+=======
+  loadFacility(facilityId: number) {
+    const accountId = localStorage.getItem('accountId'); // Obtener el accountId del localStorage
+    if (accountId) {
+      this.facilityService.getGroupsByAccount(accountId).subscribe((facilities: Facility[]) => {
+        this.facility = facilities.find(facility => facility.id === facilityId) || null;
+        this.opened = !!this.facility;
+      });
+>>>>>>> parent of c6af7e7b (Add container)
     }
   }
 }
