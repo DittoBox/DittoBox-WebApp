@@ -1,9 +1,8 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FacilityServiceService } from '../../service/facility-service.service';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
 
 @Component({
   selector: 'app-create-facility',
@@ -20,9 +19,12 @@ export class FacilityCreateComponent {
     private facilityService: FacilityServiceService,
     private fb: FormBuilder
   ) {
+    // Obtener el accountId del localStorage
+    const accountId = localStorage.getItem('accountId');
+
     this.createFacilityForm = this.fb.group({
       name: ['', Validators.required],
-      facilityType: ['', Validators.required],
+      facilityType: [0, Validators.required],
       containerCount: [0, Validators.required],
       profileCount: [0, Validators.required],
       location: this.fb.group({
@@ -34,7 +36,7 @@ export class FacilityCreateComponent {
         longitude: [0],
         plusCode: ['']
       }),
-      accountId: [1]  // Ajusta esto según sea necesario
+      accountId: [accountId, Validators.required] // Asignamos el accountId obtenido
     });
   }
 

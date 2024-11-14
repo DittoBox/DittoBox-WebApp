@@ -18,10 +18,10 @@ export class FacilityServiceService {
     });
   }
 
-  // Método para crear un nuevo grupo
   createGroup(groupData: any): Observable<any> {
     return this.http.post(`${this.BaseUrl}/group/create-group`, groupData, {
       headers: { 'Accept': 'application/json' }
     });
   }
+
 }
