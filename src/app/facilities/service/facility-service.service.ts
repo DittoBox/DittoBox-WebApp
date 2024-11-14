@@ -24,8 +24,11 @@ export class FacilityServiceService {
     });
   }
 
-  registerContainer(groupId: number, containerData: any): Observable<any> {
-    return this.http.post(`${this.BaseUrl}/group/${groupId}/register-container`, containerData);
+  registerContainer(groupId: number, data: any) {
+    return this.http.post<any>(`${this.BaseUrl}/group/${groupId}/register-container`, data);
   }
 
+  registerWorker(groupId: number, workerData: any): Observable<any> {
+    return this.http.post<any>(`${this.BaseUrl}/group/${groupId}/register-user`, workerData);
+  }
 }

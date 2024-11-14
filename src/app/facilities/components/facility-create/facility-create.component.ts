@@ -22,7 +22,7 @@ export class FacilityCreateComponent {
     private fb: FormBuilder
   ) {
     this.createFacilityForm = this.fb.group({
-      facilityType: [0, Validators.required], // Asigna 0 como valor predeterminado para "Restaurant"
+      facilityType: [0, Validators.required],
       name: ['', Validators.required],
       location: this.fb.group({
         city: ['', Validators.required],
@@ -47,7 +47,7 @@ export class FacilityCreateComponent {
         () => {
           console.log('Facility creado exitosamente');
           this.facilityCreated.emit();
-          this.createFacilityForm.reset({ facilityType: 0 }); // Restablece el tipo predeterminado a "Restaurant"
+          this.createFacilityForm.reset({ facilityType: 0 });
         },
         (error) => {
           console.error('Error al crear el facility:', error);
@@ -57,6 +57,6 @@ export class FacilityCreateComponent {
   }
 
   cancel() {
-    this.facilityCreated.emit(); // Emite el evento para cerrar el formulario sin crear
+    this.facilityCreated.emit();
   }
 }

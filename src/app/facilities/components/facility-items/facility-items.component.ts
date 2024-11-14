@@ -24,6 +24,6 @@ export class FacilityItemsComponent {
   @Output() facilitySelected = new EventEmitter<number>();
 
   openFacilitySidenav(facilityId: number) {
-    this.facilitySelected.emit(facilityId); // Emitiendo el ID del facility al componente padre
+    this.facilitySelected.emit(facilityId);
   }
 }
