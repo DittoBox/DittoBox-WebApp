@@ -11,7 +11,7 @@ export class FacilityServiceService {
 
   constructor(private http: HttpClient) {}
 
-  // Método para obtener los grupos según el `accountId`
+
   getGroupsByAccount(accountId: string): Observable<Facility[]> {
     return this.http.get<Facility[]>(`${this.BaseUrl}/account/${accountId}/groups`, {
       headers: { 'Accept': 'application/json' }
@@ -22,6 +22,10 @@ export class FacilityServiceService {
     return this.http.post(`${this.BaseUrl}/group/create-group`, groupData, {
       headers: { 'Accept': 'application/json' }
     });
+  }
+
+  registerContainer(groupId: number, containerData: any): Observable<any> {
+    return this.http.post(`${this.BaseUrl}/group/${groupId}/register-container`, containerData);
   }
 
 }

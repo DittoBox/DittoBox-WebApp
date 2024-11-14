@@ -1,29 +1,22 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #sidenav mode="over" [(opened)]="opened" class="sidenav" position="end">
-    <mat-icon class="close" (click)="sidenav.close()">arrow_back</mat-icon>
-    <div *ngIf="facility">
-      <div class="title">
-        <h2>{{ facility.name }}</h2>
-        <span>Type: {{ facility.facilityType }}</span>
-      </div>
-      <div class="container">
-        <p><mat-icon class="material-icons-outlined">widgets</mat-icon> Containers</p>
-        <p>{{ facility.containerCount }}</p>
-      </div>
-      <div class="container">
-        <p><mat-icon class="material-icons-outlined">person</mat-icon> Workers</p>
-        <p>{{ facility.profileCount }}</p>
-      </div>
-      <div class="container">
-        <p><mat-icon class="material-icons-outlined">notifications</mat-icon> Alerts</p>
-        <p>{{ facility.alerts || 0 }}</p>
-      </div>
-      <div class="container-button">
-        <button mat-flat-button color="warn">Delete</button>
-      </div>
-    </div>
-  </mat-sidenav>
-  <mat-sidenav-content class="sidenav-content">
-    <ng-content></ng-content>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<div class="facility-info">
+  <!-- Containers Section -->
+  <div class="container">
+    <span><mat-icon class="material-icons-outlined">widgets</mat-icon> Containers</span>
+    <p>{{ facility.containerCount }}</p>
+  </div>
+  <button mat-button class="info-action" (click)="openAddContainerDialog()">Add containers</button>
+
+  <!-- Workers Section -->
+  <div class="container">
+    <span><mat-icon class="material-icons-outlined">person</mat-icon> Workers</span>
+    <p class="info-count">{{ facility.profileCount || 0 }}</p>
+  </div>
+  <button mat-button class="info-action">Add workers</button>
+
+  <!-- Alerts Section -->
+  <div class="container">
+    <span><mat-icon class="material-icons-outlined">notifications</mat-icon> Pending alerts</span>
+    <p class="info-count">{{ facility.alerts || 0 }}</p>
+  </div>
+  <button mat-button class="info-action">Check alerts</button>
+</div>
