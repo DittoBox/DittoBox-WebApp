@@ -11,6 +11,7 @@ import {MatInput} from "@angular/material/input";
 import {UserInformationItemComponent} from "../user-information-item/user-information-item.component";
 import {FormsModule} from "@angular/forms";
 import {MatButton} from "@angular/material/button";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-user-information-edit-item',
@@ -24,6 +25,7 @@ import {MatButton} from "@angular/material/button";
     MatDialogActions,
     MatButton,
     MatLabel,
+    TranslateModule
   ],
   templateUrl: './user-information-edit-item.component.html',
   styleUrl: './user-information-edit-item.component.css'

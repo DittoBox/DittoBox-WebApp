@@ -5,13 +5,14 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-create-facility',
   templateUrl: './facility-create.component.html',
   styleUrls: ['./facility-create.component.css'],
   standalone: true,
-  imports: [MatButtonToggleModule, MatFormFieldModule, MatInputModule, MatButtonModule, ReactiveFormsModule]
+  imports: [MatButtonToggleModule, MatFormFieldModule, MatInputModule, MatButtonModule, ReactiveFormsModule, TranslateModule]
 })
 export class FacilityCreateComponent {
   @Output() facilityCreated = new EventEmitter<void>();

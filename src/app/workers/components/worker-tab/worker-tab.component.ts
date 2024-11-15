@@ -3,6 +3,7 @@ import {WorkerDetailsComponent} from "../worker-details/worker-details.component
 import {MatTab, MatTabGroup} from "@angular/material/tabs";
 import {WorkerItemsComponent} from "../worker-items/worker-items.component";
 import {CommonModule} from "@angular/common";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-worker-tab',
@@ -12,7 +13,7 @@ import {CommonModule} from "@angular/common";
     MatTab,
     WorkerItemsComponent,
     WorkerDetailsComponent,
-    CommonModule
+    CommonModule,
   ],
   templateUrl: './worker-tab.component.html',
   styleUrl: './worker-tab.component.css'

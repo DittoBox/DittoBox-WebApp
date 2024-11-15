@@ -1,25 +1,25 @@
 <mat-card class="user-card">
-  <mat-card-title>User information</mat-card-title>
+  <mat-card-title>{{ 'USER_INFORMATION_ITEM.TITLE' | translate }}</mat-card-title>
   <mat-card-content>
     <div class="info-row">
-      <span>Username</span>
+      <span>{{ 'USER_INFORMATION_ITEM.USERNAME' | translate }}</span>
       <span>A warm place</span>
     </div>
     <div class="info-row">
-      <span>Name</span>
+      <span>{{ 'USER_INFORMATION_ITEM.NAME' | translate }}</span>
       <span>Advance</span>
     </div>
     <div class="info-row">
-      <span>Identification number</span>
+      <span>{{ 'USER_INFORMATION_ITEM.ID_NUMBER' | translate }}</span>
       <span>20124578963</span>
     </div>
     <div class="info-row">
-      <span>Bank account owner</span>
+      <span>{{ 'USER_INFORMATION_ITEM.BANK_OWNER' | translate }}</span>
       <span>Sofía Pérez</span>
     </div>
   </mat-card-content>
   <mat-card-actions class="actions">
-    <button mat-button (click)="openEditDialog()">Edit data</button>
-    <button mat-button>Change password</button>
+    <button mat-button (click)="openEditDialog()">{{ 'USER_INFORMATION_ITEM.EDIT_DATA' | translate }}</button>
+    <button mat-button>{{ 'USER_INFORMATION_ITEM.CHANGE_PASSWORD' | translate }}</button>
   </mat-card-actions>
 </mat-card>

@@ -9,11 +9,11 @@ import {filter} from "rxjs";
 import {NgIf} from "@angular/common";
 
 @Component({
-	selector: 'app-root',
-	standalone: true,
+  selector: 'app-root',
+  standalone: true,
   imports: [RouterOutlet, MatToolbarModule, ToolbarContentComponent, MatDialogModule, MatSidenavModule, SidenavContentComponent, NgIf],
-	templateUrl: './app.component.html',
-	styleUrl: './app.component.css'
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit{
   showLayout = true;
@@ -22,13 +22,17 @@ export class AppComponent implements OnInit{
 
   ngOnInit() {
     // Verifica la ruta actual al iniciar
-    this.showLayout = !['/login', '/register','/register-company'].some(route => this.router.isActive(route, true));
+    this.showLayout = !this.isAuthRoute(this.router.url);
 
     // Actualiza showLayout al cambiar de ruta
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
-        this.showLayout = !['/login', '/register','/register-company'].includes(event.url);
+        this.showLayout = !this.isAuthRoute(event.urlAfterRedirects);
       });
+  }
+
+  private isAuthRoute(url: string): boolean {
+    return ['/login', '/register', '/register-company'].some(route => url.startsWith(route));
   }
 }

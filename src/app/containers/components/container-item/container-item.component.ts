@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {Container} from "../../model/container-model/container.entity";
 import { formatDistanceToNow } from 'date-fns';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-container-item',
@@ -18,7 +19,8 @@ import { formatDistanceToNow } from 'date-fns';
     NgForOf,
     MatIconModule,
     MatProgressSpinnerModule,
-    NgClass
+    NgClass,
+    TranslateModule
   ],
   templateUrl: './container-item.component.html',
   styleUrls: ['./container-item.component.css']

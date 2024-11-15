@@ -4,6 +4,7 @@ import { SubscriptionDialogComponent } from '../../components/subscription-dialo
 import { MatDialog } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-subscription',
@@ -11,7 +12,8 @@ import { MatDividerModule } from '@angular/material/divider';
   imports: [
 	MatCardModule,
 	MatButtonModule,
-	MatDividerModule
+	MatDividerModule,
+	TranslateModule
   ],
   templateUrl: './subscription.component.html',
   styleUrl: './subscription.component.css'

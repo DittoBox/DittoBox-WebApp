@@ -1,8 +1,8 @@
 <div class="account-container">
-    <h1>Account</h1>
+    <h1>{{ 'ACCOUNT_PAGE.TITLE' | translate }}</h1>
     <app-user-information-item></app-user-information-item>
     <hr>
-    @if (accountValidator || workerValidator || groupValidator) {
+    <ng-container *ngIf="accountValidator || workerValidator || groupValidator">
         <app-account-information-item [validator]="accountValidator"></app-account-information-item>
-    }
+    </ng-container>
 </div>

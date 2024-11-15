@@ -11,6 +11,7 @@ import { Facility } from '../../model/facility-model/facility.model';
 import {MatButtonToggle} from "@angular/material/button-toggle";
 import {MatButton} from "@angular/material/button";
 import {MatIcon} from "@angular/material/icon";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-facility-tab',
@@ -27,7 +28,8 @@ import {MatIcon} from "@angular/material/icon";
     MatSidenavModule,
     MatButtonToggle,
     MatButton,
-    MatIcon
+    MatIcon,
+    TranslateModule
   ],
   styleUrls: ['./facility-tab.component.css']
 })

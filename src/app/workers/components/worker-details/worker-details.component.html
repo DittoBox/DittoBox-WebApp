@@ -2,28 +2,28 @@
   <mat-sidenav #sidenav mode="over" [(opened)]="opened" class="sidenav" position="end">
     <mat-icon class="close" (click)="sidenav.close()">arrow_back</mat-icon>
     <div *ngIf="worker" class="worker-details-content">
-      <p class="breadcrumb">Workers &gt; {{ worker.firstName }} {{ worker.lastName }}</p>
+      <p class="breadcrumb">{{ 'WORKER_DETAILS.BREADCRUMB' | translate }} &gt; {{ worker.firstName }} {{ worker.lastName }}</p>
       <h1 class="worker-name">{{ worker.firstName }} {{ worker.lastName }}</h1>
 
       <section class="details-section">
-        <h2>Worker details</h2>
+        <h2>{{ 'WORKER_DETAILS.WORKER_DETAILS' | translate }}</h2>
         <div class="details-row">
-          <span class="label">Category</span>
+          <span class="label">{{ 'WORKER_DETAILS.CATEGORY' | translate }}</span>
           <span class="value">{{ workerRole }}</span>
         </div>
         <div class="details-row">
-          <span class="label">Location</span>
+          <span class="label">{{ 'WORKER_DETAILS.LOCATION' | translate }}</span>
           <span class="value">{{ worker.location || 'Chorrillos' }}</span>
         </div>
       </section>
 
       <section class="role-management-section">
-        <button mat-flat-button color="primary" class="role-management-button">Role management</button>
-        <button mat-button class="reassign-button">Reassign</button>
+        <button mat-flat-button color="primary" class="role-management-button">{{ 'WORKER_DETAILS.ROLE_MANAGEMENT' | translate }}</button>
+        <button mat-button class="reassign-button">{{ 'WORKER_DETAILS.REASSIGN' | translate }}</button>
 
-        <h2 class="role-management-title">Role management</h2>
-        <div class="role-toggle"  *ngFor="let privilege of ['WorkerManagement', 'GroupManagement', 'AccountManagement']">
-          <span>{{ privilege }}</span>
+        <h2 class="role-management-title">{{ 'WORKER_DETAILS.ROLE_MANAGEMENT_TITLE' | translate }}</h2>
+        <div class="role-toggle" *ngFor="let privilege of ['WORKER_MANAGEMENT', 'GROUP_MANAGEMENT', 'ACCOUNT_MANAGEMENT']">
+          <span>{{ 'WORKER_DETAILS.PRIVILEGES.' + privilege | translate }}</span>
           <mat-slide-toggle color="primary"
             [checked]="worker.privileges.includes(privilege)"
             (change)="onPrivilegeToggle(privilege, $event.checked)">

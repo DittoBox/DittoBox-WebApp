@@ -1,9 +1,10 @@
 import {Component, EventEmitter, Output} from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register-tab',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './register-tab.component.html',
   styleUrl: './register-tab.component.css'
 })

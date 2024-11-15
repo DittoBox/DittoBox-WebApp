@@ -14,6 +14,7 @@ import {MatSlideToggle} from "@angular/material/slide-toggle";
 import {FormsModule} from "@angular/forms";
 import {ContainerServiceService} from "../../service/container-service.service";
 import {NgForOf, NgIf} from "@angular/common";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contianer-edit',
@@ -35,7 +36,8 @@ import {NgForOf, NgIf} from "@angular/common";
     MatSlideToggle,
     FormsModule,
     NgForOf,
-    NgIf
+    NgIf,
+    TranslateModule
   ],
   templateUrl: './contianer-edit.component.html',
   styleUrl: './contianer-edit.component.css'

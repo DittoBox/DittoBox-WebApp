@@ -1,0 +1,15 @@
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+  
+  mat-radio-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  mat-radio-button {
+    margin-bottom: 10px;
+  }

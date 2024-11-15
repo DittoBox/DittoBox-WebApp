@@ -1,0 +1,237 @@
+{
+    "SELECT_LANGUAGE": "Select Language",
+    "MENU": "Menu",
+    "DASHBOARD": "Dashboard",
+    "FACILITIES": "Facilities",
+    "CONTAINERS": "Containers",
+    "WORKERS": "Workers",
+    "TEMPLATES": "Templates",
+    "SETTINGS": "Settings",
+    "ACCOUNT": "Account",
+    "SUBSCRIPTION": "Subscription",
+    "NOTIFICATIONS": "Notifications",
+    "LOGOUT": "Logout",
+    "LANGUAGES" : "Languages",
+    "LOGIN": "Login",
+    "USERNAME": "Username",
+    "PASSWORD": "Password",
+    "FORGOT_PASSWORD": "Forgot Password?",
+    "REGISTER_INSTEAD": "Register Instead",
+    "REGISTER": "Register",
+    "BUSINESS_NAME": "Business Name",
+    "BUSINESS_ID": "Business ID",
+    "WORKER": "Worker",
+    "OWNER": "Owner",
+    "REGISTERWORKER": {
+      "FIRSTNAME": "First Name",
+      "LASTNAME": "Last Name",
+      "USERNAME": "Username",
+      "EMAIL": "Email",
+      "PASSWORD": "Password",
+      "REGISTER": "Register"
+    },
+    "CONTAINER_DETAILS": {
+      "DESCRIPTION": "Description",
+      "TEMPERATURE": "Temperature",
+      "NO_INFORMATION": "no information",
+      "HUMIDITY": "Humidity",
+      "LAST_SYNC": "Last Sync",
+      "MANUAL_EDIT": "Manual Edit",
+      "TEMPLATE_CONFIGURATION": "Template Configuration",
+      "DETECT_GASES": "Detect Gases",
+      "OXYGEN": "Oxygen (O₂)",
+      "CARBON_DIOXIDE": "Carbon Dioxide (CO₂)",
+      "ETHYLENE": "Ethylene (C₂H₄)",
+      "AMMONIA": "Ammonia (NH₃)",
+      "SULFUR_DIOXIDE": "Sulfur Dioxide (SO₂)",
+      "NO_TEMPLATE_CONFIGURATION": "No template configuration for this container."
+    },
+    "CONTAINER_ITEM": {
+      "TEMPERATURE": "Temperature",
+      "HUMIDITY": "Humidity",
+      "LAST_SYNC": "Last Sync",
+      "OXYGEN": "Oxygen (O₂)",
+      "CARBON_DIOXIDE": "Carbon Dioxide (CO₂)",
+      "ETHYLENE": "Ethylene (C₂H₄)",
+      "AMMONIA": "Ammonia (NH₃)"
+    },
+    "CONTAINER_TAB": {
+      "TITLE": "Containers",
+      "ALL_CONTAINERS": "All Containers",
+      "ACTIVE_CONTAINERS": "Active Containers"
+    },
+    "CONTAINER_EDIT": {
+        "TITLE": "Manual change",
+        "DESCRIPTION": "This change will be recorded in this container’s historial",
+        "MIN_TEMPERATURE": "Minimum temperature",
+        "MAX_TEMPERATURE": "Maximum temperature",
+        "MIN_HUMIDITY": "Minimum humidity",
+        "MAX_HUMIDITY": "Maximum humidity",
+        "CANCEL": "Cancel",
+        "SAVE": "Save"
+    },
+    "TEMPLATE_CONFIRM": {
+      "TITLE": "Confirmation",
+      "CANCEL": "Cancel",
+      "YES": "Yes"
+    },
+    "TEMPLATE_DETAILS": {
+      "SELECT_CONTAINERS": "Select Containers",
+      "APPLY_TEMPLATE": "Apply Template"
+    },
+    "TEMPLATE_ITEM": {
+      "TITLE": "Templates Library",
+      "SEARCH_PLACEHOLDER": "Search",
+      "TEMPERATURE": "Temperature",
+      "HUMIDITY": "Humidity",
+      "DETECT_GASES": "Detect gases",
+      "OXYGEN": "Oxygen (O₂)",
+      "CARBON_DIOXIDE": "Carbon Dioxide (CO₂)",
+      "ETHYLENE": "Ethylene (C₂H₄)",
+      "AMMONIA": "Ammonia (NH₃)",
+      "SULFUR_DIOXIDE": "Sulfur Dioxide (SO₂)"
+    },
+    "ADD_CONTAINER_DIALOG": {
+      "TITLE": "Add Container",
+      "CONTAINER_ID": "Container ID",
+      "CODE": "Code",
+      "CANCEL": "Cancel",
+      "SAVE": "Save"
+    },
+    "ADD_WORKER_DIALOG": {
+      "TITLE": "Add Worker",
+      "EMAIL": "Email",
+      "CANCEL": "Cancel",
+      "SAVE": "Save"
+    },
+    "FACILITY_CREATE": {
+      "TITLE": "New Facility",
+      "FACILITY_TYPE": {
+        "RESTAURANT": "Restaurant",
+        "WAREHOUSE": "Warehouse"
+      },
+      "FORM": {
+        "FACILITY_NAME": "Facility name",
+        "CITY": "City",
+        "REGION": "Region",
+        "COUNTRY": "Country",
+        "ADDRESS": "Address"
+      },
+      "BUTTONS": {
+        "CANCEL": "Cancel",
+        "SAVE": "Save"
+      }
+    },
+    "FACILITY_DETAILS": {
+      "CONTAINERS": "Containers",
+      "ADD_CONTAINERS": "Add containers",
+      "WORKERS": "Workers",
+      "ADD_WORKERS": "Add workers",
+      "ALERTS": "Alerts",
+      "CHECK_ALERTS": "Check alerts",
+      "DELETE": "Delete"
+    },
+    "FACILITY_ITEMS": {
+      "LOCATION": "Location",
+      "CONTAINERS": "Containers",
+      "ALERTS": "Alerts",
+      "WORKERS": "Workers",
+      "MORE": "More"
+    },
+    "FACILITY_TAB": {
+      "TITLE": "Facilities",
+      "CREATE": "Create"
+    },
+    "ACCOUNT_INFORMATION_ITEM": {
+      "TITLE": "Account Information",
+      "BUSINESS_NAME": "Business name",
+      "SUBSCRIPTION_TIER": "Subscription tier",
+      "IDENTIFICATION_NUMBER": "Identification number",
+      "MANAGE_SUBSCRIPTION": "Manage Subscription"
+    },
+    "NOTIFICATION_FILTER": {
+      "FILTERS": "Filters",
+      "ALERTS": "Alerts",
+      "WARNINGS": "Warnings",
+      "UPDATES": "Updates",
+      "ALL": "All"
+    },
+    "NOTIFICATION_ITEM": {
+      "DISMISS": "Dismiss"
+    },
+    "NOTIFICATION_TIMEFILTER": {
+      "CHOOSE_DATE": "Choose a date"
+    },
+    "SUBSCRIPTION_DIALOG": {
+      "TITLE": "Are you sure you want to continue?",
+      "DESCRIPTION": "You are about to downgrade your subscription to the {{accountUsage.lowerPlan}} plan. You might lose access to some of the features.",
+      "FACILITIES": "Facilities",
+      "CONTAINERS": "Containers",
+      "USERS": "Users",
+      "USED_OUT_OF": "Used {{currentUsage}} out of {{currentPlanLimit}}",
+      "NONE_AFFECTED": "None affected",
+      "LOSE_ACCESS_TO": "You'll lose access to {{count}} {{item}}",
+      "CANCEL": "Cancel",
+      "DOWNGRADE": "Downgrade"
+    },
+    "USER_INFORMATION_EDIT_ITEM": {
+      "TITLE": "Edit User Data",
+      "USERNAME": "Username",
+      "NAME": "Name",
+      "ID_NUMBER": "Identification number",
+      "BANK_OWNER": "Bank account owner",
+      "CANCEL": "Cancel",
+      "SAVE": "Save"
+    },
+    "USER_INFORMATION_ITEM": {
+      "TITLE": "User information",
+      "USERNAME": "Username",
+      "NAME": "Name",
+      "ID_NUMBER": "Identification number",
+      "BANK_OWNER": "Bank account owner",
+      "EDIT_DATA": "Edit data",
+      "CHANGE_PASSWORD": "Change password"
+    },
+    "ACCOUNT_PAGE": {
+      "TITLE": "Account"
+    },
+    "SUBSCRIPTION_PAGE": {
+      "TITLE": "Subscription",
+      "CURRENT_TIER": "Current tier",
+      "FEATURES": "Features",
+      "FACILITIES": "Facilities",
+      "CONTAINERS": "Containers",
+      "USERS": "Users",
+      "USED_OUT_OF": "Used {{used}} out of {{total}}",
+      "UPGRADE_PLAN": "Upgrade plan",
+      "DOWNGRADE_PLAN": "Downgrade plan",
+      "PAYMENT_INFORMATION": "Payment information",
+      "STATUS": "Status",
+      "NEXT_PAYMENT_DAY": "Next payment day",
+      "IDENTIFICATION_NUMBER": "Identification number",
+      "BANK_ACCOUNT_OWNER": "Bank account owner",
+      "UPDATE_INFORMATION": "Update information",
+      "CANCEL_SUBSCRIPTION": "Cancel subscription"
+    },
+    "WORKER_DETAILS": {
+      "BREADCRUMB": "Workers",
+      "WORKER_DETAILS": "Worker details",
+      "CATEGORY": "Category",
+      "LOCATION": "Location",
+      "ROLE_MANAGEMENT": "Role management",
+      "REASSIGN": "Reassign",
+      "ROLE_MANAGEMENT_TITLE": "Role management",
+      "PRIVILEGES": {
+        "WORKER_MANAGEMENT": "Worker Management",
+        "GROUP_MANAGEMENT": "Group Management",
+        "ACCOUNT_MANAGEMENT": "Account Management"
+      }
+    },
+    "WORKER_ITEMS": {
+      "TITLE": "Workers",
+      "ROLE": "Worker",
+      "LOCATION_NOT_AVAILABLE": "Location not available"
+    }
+
+
+  }

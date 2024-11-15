@@ -10,6 +10,7 @@ import {
 import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-add-container-dialog',
@@ -22,7 +23,8 @@ import {MatButton} from "@angular/material/button";
     MatInput,
     MatDialogActions,
     MatButton,
-    MatLabel
+    MatLabel,
+    TranslateModule
   ],
   templateUrl: './add-container-dialog.component.html',
   styleUrl: './add-container-dialog.component.css'

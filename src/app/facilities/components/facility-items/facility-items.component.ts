@@ -4,6 +4,7 @@ import { NgForOf } from "@angular/common";
 import { MatIconModule } from '@angular/material/icon';
 import { MatButton } from "@angular/material/button";
 import { Facility } from '../../model/facility-model/facility.model';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-facility-items',
@@ -15,6 +16,7 @@ import { Facility } from '../../model/facility-model/facility.model';
     NgForOf,
     MatIconModule,
     MatButton,
+    TranslateModule
   ],
   templateUrl: './facility-items.component.html',
   styleUrl: './facility-items.component.css'

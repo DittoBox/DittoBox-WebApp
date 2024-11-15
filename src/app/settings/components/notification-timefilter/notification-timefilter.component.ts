@@ -10,6 +10,7 @@ import {MatInput} from "@angular/material/input";
 import {FormsModule} from "@angular/forms";
 import {MatButton} from "@angular/material/button";
 import {MatNativeDateModule} from "@angular/material/core";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-notification-timefilter',
@@ -25,7 +26,8 @@ import {MatNativeDateModule} from "@angular/material/core";
     MatLabel,
     MatHint,
     MatDatepickerActions,
-    MatSuffix
+    MatSuffix,
+    TranslateModule
   ],
   templateUrl: './notification-timefilter.component.html',
   styleUrl: './notification-timefilter.component.css'

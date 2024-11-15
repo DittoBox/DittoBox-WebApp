@@ -1,11 +1,11 @@
-<h2 mat-dialog-title>Add Worker</h2>
+<h2 mat-dialog-title>{{ 'ADD_WORKER_DIALOG.TITLE' | translate }}</h2>
 <mat-dialog-content [formGroup]="workerForm">
   <mat-form-field>
-    <mat-label>Email</mat-label>
+    <mat-label>{{ 'ADD_WORKER_DIALOG.EMAIL' | translate }}</mat-label>
     <input matInput formControlName="email">
   </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button (click)="onCancel()">Cancel</button>
-  <button mat-raised-button color="primary" (click)="onSave()" [disabled]="workerForm.invalid">Save</button>
+  <button mat-button (click)="onCancel()">{{ 'ADD_WORKER_DIALOG.CANCEL' | translate }}</button>
+  <button mat-raised-button color="primary" (click)="onSave()" [disabled]="workerForm.invalid">{{ 'ADD_WORKER_DIALOG.SAVE' | translate }}</button>
 </mat-dialog-actions>

@@ -6,6 +6,7 @@ import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from "@angular/mat
 import {NgForOf} from "@angular/common";
 import {MatIcon, MatIconModule} from '@angular/material/icon';
 import {MatButton} from "@angular/material/button";
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @Component({
@@ -20,6 +21,7 @@ import {MatButton} from "@angular/material/button";
     MatCardHeader,
     MatIcon,
     NgForOf,
+    TranslateModule
   ],
   templateUrl: './worker-items.component.html',
   styleUrl: './worker-items.component.css'
