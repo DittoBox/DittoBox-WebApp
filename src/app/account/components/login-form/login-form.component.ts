@@ -6,6 +6,7 @@ import {MatInput} from "@angular/material/input";
 import {Router, RouterLink} from "@angular/router";
 import {AccountServiceService} from "../../service/account-service.service";
 import {FormsModule} from "@angular/forms";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login-form',
@@ -17,7 +18,8 @@ import {FormsModule} from "@angular/forms";
     MatInput,
     MatLabel,
     RouterLink,
-    FormsModule
+    FormsModule,
+    TranslateModule
   ],
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.css'

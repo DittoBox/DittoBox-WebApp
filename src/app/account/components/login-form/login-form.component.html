@@ -1,25 +1,25 @@
 <div class="login-container">
   <div class="login-card">
-    <h2>Login</h2>
+    <h2>{{ 'LOGIN' | translate }}</h2>
     <!-- Se actualiza el formulario para manejar el evento submit -->
     <form (submit)="login()">
       <div class="input-field">
-        <label for="email">Username</label>
+        <label for="email">{{ 'USERNAME' | translate }}</label>
         <!-- Usar ngModel para vincular con el componente TypeScript -->
         <input type="text" id="email" [(ngModel)]="email" name="email" required />
       </div>
 
       <div class="input-field">
-        <label for="password">Password</label>
+        <label for="password">{{ 'PASSWORD' | translate }}</label>
         <!-- Usar ngModel para vincular con el componente TypeScript -->
         <input type="password" id="password" [(ngModel)]="password" name="password" required />
       </div>
 
-      <button type="submit" class="login-button">Login</button>
+      <button type="submit" class="login-button">{{ 'LOGIN' | translate }}</button>
 
       <div class="link-container">
-        <a href="#" class="link">Forgot your password?</a>
-        <a [routerLink]="'/register'" class="link">Register instead</a>
+        <a href="#" class="link">{{ 'FORGOT_PASSWORD' | translate }}</a>
+        <a [routerLink]="'/register'" class="link">{{ 'REGISTER_INSTEAD' | translate }}</a>
       </div>
     </form>
   </div>

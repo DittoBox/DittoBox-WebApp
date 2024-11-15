@@ -1,39 +1,38 @@
-
-        <div class="space">
-            <div class="title-container">
-                <h1>Templates Library</h1>
-            </div>
-            <mat-form-field class="search-field" appearance="outline">
-                <input matInput (input)="applyFilter($event)" placeholder="Search">
-                <mat-icon matSuffix>search</mat-icon>
-            </mat-form-field>
-            <div class="card-container grid-container">
-                <mat-card *ngFor="let template of filteredTemplates" (click)="openTemplateDetails(template)" class="container-card">
-                    <mat-card-title>
-                        {{template.name}}
-                    </mat-card-title>
-                    <p class="description">{{ getCategory(template.category) }}</p>
-                    <mat-divider></mat-divider>
-                    <mat-card-content>
-                        <div class="container">
-                            <p class="item"><mat-icon>thermostat</mat-icon> Temperature</p>
-                            <p class="item">{{ template.minTemperatureThreshold + '°C' }} - {{ template.maxTemperatureThreshold + '°C' }}</p>
-                        </div>
-                        <div class="container">
-                            <p class="item"><mat-icon>opacity</mat-icon> Humidity</p>
-                            <p class="item">{{ template.minHumidityThreshold + '%' }} - {{ template.maxHumidityThreshold + '%' }}</p>
-                        </div>
-                        <div class="gases">
-                            <p class="item"><mat-icon>air</mat-icon> Detect gases</p>
-                            <ul>
-                                <li class="gases-element"><p>Oxygen (O₂)</p><mat-slide-toggle class="custom-toggle" [checked]="template.maxOxygenThreshold != null" disabled></mat-slide-toggle></li>
-                                <li class="gases-element"><p>Carbon Dioxide (CO₂)</p><mat-slide-toggle class="custom-toggle" [checked]="template.maxCarbonDioxideThreshold != null" disabled></mat-slide-toggle></li>
-                                <li class="gases-element"><p>Ethylene (C₂H₄)</p><mat-slide-toggle class="custom-toggle" [checked]="template.maxEthyleneThreshold != null" disabled></mat-slide-toggle></li>
-                                <li class="gases-element"><p>Ammonia (NH₃)</p><mat-slide-toggle class="custom-toggle" [checked]="template.maxAmmoniaThreshold != null" disabled></mat-slide-toggle></li>
-                                <li class="gases-element"><p>Sulfur Dioxide (SO₂)</p><mat-slide-toggle class="custom-toggle" [checked]="template.maxSulfurDioxideThreshold != null" disabled></mat-slide-toggle></li>
-                            </ul>
-                        </div>
-                    </mat-card-content>
-                </mat-card>
-            </div>
-        </div>
+<div class="space">
+    <div class="title-container">
+        <h1>{{ 'TEMPLATE_ITEM.TITLE' | translate }}</h1>
+    </div>
+    <mat-form-field class="search-field" appearance="outline">
+        <input matInput (input)="applyFilter($event)" placeholder="{{ 'TEMPLATE_ITEM.SEARCH_PLACEHOLDER' | translate }}">
+        <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+    <div class="card-container grid-container">
+        <mat-card *ngFor="let template of filteredTemplates" (click)="openTemplateDetails(template)" class="container-card">
+            <mat-card-title>
+                {{template.name}}
+            </mat-card-title>
+            <p class="description">{{ getCategory(template.category) }}</p>
+            <mat-divider></mat-divider>
+            <mat-card-content>
+                <div class="container">
+                    <p class="item"><mat-icon>thermostat</mat-icon> {{ 'TEMPLATE_ITEM.TEMPERATURE' | translate }}</p>
+                    <p class="item">{{ template.minTemperatureThreshold + '°C' }} - {{ template.maxTemperatureThreshold + '°C' }}</p>
+                </div>
+                <div class="container">
+                    <p class="item"><mat-icon>opacity</mat-icon> {{ 'TEMPLATE_ITEM.HUMIDITY' | translate }}</p>
+                    <p class="item">{{ template.minHumidityThreshold + '%' }} - {{ template.maxHumidityThreshold + '%' }}</p>
+                </div>
+                <div class="gases">
+                    <p class="item"><mat-icon>air</mat-icon> {{ 'TEMPLATE_ITEM.DETECT_GASES' | translate }}</p>
+                    <ul>
+                        <li class="gases-element"><p>{{ 'TEMPLATE_ITEM.OXYGEN' | translate }}</p><mat-slide-toggle class="custom-toggle" [checked]="template.maxOxygenThreshold != null" disabled></mat-slide-toggle></li>
+                        <li class="gases-element"><p>{{ 'TEMPLATE_ITEM.CARBON_DIOXIDE' | translate }}</p><mat-slide-toggle class="custom-toggle" [checked]="template.maxCarbonDioxideThreshold != null" disabled></mat-slide-toggle></li>
+                        <li class="gases-element"><p>{{ 'TEMPLATE_ITEM.ETHYLENE' | translate }}</p><mat-slide-toggle class="custom-toggle" [checked]="template.maxEthyleneThreshold != null" disabled></mat-slide-toggle></li>
+                        <li class="gases-element"><p>{{ 'TEMPLATE_ITEM.AMMONIA' | translate }}</p><mat-slide-toggle class="custom-toggle" [checked]="template.maxAmmoniaThreshold != null" disabled></mat-slide-toggle></li>
+                        <li class="gases-element"><p>{{ 'TEMPLATE_ITEM.SULFUR_DIOXIDE' | translate }}</p><mat-slide-toggle class="custom-toggle" [checked]="template.maxSulfurDioxideThreshold != null" disabled></mat-slide-toggle></li>
+                    </ul>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

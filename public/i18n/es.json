@@ -1,0 +1,159 @@
+{
+    "SELECT_LANGUAGE": "Seleccionar idioma",
+    "MENU": "Menú",
+    "DASHBOARD": "Tablero",
+    "FACILITIES": "Instalaciones",
+    "CONTAINERS": "Contenedores",
+    "WORKERS": "Trabajadores",
+    "TEMPLATES": "Plantillas",
+    "SETTINGS": "Configuraciones",
+    "ACCOUNT": "Cuenta",
+    "SUBSCRIPTION": "Suscripción",
+    "NOTIFICATIONS": "Notificaciones",
+    "LOGOUT": "Cerrar sesión",
+    "LANGUAGES": "Idiomas",
+    "LOGIN": "Iniciar sesión",
+    "USERNAME": "Nombre de usuario",
+    "PASSWORD": "Contraseña",
+    "FORGOT_PASSWORD": "¿Olvidaste tu contraseña?",
+    "REGISTER_INSTEAD": "Registrarse en su lugar",
+    "REGISTER": "Registrar",
+    "BUSINESS_NAME": "Nombre del negocio",
+    "BUSINESS_ID": "ID del negocio",
+    "FIRST_NAME": "Nombre",
+    "LAST_NAME": "Apellido",
+    "EMAIL": "Correo electrónico",
+    "CONTINUE": "Continuar",
+    "WORKER": "Trabajador",
+    "OWNER": "Propietario",
+    "REGISTERWORKER": {
+      "FIRSTNAME": "Nombre",
+      "LASTNAME": "Apellido",
+      "USERNAME": "Nombre de usuario",
+      "EMAIL": "Correo electrónico",
+      "PASSWORD": "Contraseña",
+      "REGISTER": "Registrar"
+    },
+    "CONTAINER_DETAILS": {
+      "DESCRIPTION": "Descripción",
+      "TEMPERATURE": "Temperatura",
+      "NO_INFORMATION": "sin información",
+      "HUMIDITY": "Humedad",
+      "LAST_SYNC": "Última sincronización",
+      "MANUAL_EDIT": "Edición manual",
+      "TEMPLATE_CONFIGURATION": "Configuración de plantilla",
+      "DETECT_GASES": "Detectar gases",
+      "OXYGEN": "Oxígeno (O₂)",
+      "CARBON_DIOXIDE": "Dióxido de carbono (CO₂)",
+      "ETHYLENE": "Etileno (C₂H₄)",
+      "AMMONIA": "Amoníaco (NH₃)",
+      "SULFUR_DIOXIDE": "Dióxido de azufre (SO₂)",
+      "NO_TEMPLATE_CONFIGURATION": "No hay configuración de plantilla para este contenedor."
+    },
+    "CONTAINER_ITEM": {
+      "TEMPERATURE": "Temperatura",
+      "HUMIDITY": "Humedad",
+      "LAST_SYNC": "Última sincronización",
+      "OXYGEN": "Oxígeno (O₂)",
+      "CARBON_DIOXIDE": "Dióxido de carbono (CO₂)",
+      "ETHYLENE": "Etileno (C₂H₄)",
+      "AMMONIA": "Amoníaco (NH₃)",
+      "SULFUR_DIOXIDE": "Dióxido de azufre (SO₂)"
+    },
+    "CONTAINER_TAB": {
+      "TITLE": "Contenedores",
+      "ALL_CONTAINERS": "Todos los contenedores",
+      "ACTIVE_CONTAINERS": "Contenedores activos"
+    },
+    "CONTAINER_EDIT": {
+      "TITLE": "Cambio manual",
+      "DESCRIPTION": "Este cambio se registrará en el historial de este contenedor.",
+      "MIN_TEMPERATURE": "Temperatura mínima",
+      "MAX_TEMPERATURE": "Temperatura máxima",
+      "MIN_HUMIDITY": "Humedad mínima",
+      "MAX_HUMIDITY": "Humedad máxima",
+      "CANCEL": "Cancelar",
+      "SAVE": "Guardar"
+    },
+    "TEMPLATE_CONFIRM": {
+      "TITLE": "Confirmación",
+      "CANCEL": "Cancelar",
+      "YES": "Sí"
+    },
+    "TEMPLATE_DETAILS": {
+      "SELECT_CONTAINERS": "Seleccionar contenedores",
+      "APPLY_TEMPLATE": "Aplicar plantilla"
+    },
+    "TEMPLATE_ITEM": {
+      "TITLE": "Biblioteca de Plantillas",
+      "SEARCH_PLACEHOLDER": "Buscar",
+      "TEMPERATURE": "Temperatura",
+      "HUMIDITY": "Humedad",
+      "DETECT_GASES": "Detectar gases",
+      "OXYGEN": "Oxígeno (O₂)",
+      "CARBON_DIOXIDE": "Dióxido de carbono (CO₂)",
+      "ETHYLENE": "Etileno (C₂H₄)",
+      "AMMONIA": "Amoníaco (NH₃)",
+      "SULFUR_DIOXIDE": "Dióxido de azufre (SO₂)"
+    },
+    "ADD_CONTAINER_DIALOG": {
+      "TITLE": "Agregar Contenedor",
+      "CONTAINER_ID": "ID del Contenedor",
+      "CODE": "Código",
+      "CANCEL": "Cancelar",
+      "SAVE": "Guardar"
+    },
+    "ADD_WORKER_DIALOG": {
+      "TITLE": "Agregar Trabajador",
+      "EMAIL": "Correo electrónico",
+      "CANCEL": "Cancelar",
+      "SAVE": "Guardar"
+    },
+    "FACILITY_CREATE": {
+      "TITLE": "Nueva Instalación",
+      "FACILITY_TYPE": {
+        "RESTAURANT": "Restaurante",
+        "WAREHOUSE": "Almacén"
+      },
+      "FORM": {
+        "FACILITY_NAME": "Nombre de la instalación",
+        "CITY": "Ciudad",
+        "REGION": "Región",
+        "COUNTRY": "País",
+        "ADDRESS": "Dirección"
+      },
+      "BUTTONS": {
+        "CANCEL": "Cancelar",
+        "SAVE": "Guardar"
+      }
+    },
+    "FACILITY_DETAILS": {
+      "CONTAINERS": "Contenedores",
+      "ADD_CONTAINERS": "Agregar contenedores",
+      "WORKERS": "Trabajadores",
+      "ADD_WORKERS": "Agregar trabajadores",
+      "ALERTS": "Alertas",
+      "CHECK_ALERTS": "Revisar alertas",
+      "DELETE": "Eliminar"
+    },
+    "FACILITY_ITEMS": {
+      "LOCATION": "Ubicación",
+      "CONTAINERS": "Contenedores",
+      "ALERTS": "Alertas",
+      "WORKERS": "Trabajadores",
+      "MORE": "Más"
+    },
+    "FACILITY_TAB": {
+      "TITLE": "Instalaciones",
+      "CREATE": "Crear"
+    },
+    "ACCOUNT_INFORMATION_ITEM": {
+      "TITLE": "Información de la cuenta",
+      "BUSINESS_NAME": "Nombre del negocio",
+      "SUBSCRIPTION_TIER": "Nivel de suscripción",
+      "IDENTIFICATION_NUMBER": "Número de identificación",
+      "MANAGE_SUBSCRIPTION": "Gestionar suscripción"
+    }
+    
+    
+  }

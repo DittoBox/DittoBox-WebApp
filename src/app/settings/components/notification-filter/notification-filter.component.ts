@@ -3,6 +3,7 @@ import {MatIcon} from "@angular/material/icon";
 import {MatButton, MatIconButton} from "@angular/material/button";
 import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
 import {Notifications} from "../../model/notifications/notification.entity";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-notification-filter',
@@ -14,6 +15,7 @@ import {Notifications} from "../../model/notifications/notification.entity";
     MatMenu,
     MatMenuItem,
     MatButton,
+    TranslateModule
 
 
   ],

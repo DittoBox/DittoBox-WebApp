@@ -11,6 +11,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {MatIcon} from "@angular/material/icon";
 import {MatDivider} from "@angular/material/divider";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-container-details',
@@ -28,7 +29,8 @@ import {MatDivider} from "@angular/material/divider";
         MatButtonToggle,
         MatIcon,
         MatDivider,
-        MatIconButton
+        MatIconButton,
+        TranslateModule
     ],
   templateUrl: './container-details.component.html',
   styleUrl: './container-details.component.css'

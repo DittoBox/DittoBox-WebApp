@@ -10,6 +10,7 @@ import { Facility } from "../../model/facility-model/facility.model";
 import {AddContainerDialogComponent} from "../add-container-dialog/add-container-dialog.component";
 import {MatDialog} from "@angular/material/dialog";
 import {AddWorkerDialogComponent} from "../add-worker-dialog/add-worker-dialog.component";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-facility-details',
@@ -28,6 +29,7 @@ import {AddWorkerDialogComponent} from "../add-worker-dialog/add-worker-dialog.c
     MatDivider,
     MatIconButton,
     AddContainerDialogComponent,
+    TranslateModule
   ],
   templateUrl: './facility-details.component.html',
   styleUrl: './facility-details.component.css'

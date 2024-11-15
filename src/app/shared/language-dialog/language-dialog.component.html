@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>{{ 'SELECT_LANGUAGE' | translate }}</h2>
+<mat-dialog-content>
+  <div *ngIf="loading" class="loading-spinner">
+    <mat-spinner></mat-spinner>
+  </div>
+  <div *ngIf="!loading">
+    <mat-radio-group [(ngModel)]="selectedLanguage" (change)="changeLanguage(selectedLanguage)">
+      <mat-radio-button value="en">English</mat-radio-button>
+      <mat-radio-button value="es">Español</mat-radio-button>
+    </mat-radio-group>
+  </div>
+</mat-dialog-content>

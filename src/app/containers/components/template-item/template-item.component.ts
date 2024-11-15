@@ -16,6 +16,7 @@ import { ChangeDetectorRef } from '@angular/core';
 import {MatButton} from "@angular/material/button";
 import {MatSidenav, MatSidenavContainer, MatSidenavContent} from "@angular/material/sidenav";
 import {FormsModule} from "@angular/forms";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-template-item',
@@ -39,7 +40,8 @@ import {FormsModule} from "@angular/forms";
         MatSidenavContent,
         MatSidenav,
         FormsModule,
-        NgIf
+        NgIf,
+        TranslateModule
     ],
   templateUrl: './template-item.component.html',
   styleUrl: './template-item.component.css'

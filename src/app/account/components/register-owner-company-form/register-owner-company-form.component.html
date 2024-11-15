@@ -1,8 +1,7 @@
-
-<form (submit)="createAccount()"  class="form-container">
-  <h2>Register</h2>
+<form (submit)="createAccount()" class="form-container">
+  <h2>{{ 'REGISTER' | translate }}</h2>
   <div class="input-field">
-    <label for="business-name">Business Name</label>
+    <label for="business-name">{{ 'BUSINESS_NAME' | translate }}</label>
     <input
       id="business-name"
       name="business-name"
@@ -12,7 +11,7 @@
     />
   </div>
   <div class="input-field">
-    <label for="business-id">Business ID</label>
+    <label for="business-id">{{ 'BUSINESS_ID' | translate }}</label>
     <input
       id="business-id"
       name="business-id"
@@ -21,5 +20,5 @@
       required
     />
   </div>
-  <button class="register-button" type="submit">Register</button>
+  <button class="register-button" type="submit">{{ 'REGISTER' | translate }}</button>
 </form>

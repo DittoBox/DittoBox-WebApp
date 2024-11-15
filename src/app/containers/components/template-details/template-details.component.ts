@@ -9,6 +9,7 @@ import {MatListOption, MatSelectionList} from "@angular/material/list";
 import {FormsModule} from "@angular/forms";
 import {NgForOf} from "@angular/common";
 import {MatDialog} from "@angular/material/dialog";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-template-details',
@@ -24,6 +25,7 @@ import {MatDialog} from "@angular/material/dialog";
     FormsModule,
     MatListOption,
     NgForOf,
+    TranslateModule
   ],
   templateUrl: './template-details.component.html',
   styleUrl: './template-details.component.css'

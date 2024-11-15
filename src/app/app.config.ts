@@ -1,38 +1,37 @@
-import {ApplicationConfig, importProvidersFrom, provideZoneChangeDetection} from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-
 import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import {HttpClient, provideHttpClient} from "@angular/common/http";
-import {provideNativeDateAdapter} from "@angular/material/core";
-import {TranslateHttpLoader} from "@ngx-translate/http-loader";
-import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import { HttpClient, provideHttpClient, withInterceptors, withInterceptorsFromDi } from "@angular/common/http";
+import { provideNativeDateAdapter } from "@angular/material/core";
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+export function CreateTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './i18n/', '.json');
 }
 
 export const appConfig: ApplicationConfig = {
-
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }),
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideAnimationsAsync(),
     provideHttpClient(),
-    provideAnimationsAsync(),provideNativeDateAdapter(),
+    provideNativeDateAdapter(),
     importProvidersFrom(
       TranslateModule.forRoot({
         loader: {
           provide: TranslateLoader,
-          useFactory: HttpLoaderFactory,
+          useFactory: CreateTranslateLoader,
           deps: [HttpClient]
-        }
+        },
+        defaultLanguage: 'en'
       })
     ),
-	{
-		provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}
-	}
+    {
+      provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: true }
+    },
+    provideHttpClient(withInterceptorsFromDi())
   ]
-
-
 };

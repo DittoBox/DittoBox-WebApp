@@ -2,6 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
+  inject,
   Input,
   OnInit,
   Output,
@@ -13,17 +14,23 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDivider} from "@angular/material/divider";
 import {RouterLink, RouterLinkActive} from "@angular/router";
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDialog } from '@angular/material/dialog';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { LanguageDialogComponent } from '../language-dialog/language-dialog.component';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-sidenav-content',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatSidenavModule, MatNavList, MatListItem, MatIconModule, MatDivider, RouterLink, RouterLinkActive],
+  imports: [MatSidenavModule, MatNavList, MatListItem, MatIconModule, MatDivider, RouterLink, RouterLinkActive, TranslateModule, NgIf],
   templateUrl: './sidenav-content.component.html',
   styleUrl: './sidenav-content.component.css'
 })
 export class SidenavContentComponent{
-
+  translate: TranslateService = inject(TranslateService);
+  dialog: MatDialog = inject(MatDialog);
+  
   @Output() sidenavClose = new EventEmitter<void>();
   privileges: string[] = JSON.parse(localStorage.getItem('privileges') || '[]')
 
@@ -34,5 +41,7 @@ export class SidenavContentComponent{
   closeSidenav() {
     this.sidenavClose.emit();  // Emite el evento para cerrar el sidenav
   }
-
+  openLanguageDialog() {
+    this.dialog.open(LanguageDialogComponent);
+  }
 }

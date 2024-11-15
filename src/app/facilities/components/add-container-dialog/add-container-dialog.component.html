@@ -1,15 +1,15 @@
-<h2 mat-dialog-title>Add Container</h2>
+<h2 mat-dialog-title>{{ 'ADD_CONTAINER_DIALOG.TITLE' | translate }}</h2>
 <mat-dialog-content [formGroup]="containerForm">
   <mat-form-field>
-    <mat-label>Container ID</mat-label>
+    <mat-label>{{ 'ADD_CONTAINER_DIALOG.CONTAINER_ID' | translate }}</mat-label>
     <input matInput formControlName="containerId">
   </mat-form-field>
   <mat-form-field>
-    <mat-label>Code</mat-label>
+    <mat-label>{{ 'ADD_CONTAINER_DIALOG.CODE' | translate }}</mat-label>
     <input matInput formControlName="code">
   </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button (click)="onCancel()">Cancel</button>
-  <button mat-raised-button color="primary" (click)="onSave()" [disabled]="containerForm.invalid">Save</button>
+  <button mat-button (click)="onCancel()">{{ 'ADD_CONTAINER_DIALOG.CANCEL' | translate }}</button>
+  <button mat-raised-button color="primary" (click)="onSave()" [disabled]="containerForm.invalid">{{ 'ADD_CONTAINER_DIALOG.SAVE' | translate }}</button>
 </mat-dialog-actions>

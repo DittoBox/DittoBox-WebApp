@@ -1,4 +1,4 @@
 <div class="tab-container">
-  <button class="tab" [class.active]="activeTab === 'worker'" (click)="selectTab('worker')">Worker</button>
-  <button class="tab" [class.active]="activeTab === 'owner'" (click)="selectTab('owner')">Owner</button>
+  <button class="tab" [class.active]="activeTab === 'worker'" (click)="selectTab('worker')">{{ 'WORKER' | translate }}</button>
+  <button class="tab" [class.active]="activeTab === 'owner'" (click)="selectTab('owner')">{{ 'OWNER' | translate }}</button>
 </div>

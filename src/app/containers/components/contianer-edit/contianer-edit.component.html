@@ -1,28 +1,28 @@
 <mat-dialog-content>
   <mat-card class="no-border">
     <mat-card-title>
-      Manual change
+      {{ 'CONTAINER_EDIT.TITLE' | translate }}
     </mat-card-title>
-    <p>This change will be recorded in this container’s historial.</p>
+    <p>{{ 'CONTAINER_EDIT.DESCRIPTION' | translate }}</p>
     <mat-card-content>
       <div class="form-fields-container">
         <mat-form-field appearance="outline" class="form-field">
-          <mat-label>Min temperature</mat-label>
+          <mat-label>{{ 'CONTAINER_EDIT.MIN_TEMPERATURE' | translate }}</mat-label>
           <input matInput [(ngModel)]="data.minTemp">
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="form-field">
-          <mat-label>Max temperature</mat-label>
+          <mat-label>{{ 'CONTAINER_EDIT.MAX_TEMPERATURE' | translate }}</mat-label>
           <input matInput [(ngModel)]="data.maxTemp">
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="form-field">
-          <mat-label>Min humidity</mat-label>
+          <mat-label>{{ 'CONTAINER_EDIT.MIN_HUMIDITY' | translate }}</mat-label>
           <input matInput [(ngModel)]="data.minHumidity">
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="form-field">
-          <mat-label>Max humidity</mat-label>
+          <mat-label>{{ 'CONTAINER_EDIT.MAX_HUMIDITY' | translate }}</mat-label>
           <input matInput [(ngModel)]="data.maxHumidity">
         </mat-form-field>
       </div>
@@ -50,8 +50,8 @@
     </mat-card-content>
 
     <mat-card-actions class="button-container">
-      <button mat-button (click)="close()">Cancel</button>
-      <button mat-button (click)="saveChanges()">Save</button>
+      <button mat-button (click)="close()">{{ 'CONTAINER_EDIT.CANCEL' | translate }}</button>
+      <button mat-button (click)="saveChanges()">{{ 'CONTAINER_EDIT.SAVE' | translate }}</button>
     </mat-card-actions>
   </mat-card>
 </mat-dialog-content>

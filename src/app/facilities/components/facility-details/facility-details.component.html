@@ -9,27 +9,27 @@
 
       <!-- Containers Section -->
       <div class="container">
-        <p><mat-icon class="material-icons-outlined">widgets</mat-icon> Containers</p>
+        <p><mat-icon class="material-icons-outlined">widgets</mat-icon> {{ 'FACILITY_DETAILS.CONTAINERS' | translate }}</p>
         <p>{{ facility.containerCount || 0 }}</p>
       </div>
-      <button mat-button class="info-action" (click)="openAddContainerDialog()">Add containers</button>
+      <button mat-button class="info-action" (click)="openAddContainerDialog()">{{ 'FACILITY_DETAILS.ADD_CONTAINERS' | translate }}</button>
 
       <!-- Workers Section -->
       <div class="container">
-        <p><mat-icon class="material-icons-outlined">person</mat-icon> Workers</p>
+        <p><mat-icon class="material-icons-outlined">person</mat-icon> {{ 'FACILITY_DETAILS.WORKERS' | translate }}</p>
         <p>{{ facility.profileCount || 0 }}</p>
       </div>
-      <button mat-button class="info-action" (click)="openAddWorkerDialog()">Add workers</button>
+      <button mat-button class="info-action" (click)="openAddWorkerDialog()">{{ 'FACILITY_DETAILS.ADD_WORKERS' | translate }}</button>
 
       <!-- Alerts Section -->
       <div class="container">
-        <p><mat-icon class="material-icons-outlined">notifications</mat-icon> Alerts</p>
+        <p><mat-icon class="material-icons-outlined">notifications</mat-icon> {{ 'FACILITY_DETAILS.ALERTS' | translate }}</p>
         <p>{{ facility.alerts || 0 }}</p>
       </div>
-      <button mat-button class="info-action">Check alerts</button>
+      <button mat-button class="info-action">{{ 'FACILITY_DETAILS.CHECK_ALERTS' | translate }}</button>
 
       <div class="container-button">
-        <button mat-flat-button color="warn">Delete</button>
+        <button mat-flat-button color="warn">{{ 'FACILITY_DETAILS.DELETE' | translate }}</button>
       </div>
     </div>
   </mat-sidenav>

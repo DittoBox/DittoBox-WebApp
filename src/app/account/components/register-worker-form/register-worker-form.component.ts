@@ -3,12 +3,14 @@ import {User} from "../../model/user/user.entity";
 import {AccountServiceService} from "../../service/account-service.service";
 import {FormsModule} from "@angular/forms";
 import {Router} from "@angular/router";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register-worker-form',
   standalone: true,
   imports: [
-    FormsModule
+    FormsModule,
+    TranslateModule
   ],
   templateUrl: './register-worker-form.component.html',
   styleUrl: './register-worker-form.component.css'

@@ -3,12 +3,14 @@ import {FormsModule} from "@angular/forms";
 import {Account} from "../../../settings/model/account/account.entity";
 import {Router} from "@angular/router";
 import {AccountServiceService} from "../../service/account-service.service";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register-owner-company-form',
   standalone: true,
   imports: [
-    FormsModule
+    FormsModule,
+    TranslateModule
   ],
   templateUrl: './register-owner-company-form.component.html',
   styleUrl: './register-owner-company-form.component.css'
