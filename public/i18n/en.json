@@ -155,6 +155,9 @@
       "WARNINGS": "Warnings",
       "UPDATES": "Updates",
       "ALL": "All"
+    },
+    "NOTIFICATION_ITEM": {
+      "DISMISS": "Dismiss"
     }
     
 

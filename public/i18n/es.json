@@ -160,6 +160,9 @@
       "WARNINGS": "Advertencias",
       "UPDATES": "Actualizaciones",
       "ALL": "Todas"
+    },
+    "NOTIFICATION_ITEM": {
+      "DISMISS": "Descartar"
     }
     
     
