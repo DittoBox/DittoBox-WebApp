@@ -1,5 +1,5 @@
 <div class="worker-list">
-  <h2>Workers</h2>
+  <h2>{{ 'WORKER_ITEMS.TITLE' | translate }}</h2>
   <div *ngFor="let worker of workersItems" class="worker-item" (click)="openWorkerDialog(worker.id)">
     <div class="worker-initial">
       {{ worker.firstName.charAt(0) }}

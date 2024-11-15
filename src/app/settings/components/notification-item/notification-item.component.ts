@@ -14,6 +14,7 @@ import {MatButton} from "@angular/material/button";
 import {SettingServiceService} from "../../service/setting-service.service";
 import {Notifications} from "../../model/notifications/notification.entity";
 import {NotificationTimefilterComponent} from "../notification-timefilter/notification-timefilter.component";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-notification-item',
@@ -32,7 +33,8 @@ import {NotificationTimefilterComponent} from "../notification-timefilter/notifi
     NgForOf,
     DatePipe,
     MatCardSubtitle,
-    NotificationTimefilterComponent
+    NotificationTimefilterComponent,
+    TranslateModule
   ],
   templateUrl: './notification-item.component.html',
   styleUrl: './notification-item.component.css'

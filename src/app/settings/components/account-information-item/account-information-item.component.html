@@ -1,22 +1,20 @@
 <mat-card class="user-card">
-  <mat-card-title>Account Information</mat-card-title>
+  <mat-card-title>{{ 'ACCOUNT_INFORMATION.TITLE' | translate }}</mat-card-title>
   <mat-card-content>
     <div class="info-row">
-      <span>Business name</span>
+      <span>{{ 'ACCOUNT_INFORMATION.BUSINESS_NAME' | translate }}</span>
       <span>A warm place</span>
     </div>
     <div class="info-row">
-      <span>Subscription tier</span>
+      <span>{{ 'ACCOUNT_INFORMATION.SUBSCRIPTION_TIER' | translate }}</span>
       <span>Advance</span>
     </div>
     <div class="info-row">
-      <span>Identification number</span>
+      <span>{{ 'ACCOUNT_INFORMATION.IDENTIFICATION_NUMBER' | translate }}</span>
       <span>20124578963</span>
     </div>
   </mat-card-content>
-    @if (validator) {
-        <mat-card-actions class="actions">
-            <button mat-button >Manage Subscription</button>
-        </mat-card-actions>
-    }
+  <mat-card-actions *ngIf="validator" class="actions">
+    <button mat-button>{{ 'ACCOUNT_INFORMATION.MANAGE_SUBSCRIPTION' | translate }}</button>
+  </mat-card-actions>
 </mat-card>

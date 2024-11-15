@@ -3,6 +3,7 @@ import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { SettingServiceService } from '../../service/setting-service.service';
 import { AccountUsage } from '../../model/subscription/subscription.entity';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
 	selector: 'app-subscription-dialog',
@@ -10,6 +11,7 @@ import { AccountUsage } from '../../model/subscription/subscription.entity';
 	imports: [
 		MatButtonModule,
 		MatDialogModule,
+		TranslateModule
 	],
 	templateUrl: './subscription-dialog.component.html',
 	styleUrls: ['./subscription-dialog.component.css']

@@ -1,3 +1,9 @@
+import {Component, OnInit} from '@angular/core';
+import {MatTab, MatTabGroup} from "@angular/material/tabs";
+import {Facility} from "../../model/facility-model/facility.model";
+import {FacilityItemsComponent} from "../facility-items/facility-items.component";
+import {FacilityServiceService} from "../../service/facility-service.service";
+import { TranslateModule } from '@ngx-translate/core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FacilityServiceService } from '../../service/facility-service.service';
@@ -23,6 +29,7 @@ import {MatIcon} from "@angular/material/icon";
     MatSidenavContainer,
     FacilityCreateComponent,
     FacilityItemsComponent,
+    TranslateModule
     MatSidenav,
     MatSidenavModule,
     MatButtonToggle,

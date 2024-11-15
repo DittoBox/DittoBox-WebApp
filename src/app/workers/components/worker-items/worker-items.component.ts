@@ -6,20 +6,15 @@ import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from "@angular/mat
 import {NgForOf} from "@angular/common";
 import {MatIcon, MatIconModule} from '@angular/material/icon';
 import {MatButton} from "@angular/material/button";
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @Component({
   selector: 'app-worker-items',
   standalone: true,
   imports: [
-    MatTabGroup,
-    MatTab,
-    MatButton,
-    MatCard,
-    MatCardContent,
-    MatCardHeader,
-    MatIcon,
     NgForOf,
+    TranslateModule
   ],
   templateUrl: './worker-items.component.html',
   styleUrl: './worker-items.component.css'

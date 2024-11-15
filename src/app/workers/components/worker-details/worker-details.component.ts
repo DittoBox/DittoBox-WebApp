@@ -11,6 +11,7 @@ import {MatDialog, MatDialogContainer, MatDialogContent} from "@angular/material
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {Worker} from "../../model/wroker-model/worker";
 import {WorkerServiceService} from "../../service/worker-service.service";
+import { TranslateModule } from '@ngx-translate/core';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {FormsModule} from "@angular/forms";
 
@@ -18,15 +19,12 @@ import {FormsModule} from "@angular/forms";
   selector: 'app-worker-details',
   standalone: true,
   imports: [
-    MatCardContent,
-    MatCard,
-    MatCardHeader,
-    NgForOf,
-    MatSidenav,
-    MatButton,
-    MatSidenavContainer,
     NgIf,
+    MatIcon,
+    MatSidenav,
+    MatSidenavContainer,
     MatSidenavContent,
+    TranslateModule,
     MatButtonToggle,
     RouterLink,
     MatIcon,

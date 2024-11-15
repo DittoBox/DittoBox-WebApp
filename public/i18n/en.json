@@ -1,0 +1,186 @@
+{
+    "MENU": "Menu",
+    "DASHBOARD": "Dashboard",
+    "FACILITIES": "Facilities",
+    "CONTAINERS": "Containers",
+    "WORKERS": "Workers",
+    "TEMPLATES": "Templates",
+    "SETTINGS": "Settings",
+    "ACCOUNT": "Account",
+    "SUBSCRIPTION": "Subscription",
+    "NOTIFICATIONS": "Notifications",
+    "LOGOUT": "Logout",
+    "SELECT_LANGUAGE": "Select Language",
+    "LANGUAGES": "Languages",
+    "SUBSCRIPTION_DIALOG": {
+      "TITLE": "Are you sure you want to continue?",
+      "MESSAGE": "You are about to downgrade your subscription to the {{plan}} plan. You might lose access to some of the features.",
+      "FACILITIES": "Facilities",
+      "CONTAINERS": "Containers",
+      "USERS": "Users",
+      "USED_OUT_OF": "Used {{currentUsage}} out of {{currentPlanLimit}}",
+      "NONE_AFFECTED": "None affected",
+      "LOSE_ACCESS": "You'll lose access to {{count}} {{item}}",
+      "CANCEL": "Cancel",
+      "DOWNGRADE": "Downgrade"
+    },
+    "ACCOUNT_INFORMATION": {
+      "TITLE": "Account Information",
+      "BUSINESS_NAME": "Business name",
+      "SUBSCRIPTION_TIER": "Subscription tier",
+      "IDENTIFICATION_NUMBER": "Identification number",
+      "MANAGE_SUBSCRIPTION": "Manage Subscription"
+    },
+    "USER_INFORMATION_EDIT_ITEM": {
+        "TITLE": "Edit User Data",
+        "USERNAME": "Username",
+        "NAME": "Name",
+        "ID_NUMBER": "Identification number",
+        "BANK_OWNER": "Bank account owner",
+        "CANCEL": "Cancel",
+        "SAVE": "Save"
+    },
+      "USER_INFORMATION_ITEM": {
+        "TITLE": "User information",
+        "USERNAME": "Username",
+        "NAME": "Name",
+        "ID_NUMBER": "Identification number",
+        "BANK_OWNER": "Bank account owner",
+        "EDIT_DATA": "Edit data",
+        "CHANGE_PASSWORD": "Change password"
+      },
+      "NOTIFICATION_TIMEFILTER": {
+        "CHOOSE_DATE": "Choose a date"
+      },
+      "NOTIFICATION_ITEM": {
+        "DISMISS": "Dismiss"
+      },
+      "NOTIFICATION_FILTER": {
+        "FILTERS": "Filters",
+        "ALERTS": "Alerts",
+        "WARNINGS": "Warnings",
+        "UPDATES": "Updates",
+        "ALL": "All"
+      },
+      "SUBSCRIPTION_MODULE": {
+        "TITLE": "Subscription",
+        "CURRENT_TIER": "Current tier",
+        "FEATURES": "Features",
+        "FACILITIES": "Facilities",
+        "CONTAINERS": "Containers",
+        "USERS": "Users",
+        "USED_OUT_OF": "Used {{used}} out of {{total}}",
+        "UPGRADE_PLAN": "Upgrade plan",
+        "DOWNGRADE_PLAN": "Downgrade plan",
+        "PAYMENT_INFORMATION": "Payment information",
+        "STATUS": "Status",
+        "ACTIVE": "Active",
+        "NEXT_PAYMENT_DAY": "Next payment day",
+        "ID_NUMBER": "Identification number",
+        "BANK_OWNER": "Bank account owner",
+        "UPDATE_INFORMATION": "Update information",
+        "CANCEL_SUBSCRIPTION": "Cancel subscription"
+      },
+      "WORKER_DETAILS": {
+        "WORKER_INFO": "Worker Info",
+        "CATEGORY": "Category",
+        "FACILITY": "Facility",
+        "LOCATION": "Location",
+        "DELETE": "Delete"
+      },
+      "WORKER_ITEMS": {
+        "TITLE": "Worker List"
+      },
+      "FACILITY_ITEMS": {
+        "CONTAINERS": "Contenedores",
+        "ALERTS": "Alertas",
+        "WORKERS": "Trabajadores",
+        "MORE": "Más"
+      },
+      "FACILITY_DETAILS": {
+        "CONTAINERS": "Containers",
+        "ADD_CONTAINERS": "Add containers",
+        "WORKERS": "Workers",
+        "ADD_WORKERS": "Add workers",
+        "PENDING_ALERTS": "Pending Alerts",
+        "ADD_ALERTS": "Add alerts",
+        "DELETE": "Delete"
+      },
+      "FACILITY_TAB": {
+        "FACILITIES": "Facilities"
+      },
+      "CONTAINER_DETAILS": {
+        "DESCRIPTION": "Description",
+        "TEMPERATURE": "Temperature",
+        "HUMIDITY": "Humidity",
+        "LAST_SYNC": "Last sync",
+        "MANUAL_EDIT": "Manual edit",
+        "TEMPLATE_CONFIGURATION": "Template configuration",
+        "DETECT_GASES": "Detect gases",
+        "OXYGEN": "Oxygen (O₂)",
+        "CARBON_DIOXIDE": "Carbon dioxide (CO₂)",
+        "ETHYLENE": "Ethylene (C₂H₄)",
+        "AMMONIA": "Ammonia (NH₃)",
+        "SULFUR_DIOXIDE": "Sulfur dioxide (SO₂)"
+      },
+      "CONTAINER_ITEM": {
+        "TEMPERATURE": "Temperature",
+        "HUMIDITY": "Humidity",
+        "LAST_SYNC": "Last sync"
+      },
+      "CONTAINER_TAB": {
+        "TITLE": "Containers",
+        "ALL_CONTAINERS": "All Containers",
+        "ACTIVE_CONTAINERS": "Active Containers"
+      },
+      "CONTAINER_EDIT": {
+        "TITLE": "Manual change",
+        "DESCRIPTION": "This change will be recorded in this container’s history.",
+        "MIN_TEMPERATURE": "Min temperature",
+        "MAX_TEMPERATURE": "Max temperature",
+        "MIN_HUMIDITY": "Min humidity",
+        "MAX_HUMIDITY": "Max humidity",
+        "CANCEL": "Cancel",
+        "SAVE": "Save"
+      },
+      "TEMPLATE_CONFIRM": {
+        "TITLE": "Confirmation",
+        "CANCEL": "Cancel",
+        "YES": "Yes"
+      },
+      "TEMPLATE_DETAILS": {
+        "SELECT_CONTAINERS": "Select Containers",
+        "APPLY_TEMPLATE": "Apply Template"
+      },
+      "TEMPLATE_ITEM": {
+        "NEW_TEMPLATE": "New Template",
+        "TEMPLATE_NAME": "Template Name",
+        "DESCRIPTION": "Description",
+        "SELECT_CATEGORY": "Select Category",
+        "FRUITS_VEGETABLES": "Fruits and vegetables",
+        "MEATS": "Meats",
+        "DAIRY": "Dairy",
+        "ANIMAL_DERIVED": "Animal derived",
+        "PROCESSED_FOODS": "Processed foods",
+        "PREPARED_FOODS": "Prepared foods",
+        "TEMPERATURE_RANGE": "Temperature Range",
+        "MIN": "Min",
+        "MAX": "Max",
+        "HUMIDITY_RANGE": "Humidity Range",
+        "GAS_DETECTION": "Gas Detection",
+        "SAVE": "Save",
+        "DISCARD": "Discard",
+        "TEMPLATES_LIBRARY": "Templates Library",
+        "CREATE_TEMPLATE": "Create template",
+        "SEARCH": "Search",
+        "TEMPERATURE": "Temperature",
+        "HUMIDITY": "Humidity",
+        "DETECT_GASES": "Detect gases",
+        "OXYGEN": "Oxygen (O₂)",
+        "CARBON_DIOXIDE": "Carbon Dioxide (CO₂)",
+        "ETHYLENE": "Ethylene (C₂H₄)",
+        "AMMONIA": "Ammonia (NH₃)",
+        "SULFUR_DIOXIDE": "Sulfur Dioxide (SO₂)"
+      }
+      
+  }

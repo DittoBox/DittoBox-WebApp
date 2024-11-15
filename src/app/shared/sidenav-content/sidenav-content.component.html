@@ -1,82 +1,90 @@
 <div class="sidenav-content">
-    Menu
-    <mat-nav-list>
-        @if (workerValidator) {
-            <a mat-list-item>
-                <div class="list-item-content">
-                    <mat-icon>developer_board</mat-icon>
-                    Dashboard
-                    <span class="counter">24</span>
-                </div>
-            </a>
-        }
-        @if (accountValidator) {
-            <a mat-list-item [routerLink]="'/facilities'" routerLinkActive="active-link" (click)="closeSidenav()">
-                <div class="list-item-content">
-                    <mat-icon>corporate_fare</mat-icon>
-                    Facilities
-                </div>
-            </a>
-        }
-        @if (workerValidator) {
-            <a mat-list-item [routerLink]="'/containers'" routerLinkActive="active-link" (click)="closeSidenav()">
-                <div class="list-item-content">
-                    <mat-icon>widgets</mat-icon>
-                    Containers
-                </div>
-            </a>
-        }
-        @if (groupValidator) {
-            <a mat-list-item [routerLink]="'/workers'" routerLinkActive="active-link" (click)="closeSidenav()">
-                <div class="list-item-content">
-                    <mat-icon>person</mat-icon>
-                    Workers
-                </div>
-            </a>
-        }
-        @if (workerValidator) {
-            <a mat-list-item [routerLink]="'/templates'" routerLinkActive="active-link" (click)="closeSidenav()">
-                <div class="list-item-content">
-                    <mat-icon>text_snippet</mat-icon>
-                    Templates
-                </div>
-            </a>
-        }
-    </mat-nav-list>
+  <mat-nav-list>
     <mat-divider></mat-divider>
-    Settings
-    <mat-nav-list>
-        <a mat-list-item [routerLink]="'/account'" routerLinkActive="active-link" (click)="closeSidenav()">
-            <div class="list-item-content">
-                <mat-icon>manage_accounts</mat-icon>
-                Account
-            </div>
-        </a>
-        @if (accountValidator) {
-            <a mat-list-item [routerLink]="'/subscription'" routerLinkActive="active-link" (click)="closeSidenav()">
-                <div class="list-item-content">
-                    <mat-icon>credit_card</mat-icon>
-                    Subscription
-                </div>
-            </a>
-        }
-        @if (workerValidator) {
-            <a mat-list-item [routerLink]="'/notifications'" routerLinkActive="active-link" (click)="closeSidenav()">
-                <div class="list-item-content">
-                    <mat-icon>notifications</mat-icon>
-                    Notifications
-                </div>
-            </a>
-        }
-    </mat-nav-list>
 
+    <!-- Dashboard -->
+    <a *ngIf="workerValidator" mat-list-item>
+      <div class="list-item-content">
+        <mat-icon>developer_board</mat-icon>
+        {{ 'DASHBOARD' | translate }}
+        <span class="counter">24</span>
+      </div>
+    </a>
+
+    <!-- Facilities -->
+    <a *ngIf="accountValidator" mat-list-item [routerLink]="'/facilities'" routerLinkActive="active-link" (click)="closeSidenav()">
+      <div class="list-item-content">
+        <mat-icon>corporate_fare</mat-icon>
+        {{ 'FACILITIES' | translate }}
+      </div>
+    </a>
+
+    <!-- Containers -->
+    <a *ngIf="workerValidator" mat-list-item [routerLink]="'/containers'" routerLinkActive="active-link" (click)="closeSidenav()">
+      <div class="list-item-content">
+        <mat-icon>widgets</mat-icon>
+        {{ 'CONTAINERS' | translate }}
+      </div>
+    </a>
+
+    <!-- Workers -->
+    <a *ngIf="groupValidator" mat-list-item [routerLink]="'/workers'" routerLinkActive="active-link" (click)="closeSidenav()">
+      <div class="list-item-content">
+        <mat-icon>person</mat-icon>
+        {{ 'WORKERS' | translate }}
+      </div>
+    </a>
+
+    <!-- Templates -->
+    <a *ngIf="workerValidator" mat-list-item [routerLink]="'/templates'" routerLinkActive="active-link" (click)="closeSidenav()">
+      <div class="list-item-content">
+        <mat-icon>text_snippet</mat-icon>
+        {{ 'TEMPLATES' | translate }}
+      </div>
+    </a>
     <mat-divider></mat-divider>
-    <mat-nav-list>
-        <a mat-list-item>
-            <div class="list-item-content">
-                <mat-icon>logout</mat-icon>
-                Logout
-            </div>
-        </a>
-    </mat-nav-list>
+  </mat-nav-list>
+
+  <!-- Settings -->
+  <span>{{ 'SETTINGS' | translate }}</span>
+  <mat-nav-list>
+    <a mat-list-item [routerLink]="'/account'" routerLinkActive="active-link" (click)="closeSidenav()">
+      <div class="list-item-content">
+        <mat-icon>manage_accounts</mat-icon>
+        {{ 'ACCOUNT' | translate }}
+      </div>
+    </a>
+
+    <a *ngIf="accountValidator" mat-list-item [routerLink]="'/subscription'" routerLinkActive="active-link" (click)="closeSidenav()">
+      <div class="list-item-content">
+        <mat-icon>credit_card</mat-icon>
+        {{ 'SUBSCRIPTION' | translate }}
+      </div>
+    </a>
+
+    <a *ngIf="workerValidator" mat-list-item [routerLink]="'/notifications'" routerLinkActive="active-link" (click)="closeSidenav()">
+      <div class="list-item-content">
+        <mat-icon>notifications</mat-icon>
+        {{ 'NOTIFICATIONS' | translate }}
+      </div>
+    </a>
+
+    <a mat-list-item (click)="openLanguageDialog()">
+      <div class="list-item-content">
+        <mat-icon>language</mat-icon>
+        {{ 'LANGUAGES' | translate }}
+      </div>
+    </a>
+    <mat-divider></mat-divider>
+  </mat-nav-list>
+
+  <!-- Logout -->
+  <mat-nav-list>
+    <a mat-list-item>
+      <div class="list-item-content">
+        <mat-icon>logout</mat-icon>
+        {{ 'LOGOUT' | translate }}
+      </div>
+    </a>
+  </mat-nav-list>
 </div>

@@ -1,0 +1,186 @@
+{
+    "MENU": "Menú",
+    "DASHBOARD": "Tablero",
+    "FACILITIES": "Instalaciones",
+    "CONTAINERS": "Contenedores",
+    "WORKERS": "Trabajadores",
+    "TEMPLATES": "Plantillas",
+    "SETTINGS": "Configuraciones",
+    "ACCOUNT": "Cuenta",
+    "SUBSCRIPTION": "Suscripción",
+    "NOTIFICATIONS": "Notificaciones",
+    "LOGOUT": "Cerrar sesión",
+    "SELECT_LANGUAGE": "Seleccionar idioma",
+    "LANGUAGES": "idiomas",
+    "SUBSCRIPTION_DIALOG": {
+      "TITLE": "¿Estás seguro de que quieres continuar?",
+      "MESSAGE": "Estás a punto de degradar tu suscripción al plan {{plan}}. Podrías perder el acceso a algunas de las funciones.",
+      "FACILITIES": "Instalaciones",
+      "CONTAINERS": "Contenedores",
+      "USERS": "Usuarios",
+      "USED_OUT_OF": "Usado {{currentUsage}} de {{currentPlanLimit}}",
+      "NONE_AFFECTED": "Ninguno afectado",
+      "LOSE_ACCESS": "Perderás el acceso a {{count}} {{item}}",
+      "CANCEL": "Cancelar",
+      "DOWNGRADE": "Degradar"
+    },
+    "ACCOUNT_INFORMATION": {
+      "TITLE": "Información de la cuenta",
+      "BUSINESS_NAME": "Nombre del negocio",
+      "SUBSCRIPTION_TIER": "Nivel de suscripción",
+      "IDENTIFICATION_NUMBER": "Número de identificación",
+      "MANAGE_SUBSCRIPTION": "Gestionar suscripción"
+    },
+    "USER_INFORMATION_EDIT_ITEM": {
+        "TITLE": "Editar datos del usuario",
+        "USERNAME": "Nombre de usuario",
+        "NAME": "Nombre",
+        "ID_NUMBER": "Número de identificación",
+        "BANK_OWNER": "Titular de la cuenta bancaria",
+        "CANCEL": "Cancelar",
+        "SAVE": "Guardar"
+    },
+    "USER_INFORMATION_ITEM": {
+        "TITLE": "Información del usuario",
+        "USERNAME": "Nombre de usuario",
+        "NAME": "Nombre",
+        "ID_NUMBER": "Número de identificación",
+        "BANK_OWNER": "Titular de la cuenta bancaria",
+        "EDIT_DATA": "Editar datos",
+        "CHANGE_PASSWORD": "Cambiar contraseña"
+     },
+     "NOTIFICATION_TIMEFILTER": {
+        "CHOOSE_DATE": "Elige una fecha"
+     },
+     "NOTIFICATION_ITEM": {
+        "DISMISS": "Descartar"
+     },
+     "NOTIFICATION_FILTER": {
+        "FILTERS": "Filtros",
+        "ALERTS": "Alertas",
+        "WARNINGS": "Advertencias",
+        "UPDATES": "Actualizaciones",
+        "ALL": "Todas"
+      },
+      "SUBSCRIPTION_MODULE": {
+         "TITLE": "Suscripción",
+         "CURRENT_TIER": "Nivel actual",
+         "FEATURES": "Características",
+         "FACILITIES": "Instalaciones",
+         "CONTAINERS": "Contenedores",
+         "USERS": "Usuarios",
+         "USED_OUT_OF": "Usado {{used}} de {{total}}",
+         "UPGRADE_PLAN": "Mejorar plan",
+         "DOWNGRADE_PLAN": "Degradar plan",
+         "PAYMENT_INFORMATION": "Información de pago",
+         "STATUS": "Estado",
+         "ACTIVE": "Activo",
+         "NEXT_PAYMENT_DAY": "Próximo día de pago",
+         "ID_NUMBER": "Número de identificación",
+         "BANK_OWNER": "Titular de la cuenta bancaria",
+         "UPDATE_INFORMATION": "Actualizar información",
+         "CANCEL_SUBSCRIPTION": "Cancelar suscripción"
+       },
+       "WORKER_DETAILS": {
+         "WORKER_INFO": "Información del trabajador",
+         "CATEGORY": "Categoría",
+         "FACILITY": "Instalación",
+         "LOCATION": "Ubicación",
+         "DELETE": "Eliminar"
+       },
+       "WORKER_ITEMS": {
+         "TITLE": "Lista de Trabajadores"
+      },
+      "FACILITY_ITEMS": {
+        "CONTAINERS": "Containers",
+        "ALERTS": "Alerts",
+        "WORKERS": "Workers",
+        "MORE": "More"
+      },
+      "FACILITY_DETAILS": {
+        "CONTAINERS": "Contenedores",
+        "ADD_CONTAINERS": "Agregar contenedores",
+        "WORKERS": "Trabajadores",
+        "ADD_WORKERS": "Agregar trabajadores",
+        "PENDING_ALERTS": "Alertas pendientes",
+        "ADD_ALERTS": "Agregar alertas",
+        "DELETE": "Eliminar"
+      },
+      "FACILITY_TAB": {
+        "FACILITIES": "Instalaciones"
+      },
+      "CONTAINER_DETAILS": {
+        "DESCRIPTION": "Descripción",
+        "TEMPERATURE": "Temperatura",
+        "HUMIDITY": "Humedad",
+        "LAST_SYNC": "Última sincronización",
+        "MANUAL_EDIT": "Edición manual",
+        "TEMPLATE_CONFIGURATION": "Configuración de plantilla",
+        "DETECT_GASES": "Detectar gases",
+        "OXYGEN": "Oxígeno (O₂)",
+        "CARBON_DIOXIDE": "Dióxido de carbono (CO₂)",
+        "ETHYLENE": "Etileno (C₂H₄)",
+        "AMMONIA": "Amoníaco (NH₃)",
+        "SULFUR_DIOXIDE": "Dióxido de azufre (SO₂)"
+      },
+      "CONTAINER_ITEM": {
+        "TEMPERATURE": "Temperatura",
+        "HUMIDITY": "Humedad",
+        "LAST_SYNC": "Ult. Sync"
+      },
+      "CONTAINER_TAB": {
+        "TITLE": "Contenedores",
+        "ALL_CONTAINERS": "Todos los Contenedores",
+        "ACTIVE_CONTAINERS": "Contenedores Activos"
+      },
+      "CONTAINER_EDIT": {
+        "TITLE": "Cambio manual",
+        "DESCRIPTION": "Este cambio se registrará en el historial de este contenedor.",
+        "MIN_TEMPERATURE": "Temperatura mínima",
+        "MAX_TEMPERATURE": "Temperatura máxima",
+        "MIN_HUMIDITY": "Humedad mínima",
+        "MAX_HUMIDITY": "Humedad máxima",
+        "CANCEL": "Cancelar",
+        "SAVE": "Guardar"
+      },
+      "TEMPLATE_CONFIRM": {
+        "TITLE": "Confirmación",
+        "CANCEL": "Cancelar",
+        "YES": "Sí"
+      },
+      "TEMPLATE_DETAILS": {
+        "SELECT_CONTAINERS": "Seleccionar Contenedores",
+        "APPLY_TEMPLATE": "Aplicar Plantilla"
+      },
+      "TEMPLATE_ITEM": {
+        "NEW_TEMPLATE": "Nueva Plantilla",
+        "TEMPLATE_NAME": "Nombre de la Plantilla",
+        "DESCRIPTION": "Descripción",
+        "SELECT_CATEGORY": "Seleccionar Categoría",
+        "FRUITS_VEGETABLES": "Frutas y verduras",
+        "MEATS": "Carnes",
+        "DAIRY": "Lácteos",
+        "ANIMAL_DERIVED": "Derivados de animales",
+        "PROCESSED_FOODS": "Alimentos procesados",
+        "PREPARED_FOODS": "Alimentos preparados",
+        "TEMPERATURE_RANGE": "Rango de Temperatura",
+        "MIN": "Mín",
+        "MAX": "Máx",
+        "HUMIDITY_RANGE": "Rango de Humedad",
+        "GAS_DETECTION": "Detección de Gases",
+        "SAVE": "Guardar",
+        "DISCARD": "Descartar",
+        "TEMPLATES_LIBRARY": "Biblioteca de Plantillas",
+        "CREATE_TEMPLATE": "Crear plantilla",
+        "SEARCH": "Buscar",
+        "TEMPERATURE": "Temperatura",
+        "HUMIDITY": "Humedad",
+        "DETECT_GASES": "Detectar gases",
+        "OXYGEN": "Oxígeno (O₂)",
+        "CARBON_DIOXIDE": "Dióxido de Carbono (CO₂)",
+        "ETHYLENE": "Etileno (C₂H₄)",
+        "AMMONIA": "Amoníaco (NH₃)",
+        "SULFUR_DIOXIDE": "Dióxido de Azufre (SO₂)"
+      }
+
+  }

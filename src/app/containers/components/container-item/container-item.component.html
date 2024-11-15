@@ -1,70 +1,54 @@
 <div class="card-container">
-    <mat-card *ngFor="let container of containerItems" (click)="openContainerSidenav(container.id)" class="container-card">
-        <mat-card-header>
-            <h3>{{ container.name }}</h3>
-        </mat-card-header>
-        <mat-card-content>
-            <p>{{ container.lastKnownContainerStatus }}</p>
+  <mat-card *ngFor="let container of containerItems" (click)="openContainerSidenav(container.id)" class="container-card">
+    <mat-card-header>
+      <h3>{{ container.name }}</h3>
+    </mat-card-header>
+    <mat-card-content>
+      <!-- Estado del contenedor -->
+      <p>{{ container.status || 'CONTAINER_ITEM.UNKNOWN_STATUS' | translate }}</p>
 
-            <!-- Sección de Temperatura y Humedad -->
-            <div class="content">
-                <div class="tag">
-                    <mat-icon aria-hidden="false" aria-label="Temperature icon" fontIcon="device_thermostat"></mat-icon>
-                    <span>Temperature</span>
-                </div>
-                <span>{{ container.temperature != null ? container.temperature + ' °C' : '--' }}</span>
-            </div>
-            <div class="content">
-                <div class="tag">
-                    <mat-icon aria-hidden="false" aria-label="Humidity icon" fontIcon="water_drop"></mat-icon>
-                    <span>Humidity</span>
-                </div>
-                <span>{{ container.humidity != null ? container.humidity + ' %' : '--' }}</span>
-            </div>
-            <div class="content">
-                <div class="tag">
-                    <mat-icon aria-hidden="false" aria-label="Example last sync" fontIcon="hourglass_empty"></mat-icon>
-                    <span>Last sync</span>
-                </div>
-                <span>{{ this.getLastSync(container) }}</span>
-            </div>
+      <!-- Temperatura -->
+      <div class="content">
+        <div class="tag">
+          <mat-icon aria-hidden="false" aria-label="Temperature icon" fontIcon="device_thermostat"></mat-icon>
+          <span>{{ 'CONTAINER_ITEM.TEMPERATURE' | translate }}</span>
+        </div>
+        <span>{{ container.temperature !== null ? container.temperature + '°C' : '--' }}</span>
+      </div>
 
-            <!-- Separador para los Gases -->
-            <hr class="divider" />
+      <!-- Humedad -->
+      <div class="content">
+        <div class="tag">
+          <mat-icon aria-hidden="false" aria-label="Humidity icon" fontIcon="water_drop"></mat-icon>
+          <span>{{ 'CONTAINER_ITEM.HUMIDITY' | translate }}</span>
+        </div>
+        <span>{{ container.humidity !== null ? container.humidity + '%' : '--' }}</span>
+      </div>
 
-            <!-- Sección de Gases -->
-            <div class="gases-section">
-                <div class="gas">
-                    <div class="gas-name">Oxygen <b>O</b></div>
-                    <div class="gas-value">
-                        {{ container.oxygen != null ? container.oxygen + ' %' : '--' }}
-                    </div>
-                </div>
-                <div class="gas">
-                    <div class="gas-name">Carbon Dioxide <b>CO₂</b></div>
-                    <div class="gas-value">
-                        {{ container.dioxide != null ? container.dioxide + ' %' : '--' }}
-                    </div>
-                </div>
-                <div class="gas">
-                    <div class="gas-name">Ethylene <b>C₂H₄</b></div>
-                    <div class="gas-value">
-                        {{ container.ethylene != null ? container.ethylene + ' %' : '--' }}
-                    </div>
-                </div>
-                <div class="gas">
-                    <div class="gas-name">Ammonia <b>NH₃</b></div>
-                    <div class="gas-value">
-                        {{ container.ammonia != null ? container.ammonia + ' %' : '--' }}
-                    </div>
-                </div>
-                <div class="gas">
-                    <div class="gas-name">Sulfur Dioxide <b>SO₂</b></div>
-                    <div class="gas-value">
-                        {{ container.sulfurDioxide != null ? container.sulfurDioxide + ' %' : '--' }}
-                    </div>
-                </div>
-            </div>
-        </mat-card-content>
-    </mat-card>
+      <!-- Última sincronización -->
+      <div class="content">
+        <div class="tag">
+          <mat-icon aria-hidden="false" aria-label="Last sync icon" fontIcon="hourglass_empty"></mat-icon>
+          <span>{{ 'CONTAINER_ITEM.LAST_SYNC' | translate }}</span>
+        </div>
+        <span>{{ container.lastSync || '--' }}</span>
+      </div>
+
+      <!-- Separador -->
+      <hr class="divider" />
+
+      <!-- Sección de gases -->
+      <div class="gases-section" *ngIf="container.gases && container.gases.length > 0">
+        <div *ngFor="let gas of container.gases" class="gas">
+          <div class="gas-name">{{ gas.name | translate }}</div>
+          <div class="gas-value">
+            {{ gas.value !== null ? gas.value + ' %' : '--' }}
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!container.gases || container.gases.length === 0" class="no-gases">
+        <p>{{ 'CONTAINER_ITEM.NO_GASES' | translate }}</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
 </div>

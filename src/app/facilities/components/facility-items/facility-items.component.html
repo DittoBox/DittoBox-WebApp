@@ -5,29 +5,39 @@
     </mat-card-header>
     <mat-card-content>
       <p>Location: {{ facility.location.city }}, {{ facility.location.state }}, {{ facility.location.country }}</p>
+
+      <!-- Containers Section -->
       <div class="content">
         <div class="tag">
-          <mat-icon class="material-icons-outlined">widgets</mat-icon>
-          <span>Containers</span>
+          <mat-icon class="material-icons-outlined" aria-hidden="false" aria-label="Containers icon">widgets</mat-icon>
+          <span>{{ 'FACILITY_ITEMS.CONTAINERS' | translate }}</span>
         </div>
-        <span>{{ facility.containerCount }}</span>
+        <span>{{ facility.containerCount || 0 }}</span>
       </div>
+
+      <!-- Alerts Section -->
       <div class="content">
         <div class="tag">
-          <mat-icon class="material-icons-outlined">notifications</mat-icon>
-          <span>Alerts</span>
+          <mat-icon class="material-icons-outlined" aria-hidden="false" aria-label="Alerts icon">notifications</mat-icon>
+          <span>{{ 'FACILITY_ITEMS.ALERTS' | translate }}</span>
         </div>
         <span>{{ facility.alerts || 0 }}</span>
       </div>
+
+      <!-- Workers Section -->
       <div class="content">
         <div class="tag">
-          <mat-icon fontIcon="person"></mat-icon>
-          <span>Workers</span>
+          <mat-icon class="material-icons-outlined" aria-hidden="false" aria-label="Workers icon">person</mat-icon>
+          <span>{{ 'FACILITY_ITEMS.WORKERS' | translate }}</span>
         </div>
         <span>{{ facility.profileCount || 0 }}</span>
       </div>
+
+      <!-- More Info Button -->
       <div class="container-button">
-        <button mat-flat-button (click)="openFacilitySidenav(facility.id)">More</button>
+        <button mat-stroked-button (click)="openFacilitySidenav(facility.id)">
+          {{ 'FACILITY_ITEMS.MORE' | translate }}
+        </button>
       </div>
     </mat-card-content>
   </mat-card>
