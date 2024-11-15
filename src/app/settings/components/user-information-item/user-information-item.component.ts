@@ -3,6 +3,7 @@ import {MatButton} from "@angular/material/button";
 import {MatCard, MatCardActions, MatCardContent, MatCardTitle} from "@angular/material/card";
 import {MatDialog} from "@angular/material/dialog";
 import {UserInformationEditItemComponent} from "../user-information-edit-item/user-information-edit-item.component";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-user-information-item',
@@ -12,7 +13,8 @@ import {UserInformationEditItemComponent} from "../user-information-edit-item/us
         MatCard,
         MatCardActions,
         MatCardContent,
-        MatCardTitle
+        MatCardTitle,
+        TranslateModule
     ],
   templateUrl: './user-information-item.component.html',
   styleUrl: './user-information-item.component.css'

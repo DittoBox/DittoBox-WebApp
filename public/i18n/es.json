@@ -178,6 +178,45 @@
       "LOSE_ACCESS_TO": "Perderás acceso a {{count}} {{item}}",
       "CANCEL": "Cancelar",
       "DOWNGRADE": "Degradar"
+    },
+    "USER_INFORMATION_EDIT_ITEM": {
+      "TITLE": "Editar datos del usuario",
+      "USERNAME": "Nombre de usuario",
+      "NAME": "Nombre",
+      "ID_NUMBER": "Número de identificación",
+      "BANK_OWNER": "Titular de la cuenta bancaria",
+      "CANCEL": "Cancelar",
+      "SAVE": "Guardar"
+    },
+    "USER_INFORMATION_ITEM": {
+      "TITLE": "Información del usuario",
+      "USERNAME": "Nombre de usuario",
+      "NAME": "Nombre",
+      "ID_NUMBER": "Número de identificación",
+      "BANK_OWNER": "Titular de la cuenta bancaria",
+      "EDIT_DATA": "Editar datos",
+      "CHANGE_PASSWORD": "Cambiar contraseña"
+    },
+    "ACCOUNT_PAGE": {
+      "TITLE": "Cuenta"
+    },
+    "SUBSCRIPTION_PAGE": {
+      "TITLE": "Suscripción",
+      "CURRENT_TIER": "Nivel actual",
+      "FEATURES": "Características",
+      "FACILITIES": "Instalaciones",
+      "CONTAINERS": "Contenedores",
+      "USERS": "Usuarios",
+      "USED_OUT_OF": "Usado {{used}} de {{total}}",
+      "UPGRADE_PLAN": "Mejorar plan",
+      "DOWNGRADE_PLAN": "Degradar plan",
+      "PAYMENT_INFORMATION": "Información de pago",
+      "STATUS": "Estado",
+      "NEXT_PAYMENT_DAY": "Próximo día de pago",
+      "IDENTIFICATION_NUMBER": "Número de identificación",
+      "BANK_ACCOUNT_OWNER": "Titular de la cuenta bancaria",
+      "UPDATE_INFORMATION": "Actualizar información",
+      "CANCEL_SUBSCRIPTION": "Cancelar suscripción"
     }
     
     
