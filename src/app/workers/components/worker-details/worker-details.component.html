@@ -1,31 +1,50 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav mode="over" [(opened)]="opened" class="sidenav" position="end">
     <mat-icon class="close" (click)="sidenav.close()">arrow_back</mat-icon>
-    <div *ngIf="worker">
-      <div class="title">
-        <h2>{{ worker.name }}</h2>
-      </div>
-      <div class="container">
-        <p>{{ 'WORKER_DETAILS.WORKER_INFO' | translate }}:</p> <br>
-      </div>
-      <div class="container">
-        <p>{{ 'WORKER_DETAILS.CATEGORY' | translate }}:</p> <br>
-        <p>{{ worker.rol }}</p>
-      </div>
-      <div class="container">
-        <p>{{ 'WORKER_DETAILS.FACILITY' | translate }}:</p> <br>
-        <p>{{ worker.facility }}</p>
-      </div>
-      <div class="container">
-        <p>{{ 'WORKER_DETAILS.LOCATION' | translate }}:</p> <br>
-        <p>{{ worker.location }}</p>
-      </div>
+    
+    <!-- Detalles del trabajador -->
+    <div *ngIf="worker" class="worker-details-content">
+      <p class="breadcrumb">Workers &gt; {{ worker.firstName }} {{ worker.lastName }}</p>
+      <h1 class="worker-name">{{ worker.firstName }} {{ worker.lastName }}</h1>
 
+      <!-- Sección de detalles del trabajador -->
+      <section class="details-section">
+        <h2>{{ 'WORKER_DETAILS.TITLE' | translate }}</h2>
+        <div class="details-row">
+          <span class="label">{{ 'WORKER_DETAILS.CATEGORY' | translate }}</span>
+          <span class="value">{{ workerRole }}</span>
+        </div>
+        <div class="details-row">
+          <span class="label">{{ 'WORKER_DETAILS.LOCATION' | translate }}</span>
+          <span class="value">{{ worker.location || 'Chorrillos' }}</span>
+        </div>
+      </section>
+
+      <!-- Sección de gestión de roles -->
+      <section class="role-management-section">
+        <button mat-flat-button color="primary" class="role-management-button">
+          {{ 'WORKER_DETAILS.ROLE_MANAGEMENT' | translate }}
+        </button>
+        <button mat-button class="reassign-button">{{ 'WORKER_DETAILS.REASSIGN' | translate }}</button>
+
+        <h2 class="role-management-title">{{ 'WORKER_DETAILS.ROLE_MANAGEMENT_TITLE' | translate }}</h2>
+        <div class="role-toggle" *ngFor="let privilege of ['WorkerManagement', 'GroupManagement', 'AccountManagement']">
+          <span>{{ privilege | translate }}</span>
+          <mat-slide-toggle color="primary"
+            [checked]="worker.privileges.includes(privilege)"
+            (change)="onPrivilegeToggle(privilege, $event.checked)">
+          </mat-slide-toggle>
+        </div>
+      </section>
+      
+      <!-- Botón para eliminar trabajador -->
       <div class="container-button">
         <button mat-flat-button>{{ 'WORKER_DETAILS.DELETE' | translate }}</button>
       </div>
     </div>
   </mat-sidenav>
+  
+  <!-- Contenido del sidenav -->
   <mat-sidenav-content class="sidenav-content">
     <ng-content></ng-content>
   </mat-sidenav-content>

@@ -12,6 +12,8 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {Worker} from "../../model/wroker-model/worker";
 import {WorkerServiceService} from "../../service/worker-service.service";
 import { TranslateModule } from '@ngx-translate/core';
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-worker-details',
@@ -23,49 +25,89 @@ import { TranslateModule } from '@ngx-translate/core';
     MatSidenavContainer,
     MatSidenavContent,
     TranslateModule,
+    MatButtonToggle,
+    RouterLink,
+    MatIcon,
+    MatDivider,
+    MatIconButton,
+    MatDialogContainer,
+    MatDialogContent,
+    MatSlideToggleModule,
+    FormsModule,
   ],
   templateUrl: './worker-details.component.html',
   styleUrl: './worker-details.component.css'
 })
 export class WorkerDetailsComponent {
   worker: Worker | null = null;
+  workersList: Worker[] = [];
+  workerRole: string = '';
   opened: boolean = false;
 
-  constructor(private workerServiceService: WorkerServiceService, public dialog:MatDialog,private snackBar: MatSnackBar) { }
+  constructor(
+    private workerServiceService: WorkerServiceService,
+    public dialog: MatDialog,
+    private snackBar: MatSnackBar
+  ) {
+    this.loadAllWorkers();
+  }
 
-  loadWorker(workerId: number) {
-    this.workerServiceService.getWorkerbyId(workerId.toString()).subscribe(data => {
-      this.worker = new Worker(
-        data.id,
-        data.name,
-        data.facility,
-        data.location,
-        data.rol,
-        data.image
+  loadAllWorkers() {
+    const accountId = localStorage.getItem('accountId');
+    if (accountId) {
+      this.workerServiceService.getWorkersByAccount(accountId).subscribe(
+        (data: any[]) => {
+          this.workersList = data.map((workerData: any) => new Worker(
+            workerData.id,
+            workerData.firstName,
+            workerData.lastName,
+            workerData.accountId,
+            workerData.groupId,
+            workerData.location,
+            workerData.privileges
+          ));
+        },
+        (error) => {
+          console.error('Error al obtener los trabajadores:', error);
+        }
       );
-      if (this.worker && this.worker.id) {
-        this.workerServiceService.getWorkerbyId(this.worker.id).subscribe(WorkerData => {
-          this.worker = new Worker(
-            data.id,
-            data.name,
-            data.facility,
-            data.location,
-            data.rol,
-            data.image
-          );
+    }
+  }
 
+  loadWorker(workerId: string | number) {
+    const id = typeof workerId === 'string' ? parseInt(workerId, 10) : workerId;
+    this.worker = this.workersList.find(worker => worker.id === id) || null;
+    if (this.worker) {
+      this.workerRole = this.getRoleBasedOnPrivileges(this.worker.privileges);
+    }
+    this.opened = !!this.worker;
+  }
 
-          this.opened = true;
-        }, error => {
-          console.error('Error al obtener:', error);
-        });
+  getRoleBasedOnPrivileges(privileges: string[]): string {
+    const hasWorkerManagement = privileges.includes('WorkerManagement');
+    const hasGroupManagement = privileges.includes('GroupManagement');
+    const hasAccountManagement = privileges.includes('AccountManagement');
+
+    if (hasWorkerManagement && hasGroupManagement && hasAccountManagement) {
+      return 'Owner';
+    } else if (hasWorkerManagement && hasGroupManagement) {
+      return 'Manager';
+    } else {
+      return 'Worker';
+    }
+  }
+
+  onPrivilegeToggle(privilege: string, isChecked: boolean) {
+    if (this.worker) {
+      if (isChecked) {
+        if (!this.worker.privileges.includes(privilege)) {
+          this.worker.privileges.push(privilege);
+        }
       } else {
-        console.error('definido o worker es nulo');
+        this.worker.privileges = this.worker.privileges.filter(p => p !== privilege);
       }
-
-    }, error => {
-      console.error('Error al obtener el worker:', error);
-    });
+      this.workerRole = this.getRoleBasedOnPrivileges(this.worker.privileges);
+    }
   }
 
 }

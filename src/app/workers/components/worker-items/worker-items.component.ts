@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {MatTab, MatTabGroup} from "@angular/material/tabs";
 import {WorkerServiceService} from "../../service/worker-service.service";
 import {WorkerDetailsComponent} from "../worker-details/worker-details.component";
@@ -21,19 +21,23 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class WorkerItemsComponent implements OnInit {
   @Input() workersItems: any[] = [];
+  @Output() workerSelected = new EventEmitter<number>();
 
-  constructor(
-    private sidenavComponent: WorkerDetailsComponent,
-    private workerServiceService: WorkerServiceService
-  ) {}
+  constructor(private workerServiceService: WorkerServiceService) {}
 
   ngOnInit() {
+    const myUserId = localStorage.getItem('userId');
+
     this.workerServiceService.getWorkers().subscribe((data: any[]) => {
-      this.workersItems = data;
+      if (myUserId !== null) {
+        this.workersItems = data.filter(worker => worker.id !== +myUserId);
+      } else {
+        this.workersItems = data;
+      }
     });
   }
 
   openWorkerDialog(workerId: number) {
-    this.sidenavComponent.loadWorker(workerId);
+    this.workerSelected.emit(workerId);
   }
 }

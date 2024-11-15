@@ -2,5 +2,7 @@
     <h1>{{ 'ACCOUNT' | translate }}</h1>
     <app-user-information-item></app-user-information-item>
     <hr>
-    <app-account-information-item></app-account-information-item>
+    @if (accountValidator || workerValidator || groupValidator) {
+        <app-account-information-item [validator]="accountValidator"></app-account-information-item>
+    }
 </div>

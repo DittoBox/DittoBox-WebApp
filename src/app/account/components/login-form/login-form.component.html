@@ -1,0 +1,26 @@
+<div class="login-container">
+  <div class="login-card">
+    <h2>Login</h2>
+    <!-- Se actualiza el formulario para manejar el evento submit -->
+    <form (submit)="login()">
+      <div class="input-field">
+        <label for="email">Username</label>
+        <!-- Usar ngModel para vincular con el componente TypeScript -->
+        <input type="text" id="email" [(ngModel)]="email" name="email" required />
+      </div>
+
+      <div class="input-field">
+        <label for="password">Password</label>
+        <!-- Usar ngModel para vincular con el componente TypeScript -->
+        <input type="password" id="password" [(ngModel)]="password" name="password" required />
+      </div>
+
+      <button type="submit" class="login-button">Login</button>
+
+      <div class="link-container">
+        <a href="#" class="link">Forgot your password?</a>
+        <a [routerLink]="'/register'" class="link">Register instead</a>
+      </div>
+    </form>
+  </div>
+</div>

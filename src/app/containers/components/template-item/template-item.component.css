@@ -57,6 +57,10 @@
   align-items: center;
 }
 
+.title-container h1 {
+  font-size: 32px;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

@@ -22,6 +22,10 @@ export class ContainerTabComponent implements  OnInit{
   allContainers: Container[] = [];
   activeContainers: Container[] = [];
 
+    idGroup = Number(localStorage.getItem('groupId'));
+    privileges: string[] = JSON.parse(localStorage.getItem('privileges') || '[]')
+
+
   constructor(private containerService: ContainerServiceService) {}
 
   ngOnInit() {
@@ -29,9 +33,16 @@ export class ContainerTabComponent implements  OnInit{
   }
 
   loadContainers() {
-    this.containerService.getContainers().subscribe((data: Container[]) => {
-      this.allContainers = data;
-      this.activeContainers = data.filter(container => container.status === 'Active');
-    });
+    if (this.privileges.includes('AccountManagement')) {
+      this.containerService.getContainersByAccountId(Number(localStorage.getItem('accountId'))).subscribe((data: Container[]) => {
+        this.allContainers = data;
+        this.activeContainers = data.filter(container => container.lastKnownContainerStatus === 'Running');
+      });
+    } else {
+        this.containerService.getContainersByGroupId(this.idGroup).subscribe((data: Container[]) => {
+          this.allContainers = data;
+          this.activeContainers = data.filter(container => container.lastKnownContainerStatus === 'Running');
+        });
+    }
   }
 }

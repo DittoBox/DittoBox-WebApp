@@ -10,7 +10,7 @@ import { Container } from "../model/container-model/container.entity";
 })
 export class ContainerServiceService {
 
-  Baseurl: string = 'http://localhost:3000';
+  DevBaseurl: string = 'https://app-dev-01-dittobox-a8bpd5bkh4dnh3g7.eastus-01.azurewebsites.net/api/v1';
 
   // to manage the templates selection
   private templateSource = new BehaviorSubject<any>(null);
@@ -28,35 +28,42 @@ export class ContainerServiceService {
 
   getContainers(): Observable<any> {
     this.setLoading(true);
-    return this.http.get<any>(`${this.Baseurl}/containers`).pipe(
+    return this.http.get<any>(`${this.DevBaseurl}/container`).pipe(
       finalize(() => this.setLoading(false))
+    );
+  }
+
+  getContainersByAccountId(accountId: number): Observable<any> {
+    this.setLoading(true);
+    return this.http.get<any>(`${this.DevBaseurl}/account/${accountId}/containers`).pipe(
+      finalize(() => this.setLoading(false))
+    );
+  }
+
+  getContainersByGroupId(groupId: number): Observable<any> {
+    this.setLoading(true);
+    return this.http.get<any>(`${this.DevBaseurl}/group/${groupId}/containers`).pipe(
+        finalize(() => this.setLoading(false))
     );
   }
 
   getTemplates(): Observable<any> {
     this.setLoading(true);
-    return this.http.get<any>(`${this.Baseurl}/templates`).pipe(
+    return this.http.get<any>(`${this.DevBaseurl}/template`).pipe(
       finalize(() => this.setLoading(false))
     );
   }
 
   getContainerbyId(containerID: string): Observable<any> {
     this.setLoading(true);
-    return this.http.get<any>(`${this.Baseurl}/containers/${containerID}`).pipe(
+    return this.http.get<any>(`${this.DevBaseurl}/container/${containerID}`).pipe(
       finalize(() => this.setLoading(false))
     );
   }
 
-  getTemplateById(templateId: string): Observable<any> {
+  updateContainerParameters(containerId: any, data: any) {
     this.setLoading(true);
-    return this.http.get<any>(`${this.Baseurl}/templates/${templateId}`).pipe(
-      finalize(() => this.setLoading(false))
-    );
-  }
-
-  updateContainer(container: Container) {
-    this.setLoading(true);
-    return this.http.put<Container>(`${this.Baseurl}/containers/${container.id}`, container).pipe(
+    return this.http.put<Container>(`${this.DevBaseurl}/container/${containerId}/parameters`, data).pipe(
       finalize(() => this.setLoading(false))
     );
   }
@@ -65,9 +72,9 @@ export class ContainerServiceService {
     this.templateSource.next(template);
   }
 
-  postTemplate(template: Template) {
+  assignTemplateToContainer(containerId: number, templateId: number) {
     this.setLoading(true);
-    return this.http.post<Template>(`${this.Baseurl}/templates`, template).pipe(
+    return this.http.post<any>(`${this.DevBaseurl}/container/${containerId}/assign/${templateId}`, {}).pipe(
       finalize(() => this.setLoading(false))
     );
   }

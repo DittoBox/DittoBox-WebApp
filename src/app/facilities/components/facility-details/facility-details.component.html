@@ -4,28 +4,50 @@
     <div *ngIf="facility">
       <div class="title">
         <h2>{{ facility.name }}</h2>
-        <span>{{ facility.type }}</span>
+        <span>{{ getFacilityType() }}</span>
       </div>
+
+      <!-- Containers Section -->
       <div class="container">
-        <p><mat-icon class="material-icons-outlined">widgets</mat-icon> {{ 'FACILITY_DETAILS.CONTAINERS' | translate }}</p>
-        <p>{{ facility.containers }}</p>
+        <p><mat-icon class="material-icons-outlined">widgets</mat-icon> 
+          {{ 'FACILITY_DETAILS.CONTAINERS' | translate }}
+        </p>
+        <p>{{ facility.containerCount || 0 }}</p>
       </div>
-      <div><button mat-button>{{ 'FACILITY_DETAILS.ADD_CONTAINERS' | translate }}</button></div>
+      <button mat-button class="info-action" (click)="openAddContainerDialog()">
+        {{ 'FACILITY_DETAILS.ADD_CONTAINERS' | translate }}
+      </button>
+
+      <!-- Workers Section -->
       <div class="container">
-        <p><mat-icon class="material-icons-outlined">person</mat-icon> {{ 'FACILITY_DETAILS.WORKERS' | translate }}</p>
-        <p>{{ facility.workers }}</p>
+        <p><mat-icon class="material-icons-outlined">person</mat-icon> 
+          {{ 'FACILITY_DETAILS.WORKERS' | translate }}
+        </p>
+        <p>{{ facility.profileCount || 0 }}</p>
       </div>
-      <div><button mat-button>{{ 'FACILITY_DETAILS.ADD_WORKERS' | translate }}</button></div>
+      <button mat-button class="info-action" (click)="openAddWorkerDialog()">
+        {{ 'FACILITY_DETAILS.ADD_WORKERS' | translate }}
+      </button>
+
+      <!-- Alerts Section -->
       <div class="container">
-        <p><mat-icon class="material-icons-outlined">notifications</mat-icon> {{ 'FACILITY_DETAILS.PENDING_ALERTS' | translate }}</p>
-        <p>{{ facility.alerts }}</p>
+        <p><mat-icon class="material-icons-outlined">notifications</mat-icon> 
+          {{ 'FACILITY_DETAILS.PENDING_ALERTS' | translate }}
+        </p>
+        <p>{{ facility.alerts || 0 }}</p>
       </div>
-      <div><button mat-button>{{ 'FACILITY_DETAILS.ADD_ALERTS' | translate }}</button></div>
+      <button mat-button class="info-action">
+        {{ 'FACILITY_DETAILS.ADD_ALERTS' | translate }}
+      </button>
+
       <div class="container-button">
-        <button mat-flat-button>{{ 'FACILITY_DETAILS.DELETE' | translate }}</button>
+        <button mat-flat-button color="warn">
+          {{ 'FACILITY_DETAILS.DELETE' | translate }}
+        </button>
       </div>
     </div>
   </mat-sidenav>
+
   <mat-sidenav-content class="sidenav-content">
     <ng-content></ng-content>
   </mat-sidenav-content>

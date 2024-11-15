@@ -44,7 +44,12 @@ export class ContainerDetailsComponent{
         data.status,
         data.temperature,
         data.humidity,
-        data.lastSync,
+        data.oxygen,
+        data.dioxide,
+        data.ethylene,
+        data.ammonia,
+        data.sulfurDioxide,
+        data.lastSync != "0001-01-01T00:00:00"? new Date(data.lastSync).toLocaleString() : "never",
         data.maxTemp,
         data.minTemp,
         data.maxHumidity,
@@ -58,10 +63,13 @@ export class ContainerDetailsComponent{
         data.ammoniaMin,
         data.ammoniaMax,
         data.sulfurDioxideMin,
-        data.sulfurDioxideMax
+        data.sulfurDioxideMax,
+        data.lastKnownHealthStatus,
+        data.lastKnownContainerStatus
       );
-
         this.opened = true;
+
+        console.log(this.container);
 
     }, error => {
       console.error('Error al obtener el contenedor:', error);

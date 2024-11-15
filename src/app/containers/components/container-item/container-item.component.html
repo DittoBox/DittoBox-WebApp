@@ -1,31 +1,54 @@
 <div class="card-container">
   <mat-card *ngFor="let container of containerItems" (click)="openContainerSidenav(container.id)" class="container-card">
     <mat-card-header>
-      <h3>{{container.name}}</h3>
+      <h3>{{ container.name }}</h3>
     </mat-card-header>
     <mat-card-content>
-      <p>{{ container.status }}</p>
+      <!-- Estado del contenedor -->
+      <p>{{ container.status || 'CONTAINER_ITEM.UNKNOWN_STATUS' | translate }}</p>
+
+      <!-- Temperatura -->
       <div class="content">
-          <div class="tag">
-              <mat-icon aria-hidden="false" aria-label="Example temperature icon" fontIcon="device_thermostat"></mat-icon>
-              <span>{{ 'CONTAINER_ITEM.TEMPERATURE' | translate }}</span>
-          </div>
+        <div class="tag">
+          <mat-icon aria-hidden="false" aria-label="Temperature icon" fontIcon="device_thermostat"></mat-icon>
+          <span>{{ 'CONTAINER_ITEM.TEMPERATURE' | translate }}</span>
+        </div>
         <span>{{ container.temperature !== null ? container.temperature + '°C' : '--' }}</span>
       </div>
+
+      <!-- Humedad -->
       <div class="content">
-          <div class="tag">
-              <mat-icon aria-hidden="false" aria-label="Example humidity icon" fontIcon="water_drop"></mat-icon>
-              <span>{{ 'CONTAINER_ITEM.HUMIDITY' | translate }}</span>
-          </div>
+        <div class="tag">
+          <mat-icon aria-hidden="false" aria-label="Humidity icon" fontIcon="water_drop"></mat-icon>
+          <span>{{ 'CONTAINER_ITEM.HUMIDITY' | translate }}</span>
+        </div>
         <span>{{ container.humidity !== null ? container.humidity + '%' : '--' }}</span>
       </div>
+
+      <!-- Última sincronización -->
       <div class="content">
-          <div class="tag">
-              <mat-icon aria-hidden="false" aria-label="Example last sync" fontIcon="hourglass_empty"></mat-icon>
-              <span>{{ 'CONTAINER_ITEM.LAST_SYNC' | translate }}</span>
+        <div class="tag">
+          <mat-icon aria-hidden="false" aria-label="Last sync icon" fontIcon="hourglass_empty"></mat-icon>
+          <span>{{ 'CONTAINER_ITEM.LAST_SYNC' | translate }}</span>
+        </div>
+        <span>{{ container.lastSync || '--' }}</span>
+      </div>
+
+      <!-- Separador -->
+      <hr class="divider" />
+
+      <!-- Sección de gases -->
+      <div class="gases-section" *ngIf="container.gases && container.gases.length > 0">
+        <div *ngFor="let gas of container.gases" class="gas">
+          <div class="gas-name">{{ gas.name | translate }}</div>
+          <div class="gas-value">
+            {{ gas.value !== null ? gas.value + ' %' : '--' }}
           </div>
-        <span>{{ container.lastSync }}</span>
+        </div>
+      </div>
+      <div *ngIf="!container.gases || container.gases.length === 0" class="no-gases">
+        <p>{{ 'CONTAINER_ITEM.NO_GASES' | translate }}</p>
       </div>
     </mat-card-content>
   </mat-card>
-  </div>
+</div>

@@ -48,27 +48,6 @@ import { TranslateModule } from '@ngx-translate/core';
 export class TemplateItemComponent implements OnInit {
   templateItems: Template[] = [];
   filteredTemplates: Template[] = [];
-  newTemplate: Template = new Template(
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-      0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-  );
-  isNewTemplateSidenavOpened = false;
   gasSwitch: boolean = false;
 
     gases : any[] = [
@@ -88,7 +67,23 @@ export class TemplateItemComponent implements OnInit {
     this.containerServiceService.getTemplates().subscribe((data: any[]) => {
       this.templateItems = data;
       this.filteredTemplates = data;
+      console.log(this.templateItems);
     });
+  }
+
+  getCategory(categoryNumber: number) {
+      switch (categoryNumber) {
+          case 0:
+              return 'Produce';
+          case 1:
+              return 'Meats';
+          case 2:
+              return 'Animal Derived';
+          case 3:
+              return 'Processed Food';
+          default:
+              return 'Unknown';
+      }
   }
 
   openTemplateDetails(template: Template) {
@@ -99,56 +94,10 @@ export class TemplateItemComponent implements OnInit {
     applyFilter(event: Event): void {
         const filterValue = (event.target as HTMLInputElement).value.toLowerCase();
         this.filteredTemplates = this.templateItems.filter(template =>
-            template.nameTemplate.toLowerCase().includes(filterValue) ||
-            template.category.toLowerCase().includes(filterValue)
+            template.name.toLowerCase().includes(filterValue) ||
+            this.getCategory(template.category).toLowerCase().includes(filterValue)
         );
         this.cdr.detectChanges();
-    }
-
-    openNewTemplateSidenav(sidenav: MatSidenav): void {
-      this.isNewTemplateSidenavOpened = true;
-      sidenav.open();
-    }
-
-    saveTemplate(): void {
-      // value mapping -> if "enabled" is true and min/max are null, set them to 0
-      this.newTemplate.id = (this.templateItems.length + 1).toString();
-      this.newTemplate.oxygenMin = this.gases[0].enabled?this.gases[0].min??0 : 0;
-        this.newTemplate.oxygenMax = this.gases[0].enabled?this.gases[0].max??0 : 0;
-        this.newTemplate.dioxideMin = this.gases[1].enabled?this.gases[1].min??0 : 0;
-        this.newTemplate.dioxideMax = this.gases[1].enabled?this.gases[1].max??0 : 0;
-        this.newTemplate.ethyleneMin = this.gases[2].enabled?this.gases[2].min??0 : 0;
-        this.newTemplate.ethyleneMax = this.gases[2].enabled?this.gases[2].max??0 : 0;
-        this.newTemplate.ammoniaMin = this.gases[3].enabled?this.gases[3].min??0 : 0;
-        this.newTemplate.ammoniaMax = this.gases[3].enabled?this.gases[3].max??0 : 0;
-        this.newTemplate.sulfurDioxideMin = this.gases[4].enabled?this.gases[4].min??0 : 0;
-        this.newTemplate.sulfurDioxideMax = this.gases[4].enabled?this.gases[4].max??0 : 0;
-
-        // save template
-        this.templateItems.push(this.newTemplate);
-        this.filteredTemplates = [...this.templateItems];
-        this.containerServiceService.postTemplate(this.newTemplate).subscribe();
-        this.newTemplate = new Template(
-            '',
-            '',
-            '',
-            '',
-            '',
-            '',
-            '',
-            '',
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-        ); // Limpia el formulario
-        this.isNewTemplateSidenavOpened = false;
     }
 
 

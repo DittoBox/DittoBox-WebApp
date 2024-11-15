@@ -1,7 +1,31 @@
 <mat-tab-group>
+  <!-- Facilities Tab -->
   <mat-tab label="{{ 'FACILITY_TAB.FACILITIES' | translate }}">
+    <div class="header-container">
+      <h2>{{ 'FACILITY_TAB.FACILITIES' | translate }}</h2>
+      <button mat-flat-button color="primary" (click)="openCreateSidenav()">
+        {{ 'FACILITY_TAB.CREATE' | translate }}
+      </button>
+    </div>
+
+    <!-- Sidenav para creación de facilities -->
+    <mat-sidenav
+      #createSidenav
+      mode="over"
+      [(opened)]="isCreatingFacility"
+      class="sidenav"
+      position="end"
+    >
+      <mat-icon class="close" (click)="closeCreateSidenav()">arrow_back</mat-icon>
+      <app-create-facility (facilityCreated)="onFacilityCreated()"></app-create-facility>
+    </mat-sidenav>
+
+    <!-- Contenido principal -->
     <div class="card-container">
-      <app-facility-items [facilityItems]="allFacilities"></app-facility-items>
+      <app-facility-items
+        [facilityItems]="allFacilities"
+        (facilitySelected)="showFacilityDetails($event)"
+      ></app-facility-items>
     </div>
   </mat-tab>
 </mat-tab-group>

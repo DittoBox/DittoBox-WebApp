@@ -1,22 +1,34 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
-import { Template } from "../../containers/model/template-model/template.entity";
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Facility } from '../model/facility-model/facility.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FacilityServiceService {
+  BaseUrl: string = 'https://app-dev-01-dittobox-a8bpd5bkh4dnh3g7.eastus-01.azurewebsites.net/api/v1';
 
-  Baseurl: string = 'http://localhost:3000';
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  getFacilities(): Observable<any> {
-    return this.http.get<any>(`${this.Baseurl}/facilities`);
+  // Método para obtener los grupos según el `accountId`
+  getGroupsByAccount(accountId: string): Observable<Facility[]> {
+    return this.http.get<Facility[]>(`${this.BaseUrl}/account/${accountId}/groups`, {
+      headers: { 'Accept': 'application/json' }
+    });
   }
 
-  getFacilitybyId(facilityID: string): Observable<any> {
-    return this.http.get<any>(`${this.Baseurl}/facilities/${facilityID}`);
+  createGroup(groupData: any): Observable<any> {
+    return this.http.post(`${this.BaseUrl}/group/create-group`, groupData, {
+      headers: { 'Accept': 'application/json' }
+    });
+  }
+
+  registerContainer(groupId: number, data: any) {
+    return this.http.post<any>(`${this.BaseUrl}/group/${groupId}/register-container`, data);
+  }
+
+  registerWorker(groupId: number, workerData: any): Observable<any> {
+    return this.http.post<any>(`${this.BaseUrl}/group/${groupId}/register-user`, workerData);
   }
 }

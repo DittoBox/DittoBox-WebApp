@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {MatCard, MatCardActions, MatCardContent, MatCardTitle} from "@angular/material/card";
 import {MatButton} from "@angular/material/button";
 import { TranslateModule } from '@ngx-translate/core';
@@ -19,5 +19,10 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './account-information-item.component.css'
 })
 export class AccountInformationItemComponent {
+
+  @Input() validator!: boolean;
+
+  constructor() {
+  }
 
 }

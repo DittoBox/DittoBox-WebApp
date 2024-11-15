@@ -14,7 +14,7 @@
       <span>20124578963</span>
     </div>
   </mat-card-content>
-  <mat-card-actions class="actions">
+  <mat-card-actions *ngIf="validator" class="actions">
     <button mat-button>{{ 'ACCOUNT_INFORMATION.MANAGE_SUBSCRIPTION' | translate }}</button>
   </mat-card-actions>
 </mat-card>

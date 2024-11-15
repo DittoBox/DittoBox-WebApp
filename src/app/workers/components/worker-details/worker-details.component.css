@@ -1,119 +1,102 @@
-.sidenav {
-  width: 400px;
-  max-width: 100%;
-  padding: 24px;
-}
-
 .sidenav-container {
   height: 100vh;
+  background-color: #f9f9f9;
 }
 
-.sidenav-content {
-  height: 100%;
+.sidenav {
+  width: 500px;
+  padding: 16px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
 }
 
-.title {
+.worker-details-content {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.title span {
-  font-weight: 500;
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.container p {
-  display: inline;
-}
-
-.container p:first-child {
-  font-weight: 500;
-}
-
-.container-button button {
-  margin-top: 16px;
-  font-weight: normal;
-}
-
-.container-button {
-  width: 100%;
-  display: flex;
-  justify-content: right;
-}
-
-h2 {
-  display: inline;
-  font-weight: normal;
-  font-size: 32px;
+.worker-name {
+  font-size: 24px;
+  font-weight: bold;
   color: #333;
-  margin-bottom: 0px;
+  margin-top: 0;
+  margin-bottom: -20px;
 }
 
-h3 {
-  font-size: 18px;
-  font-weight: 500;
-}
-
-p {
-  margin: 8px 0;
+.breadcrumb {
   font-size: 14px;
+  color: #757575;
+  margin-bottom: -20px;
 }
 
-.mat-divider {
-  margin: 24px 0;
+.details-section, .role-management-section {
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fff;
 }
 
-.gases {
+.details-section h2, .role-management-section h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.details-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+}
+
+.value {
+  font-size: 14px;
+  color: #333;
+}
+
+.role-management-button {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.reassign-button {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-left: 10px;
+}
+
+.role-management-title {
+  font-size: 18px;
+  font-weight: bold;
   margin-top: 20px;
 }
 
-.gases p:first-child {
-  font-weight: 500;
-  margin-bottom: 0;
-}
-
-.gases-element p:first-child {
-  font-weight: 500;
-}
-
-.gases-element {
+.role-toggle {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0;
+  margin-top: 10px;
+  padding: 8px 0;
+  border-top: 1px solid #e0e0e0;
 }
 
-.gases-element p {
-  margin: 0;
+.role-toggle:first-of-type {
+  border-top: none;
 }
 
-ul {
-  padding-left: 0;
-  list-style-type: none;
-  margin: 0;
-}
-
-ul li {
-  margin: 0;
-  font-size: 14px;
-}
-
-.sidenav p strong {
-  font-weight: bold;
-}
-
-/* Estilo para íconos */
-.mat-icon {
-  vertical-align: middle;
+.mat-slide-toggle {
   margin-right: 8px;
 }
 
-.close:hover {
-  cursor: pointer;
+@media (max-width: 768px) {
+  .sidenav {
+    width: 100%;
+  }
 }
