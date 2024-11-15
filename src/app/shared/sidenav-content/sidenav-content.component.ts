@@ -12,7 +12,7 @@ import {MatDrawer} from '@angular/material/sidenav';
 import {MatListItem, MatNavList} from "@angular/material/list";
 import {MatIconModule} from '@angular/material/icon';
 import {MatDivider} from "@angular/material/divider";
-import {RouterLink, RouterLinkActive} from "@angular/router";
+import {Router, RouterLink, RouterLinkActive} from "@angular/router";
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDialog } from '@angular/material/dialog';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -30,7 +30,8 @@ import { NgIf } from '@angular/common';
 export class SidenavContentComponent{
   translate: TranslateService = inject(TranslateService);
   dialog: MatDialog = inject(MatDialog);
-  
+  constructor(private router: Router) {}
+
   @Output() sidenavClose = new EventEmitter<void>();
   privileges: string[] = JSON.parse(localStorage.getItem('privileges') || '[]')
 
@@ -43,5 +44,9 @@ export class SidenavContentComponent{
   }
   openLanguageDialog() {
     this.dialog.open(LanguageDialogComponent);
+  }
+  logout() {
+    localStorage.clear();
+    this.router.navigate(['/login']);
   }
 }

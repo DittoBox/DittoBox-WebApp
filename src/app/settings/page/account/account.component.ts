@@ -4,6 +4,7 @@ import {
 } from "../../components/account-information-item/account-information-item.component";
 import {UserInformationItemComponent} from "../../components/user-information-item/user-information-item.component";
 import { TranslateModule } from '@ngx-translate/core';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-account',
@@ -11,7 +12,8 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [
     AccountInformationItemComponent,
     UserInformationItemComponent,
-    TranslateModule
+    TranslateModule,
+    NgIf
   ],
   templateUrl: './account.component.html',
   styleUrl: './account.component.css'
