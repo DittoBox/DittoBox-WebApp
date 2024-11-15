@@ -68,6 +68,11 @@ export class FacilityDetailsComponent {
     }
   }
 
+  getFacilityType(): string {
+    return this.facility?.facilityType === 0 ? 'Restaurant' : 'Warehouse';
+  }
+
+
   addContainer(containerData: any) {
     if (this.facility && this.facility.id) {
       const payload = {

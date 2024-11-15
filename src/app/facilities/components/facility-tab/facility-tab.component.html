@@ -1,20 +1,23 @@
 <app-facility-details>
-  <mat-tab-group>
-    <mat-tab label="Facilities">
+  <div class="header-container">
+    <h2>Facilities</h2>
+    <button mat-flat-button color="primary" (click)="openCreateSidenav()">Create</button>
+  </div>
 
-      <button mat-button (click)="openCreateSidenav()">Create</button>
+  <!-- Sidenav para creación de facilities que se comporta como el de details -->
+  <mat-sidenav
+    #createSidenav
+    mode="over"
+    [(opened)]="isCreatingFacility"
+    class="sidenav"
+    position="end"
+  >
+    <mat-icon class="close" (click)="closeCreateSidenav()">arrow_back</mat-icon>
+    <app-create-facility (facilityCreated)="onFacilityCreated()"></app-create-facility>
+  </mat-sidenav>
 
-      <mat-sidenav-container class="sidenav-container">
-        <mat-sidenav #createSidenav mode="side" position="end" [(opened)]="isCreatingFacility" class="create-sidenav">
-          <app-create-facility (facilityCreated)="onFacilityCreated()"></app-create-facility>
-        </mat-sidenav>
-
-        <mat-sidenav-content>
-          <div class="card-container">
-            <app-facility-items [facilityItems]="allFacilities" (facilitySelected)="showFacilityDetails($event)"></app-facility-items>
-          </div>
-        </mat-sidenav-content>
-      </mat-sidenav-container>
-    </mat-tab>
-  </mat-tab-group>
+  <!-- Contenido principal -->
+  <div class="card-container">
+    <app-facility-items [facilityItems]="allFacilities" (facilitySelected)="showFacilityDetails($event)"></app-facility-items>
+  </div>
 </app-facility-details>

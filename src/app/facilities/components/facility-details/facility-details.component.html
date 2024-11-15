@@ -4,7 +4,7 @@
     <div *ngIf="facility">
       <div class="title">
         <h2>{{ facility.name }}</h2>
-        <span>Type: {{ facility.facilityType }}</span>
+        <span>{{ getFacilityType() }}</span>
       </div>
 
       <!-- Containers Section -->

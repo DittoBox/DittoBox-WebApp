@@ -8,6 +8,9 @@ import {MatSidenav, MatSidenavContainer, MatSidenavModule} from "@angular/materi
 import { FacilityCreateComponent } from "../facility-create/facility-create.component";
 import { FacilityItemsComponent } from "../facility-items/facility-items.component";
 import { Facility } from '../../model/facility-model/facility.model';
+import {MatButtonToggle} from "@angular/material/button-toggle";
+import {MatButton} from "@angular/material/button";
+import {MatIcon} from "@angular/material/icon";
 
 @Component({
   selector: 'app-facility-tab',
@@ -21,7 +24,10 @@ import { Facility } from '../../model/facility-model/facility.model';
     FacilityCreateComponent,
     FacilityItemsComponent,
     MatSidenav,
-    MatSidenavModule
+    MatSidenavModule,
+    MatButtonToggle,
+    MatButton,
+    MatIcon
   ],
   styleUrls: ['./facility-tab.component.css']
 })
@@ -51,12 +57,14 @@ export class FacilityTabComponent implements OnInit {
 
   openCreateSidenav() {
     this.isCreatingFacility = true;
-    this.createSidenav.open();
+  }
+
+  closeCreateSidenav() {
+    this.isCreatingFacility = false;
   }
 
   onFacilityCreated() {
-    this.isCreatingFacility = false;
-    this.createSidenav.close();
+    this.closeCreateSidenav();
     this.loadFacilities();
   }
 
