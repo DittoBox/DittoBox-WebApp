@@ -148,6 +148,13 @@
       "SUBSCRIPTION_TIER": "Subscription tier",
       "IDENTIFICATION_NUMBER": "Identification number",
       "MANAGE_SUBSCRIPTION": "Manage Subscription"
+    },
+    "NOTIFICATION_FILTER": {
+      "FILTERS": "Filters",
+      "ALERTS": "Alerts",
+      "WARNINGS": "Warnings",
+      "UPDATES": "Updates",
+      "ALL": "All"
     }
     
 

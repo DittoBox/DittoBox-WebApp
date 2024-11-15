@@ -153,6 +153,13 @@
       "SUBSCRIPTION_TIER": "Nivel de suscripción",
       "IDENTIFICATION_NUMBER": "Número de identificación",
       "MANAGE_SUBSCRIPTION": "Gestionar suscripción"
+    },
+    "NOTIFICATION_FILTER": {
+      "FILTERS": "Filtros",
+      "ALERTS": "Alertas",
+      "WARNINGS": "Advertencias",
+      "UPDATES": "Actualizaciones",
+      "ALL": "Todas"
     }
     
     
