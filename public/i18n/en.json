@@ -158,7 +158,22 @@
     },
     "NOTIFICATION_ITEM": {
       "DISMISS": "Dismiss"
+    },
+    "NOTIFICATION_TIMEFILTER": {
+      "CHOOSE_DATE": "Choose a date"
+    },
+    "SUBSCRIPTION_DIALOG": {
+      "TITLE": "Are you sure you want to continue?",
+      "DESCRIPTION": "You are about to downgrade your subscription to the {{accountUsage.lowerPlan}} plan. You might lose access to some of the features.",
+      "FACILITIES": "Facilities",
+      "CONTAINERS": "Containers",
+      "USERS": "Users",
+      "USED_OUT_OF": "Used {{currentUsage}} out of {{currentPlanLimit}}",
+      "NONE_AFFECTED": "None affected",
+      "LOSE_ACCESS_TO": "You'll lose access to {{count}} {{item}}",
+      "CANCEL": "Cancel",
+      "DOWNGRADE": "Downgrade"
     }
-    
+
 
   }

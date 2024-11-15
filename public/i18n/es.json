@@ -163,6 +163,21 @@
     },
     "NOTIFICATION_ITEM": {
       "DISMISS": "Descartar"
+    },
+    "NOTIFICATION_TIMEFILTER": {
+      "CHOOSE_DATE": "Elige una fecha"
+    },
+    "SUBSCRIPTION_DIALOG": {
+      "TITLE": "¿Estás seguro de que quieres continuar?",
+      "DESCRIPTION": "Estás a punto de degradar tu suscripción al plan {{accountUsage.lowerPlan}}. Podrías perder acceso a algunas de las funciones.",
+      "FACILITIES": "Instalaciones",
+      "CONTAINERS": "Contenedores",
+      "USERS": "Usuarios",
+      "USED_OUT_OF": "Usado {{currentUsage}} de {{currentPlanLimit}}",
+      "NONE_AFFECTED": "Ninguno afectado",
+      "LOSE_ACCESS_TO": "Perderás acceso a {{count}} {{item}}",
+      "CANCEL": "Cancelar",
+      "DOWNGRADE": "Degradar"
     }
     
     
