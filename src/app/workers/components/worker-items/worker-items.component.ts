@@ -26,18 +26,23 @@ import {MatButton} from "@angular/material/button";
 })
 export class WorkerItemsComponent implements OnInit {
   @Input() workersItems: any[] = [];
-  @Output() workerSelected = new EventEmitter<number>(); // Añadido el Output para emitir el ID del trabajador
+  @Output() workerSelected = new EventEmitter<number>();
 
   constructor(private workerServiceService: WorkerServiceService) {}
 
   ngOnInit() {
+    const myUserId = localStorage.getItem('userId');
+
     this.workerServiceService.getWorkers().subscribe((data: any[]) => {
-      this.workersItems = data;
+      if (myUserId !== null) {
+        this.workersItems = data.filter(worker => worker.id !== +myUserId);
+      } else {
+        this.workersItems = data;
+      }
     });
   }
 
   openWorkerDialog(workerId: number) {
     this.workerSelected.emit(workerId);
   }
-
 }

@@ -3,6 +3,7 @@ import { WorkerItemsComponent } from "../../components/worker-items/worker-items
 import {WorkerDetailsComponent} from "../../components/worker-details/worker-details.component";
 import {FacilityDetailsComponent} from "../../../facilities/components/facility-details/facility-details.component";
 import {FacilityTabComponent} from "../../../facilities/components/facility-tab/facility-tab.component";
+import {WorkerTabComponent} from "../../components/worker-tab/worker-tab.component";
 
 @Component({
   selector: 'app-worker',
@@ -11,7 +12,8 @@ import {FacilityTabComponent} from "../../../facilities/components/facility-tab/
     WorkerItemsComponent,
     WorkerDetailsComponent,
     FacilityDetailsComponent,
-    FacilityTabComponent
+    FacilityTabComponent,
+    WorkerTabComponent
   ],
   templateUrl: './worker.component.html',
   styleUrl: './worker.component.css'

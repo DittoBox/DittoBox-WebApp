@@ -20,4 +20,9 @@ export class WorkerServiceService {
     const accountId = localStorage.getItem('accountId');
     return this.http.get<any>(`${this.Baseurl}/account/${accountId}/users/${workerId}`);
   }
+
+  getWorkersByAccount(accountId: string) {
+    return this.http.get<any[]>(`${this.Baseurl}/account/${accountId}/users`);
+  }
+
 }
