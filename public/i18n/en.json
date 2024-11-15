@@ -212,6 +212,25 @@
       "BANK_ACCOUNT_OWNER": "Bank account owner",
       "UPDATE_INFORMATION": "Update information",
       "CANCEL_SUBSCRIPTION": "Cancel subscription"
+    },
+    "WORKER_DETAILS": {
+      "BREADCRUMB": "Workers",
+      "WORKER_DETAILS": "Worker details",
+      "CATEGORY": "Category",
+      "LOCATION": "Location",
+      "ROLE_MANAGEMENT": "Role management",
+      "REASSIGN": "Reassign",
+      "ROLE_MANAGEMENT_TITLE": "Role management",
+      "PRIVILEGES": {
+        "WORKER_MANAGEMENT": "Worker Management",
+        "GROUP_MANAGEMENT": "Group Management",
+        "ACCOUNT_MANAGEMENT": "Account Management"
+      }
+    },
+    "WORKER_ITEMS": {
+      "TITLE": "Workers",
+      "ROLE": "Worker",
+      "LOCATION_NOT_AVAILABLE": "Location not available"
     }
 
 

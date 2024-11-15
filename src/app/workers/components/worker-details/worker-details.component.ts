@@ -13,6 +13,7 @@ import {Worker} from "../../model/wroker-model/worker";
 import {WorkerServiceService} from "../../service/worker-service.service";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {FormsModule} from "@angular/forms";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-worker-details',
@@ -36,6 +37,7 @@ import {FormsModule} from "@angular/forms";
     MatDialogContent,
     MatSlideToggleModule,
     FormsModule,
+    TranslateModule
   ],
   templateUrl: './worker-details.component.html',
   styleUrl: './worker-details.component.css'

@@ -1,13 +1,13 @@
 <div class="worker-list">
-  <h2>Workers</h2>
+  <h2>{{ 'WORKER_ITEMS.TITLE' | translate }}</h2>
   <div *ngFor="let worker of workersItems" class="worker-item" (click)="openWorkerDialog(worker.id)">
     <div class="worker-initial">
       {{ worker.firstName.charAt(0) }}
     </div>
     <div class="worker-info">
-      <span class="worker-role">{{ worker.role || 'Worker' }}</span>
+      <span class="worker-role">{{ worker.role || ('WORKER_ITEMS.ROLE' | translate) }}</span>
       <h3>{{ worker.firstName }} {{ worker.lastName }}</h3>
-      <p class="worker-location">{{ worker.location || 'Location not available' }}</p>
+      <p class="worker-location">{{ worker.location || ('WORKER_ITEMS.LOCATION_NOT_AVAILABLE' | translate) }}</p>
     </div>
   </div>
 </div>

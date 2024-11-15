@@ -217,6 +217,25 @@
       "BANK_ACCOUNT_OWNER": "Titular de la cuenta bancaria",
       "UPDATE_INFORMATION": "Actualizar información",
       "CANCEL_SUBSCRIPTION": "Cancelar suscripción"
+    },
+    "WORKER_DETAILS": {
+      "BREADCRUMB": "Trabajadores",
+      "WORKER_DETAILS": "Detalles del trabajador",
+      "CATEGORY": "Categoría",
+      "LOCATION": "Ubicación",
+      "ROLE_MANAGEMENT": "Gestión de roles",
+      "REASSIGN": "Reasignar",
+      "ROLE_MANAGEMENT_TITLE": "Gestión de roles",
+      "PRIVILEGES": {
+        "WORKER_MANAGEMENT": "Gestión de trabajadores",
+        "GROUP_MANAGEMENT": "Gestión de grupos",
+        "ACCOUNT_MANAGEMENT": "Gestión de cuentas"
+      }
+    },
+    "WORKER_ITEMS": {
+      "TITLE": "Trabajadores",
+      "ROLE": "Trabajador",
+      "LOCATION_NOT_AVAILABLE": "Ubicación no disponible"
     }
     
     
