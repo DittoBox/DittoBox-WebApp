@@ -62,7 +62,7 @@ export class ContainerServiceService {
   }
 
   updateContainerParameters(containerId: number, parameters: any): Observable<any> {
-    return this.http.put(`${this.DevBaseurl}/api/v1/container/${containerId}/parameters`, parameters);
+    return this.http.put(`${this.DevBaseurl}/container/${containerId}/parameters`, parameters);
   }
 
   selectTemplate(template: Template) {

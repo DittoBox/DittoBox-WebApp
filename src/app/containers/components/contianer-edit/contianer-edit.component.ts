@@ -80,7 +80,7 @@ export class ContianerEditComponent implements OnInit{
       this.data[`${gas.name.toLowerCase()}Min`] = gas.min;
       this.data[`${gas.name.toLowerCase()}Max`] = gas.max;
     });
-  
+
     const parameters = {
       minTemp: this.data.minTemp,
       maxTemp: this.data.maxTemp,
@@ -97,17 +97,25 @@ export class ContianerEditComponent implements OnInit{
       sulfurDioxideMin: this.data.sulfurDioxideMin,
       sulfurDioxideMax: this.data.sulfurDioxideMax
     };
-  
+
+    // Filtrar los datos de gases enteros
+    (Object.keys(parameters) as (keyof typeof parameters)[]).forEach(key => {
+      if (parameters[key] === null || parameters[key] === undefined) {
+        delete parameters[key];
+      }
+    });
+
     this.containerService.updateContainerParameters(this.data.id, parameters).subscribe(
       (response) => {
         console.log('Template updated successfully', response);
         this.dialogRef.close(response);
       },
       (error) => {
+        console.log(this.data);
         console.error('Error updating template', error);
       }
     );
-  } 
+  }
   close(): void {
     this.dialogRef.close();
   }
