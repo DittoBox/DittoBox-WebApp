@@ -98,8 +98,9 @@
     },
     "ADD_CONTAINER_DIALOG": {
       "TITLE": "Agregar Contenedor",
-      "CONTAINER_ID": "ID del Contenedor",
       "CODE": "Código",
+      "NAME": "Nombre",
+      "DESCRIPTION": "Descripción",
       "CANCEL": "Cancelar",
       "SAVE": "Guardar"
     },

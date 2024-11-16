@@ -76,12 +76,11 @@ export class ContianerEditComponent implements OnInit{
 
 
   saveChanges() {
-
     this.gases.forEach(gas => {
       this.data[`${gas.name.toLowerCase()}Min`] = gas.min;
       this.data[`${gas.name.toLowerCase()}Max`] = gas.max;
     });
-
+  
     const parameters = {
       minTemp: this.data.minTemp,
       maxTemp: this.data.maxTemp,
@@ -98,7 +97,7 @@ export class ContianerEditComponent implements OnInit{
       sulfurDioxideMin: this.data.sulfurDioxideMin,
       sulfurDioxideMax: this.data.sulfurDioxideMax
     };
-
+  
     this.containerService.updateContainerParameters(this.data.id, parameters).subscribe(
       (response) => {
         console.log('Template updated successfully', response);
@@ -108,8 +107,7 @@ export class ContianerEditComponent implements OnInit{
         console.error('Error updating template', error);
       }
     );
-  }
-
+  } 
   close(): void {
     this.dialogRef.close();
   }

@@ -25,10 +25,17 @@ export class FacilityServiceService {
   }
 
   registerContainer(groupId: number, data: any) {
-    return this.http.post<any>(`${this.BaseUrl}/group/${groupId}/register-container`, data);
+    return this.http.post<any>(`${this.BaseUrl}/container`, data);
   }
 
   registerWorker(groupId: number, workerData: any): Observable<any> {
     return this.http.post<any>(`${this.BaseUrl}/group/${groupId}/register-user`, workerData);
+  }
+  selfRegisterContainer(code: string): Observable<any> {
+    const payload = { uiid: code };
+    const url = 'https://edge-dev-01-dittobox-f7a7ccd2hyadedad.eastus-01.azurewebsites.net/api/v1/cloud-service/self-register-container';
+    return this.http.post<any>(url, payload, {
+      headers: { 'Accept': 'application/json' } 
+    });
   }
 }

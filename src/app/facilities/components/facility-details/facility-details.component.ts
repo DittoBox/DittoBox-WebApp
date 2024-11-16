@@ -54,12 +54,12 @@ export class FacilityDetailsComponent {
   }
 
   openAddContainerDialog() {
-    if (this.facility?.accountId) {
+    if (this.facility?.accountId && this.facility?.id) {
       const dialogRef = this.dialog.open(AddContainerDialogComponent, {
         width: '300px',
-        data: { accountId: this.facility.accountId }
+        data: { accountId: this.facility.accountId, groupId: this.facility.id }
       });
-
+  
       dialogRef.afterClosed().subscribe(result => {
         if (result) {
           this.addContainer(result);
@@ -77,20 +77,30 @@ export class FacilityDetailsComponent {
 
   addContainer(containerData: any) {
     if (this.facility && this.facility.id) {
-      const payload = {
-        groupId: this.facility.id,
-        containerId: containerData.containerId,
-        accountId: this.facility.accountId,
-        code: containerData.code
-      };
-
-      this.facilityService.registerContainer(this.facility.id, payload).subscribe(
+      this.facilityService.selfRegisterContainer(containerData.code).subscribe(
         response => {
-          console.log('Container registered successfully:', response);
-          this.facility!.containerCount = (this.facility?.containerCount || 0) + 1;
+          console.log('Self-register container successful:', response);
+          const payload = {
+            deviceId: containerData.code,
+            name: containerData.name,
+            description: containerData.description,
+            accountId: this.facility?.accountId,
+            groupId: this.facility!.id
+          };
+          console.log('Payload:', payload);
+  
+          this.facilityService.registerContainer(this.facility!.id, payload).subscribe(
+            response => {
+              console.log('Container registered successfully:', response);
+              this.facility!.containerCount = (this.facility?.containerCount || 0) + 1;
+            },
+            error => {
+              console.error('Error registering container:', error);
+            }
+          );
         },
         error => {
-          console.error('Error registering container:', error);
+          console.error('Error in self-registering container:', error);
         }
       );
     }

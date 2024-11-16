@@ -2,6 +2,7 @@ export class Container {
   id: number;
   name: string;
   description: string;
+  groupId: number;
   status: string;
   temperature: number;
   humidity:number;
@@ -31,6 +32,7 @@ export class Container {
   constructor(id: number,
               name: string,
               description: string,
+              groupId: number,
               status: string,
               temperature: number,
               humidity:number,
@@ -59,6 +61,7 @@ export class Container {
     this.id = id;
     this.name = name;
     this.description = description;
+    this.groupId = groupId;
     this.status = status;
     this.temperature = temperature;
     this.humidity = humidity;
