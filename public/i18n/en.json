@@ -92,11 +92,12 @@
       "SULFUR_DIOXIDE": "Sulfur Dioxide (SO₂)"
     },
     "ADD_CONTAINER_DIALOG": {
-      "TITLE": "Add Container",
-      "CONTAINER_ID": "Container ID",
-      "CODE": "Code",
-      "CANCEL": "Cancel",
-      "SAVE": "Save"
+      "TITLE": "Agregar Contenedor",
+      "CODE": "Código",
+      "NAME": "Nombre",
+      "DESCRIPTION": "Descripción",
+      "CANCEL": "Cancelar",
+      "SAVE": "Guardar"
     },
     "ADD_WORKER_DIALOG": {
       "TITLE": "Add Worker",

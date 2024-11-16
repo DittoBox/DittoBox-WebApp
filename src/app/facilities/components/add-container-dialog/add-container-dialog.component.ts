@@ -38,9 +38,11 @@ export class AddContainerDialogComponent {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.containerForm = this.fb.group({
-      containerId: ['', Validators.required],
       accountId: [data.accountId, Validators.required],
-      code: ['', Validators.required]
+      groupId: [data.groupId, Validators.required],
+      code: ['', Validators.required],
+      name: ['', Validators.required],
+      description: ['', Validators.required]
     });
   }
 
