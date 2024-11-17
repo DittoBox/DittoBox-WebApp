@@ -1,0 +1,61 @@
+h2 {
+    text-align: center;
+    margin-top: 40px; /* Aumentar margen superior */
+    margin-bottom: 40px; /* Aumentar margen inferior */
+}
+
+.chart-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    gap: 10px;
+    padding: 20px;
+    margin: 20px; /* Añadir margen */
+    max-width: 100%; /* Asegurar que no cause desbordamiento */
+    box-sizing: border-box; /* Incluir padding y borde en el ancho total */
+    overflow-x: hidden; /* Evitar scroll horizontal */
+}
+
+.chart-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 30px; /* Aumentar padding */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chart-item.large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.chart-item.medium {
+    grid-column: span 2;
+}
+
+.chart-item.small {
+    grid-column: span 1;
+}
+
+.chart-item h3 {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+@media (max-width: 600px) {
+    .chart-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-item {
+        padding: 20px; /* Ajustar padding para pantallas pequeñas */
+        margin: 10px;
+    }
+
+    .chart-item h3 {
+        font-size: 1em;
+    }
+}

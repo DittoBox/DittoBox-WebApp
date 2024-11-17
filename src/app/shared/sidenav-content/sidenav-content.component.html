@@ -2,7 +2,7 @@
     {{ 'MENU' | translate }}
     <mat-nav-list>
         <ng-container *ngIf="workerValidator">
-            <a mat-list-item>
+            <a mat-list-item [routerLink]= '"/dashboard"' routerLinkActive="active-link" (click)="closeSidenav()" >
                 <div class="list-item-content">
                     <mat-icon>developer_board</mat-icon>
                     {{ 'DASHBOARD' | translate }}

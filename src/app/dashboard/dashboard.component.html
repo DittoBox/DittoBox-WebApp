@@ -1,0 +1,50 @@
+<div>
+    <h2>Dashboard</h2>
+    <div class="chart-grid">
+      <div class="chart-item">
+        <h3>Users</h3>
+        <canvas baseChart
+                [datasets]="[{ data: usersChartData, label: 'Users' }]"
+                [labels]="usersChartLabels"
+                [options]="{ responsive: true }"
+                [type]="usersChartType">
+        </canvas>
+      </div>
+      <div class="chart-item">
+        <h3>Groups</h3>
+        <canvas baseChart
+                [datasets]="[{ data: groupsChartData, label: 'Groups' }]"
+                [labels]="groupsChartLabels"
+                [options]="{ responsive: true }"
+                [type]="groupsChartType">
+        </canvas>
+      </div>
+      <div class="chart-item">
+        <h3>Containers</h3>
+        <canvas baseChart
+                [datasets]="[{ data: containersChartData, label: 'Containers' }]"
+                [labels]="containersChartLabels"
+                [options]="{ responsive: true }"
+                [type]="containersChartType">
+        </canvas>
+      </div>
+      <div class="chart-item">
+        <h3>Privileges</h3>
+        <canvas baseChart
+                [datasets]="[{ data: privilegesChartData, label: 'Privileges' }]"
+                [labels]="privilegesChartLabels"
+                [options]="{ responsive: true }"
+                [type]="privilegesChartType">
+        </canvas>
+      </div>
+      <div class="chart-item">
+        <h3>Active Containers</h3>
+        <canvas baseChart
+                [datasets]="[{ data: activeContainersChartData, label: 'Active Containers' }]"
+                [labels]="activeContainersChartLabels"
+                [options]="{ responsive: true }"
+                [type]="activeContainersChartType">
+        </canvas>
+      </div>
+    </div>
+  </div>

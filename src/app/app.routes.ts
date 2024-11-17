@@ -15,6 +15,7 @@ import {
 } from "./account/components/register-owner-company-form/register-owner-company-form.component";
 import {TokenGuardService} from "./account/service/token-guard.service";
 import {PrivilegeGuardService} from "./account/service/privilege-guard.service";
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 export const routes: Routes = [
   {
@@ -69,6 +70,11 @@ export const routes: Routes = [
     component: SubscriptionComponent,
     canActivate: [TokenGuardService, PrivilegeGuardService],
     data: { requiredPrivilege: 'AccountManagement' }
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [TokenGuardService]
   },
 
   { path: '',
