@@ -1,0 +1,14 @@
+<div class="chart-container">
+  <canvas baseChart
+          [datasets]="[{ data: groupsChartData,label: 'Containers per facility',backgroundColor: barColors}]"
+          [labels]="groupsChartLabels"
+          [options]="{ responsive: true,
+            plugins: {
+              title: {
+                display: true,
+                text: 'Number of Containers per Facility'
+              }
+              }}"
+          [type]="facilitychartType">
+  </canvas>
+</div>

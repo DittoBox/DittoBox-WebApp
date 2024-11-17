@@ -1,0 +1,5 @@
+.chart-container {
+  width: 100%;
+  height: 400px; /* Ajusta la altura del contenedor del gráfico */
+  position: relative;
+}
