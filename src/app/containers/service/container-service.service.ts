@@ -65,6 +65,7 @@ export class ContainerServiceService {
     return this.http.put(`${this.DevBaseurl}/api/v1/container/${containerId}/parameters`, parameters);
   }
 
+
   selectTemplate(template: Template) {
     this.templateSource.next(template);
   }

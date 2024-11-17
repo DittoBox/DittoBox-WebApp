@@ -35,6 +35,7 @@ export class Facility {
   containerCount: number;
   profileCount: number;
 
+
   constructor(
     id: number,
     name: string,

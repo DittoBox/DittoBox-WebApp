@@ -14,12 +14,12 @@ export class SettingServiceService {
 	constructor(private http: HttpClient) { }
 
 	getNotifications(): Observable<any> {
-		return this.http.get<any>(`${this.Baseurl}/notifications`);
+      return this.http.get<any>(`${this.Baseurl}/notifications`);
 	}
 
 	getAccountUsage(): Observable<AccountUsage> {
 		// return this.http.get<any>(`${this.Baseurl}/account-usage-report`);
-		// 
+		//
 		return new Observable<AccountUsage>(observer => {
 			setTimeout(() => {
 				observer.next({
