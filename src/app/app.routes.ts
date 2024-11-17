@@ -15,7 +15,10 @@ import {
 } from "./account/components/register-owner-company-form/register-owner-company-form.component";
 import {TokenGuardService} from "./account/service/token-guard.service";
 import {PrivilegeGuardService} from "./account/service/privilege-guard.service";
-import { DashboardComponent } from './dashboard/dashboard.component';
+import {
+  BarChartContainersByFacilityComponent
+} from "./dashboard/components/bar-chart-containers-by-facility/bar-chart-containers-by-facility.component";
+import {DashboardComponent} from "./dashboard/page/dashboard/dashboard.component";
 
 export const routes: Routes = [
   {

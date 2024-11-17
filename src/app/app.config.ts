@@ -7,6 +7,7 @@ import { provideNativeDateAdapter } from "@angular/material/core";
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import {provideCharts, withDefaultRegisterables} from "ng2-charts";
 
 export function CreateTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './i18n/', '.json');
@@ -15,6 +16,7 @@ export function CreateTranslateLoader(http: HttpClient) {
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
+    provideCharts(withDefaultRegisterables()),
     provideRouter(routes),
     provideAnimationsAsync(),
     provideHttpClient(),
