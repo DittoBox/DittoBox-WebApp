@@ -38,13 +38,11 @@ export const routes: Routes = [
     path: 'containers',
     component: ContainerComponent,
     canActivate: [TokenGuardService, PrivilegeGuardService],
-    data: { requiredPrivilege: 'WorkerManagement' }
   },
   {
     path: 'templates',
     component: TemplateComponent,
     canActivate: [TokenGuardService, PrivilegeGuardService],
-    data: { requiredPrivilege: 'WorkerManagement' }
   },
   {
     path: 'facilities',
@@ -54,15 +52,14 @@ export const routes: Routes = [
   },
   {
     path: 'workers',
-    component: WorkerComponent,
+    component: WorkerComponent, 
     canActivate: [TokenGuardService, PrivilegeGuardService],
-    data: { requiredPrivilege: 'GroupManagement' }
+    data: { requiredPrivilege: 'WorkerManagement' }
   },
   {
     path: 'notifications',
     component: NotificationsComponent,
     canActivate: [TokenGuardService, PrivilegeGuardService],
-    data: { requiredPrivilege: 'WorkerManagement' }
   },
   {
     path: 'account',

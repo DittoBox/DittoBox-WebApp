@@ -230,9 +230,9 @@
       "REASSIGN": "Reasignar",
       "ROLE_MANAGEMENT_TITLE": "Gestión de roles",
       "PRIVILEGES": {
-        "WORKER_MANAGEMENT": "Gestión de trabajadores",
-        "GROUP_MANAGEMENT": "Gestión de grupos",
-        "ACCOUNT_MANAGEMENT": "Gestión de cuentas"
+        "WorkerManagement": "Gestión de Trabajadores",
+        "GroupManagement": "Gestión de Grupos",
+        "AccountManagement": "Gestión de Cuentas"
       }
     },
     "WORKER_ITEMS": {

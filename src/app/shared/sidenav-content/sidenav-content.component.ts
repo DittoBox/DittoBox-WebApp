@@ -27,7 +27,7 @@ import { NgIf } from '@angular/common';
   templateUrl: './sidenav-content.component.html',
   styleUrl: './sidenav-content.component.css'
 })
-export class SidenavContentComponent{
+export class SidenavContentComponent {
   translate: TranslateService = inject(TranslateService);
   dialog: MatDialog = inject(MatDialog);
   constructor(private router: Router) {}
@@ -35,9 +35,10 @@ export class SidenavContentComponent{
   @Output() sidenavClose = new EventEmitter<void>();
   privileges: string[] = JSON.parse(localStorage.getItem('privileges') || '[]')
 
-  workerValidator : boolean = this.privileges.includes('WorkerManagement');
-  groupValidator : boolean = this.privileges.includes('GroupManagement');
-  accountValidator : boolean = this.privileges.includes('AccountManagement');
+  workerValidator: boolean = this.privileges.includes('WorkerManagement');
+  groupValidator: boolean = this.privileges.includes('GroupManagement');
+  accountValidator: boolean = this.privileges.includes('AccountManagement');
+  allPrivileges: boolean = this.workerValidator && this.groupValidator && this.accountValidator;
 
   closeSidenav() {
     this.sidenavClose.emit();  // Emite el evento para cerrar el sidenav

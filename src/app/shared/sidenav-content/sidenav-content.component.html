@@ -1,7 +1,7 @@
 <div class="sidenav-content">
     {{ 'MENU' | translate }}
     <mat-nav-list>
-        <ng-container *ngIf="workerValidator">
+        <ng-container *ngIf="allPrivileges">
             <a mat-list-item [routerLink]= '"/dashboard"' routerLinkActive="active-link" (click)="closeSidenav()" >
                 <div class="list-item-content">
                     <mat-icon>developer_board</mat-icon>
@@ -10,7 +10,7 @@
                 </div>
             </a>
         </ng-container>
-        <ng-container *ngIf="accountValidator">
+        <ng-container *ngIf="groupValidator">
             <a mat-list-item [routerLink]="'/facilities'" routerLinkActive="active-link" (click)="closeSidenav()">
                 <div class="list-item-content">
                     <mat-icon>corporate_fare</mat-icon>
@@ -18,7 +18,7 @@
                 </div>
             </a>
         </ng-container>
-        <ng-container *ngIf="workerValidator">
+        <ng-container>
             <a mat-list-item [routerLink]="'/containers'" routerLinkActive="active-link" (click)="closeSidenav()">
                 <div class="list-item-content">
                     <mat-icon>widgets</mat-icon>
@@ -26,7 +26,7 @@
                 </div>
             </a>
         </ng-container>
-        <ng-container *ngIf="groupValidator">
+        <ng-container *ngIf="workerValidator">
             <a mat-list-item [routerLink]="'/workers'" routerLinkActive="active-link" (click)="closeSidenav()">
                 <div class="list-item-content">
                     <mat-icon>person</mat-icon>
@@ -34,7 +34,7 @@
                 </div>
             </a>
         </ng-container>
-        <ng-container *ngIf="workerValidator">
+        <ng-container>
             <a mat-list-item [routerLink]="'/templates'" routerLinkActive="active-link" (click)="closeSidenav()">
                 <div class="list-item-content">
                     <mat-icon>text_snippet</mat-icon>
@@ -60,7 +60,7 @@
                 </div>
             </a>
         </ng-container>
-        <ng-container *ngIf="workerValidator">
+        <ng-container>
             <a mat-list-item [routerLink]="'/notifications'" routerLinkActive="active-link" (click)="closeSidenav()">
                 <div class="list-item-content">
                     <mat-icon>notifications</mat-icon>

@@ -14,6 +14,7 @@ import {WorkerServiceService} from "../../service/worker-service.service";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {FormsModule} from "@angular/forms";
 import { TranslateModule } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-worker-details',
@@ -50,8 +51,9 @@ export class WorkerDetailsComponent {
 
   constructor(
     private workerServiceService: WorkerServiceService,
-    public dialog: MatDialog,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private http: HttpClient // Añade esta línea
+
   ) {
     this.loadAllWorkers();
   }
@@ -100,18 +102,58 @@ export class WorkerDetailsComponent {
       return 'Worker';
     }
   }
-
   onPrivilegeToggle(privilege: string, isChecked: boolean) {
     if (this.worker) {
+      const privilegeId = this.getPrivilegeId(privilege);
+      const profileId = this.worker.id;
+  
+      console.log('Privilege:', privilege);
+      console.log('Privilege ID:', privilegeId);
+      console.log('Profile ID:', profileId);
+      console.log('Is Checked:', isChecked);
+  
       if (isChecked) {
-        if (!this.worker.privileges.includes(privilege)) {
-          this.worker.privileges.push(privilege);
-        }
+        this.workerServiceService.grantPrivilege(profileId, privilegeId).subscribe(
+          () => {
+            console.log('Privilege granted successfully');
+            if (this.worker) {
+              this.worker.privileges.push(privilegeId.toString());
+              this.workerRole = this.getRoleBasedOnPrivileges(this.worker.privileges);
+              console.log('Updated worker privileges:', this.worker.privileges);
+              console.log('Updated worker role:', this.workerRole);
+            }
+          },
+          (error) => {
+            console.error('Error al asignar privilegio:', error);
+          }
+        );
       } else {
-        this.worker.privileges = this.worker.privileges.filter(p => p !== privilege);
+        this.workerServiceService.revokePrivilege(profileId, privilegeId).subscribe(
+          () => {
+            console.log('Privilege revoked successfully');
+            if (this.worker) {
+              this.worker.privileges = this.worker.privileges.filter(p => p !== privilegeId.toString());
+              this.workerRole = this.getRoleBasedOnPrivileges(this.worker.privileges);
+              console.log('Updated worker privileges:', this.worker.privileges);
+              console.log('Updated worker role:', this.workerRole);
+            }
+          },
+          (error) => {
+            console.error('Error al revocar privilegio:', error);
+          }
+        );
       }
-      this.workerRole = this.getRoleBasedOnPrivileges(this.worker.privileges);
+    } else {
+      console.log('Worker is null');
     }
   }
-
+  
+  getPrivilegeId(privilege: string): number {
+    const privilegeMap: { [key: string]: number } = {
+      'WorkerManagement': 1,
+      'GroupManagement': 2,
+      'AccountManagement': 3
+    };
+    return privilegeMap[privilege] || 0;
+  }
 }

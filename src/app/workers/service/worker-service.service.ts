@@ -24,5 +24,16 @@ export class WorkerServiceService {
   getWorkersByAccount(accountId: string) {
     return this.http.get<any[]>(`${this.Baseurl}/account/${accountId}/users`);
   }
+  grantPrivilege(profileId: number, privilegeId: number): Observable<any> {
+    const url = `${this.Baseurl}/profile/grant-privileges`;
+    const body = { profileId, privilegeId };
+    return this.http.post(url, body);
+  }
+
+  revokePrivilege(profileId: number, privilegeId: number): Observable<any> {
+    const url = `${this.Baseurl}/profile/revoke-privileges`;
+    const body = { profileId, privilegeId };
+    return this.http.put(url, body);
+  }
 
 }

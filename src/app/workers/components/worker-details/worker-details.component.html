@@ -22,13 +22,13 @@
         <button mat-button class="reassign-button">{{ 'WORKER_DETAILS.REASSIGN' | translate }}</button>
 
         <h2 class="role-management-title">{{ 'WORKER_DETAILS.ROLE_MANAGEMENT_TITLE' | translate }}</h2>
-        <div class="role-toggle" *ngFor="let privilege of ['WORKER_MANAGEMENT', 'GROUP_MANAGEMENT', 'ACCOUNT_MANAGEMENT']">
-          <span>{{ 'WORKER_DETAILS.PRIVILEGES.' + privilege | translate }}</span>
-          <mat-slide-toggle color="primary"
-            [checked]="worker.privileges.includes(privilege)"
-            (change)="onPrivilegeToggle(privilege, $event.checked)">
-          </mat-slide-toggle>
-        </div>
+      <div class="role-toggle" *ngFor="let privilege of ['WorkerManagement', 'GroupManagement', 'AccountManagement']">
+        <span>{{ 'WORKER_DETAILS.PRIVILEGES.' + privilege | translate }}</span>
+        <mat-slide-toggle color="primary"
+          [checked]="worker.privileges.includes(privilege)"
+          (change)="onPrivilegeToggle(privilege, $event.checked)">
+        </mat-slide-toggle>
+      </div>
       </section>
     </div>
   </mat-sidenav>
