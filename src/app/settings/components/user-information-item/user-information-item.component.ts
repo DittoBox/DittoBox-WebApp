@@ -8,6 +8,7 @@ import {AccountServiceService} from "../../../account/service/account-service.se
 import {SettingServiceService} from "../../service/setting-service.service";
 import {User} from "../../../account/model/user/user.entity";
 import {NgIf} from "@angular/common";
+import {ChangePasswordModalComponent} from "../change-password-modal/change-password-modal.component";
 
 @Component({
   selector: 'app-user-information-item',
@@ -62,5 +63,20 @@ export class UserInformationItemComponent implements OnInit{
       }
     });
   }
+
+    openChangePasswordModal() {
+        const dialogRef = this.dialog.open(ChangePasswordModalComponent, {
+            width: '400px'
+        });
+
+        dialogRef.afterClosed().subscribe((newPassword) => {
+            if (newPassword) {
+                this.settingService.changePassword(this.id, {
+                    userId: this.id,
+                    newPassword: newPassword
+                }).subscribe();
+            }
+        });
+    }
 
 }

@@ -11,6 +11,6 @@
     </div>
   </mat-card-content>
   <mat-card-actions class="actions">
-    <button mat-button>{{ 'USER_INFORMATION_ITEM.CHANGE_PASSWORD' | translate }}</button>
+    <button mat-button (click)="openChangePasswordModal()">{{ 'USER_INFORMATION_ITEM.CHANGE_PASSWORD' | translate }}</button>
   </mat-card-actions>
 </mat-card>
