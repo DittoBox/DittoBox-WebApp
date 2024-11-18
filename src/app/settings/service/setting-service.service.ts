@@ -15,7 +15,7 @@ import {Account} from "../model/account/account.entity";
 	providedIn: 'root'
 })
 export class SettingServiceService {
-	DevBaseurl: string = 'https://app-dev-01-dittobox-a8bpd5bkh4dnh3g7.eastus-01.azurewebsites.net/api/v1';
+	DevBaseurl: string = 'https://app-prod-01-dittobox-argeesg8era0c7ex.eastus-01.azurewebsites.net/api/v1';
 
 	private loadingSource = new BehaviorSubject<boolean>(false);
 	loading$ = this.loadingSource.asObservable();

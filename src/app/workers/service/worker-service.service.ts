@@ -7,7 +7,7 @@ import { Observable } from "rxjs";
 })
 export class WorkerServiceService {
 
-  Baseurl: string = 'https://app-dev-01-dittobox-a8bpd5bkh4dnh3g7.eastus-01.azurewebsites.net/api/v1';
+  Baseurl: string = 'https://app-prod-01-dittobox-argeesg8era0c7ex.eastus-01.azurewebsites.net/api/v1';
 
   constructor(private http: HttpClient) { }
 
