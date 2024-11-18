@@ -1,0 +1,5 @@
+span {
+  color: #1aff00 !important;
+  border: none !important; /* Ensure no border */
+  box-shadow: none !important; /* Remove any shadow */
+}
