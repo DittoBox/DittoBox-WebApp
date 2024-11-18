@@ -33,15 +33,15 @@
   font-weight: 500;
 }
 
-.container-button button {
-  margin-top: 10px;
-  font-weight: normal;
-}
-
 .container-button {
+  margin-top: 15px;
   width: 100%;
   display: flex;
-  justify-content: right;
+  justify-content: space-between;
+}
+
+.container-button button {
+  width: 48%;
 }
 
 h2 {

@@ -63,7 +63,7 @@ export class Container {
     this.description = description;
     this.groupId = groupId;
     this.status = status;
-    this.temperature = temperature;
+    this.temperature = parseFloat(temperature.toFixed(2));
     this.humidity = humidity;
     this.oxygen = oxygen;
     this.dioxide = dioxide;

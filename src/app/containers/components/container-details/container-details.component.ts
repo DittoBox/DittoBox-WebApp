@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MatCard, MatCardContent, MatCardHeader} from "@angular/material/card";
-import {NgForOf, NgIf} from "@angular/common";
+import {DecimalPipe, NgForOf, NgIf} from "@angular/common";
 import {ContainerServiceService} from "../../service/container-service.service";
 import {MatSidenav, MatSidenavContainer, MatSidenavContent} from "@angular/material/sidenav";
 import {MatButton, MatIconButton} from "@angular/material/button";
@@ -13,6 +13,7 @@ import {MatIcon} from "@angular/material/icon";
 import {MatDivider} from "@angular/material/divider";
 import { TranslateModule } from '@ngx-translate/core';
 import { group } from '@angular/animations';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-container-details',
@@ -31,7 +32,8 @@ import { group } from '@angular/animations';
         MatIcon,
         MatDivider,
         MatIconButton,
-        TranslateModule
+        TranslateModule,
+        DecimalPipe
     ],
   templateUrl: './container-details.component.html',
   styleUrl: './container-details.component.css'
@@ -39,8 +41,9 @@ import { group } from '@angular/animations';
 export class ContainerDetailsComponent{
   container !: any;
   opened: boolean = false;
+  digitInfo = '1.2-2';
 
-  constructor(private containerService: ContainerServiceService, public dialog:MatDialog,private snackBar: MatSnackBar) { }
+  constructor(private containerService: ContainerServiceService, public dialog:MatDialog,private snackBar: MatSnackBar, private router : Router) { }
 
   loadContainer(containerId: number) {
     this.containerService.getContainerbyId(containerId.toString()).subscribe(data => {
@@ -91,6 +94,11 @@ export class ContainerDetailsComponent{
         ...this.container,
       }
     });
+  }
+
+  changeTemplate() {
+      // go to template rute using router
+      this.router.navigateByUrl('/templates');
   }
 
 }

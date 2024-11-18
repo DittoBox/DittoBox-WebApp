@@ -44,7 +44,8 @@
       "ETHYLENE": "Ethylene (C₂H₄)",
       "AMMONIA": "Ammonia (NH₃)",
       "SULFUR_DIOXIDE": "Sulfur Dioxide (SO₂)",
-      "NO_TEMPLATE_CONFIGURATION": "No template configuration for this container."
+      "NO_TEMPLATE_CONFIGURATION": "No template configuration for this container.",
+        "CHANGE_TEMPLATE": "Change Template"
     },
     "CONTAINER_ITEM": {
       "TEMPERATURE": "Temperature",
