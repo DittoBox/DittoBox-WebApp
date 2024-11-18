@@ -217,17 +217,17 @@
       "CANCEL_SUBSCRIPTION": "Cancel subscription"
     },
     "WORKER_DETAILS": {
-      "BREADCRUMB": "Workers",
-      "WORKER_DETAILS": "Worker details",
+      "BREADCRUMB": "Worker Details",
+      "WORKER_DETAILS": "Worker Details",
       "CATEGORY": "Category",
       "LOCATION": "Location",
-      "ROLE_MANAGEMENT": "Role management",
+      "ROLE_MANAGEMENT": "Role Management",
       "REASSIGN": "Reassign",
-      "ROLE_MANAGEMENT_TITLE": "Role management",
+      "ROLE_MANAGEMENT_TITLE": "Role Management",
       "PRIVILEGES": {
-        "WORKER_MANAGEMENT": "Worker Management",
-        "GROUP_MANAGEMENT": "Group Management",
-        "ACCOUNT_MANAGEMENT": "Account Management"
+        "WorkerManagement": "Worker Management",
+        "GroupManagement": "Group Management",
+        "AccountManagement": "Account Management"
       }
     },
     "WORKER_ITEMS": {

@@ -72,6 +72,7 @@ export class WorkerDetailsComponent {
             workerData.location,
             workerData.privileges
           ));
+          console.log('Loaded workers list:', this.workersList);
         },
         (error) => {
           console.error('Error al obtener los trabajadores:', error);
@@ -85,6 +86,8 @@ export class WorkerDetailsComponent {
     this.worker = this.workersList.find(worker => worker.id === id) || null;
     if (this.worker) {
       this.workerRole = this.getRoleBasedOnPrivileges(this.worker.privileges);
+      console.log('Loaded worker:', this.worker);
+      console.log('Worker role:', this.workerRole);
     }
     this.opened = !!this.worker;
   }
@@ -93,7 +96,7 @@ export class WorkerDetailsComponent {
     const hasWorkerManagement = privileges.includes('WorkerManagement');
     const hasGroupManagement = privileges.includes('GroupManagement');
     const hasAccountManagement = privileges.includes('AccountManagement');
-
+  
     if (hasWorkerManagement && hasGroupManagement && hasAccountManagement) {
       return 'Owner';
     } else if (hasWorkerManagement && hasGroupManagement) {
@@ -102,22 +105,29 @@ export class WorkerDetailsComponent {
       return 'Worker';
     }
   }
+
+
   onPrivilegeToggle(privilege: string, isChecked: boolean) {
     if (this.worker) {
-      const privilegeId = this.getPrivilegeId(privilege);
       const profileId = this.worker.id;
+      const privilegeId = this.getPrivilegeId(privilege);
   
       console.log('Privilege:', privilege);
       console.log('Privilege ID:', privilegeId);
       console.log('Profile ID:', profileId);
       console.log('Is Checked:', isChecked);
   
+      if (privilegeId === -1) {
+        console.error('Invalid privilege:', privilege);
+        return;
+      }
+  
       if (isChecked) {
         this.workerServiceService.grantPrivilege(profileId, privilegeId).subscribe(
           () => {
             console.log('Privilege granted successfully');
             if (this.worker) {
-              this.worker.privileges.push(privilegeId.toString());
+              this.worker.privileges.push(privilege);
               this.workerRole = this.getRoleBasedOnPrivileges(this.worker.privileges);
               console.log('Updated worker privileges:', this.worker.privileges);
               console.log('Updated worker role:', this.workerRole);
@@ -132,7 +142,7 @@ export class WorkerDetailsComponent {
           () => {
             console.log('Privilege revoked successfully');
             if (this.worker) {
-              this.worker.privileges = this.worker.privileges.filter(p => p !== privilegeId.toString());
+              this.worker.privileges = this.worker.privileges.filter(p => p !== privilege);
               this.workerRole = this.getRoleBasedOnPrivileges(this.worker.privileges);
               console.log('Updated worker privileges:', this.worker.privileges);
               console.log('Updated worker role:', this.workerRole);
@@ -150,10 +160,10 @@ export class WorkerDetailsComponent {
   
   getPrivilegeId(privilege: string): number {
     const privilegeMap: { [key: string]: number } = {
-      'WorkerManagement': 1,
-      'GroupManagement': 2,
-      'AccountManagement': 3
+      'WorkerManagement': 0,
+      'GroupManagement': 1,
+      'AccountManagement': 2
     };
-    return privilegeMap[privilege] || 0;
+    return privilegeMap[privilege] !== undefined ? privilegeMap[privilege] : -1;
   }
 }

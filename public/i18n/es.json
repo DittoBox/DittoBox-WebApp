@@ -222,13 +222,13 @@
       "CANCEL_SUBSCRIPTION": "Cancelar suscripción"
     },
     "WORKER_DETAILS": {
-      "BREADCRUMB": "Trabajadores",
-      "WORKER_DETAILS": "Detalles del trabajador",
+      "BREADCRUMB": "Detalles del Trabajador",
+      "WORKER_DETAILS": "Detalles del Trabajador",
       "CATEGORY": "Categoría",
       "LOCATION": "Ubicación",
-      "ROLE_MANAGEMENT": "Gestión de roles",
+      "ROLE_MANAGEMENT": "Gestión de Roles",
       "REASSIGN": "Reasignar",
-      "ROLE_MANAGEMENT_TITLE": "Gestión de roles",
+      "ROLE_MANAGEMENT_TITLE": "Gestión de Roles",
       "PRIVILEGES": {
         "WorkerManagement": "Gestión de Trabajadores",
         "GroupManagement": "Gestión de Grupos",

@@ -27,12 +27,15 @@ export class WorkerServiceService {
   grantPrivilege(profileId: number, privilegeId: number): Observable<any> {
     const url = `${this.Baseurl}/profile/grant-privileges`;
     const body = { profileId, privilegeId };
+    console.log('grantPrivilege', body);
     return this.http.post(url, body);
+
   }
 
   revokePrivilege(profileId: number, privilegeId: number): Observable<any> {
     const url = `${this.Baseurl}/profile/revoke-privileges`;
     const body = { profileId, privilegeId };
+    console.log('revokePrivilege', body);
     return this.http.put(url, body);
   }
 
