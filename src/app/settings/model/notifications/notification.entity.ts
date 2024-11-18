@@ -1,19 +1,15 @@
 export class Notifications {
-    type: 'alert' | 'warning' | 'update';
-    icon: string;
-    title: string;
-    message: string;
-    date: Date;
-    action?: string;
-    viewed:boolean;
+    alertType: number;
+    issuedAt: Date;
+    accountId: number;
+    groupId: number;
+    containerName: string
 
-    constructor(type: 'alert' | 'warning' | 'update', icon: string, title: string, message: string, date: Date,viewed:boolean ,action?: string) {
-        this.type = type;
-        this.icon = icon;
-        this.title = title;
-        this.message = message;
-        this.date = date;
-        this.action = action;
-        this.viewed = viewed;
+    constructor(alertType: number, issuedAt: Date, accountId: number, groupId: number, containerName:string) {
+        this.alertType = alertType;
+        this.issuedAt = issuedAt;
+        this.accountId = accountId;
+        this.groupId = groupId;
+        this.containerName = containerName;
     }
 }

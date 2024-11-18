@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatButton} from "@angular/material/button";
 import {MatCard, MatCardActions, MatCardContent, MatCardTitle} from "@angular/material/card";
 import {MatDialog} from "@angular/material/dialog";
 import {UserInformationEditItemComponent} from "../user-information-edit-item/user-information-edit-item.component";
 import { TranslateModule } from '@ngx-translate/core';
+import {AccountServiceService} from "../../../account/service/account-service.service";
+import {SettingServiceService} from "../../service/setting-service.service";
+import {User} from "../../../account/model/user/user.entity";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-user-information-item',
@@ -14,13 +18,31 @@ import { TranslateModule } from '@ngx-translate/core';
         MatCardActions,
         MatCardContent,
         MatCardTitle,
-        TranslateModule
+        TranslateModule,
+        NgIf
     ],
   templateUrl: './user-information-item.component.html',
   styleUrl: './user-information-item.component.css'
 })
-export class UserInformationItemComponent {
-  constructor(private dialog: MatDialog) {}
+export class UserInformationItemComponent implements OnInit{
+
+    id !: number;
+    user !: User;
+
+  constructor(private dialog: MatDialog, private settingService: SettingServiceService) {}
+
+    ngOnInit(): void {
+        this.id = Number(localStorage.getItem('userId'));
+        this.loadUserInformation(this.id);
+    }
+
+    loadUserInformation(id: number) {
+        this.settingService.getUserById(id).subscribe((data) => {
+            this.settingService.getProfileById(id).subscribe((profile) => {
+                this.user = new User(profile.firstName, profile.lastName, data.username)
+            });
+        });
+    }
 
   openEditDialog() {
     const dialogRef = this.dialog.open(UserInformationEditItemComponent, {
