@@ -54,7 +54,7 @@ export class ContainerServiceService {
     );
   }
 
-  getContainerbyId(containerID: string): Observable<any> {
+  getContainerbyId(containerID: any): Observable<any> {
     this.setLoading(true);
     return this.http.get<any>(`${this.DevBaseurl}/container/${containerID}`).pipe(
       finalize(() => this.setLoading(false))

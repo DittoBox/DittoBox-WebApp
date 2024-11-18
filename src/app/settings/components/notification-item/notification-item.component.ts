@@ -15,6 +15,7 @@ import {SettingServiceService} from "../../service/setting-service.service";
 import {Notifications} from "../../model/notifications/notification.entity";
 import {NotificationTimefilterComponent} from "../notification-timefilter/notification-timefilter.component";
 import { TranslateModule } from '@ngx-translate/core';
+import {ContainerServiceService} from "../../../containers/service/container-service.service";
 
 @Component({
   selector: 'app-notification-item',
@@ -39,29 +40,53 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './notification-item.component.html',
   styleUrl: './notification-item.component.css'
 })
-export class NotificationItemComponent implements  OnInit{
+export class NotificationItemComponent implements  OnInit {
   notifications: Notifications[] = [];
+  notification !: any;
   filteredNotifications: Notifications[] = [];
-  constructor(private notificationService: SettingServiceService) {}
+  privileges: string[] = JSON.parse(localStorage.getItem('privileges') || '[]');
+  accountValidator: boolean = this.privileges.includes('AccountManagement');
+
+  constructor(private notificationService: SettingServiceService, private containerService: ContainerServiceService) {
+  }
 
   ngOnInit(): void {
     this.loadNotifications();
-
   }
 
   loadNotifications() {
-    this.notificationService.getNotifications().subscribe(data => {
-      this.notifications = data; // Asigna las notificaciones desde el servicio
-      this.filteredNotifications = this.notifications; // Muestra todas las notificaciones inicialmente
+    if (this.accountValidator) {
+      this.notificationService.getNotificationsByAccount(Number(localStorage.getItem("accountId"))).subscribe(data => {
+        for (let notification of data) {
+          this.containerService.getContainerbyId(notification.containerId).subscribe(container => {
+            this.notifications.push(new Notifications(notification.alertType, notification.issuedAt, notification.accountId, notification.groupId, container.name));
+          });
+        }
+      });
+    }
+    else {
+        this.notificationService.getNotificationsByGroup(Number(localStorage.getItem("groupId"))).subscribe(data => {
+            for (let notification of data) {
+            this.containerService.getContainerbyId(notification.containerId).subscribe(container => {
+                this.notifications.push(new Notifications(notification.alertType, notification.issuedAt, notification.accountId, notification.groupId, container.name));
+            });
+            }
     });
+  }}
 
+  getNotificationType(notification: Notifications): string {
+    return this.notificationService.getNotificationTitle(notification);
   }
 
-  markAsViewed(notification: Notifications) {
+  getNotificationDescription(notification: Notifications): string {
+      return this.notificationService.getNotificationInfo(notification, notification.containerName);
+  }
+
+  /* markAsViewed(notification: Notifications) {
     notification.viewed = true;
-  }
+  } */
 
-  handleAction(notification: Notifications, event: Event) {
+  /* handleAction(notification: Notifications, event: Event) {
     event.stopPropagation(); // Evita marcar la notificación como vista al hacer clic en el botón
     console.log(`Ejecutando acción: ${notification.action}`);
   }
@@ -77,8 +102,10 @@ export class NotificationItemComponent implements  OnInit{
     } else {
       this.filteredNotifications = this.notifications.filter(notification => notification.type === type);
     }
-  }
+    /*
+  }*/
 
+  /*
   onDateChange(selectedDate: Date | null) {
     if (selectedDate) {
       // Convertir la fecha seleccionada a una cadena en formato YYYY-MM-DD
@@ -94,4 +121,5 @@ export class NotificationItemComponent implements  OnInit{
       this.filteredNotifications = this.notifications; // Si no hay fecha, muestra todas
     }
   }
+  */
 }

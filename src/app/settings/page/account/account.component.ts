@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {
   AccountInformationItemComponent
 } from "../../components/account-information-item/account-information-item.component";
@@ -18,9 +18,10 @@ import { NgIf } from '@angular/common';
   templateUrl: './account.component.html',
   styleUrl: './account.component.css'
 })
-export class AccountComponent {
+export class AccountComponent{
 
-      constructor() { }
+    constructor() { }
+
 
       privileges: string[] = JSON.parse(localStorage.getItem('privileges') || '[]')
       workerValidator : boolean = this.privileges.includes('WorkerManagement');

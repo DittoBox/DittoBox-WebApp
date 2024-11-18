@@ -3,23 +3,14 @@
   <mat-card-content>
     <div class="info-row">
       <span>{{ 'USER_INFORMATION_ITEM.USERNAME' | translate }}</span>
-      <span>A warm place</span>
+      <span *ngIf="user">{{ user.username }}</span>
     </div>
     <div class="info-row">
       <span>{{ 'USER_INFORMATION_ITEM.NAME' | translate }}</span>
-      <span>Advance</span>
-    </div>
-    <div class="info-row">
-      <span>{{ 'USER_INFORMATION_ITEM.ID_NUMBER' | translate }}</span>
-      <span>20124578963</span>
-    </div>
-    <div class="info-row">
-      <span>{{ 'USER_INFORMATION_ITEM.BANK_OWNER' | translate }}</span>
-      <span>Sofía Pérez</span>
+      <span *ngIf="user">{{ user.firstName + " " + user.lastName }}</span>
     </div>
   </mat-card-content>
   <mat-card-actions class="actions">
-    <button mat-button (click)="openEditDialog()">{{ 'USER_INFORMATION_ITEM.EDIT_DATA' | translate }}</button>
-    <button mat-button>{{ 'USER_INFORMATION_ITEM.CHANGE_PASSWORD' | translate }}</button>
+    <button mat-button (click)="openChangePasswordModal()">{{ 'USER_INFORMATION_ITEM.CHANGE_PASSWORD' | translate }}</button>
   </mat-card-actions>
 </mat-card>
