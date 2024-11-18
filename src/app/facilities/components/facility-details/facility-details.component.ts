@@ -11,6 +11,7 @@ import {AddContainerDialogComponent} from "../add-container-dialog/add-container
 import {MatDialog} from "@angular/material/dialog";
 import {AddWorkerDialogComponent} from "../add-worker-dialog/add-worker-dialog.component";
 import { TranslateModule } from '@ngx-translate/core';
+import {SnackbarService} from "../../../shared/service/snackbar.service";
 
 @Component({
   selector: 'app-facility-details',
@@ -40,7 +41,8 @@ export class FacilityDetailsComponent {
 
   constructor(
     private facilityService: FacilityServiceService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private snackbarservice: SnackbarService
   ) {}
 
   loadFacility(facilityId: number) {
@@ -89,10 +91,13 @@ export class FacilityDetailsComponent {
       this.facilityService.registerContainer(this.facility!.id, payload).subscribe(
         response => {
           console.log('Container registered successfully:', response);
+          this.snackbarservice.showMessageCorrect('Container registered successfully');
           this.facility!.containerCount = (this.facility?.containerCount || 0) + 1;
         },
         error => {
           console.error('Error registering container:', error);
+          this.snackbarservice.showMessageError('Error registering container');
+
         }
       );
     }
@@ -120,10 +125,11 @@ export class FacilityDetailsComponent {
 
       this.facilityService.registerWorker(this.facility.id, payload).subscribe(
         response => {
+          this.snackbarservice.showMessageCorrect('Worker registered successfully');
           console.log('Worker registered successfully:', response);
-          // Aquí puedes actualizar el conteo de trabajadores si es necesario
         },
         error => {
+          this.snackbarservice.showMessageError('Wrong mail');
           console.error('Error registering worker:', error);
         }
       );

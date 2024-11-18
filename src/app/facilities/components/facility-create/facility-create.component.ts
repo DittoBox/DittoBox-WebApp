@@ -6,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { TranslateModule } from '@ngx-translate/core';
+import {SnackbarService} from "../../../shared/service/snackbar.service";
 
 @Component({
   selector: 'app-create-facility',
@@ -20,7 +21,8 @@ export class FacilityCreateComponent {
 
   constructor(
     private facilityService: FacilityServiceService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private snackbarservice: SnackbarService
   ) {
     this.createFacilityForm = this.fb.group({
       facilityType: [0, Validators.required],
@@ -47,10 +49,12 @@ export class FacilityCreateComponent {
       this.facilityService.createGroup(formData).subscribe(
         () => {
           console.log('Facility creado exitosamente');
+          this.snackbarservice.showMessageCorrect('Facility creado exitosamente');
           this.facilityCreated.emit();
           this.createFacilityForm.reset({ facilityType: 0 });
         },
         (error) => {
+          this.snackbarservice.showMessageError('Parameters are not correct');
           console.error('Error al crear el facility:', error);
         }
       );

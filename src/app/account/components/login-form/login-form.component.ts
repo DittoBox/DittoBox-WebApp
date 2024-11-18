@@ -7,6 +7,7 @@ import {Router, RouterLink} from "@angular/router";
 import {AccountServiceService} from "../../service/account-service.service";
 import {FormsModule} from "@angular/forms";
 import { TranslateModule } from '@ngx-translate/core';
+import {SnackbarService} from "../../../shared/service/snackbar.service";
 
 @Component({
   selector: 'app-login-form',
@@ -28,11 +29,12 @@ export class LoginFormComponent {
   email: string = '';
   password: string = '';
 
-  constructor(private accountService: AccountServiceService, private router: Router) {}
+  constructor(private accountService: AccountServiceService, private router: Router,private snackbarService: SnackbarService) {}
 
   login() {
     if (!this.email || !this.password) {
       console.error('Username y password son requeridos');
+      this.snackbarService.showMessageError('Username and password are required');
       return;
     }
 
@@ -40,10 +42,12 @@ export class LoginFormComponent {
     this.accountService.login(this.email, this.password).subscribe(
       response => {
         console.log('Inicio de sesión exitoso:', response);
+        this.snackbarService.showMessageCorrect('Login successful');
         this.router.navigate(['/containers']);
       },
       error => {
         console.error('Error en el inicio de sesión:', error);
+        this.snackbarService.showMessageError('Wrong username or password');
       }
     );
   }

@@ -19,6 +19,7 @@ import {
   BarChartContainersByFacilityComponent
 } from "./dashboard/components/bar-chart-containers-by-facility/bar-chart-containers-by-facility.component";
 import {DashboardComponent} from "./dashboard/page/dashboard/dashboard.component";
+import {PageNotFoundComponent} from "./shared/page/page-not-found/page-not-found.component";
 
 export const routes: Routes = [
   {
@@ -82,6 +83,9 @@ export const routes: Routes = [
 
   { path: '',
     redirectTo: '/login', pathMatch: 'full'
+  },
+  { path: '**',
+    component:PageNotFoundComponent
   },
 ];
 

@@ -29,6 +29,7 @@ export class SettingServiceService {
 		this.loadingSource.next(loading);
 	}
 
+
 	getProfileById(profileId: number): Observable<any> {
 		this.setLoading(true);
 		return this.http.get<any>(`${this.DevBaseurl}/profile/${profileId}`).pipe(
@@ -190,6 +191,7 @@ export class SettingServiceService {
 				return this.translateService.instant("alerts.unknownAlert", { name });
 		}
 	}
+
 
 
 	getAccountUsage(): Observable<AccountUsage> {

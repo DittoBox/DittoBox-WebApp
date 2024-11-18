@@ -4,6 +4,7 @@ import {AccountServiceService} from "../../service/account-service.service";
 import {FormsModule} from "@angular/forms";
 import {Router} from "@angular/router";
 import { TranslateModule } from '@ngx-translate/core';
+import {SnackbarService} from "../../../shared/service/snackbar.service";
 
 @Component({
   selector: 'app-register-worker-form',
@@ -18,12 +19,13 @@ import { TranslateModule } from '@ngx-translate/core';
 export class RegisterWorkerFormComponent {
   user: User = new User();
 
-  constructor(private accountService: AccountServiceService, private router: Router) {}
+  constructor(private accountService: AccountServiceService, private router: Router,private snackbarservice:SnackbarService) {}
 
   registerWorker() {
     this.accountService.createUser(this.user).subscribe(
       response => {
         console.log('Worker registrado con éxito:', response);
+        this.snackbarservice.showMessageCorrect('Worker registered successfully');
         this.accountService.login(this.user.email,this.user.password).subscribe(
           response => {
             this.router.navigate(['/containers']);
@@ -34,6 +36,7 @@ export class RegisterWorkerFormComponent {
         )
       },
       error => {
+        this.snackbarservice.showMessageError('Parameters are required');
         console.error('Error al registrar el Worker:', error);
       }
     );

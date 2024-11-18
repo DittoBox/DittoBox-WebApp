@@ -10,6 +10,7 @@ import {FormsModule} from "@angular/forms";
 import {NgForOf} from "@angular/common";
 import {MatDialog} from "@angular/material/dialog";
 import { TranslateModule } from '@ngx-translate/core';
+import {SnackbarService} from "../../../shared/service/snackbar.service";
 
 @Component({
   selector: 'app-template-details',
@@ -40,7 +41,7 @@ export class TemplateDetailsComponent implements OnInit{
     selectedContainers: any[] = [];
     privileges: string[] = JSON.parse(localStorage.getItem('privileges') || '[]')
 
-  constructor(private containerService: ContainerServiceService, public dialog: MatDialog) { }
+  constructor(private containerService: ContainerServiceService, public dialog: MatDialog, private snackbarservice:SnackbarService) { }
 
   ngOnInit() {
     this.containerService.templateSelected.subscribe(data => {
@@ -68,13 +69,16 @@ export class TemplateDetailsComponent implements OnInit{
 
       for (let container of this.selectedContainers) {
         this.containerService.assignTemplateToContainer(container.id, this.template.id).subscribe(data => {
+          this.snackbarservice.showMessageCorrect('Template applied successfully');
           console.log('Template aplicado correctamente:', data);
+
         });
       }
 
       this.sidenav.close();
 
     } else {
+      this.snackbarservice.showMessageError('No container selected');
       console.warn('No se ha seleccionado ningún container.');
     }
   }

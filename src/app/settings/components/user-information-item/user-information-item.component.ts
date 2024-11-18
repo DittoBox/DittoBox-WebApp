@@ -4,11 +4,10 @@ import {MatCard, MatCardActions, MatCardContent, MatCardTitle} from "@angular/ma
 import {MatDialog} from "@angular/material/dialog";
 import {UserInformationEditItemComponent} from "../user-information-edit-item/user-information-edit-item.component";
 import { TranslateModule } from '@ngx-translate/core';
-import {AccountServiceService} from "../../../account/service/account-service.service";
 import {SettingServiceService} from "../../service/setting-service.service";
 import {User} from "../../../account/model/user/user.entity";
 import {NgIf} from "@angular/common";
-import {ChangePasswordModalComponent} from "../change-password-modal/change-password-modal.component";
+import { ChangePasswordModalComponent } from '../change-password-modal/change-password-modal.component';
 
 @Component({
   selector: 'app-user-information-item',
@@ -56,27 +55,27 @@ export class UserInformationItemComponent implements OnInit{
       position: { right: '0' },
       panelClass: 'custom-dialog-container'
     });
-  
+
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         console.log('Dialog closed with data:', result);
       }
     });
   }
+  openChangePasswordModal() {
+    const dialogRef = this.dialog.open(ChangePasswordModalComponent, {
+      width: '400px'
+    });
 
-    openChangePasswordModal() {
-        const dialogRef = this.dialog.open(ChangePasswordModalComponent, {
-            width: '400px'
-        });
+    dialogRef.afterClosed().subscribe((newPassword) => {
+      if (newPassword) {
+        this.settingService.changePassword(this.id, {
+          userId: this.id,
+          newPassword: newPassword
+        }).subscribe();
+      }
+    });
+  }
 
-        dialogRef.afterClosed().subscribe((newPassword) => {
-            if (newPassword) {
-                this.settingService.changePassword(this.id, {
-                    userId: this.id,
-                    newPassword: newPassword
-                }).subscribe();
-            }
-        });
-    }
 
 }

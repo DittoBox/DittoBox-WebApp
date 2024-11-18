@@ -33,6 +33,7 @@ export class AppComponent implements OnInit{
   }
 
   private isAuthRoute(url: string): boolean {
-    return ['/login', '/register', '/register-company'].some(route => url.startsWith(route));
+    const authRoutes = ['/login', '/register', '/register-company'];
+    return authRoutes.some(route => url.startsWith(route)) || url === '/page-not-found';
   }
 }

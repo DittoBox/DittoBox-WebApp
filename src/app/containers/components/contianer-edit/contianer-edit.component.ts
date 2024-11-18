@@ -15,6 +15,7 @@ import {FormsModule} from "@angular/forms";
 import {ContainerServiceService} from "../../service/container-service.service";
 import {NgForOf, NgIf} from "@angular/common";
 import { TranslateModule } from '@ngx-translate/core';
+import {SnackbarService} from "../../../shared/service/snackbar.service";
 
 @Component({
   selector: 'app-contianer-edit',
@@ -47,7 +48,7 @@ export class ContianerEditComponent implements OnInit{
   gases: any[] = [];
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,  private dialogRef: MatDialogRef<ContianerEditComponent>,
-              private containerService: ContainerServiceService ) {}
+              private containerService: ContainerServiceService,private snackbarservice:SnackbarService) {}
 
   ngOnInit() {
     this.initializeGases()
@@ -86,7 +87,7 @@ export class ContianerEditComponent implements OnInit{
         this.data[`${gas.name.toLowerCase()}Max`] = gas.max;
       }
     });
-  
+
     const parameters = {
       minTemp: this.data.minTemp,
       maxTemp: this.data.maxTemp,
@@ -103,17 +104,19 @@ export class ContianerEditComponent implements OnInit{
       sulfurDioxideMin: this.data.sulfurDioxideMin,
       sulfurDioxideMax: this.data.sulfurDioxideMax
     };
-  
+
     this.containerService.updateContainerParameters(this.data.id, parameters).subscribe(
       (response) => {
         console.log('Template updated successfully', response);
+        this.snackbarservice.showMessageCorrect('Template updated successfully');
         this.dialogRef.close(response);
       },
       (error) => {
+        this.snackbarservice.showMessageError('Parameters are required');
         console.error('Error updating template', error);
       }
     );
-  } 
+  }
   close(): void {
     this.dialogRef.close();
   }
