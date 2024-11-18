@@ -196,7 +196,8 @@
       "ID_NUMBER": "Número de identificación",
       "BANK_OWNER": "Titular de la cuenta bancaria",
       "EDIT_DATA": "Editar datos",
-      "CHANGE_PASSWORD": "Cambiar contraseña"
+      "CHANGE_PASSWORD": "Cambiar contraseña",
+        "NEW_PASSWORD": "Nueva contraseña"
     },
     "ACCOUNT_PAGE": {
       "TITLE": "Cuenta"

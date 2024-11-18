@@ -191,7 +191,8 @@
       "ID_NUMBER": "Identification number",
       "BANK_OWNER": "Bank account owner",
       "EDIT_DATA": "Edit data",
-      "CHANGE_PASSWORD": "Change password"
+      "CHANGE_PASSWORD": "Change password",
+        "NEW_PASSWORD": "New password"
     },
     "ACCOUNT_PAGE": {
       "TITLE": "Account"

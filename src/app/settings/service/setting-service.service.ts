@@ -65,6 +65,14 @@ export class SettingServiceService {
 
 	}
 
+	changePassword(userId: number, body: any): Observable<any> {
+		this.setLoading(true);
+		return this.http.put<any>(`${this.DevBaseurl}/user/change-password`,  body ).pipe(
+			finalize(() => this.setLoading(false))
+		);
+
+	}
+
 	getNotificationTitle(notification: Notifications): string {
 		switch (notification.alertType) {
 			case 1:
