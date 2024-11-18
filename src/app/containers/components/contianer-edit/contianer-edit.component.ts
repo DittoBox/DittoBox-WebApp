@@ -77,8 +77,14 @@ export class ContianerEditComponent implements OnInit{
 
   saveChanges() {
     this.gases.forEach(gas => {
-      this.data[`${gas.name.toLowerCase()}Min`] = gas.min;
-      this.data[`${gas.name.toLowerCase()}Max`] = gas.max;
+      if (gas.name === 'Sulfur dioxide') {
+        this.data["sulfurDioxideMin"] = gas.min;
+        this.data["sulfurDioxideMax"] = gas.max;
+      }
+      else {
+        this.data[`${gas.name.toLowerCase()}Min`] = gas.min;
+        this.data[`${gas.name.toLowerCase()}Max`] = gas.max;
+      }
     });
   
     const parameters = {

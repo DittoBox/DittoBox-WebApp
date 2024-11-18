@@ -48,7 +48,8 @@
       "ETHYLENE": "Etileno (C₂H₄)",
       "AMMONIA": "Amoníaco (NH₃)",
       "SULFUR_DIOXIDE": "Dióxido de azufre (SO₂)",
-      "NO_TEMPLATE_CONFIGURATION": "No hay configuración de plantilla para este contenedor."
+      "NO_TEMPLATE_CONFIGURATION": "No hay configuración de plantilla para este contenedor.",
+        "CHANGE_TEMPLATE": "Cambiar plantilla"
     },
     "CONTAINER_ITEM": {
       "TEMPERATURE": "Temperatura",

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatCard, MatCardContent, MatCardHeader } from "@angular/material/card";
-import {NgClass, NgForOf} from "@angular/common";
+import {DecimalPipe, NgClass, NgForOf} from "@angular/common";
 import { ContainerServiceService } from "../../service/container-service.service";
 import { ContainerDetailsComponent } from "../container-details/container-details.component";
 import { MatIconModule } from '@angular/material/icon';
@@ -20,7 +20,8 @@ import { TranslateModule } from '@ngx-translate/core';
     MatIconModule,
     MatProgressSpinnerModule,
     NgClass,
-    TranslateModule
+    TranslateModule,
+    DecimalPipe
   ],
   templateUrl: './container-item.component.html',
   styleUrls: ['./container-item.component.css']
@@ -29,6 +30,7 @@ export class ContainerItemComponent implements OnInit {
 
   @Input() containerItems: Container[] = [];
   isLoading = false;
+  digitInfo = '1.2-2';
 
   constructor(private sidenavComponent: ContainerDetailsComponent, private containerServiceService: ContainerServiceService) { }
 
