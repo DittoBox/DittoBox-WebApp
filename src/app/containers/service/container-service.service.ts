@@ -4,13 +4,12 @@ import { BehaviorSubject, Observable } from "rxjs";
 import { tap, finalize } from 'rxjs/operators';
 import { Template } from "../model/template-model/template.entity";
 import { Container } from "../model/container-model/container.entity";
+import { BaseService } from '../../shared/service/base.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ContainerServiceService {
-
-  DevBaseurl: string = 'https://app-prod-01-dittobox-argeesg8era0c7ex.eastus-01.azurewebsites.net/api/v1';
+export class ContainerServiceService extends BaseService {
 
   // to manage the templates selection
   private templateSource = new BehaviorSubject<any>(null);
@@ -20,7 +19,9 @@ export class ContainerServiceService {
   private loadingSource = new BehaviorSubject<boolean>(false);
   loading$ = this.loadingSource.asObservable();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+		super();
+	}
 
   private setLoading(loading: boolean) {
     this.loadingSource.next(loading);
@@ -28,41 +29,41 @@ export class ContainerServiceService {
 
   getContainers(): Observable<any> {
     this.setLoading(true);
-    return this.http.get<any>(`${this.DevBaseurl}/container`).pipe(
+    return this.http.get<any>(`${this.baseUrl}/container`).pipe(
       finalize(() => this.setLoading(false))
     );
   }
 
   getContainersByAccountId(accountId: number): Observable<any> {
     this.setLoading(true);
-    return this.http.get<any>(`${this.DevBaseurl}/account/${accountId}/containers`).pipe(
+    return this.http.get<any>(`${this.baseUrl}/account/${accountId}/containers`).pipe(
       finalize(() => this.setLoading(false))
     );
   }
 
   getContainersByGroupId(groupId: number): Observable<any> {
     this.setLoading(true);
-    return this.http.get<any>(`${this.DevBaseurl}/group/${groupId}/containers`).pipe(
+    return this.http.get<any>(`${this.baseUrl}/group/${groupId}/containers`).pipe(
         finalize(() => this.setLoading(false))
     );
   }
 
   getTemplates(): Observable<any> {
     this.setLoading(true);
-    return this.http.get<any>(`${this.DevBaseurl}/template`).pipe(
+    return this.http.get<any>(`${this.baseUrl}/template`).pipe(
       finalize(() => this.setLoading(false))
     );
   }
 
   getContainerbyId(containerID: any): Observable<any> {
     this.setLoading(true);
-    return this.http.get<any>(`${this.DevBaseurl}/container/${containerID}`).pipe(
+    return this.http.get<any>(`${this.baseUrl}/container/${containerID}`).pipe(
       finalize(() => this.setLoading(false))
     );
   }
 
   updateContainerParameters(containerId: number, parameters: any): Observable<any> {
-    return this.http.put(`${this.DevBaseurl}/container/${containerId}/parameters`, parameters);
+    return this.http.put(`${this.baseUrl}/container/${containerId}/parameters`, parameters);
   }
 
 
@@ -72,7 +73,7 @@ export class ContainerServiceService {
 
   assignTemplateToContainer(containerId: number, templateId: number) {
     this.setLoading(true);
-    return this.http.post<any>(`${this.DevBaseurl}/container/${containerId}/assign/${templateId}`, {}).pipe(
+    return this.http.post<any>(`${this.baseUrl}/container/${containerId}/assign/${templateId}`, {}).pipe(
       finalize(() => this.setLoading(false))
     );
   }

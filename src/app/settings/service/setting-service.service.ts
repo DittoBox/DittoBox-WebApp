@@ -7,6 +7,7 @@ import {Notifications} from "../model/notifications/notification.entity";
 import {TranslateService} from "@ngx-translate/core";
 import {User} from "../../account/model/user/user.entity";
 import {Account} from "../model/account/account.entity";
+import { BaseService } from '../../shared/service/base.service';
 
 
 
@@ -14,14 +15,13 @@ import {Account} from "../model/account/account.entity";
 @Injectable({
 	providedIn: 'root'
 })
-export class SettingServiceService {
-	DevBaseurl: string = 'https://app-prod-01-dittobox-argeesg8era0c7ex.eastus-01.azurewebsites.net/api/v1';
+export class SettingServiceService extends BaseService {
 
 	private loadingSource = new BehaviorSubject<boolean>(false);
 	loading$ = this.loadingSource.asObservable();
 
 	constructor(private http: HttpClient, private translateService: TranslateService) {
-
+		super();
 		this.translateService.setDefaultLang('en');
 	}
 
@@ -32,35 +32,35 @@ export class SettingServiceService {
 
 	getProfileById(profileId: number): Observable<any> {
 		this.setLoading(true);
-		return this.http.get<any>(`${this.DevBaseurl}/profile/${profileId}`).pipe(
+		return this.http.get<any>(`${this.baseUrl}/profile/${profileId}`).pipe(
 			finalize(() => this.setLoading(false))
 		);
 	}
 
 	getUserById(userId: number): Observable<User> {
 		this.setLoading(true);
-		return this.http.get<User>(`${this.DevBaseurl}/user/${userId}`).pipe(
+		return this.http.get<User>(`${this.baseUrl}/user/${userId}`).pipe(
 			finalize(() => this.setLoading(false))
 		);
 	}
 
 	getAccountById(accountId: number): Observable<Account> {
 		this.setLoading(true);
-		return this.http.get<Account>(`${this.DevBaseurl}/account/${accountId}`).pipe(
+		return this.http.get<Account>(`${this.baseUrl}/account/${accountId}`).pipe(
 			finalize(() => this.setLoading(false))
 		);
 	}
 
 	getNotificationsByAccount(accountId: number) : Observable<any> {
 		this.setLoading(true);
-		return this.http.get<any>(`${this.DevBaseurl}/notification/account/${accountId}?priority=1&limit=20`).pipe(
+		return this.http.get<any>(`${this.baseUrl}/notification/account/${accountId}?priority=1&limit=20`).pipe(
 			finalize(() => this.setLoading(false))
 		);
 	}
 
 	getNotificationsByGroup(groupId: number) : Observable<any> {
 		this.setLoading(true);
-		return this.http.get<any>(`${this.DevBaseurl}/notification/group/${groupId}?priority=1&limit=20`).pipe(
+		return this.http.get<any>(`${this.baseUrl}/notification/group/${groupId}?priority=1&limit=20`).pipe(
 			finalize(() => this.setLoading(false))
 		);
 
@@ -68,7 +68,7 @@ export class SettingServiceService {
 
 	changePassword(userId: number, body: any): Observable<any> {
 		this.setLoading(true);
-		return this.http.put<any>(`${this.DevBaseurl}/user/change-password`,  body ).pipe(
+		return this.http.put<any>(`${this.baseUrl}/user/change-password`,  body ).pipe(
 			finalize(() => this.setLoading(false))
 		);
 
