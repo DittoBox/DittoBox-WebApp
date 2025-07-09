@@ -37,47 +37,35 @@ export const routes: Routes = [
   {
     path: 'containers',
     component: ContainerComponent,
-    canActivate: [TokenGuardService, PrivilegeGuardService],
   },
   {
     path: 'templates',
     component: TemplateComponent,
-    canActivate: [TokenGuardService, PrivilegeGuardService],
   },
   {
     path: 'facilities',
     component: FacilityComponent,
-    canActivate: [TokenGuardService, PrivilegeGuardService],
-    data: { requiredPrivilege: 'AccountManagement' }
   },
   {
     path: 'workers',
     component: WorkerComponent, 
-    canActivate: [TokenGuardService, PrivilegeGuardService],
-    data: { requiredPrivilege: 'WorkerManagement' }
   },
   {
     path: 'notifications',
     component: NotificationsComponent,
-    canActivate: [TokenGuardService, PrivilegeGuardService],
   },
   {
     path: 'account',
     component: AccountComponent,
-    canActivate: [TokenGuardService]
   },
   {
     path: 'subscription',
     component: SubscriptionComponent,
-    canActivate: [TokenGuardService, PrivilegeGuardService],
-    data: { requiredPrivilege: 'AccountManagement' }
   },
   {
     path: 'dashboard',
     component: DashboardComponent,
-    canActivate: [TokenGuardService]
   },
-
   { path: '',
     redirectTo: '/login', pathMatch: 'full'
   },
