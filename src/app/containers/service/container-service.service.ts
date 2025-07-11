@@ -20,8 +20,8 @@ export class ContainerServiceService extends BaseService {
   loading$ = this.loadingSource.asObservable();
 
   constructor(private http: HttpClient) {
-		super();
-	}
+    super();
+  }
 
   private setLoading(loading: boolean) {
     this.loadingSource.next(loading);
@@ -43,8 +43,8 @@ export class ContainerServiceService extends BaseService {
 
   getContainersByGroupId(groupId: number): Observable<any> {
     this.setLoading(true);
-    return this.http.get<any>(`${this.baseUrl}/group/${groupId}/containers`).pipe(
-        finalize(() => this.setLoading(false))
+    return this.http.get<any>(`${this.baseUrl}/container/${groupId}/containers`).pipe(
+      finalize(() => this.setLoading(false))
     );
   }
 

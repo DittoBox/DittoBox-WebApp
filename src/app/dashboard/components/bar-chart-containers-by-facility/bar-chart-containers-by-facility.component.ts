@@ -1,26 +1,26 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../../service/dashboard.service';
-import {ChartType} from "chart.js";
-import {BaseChartDirective} from "ng2-charts";
-import {CommonModule} from "@angular/common";
-import {HttpClientModule} from "@angular/common/http";
+import { ChartType } from "chart.js";
+import { BaseChartDirective } from "ng2-charts";
+import { CommonModule } from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
 
 @Component({
   selector: 'app-bar-chart-containers-by-facility',
   standalone: true,
   imports: [
-    CommonModule, HttpClientModule,BaseChartDirective
+    CommonModule, HttpClientModule, BaseChartDirective
   ],
   templateUrl: './bar-chart-containers-by-facility.component.html',
   styleUrl: './bar-chart-containers-by-facility.component.css'
 })
-export class BarChartContainersByFacilityComponent  implements  OnInit{
+export class BarChartContainersByFacilityComponent implements OnInit {
   public groupsChartLabels: string[] = ['Containers'];
   public groupsChartData: number[] = [];
   public facilitychartType: ChartType = 'bar';
   public barColors: string[] = [];
 
-  accountId:number;
+  accountId: number;
   users: any[] = [];
   groups: any[] = [];
   containers: any[] = [];
@@ -40,7 +40,7 @@ export class BarChartContainersByFacilityComponent  implements  OnInit{
   }
 
   loadGroups(): void {
-    this.dashboardService.getGroups(this.accountId).subscribe(data => {
+    this.dashboardService.getGroupsByAccount(this.accountId).subscribe(data => {
       this.groups = data;
       this.groupsChartLabels = this.groups.map(group => group.name);
       this.groupsChartData = this.groups.map(group => group.containerCount);
