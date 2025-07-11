@@ -1,11 +1,11 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {MatTab, MatTabGroup} from "@angular/material/tabs";
-import {WorkerServiceService} from "../../service/worker-service.service";
-import {WorkerDetailsComponent} from "../worker-details/worker-details.component";
-import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from "@angular/material/card";
-import {NgForOf} from "@angular/common";
-import {MatIcon, MatIconModule} from '@angular/material/icon';
-import {MatButton} from "@angular/material/button";
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatTab, MatTabGroup } from "@angular/material/tabs";
+import { WorkerServiceService } from "../../service/worker-service.service";
+import { WorkerDetailsComponent } from "../worker-details/worker-details.component";
+import { MatCard, MatCardContent, MatCardHeader, MatCardTitle } from "@angular/material/card";
+import { NgForOf } from "@angular/common";
+import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { MatButton } from "@angular/material/button";
 import { TranslateModule } from '@ngx-translate/core';
 
 
@@ -30,7 +30,7 @@ export class WorkerItemsComponent implements OnInit {
   @Input() workersItems: any[] = [];
   @Output() workerSelected = new EventEmitter<number>();
 
-  constructor(private workerServiceService: WorkerServiceService) {}
+  constructor(private workerServiceService: WorkerServiceService) { }
 
   ngOnInit() {
     const myUserId = localStorage.getItem('userId');

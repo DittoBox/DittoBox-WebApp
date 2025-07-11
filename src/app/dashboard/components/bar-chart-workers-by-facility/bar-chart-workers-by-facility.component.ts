@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {ChartType} from "chart.js";
-import {DashboardService} from "../../service/dashboard.service";
-import {BaseChartDirective} from "ng2-charts";
+import { Component, OnInit } from '@angular/core';
+import { ChartType } from "chart.js";
+import { DashboardService } from "../../service/dashboard.service";
+import { BaseChartDirective } from "ng2-charts";
 
 @Component({
   selector: 'app-bar-chart-workers-by-facility',
@@ -18,7 +18,7 @@ export class BarChartWorkersByFacilityComponent implements OnInit {
   public facilitychartType: ChartType = 'bar';
   public barColors: string[] = [];
 
-  accountId:number;
+  accountId: number;
   users: any[] = [];
   groups: any[] = [];
   containers: any[] = [];
@@ -38,7 +38,7 @@ export class BarChartWorkersByFacilityComponent implements OnInit {
   }
 
   loadGroups(): void {
-    this.dashboardService.getGroups(this.accountId).subscribe(data => {
+    this.dashboardService.getGroupsByAccount(this.accountId).subscribe(data => {
       this.groups = data;
       this.groupsChartLabels = this.groups.map(group => group.name);
       this.groupsChartData = this.groups.map(group => group.profileCount);

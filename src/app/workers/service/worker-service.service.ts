@@ -8,9 +8,9 @@ import { BaseService } from '../../shared/service/base.service';
 })
 export class WorkerServiceService extends BaseService {
 
-  constructor(private http: HttpClient) { 
-		super();
-	}
+  constructor(private http: HttpClient) {
+    super();
+  }
 
   getWorkers(): Observable<any> {
     const accountId = localStorage.getItem('accountId');
