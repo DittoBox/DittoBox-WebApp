@@ -26,14 +26,14 @@
                     <mat-icon aria-hidden="false" aria-label="Oxygen icon" fontIcon="air_outlined"></mat-icon>
                     <span>{{ 'CONTAINER_ITEM.OXYGEN' | translate }}</span>
                 </div>
-                <span>{{ container.oxygen != null ? (container.oxygen | number: digitInfo) + ' %' : 'not yet' }}</span>
+                <span>{{ container.oxygen != null ? (container.oxygen | number: digitInfo) + ' ppm' : 'not yet' }}</span>
             </div>
             <div class="content">
                 <div class="tag">
                     <mat-icon aria-hidden="false" aria-label="Carbon Dioxide icon" fontIcon="cloud_outlined"></mat-icon>
                     <span>{{ 'CONTAINER_ITEM.CARBON_DIOXIDE' | translate }}</span>
                 </div>
-                <span>{{ container.dioxide != null ? (container.dioxide | number: digitInfo) + ' %' : 'not yet' }}</span>
+                <span>{{ container.dioxide != null ? (container.dioxide | number: digitInfo) + ' ppm' : 'not yet' }}</span>
             </div>
             <div class="content">
                 <div class="tag">

@@ -36,7 +36,7 @@ export class ContainerServiceService extends BaseService {
 
   getContainersByAccountId(accountId: number): Observable<any> {
     this.setLoading(true);
-    return this.http.get<any>(`${this.baseUrl}/account/${accountId}/containers`).pipe(
+    return this.http.get<any>(`${this.baseUrl}/container/by-account/${accountId}`).pipe(
       finalize(() => this.setLoading(false))
     );
   }
