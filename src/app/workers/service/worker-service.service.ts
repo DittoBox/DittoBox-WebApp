@@ -14,7 +14,7 @@ export class WorkerServiceService extends BaseService {
 
   getWorkers(): Observable<any> {
     const accountId = localStorage.getItem('accountId');
-    return this.http.get<any>(`${this.baseUrl}/user/workers/${accountId}`);
+    return this.http.get<any>(`${this.baseUrl}/account/${accountId}/users`);
   }
 
   getWorkerbyId(workerId: string): Observable<any> {
@@ -23,7 +23,7 @@ export class WorkerServiceService extends BaseService {
   }
 
   getWorkersByAccount(accountId: string) {
-    return this.http.get<any[]>(`${this.baseUrl}/user/workers/${accountId}`);
+    return this.http.get<any[]>(`${this.baseUrl}/account/${accountId}/users`);
   }
   grantPrivilege(profileId: number, privilegeId: number): Observable<any> {
     const url = `${this.baseUrl}/profile/grant-privileges`;

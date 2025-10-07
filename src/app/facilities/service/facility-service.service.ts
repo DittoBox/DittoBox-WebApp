@@ -14,8 +14,7 @@ export class FacilityServiceService extends BaseService {
 
 	// Método para obtener los grupos según el `accountId`
 	getGroupsByAccount(accountId: string): Observable<Facility[]> {
-		return this.http.post<Facility[]>(`${this.baseUrl}/group/by-account`,
-			{ accountId: accountId },
+		return this.http.get<Facility[]>(`${this.baseUrl}/account/${accountId}/groups`,
 			{
 				headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
 			}
@@ -33,7 +32,7 @@ export class FacilityServiceService extends BaseService {
 	}
 
 	registerWorker(groupId: number, workerData: any): Observable<any> {
-		return this.http.post<any>(`${this.baseUrl}/profile/assign-to-facility`, workerData);
+		return this.http.post<any>(`${this.baseUrl}/group/${groupId}/register-user`, workerData);
 	}
 
 }
