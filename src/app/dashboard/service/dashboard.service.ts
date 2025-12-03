@@ -16,24 +16,19 @@ export class DashboardService extends BaseService {
 
 
   getGroups(accountId: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${accountId}/groups`);
+    return this.http.get(`${this.baseUrl}/account/${accountId}/groups`);
   }
 
 
   getContainers(accountId: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/container/by-account/${accountId}`);
+    return this.http.get(`${this.baseUrl}/account/${accountId}/containers`);
   }
   getUsers(accountId: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/user/workers/${accountId}`);
+    return this.http.get(`${this.baseUrl}/account/${accountId}/users`);
   }
 
   getGroupsByAccount(accountId: number): Observable<Facility[]> {
-    return this.http.post<Facility[]>(`${this.baseUrl}/group/by-account`,
-      { accountId: accountId },
-      {
-        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
-      }
-    );
+    return this.http.get<Facility[]>(`${this.baseUrl}/account/${accountId}/groups`);
   }
 
 }

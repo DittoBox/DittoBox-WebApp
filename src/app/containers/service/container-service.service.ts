@@ -36,14 +36,14 @@ export class ContainerServiceService extends BaseService {
 
   getContainersByAccountId(accountId: number): Observable<any> {
     this.setLoading(true);
-    return this.http.get<any>(`${this.baseUrl}/container/by-account/${accountId}`).pipe(
+    return this.http.get<any>(`${this.baseUrl}/account/${accountId}/containers`).pipe(
       finalize(() => this.setLoading(false))
     );
   }
 
   getContainersByGroupId(groupId: number): Observable<any> {
     this.setLoading(true);
-    return this.http.get<any>(`${this.baseUrl}/container/${groupId}/containers`).pipe(
+    return this.http.get<any>(`${this.baseUrl}/group/${groupId}/containers`).pipe(
       finalize(() => this.setLoading(false))
     );
   }
