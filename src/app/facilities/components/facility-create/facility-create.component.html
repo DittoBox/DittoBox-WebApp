@@ -1,11 +1,12 @@
 <div>
   <h2>{{ 'FACILITY_CREATE.TITLE' | translate }}</h2>
-  <mat-button-toggle-group formControlName="facilityType">
-    <mat-button-toggle [value]="0">{{ 'FACILITY_CREATE.FACILITY_TYPE.RESTAURANT' | translate }}</mat-button-toggle>
-    <mat-button-toggle [value]="1">{{ 'FACILITY_CREATE.FACILITY_TYPE.WAREHOUSE' | translate }}</mat-button-toggle>
-  </mat-button-toggle-group>
 
   <form [formGroup]="createFacilityForm" (ngSubmit)="onSubmit()">
+    <mat-button-toggle-group formControlName="facilityType">
+      <mat-button-toggle [value]="0">{{ 'FACILITY_CREATE.FACILITY_TYPE.RESTAURANT' | translate }}</mat-button-toggle>
+      <mat-button-toggle [value]="1">{{ 'FACILITY_CREATE.FACILITY_TYPE.WAREHOUSE' | translate }}</mat-button-toggle>
+    </mat-button-toggle-group>
+
     <div class="input-field">
       <mat-form-field>
         <mat-label>{{ 'FACILITY_CREATE.FORM.FACILITY_NAME' | translate }}</mat-label>
