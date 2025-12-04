@@ -34,12 +34,17 @@ export class WorkerItemsComponent implements OnInit {
 
   ngOnInit() {
     const myUserId = localStorage.getItem('userId');
+    console.log('WorkerItems - userId:', myUserId);
 
-    this.workerServiceService.getWorkers().subscribe((data: any[]) => {
-      if (myUserId !== null) {
-        this.workersItems = data.filter(worker => worker.id !== +myUserId);
-      } else {
+    this.workerServiceService.getWorkers().subscribe({
+      next: (data: any[]) => {
+        console.log('WorkerItems - Raw data received:', data);
+        // Mostrar todos los trabajadores (incluyendo el usuario actual)
         this.workersItems = data;
+        console.log('WorkerItems - Workers to display:', this.workersItems);
+      },
+      error: (error) => {
+        console.error('WorkerItems - Error loading workers:', error);
       }
     });
   }
